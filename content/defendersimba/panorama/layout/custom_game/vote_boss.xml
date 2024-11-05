@@ -6,7 +6,7 @@
     <scripts>
         <include src="file://{resources}/scripts/custom_game/vote_boss.js"/>
     </scripts>
-    <Panel class="root">
+    <Panel class="root" hittest="false">
         <Panel id="vote_boss">
             <Panel id="text_and_rectangle_container">
                 <Label id="vote_boss_text" text="Ты хочешь стать финальным боссом?"/>

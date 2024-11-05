@@ -3,6 +3,7 @@
 -- Подключаем необходимые библиотеки
 require('internal/util')
 require('libraries/timers')
+require('neutral_manager')
 
 -- Подключаем модификатор
 require('modifiers/modifier_golem_ai')
@@ -15,8 +16,10 @@ if GameMode == nil then
     _G.GameMode = class({})
 end
 
-TRANSFER_FINAL_BOSS = 2
--- Переменные для отслеживания текущей волны и максимального количества волн
+TRANSFER_FINAL_BOSS = 10
+WAVE_INTERVAL = 30
+
+
 GameMode.currentWave = 1        -- Текущая волна
 GameMode.maxWaves = 30           -- Максимальное количество волн
 
@@ -62,7 +65,11 @@ function GameMode:InitGameMode()
 
     -- Устанавливаем предыгровое время в 10 секунд
     GameRules:SetPreGameTime(10)
-
+    GameRules:SetUseUniversalShopMode(true)
+    GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
+    if IsInToolsMode() then
+        GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+    end
     -- Отключаем задержку автозапуска игры
     GameRules:SetCustomGameSetupAutoLaunchDelay(0)
 
@@ -80,6 +87,8 @@ function GameMode:OnGameRulesStateChange()
 
     if state == DOTA_GAMERULES_STATE_PRE_GAME then
         print("Игра в состоянии предыгровой подготовки")
+
+        NeutralManager:Init()
 
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
@@ -330,7 +339,7 @@ function GameMode:StartWaveSpawnTimer()
             print("Все волны были заспавнены.")
             return nil  -- Останавливаем таймер
         else
-            return 5.0  -- Повторяем каждые 30 секунд
+            return WAVE_INTERVAL  -- Повторяем каждые 30 секунд
         end
     end)
 end
