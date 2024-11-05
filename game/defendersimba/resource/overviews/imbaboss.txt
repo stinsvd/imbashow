@@ -1,0 +1,8 @@
+imbaboss
+{
+	material materials/overviews/imbaboss.vmat
+	pos_x -11520
+	pos_y 11520
+	scale 22.500
+}
+

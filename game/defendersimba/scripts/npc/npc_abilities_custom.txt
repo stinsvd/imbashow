@@ -1,0 +1,117 @@
+"DOTAAbilities"
+{
+    // Способность волны 1
+    "golem_ability_wave_1"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"
+        "AbilityTextureName"        "golem_ability_wave_1"
+
+        "Modifiers"
+        {
+            "modifier_golem_ability_wave_1"
+            {
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "Properties"
+                {
+                    // Увеличение скорости атаки на 10
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "10"
+                }
+            }
+        }
+    }
+
+    // Способность волны 2
+    "golem_ability_wave_2"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+        "AbilityTextureName"        "golem_ability_wave_2"
+
+        "Modifiers"
+        {
+            "modifier_golem_ability_wave_2"
+            {
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "Properties"
+                {
+                    // Увеличение магического урона на 5%
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"  "5"
+                }
+            }
+        }
+    }
+
+    // Способность волны 3
+    "golem_ability_wave_3"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_PURE"
+        "AbilityTextureName"        "golem_ability_wave_3"
+
+        "Modifiers"
+        {
+            "modifier_golem_ability_wave_3"
+            {
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "Properties"
+                {
+                    // Увеличение чистого урона на 15
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "15"
+                }
+            }
+        }
+    }
+
+    // Способность волны 4
+    "golem_ability_wave_4"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"
+        "AbilityTextureName"        "golem_ability_wave_4"
+
+        "Modifiers"
+        {
+            "modifier_golem_ability_wave_4"
+            {
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "Properties"
+                {
+                    // Увеличение физической брони на 2
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "2"
+                }
+            }
+        }
+    }
+
+    // Способность волны 5
+    "golem_ability_wave_5"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+        "AbilityTextureName"        "golem_ability_wave_5"
+
+        "Modifiers"
+        {
+            "modifier_golem_ability_wave_5"
+            {
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "Properties"
+                {
+                    // Увеличение магической сопротивляемости на 5%
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"  "5"
+                }
+            }
+        }
+    }
+}

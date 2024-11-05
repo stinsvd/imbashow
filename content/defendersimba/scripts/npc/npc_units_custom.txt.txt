@@ -1,0 +1,11 @@
+"npc_dota_creep_badguys_melee"
+{
+    "BaseClass"            "npc_dota_creep_lane"
+    "Model"                "models/creeps/lane_creeps/creep_dire_melee.mdl"
+    "Level"                "1"
+    "Health"               "550"
+    "Armor"                "2"
+    "AttackDamage"         "25"
+    "MovementSpeed"        "325"
+    "TeamName"             "DOTA_TEAM_BADGUYS"
+}

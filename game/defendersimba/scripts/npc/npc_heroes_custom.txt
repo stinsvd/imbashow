@@ -1,0 +1,8 @@
+"DOTAHeroes"
+{
+    "npc_dota_hero_alchemist"
+    {
+        "VisionNighttimeRange"      "99999"
+        "VisionDaytimeRange"      "99999"
+    }
+}

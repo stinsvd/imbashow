@@ -1,0 +1,22 @@
+"AddonInfo"
+{
+    "AddonSteamAppID"           "570"
+    "AddonVersion"              "1.0"
+    "AddonTitle"                "DefenderSimba"
+    "AddonAuthor"               "IMBASHOW"
+    "AddonDescription"          "Тестовое описание аддона где этот текст"
+
+    "maps"                       "imbaboss"
+
+    "Mount"
+    {
+        "resource"     "resource/"
+    }
+
+    "Localization"
+    {
+        "resource/localization/game_dota_ru.txt"
+        "resource/localization/game_dota_en.txt"
+        // Добавьте другие языковые файлы, если необходимо
+    }
+}

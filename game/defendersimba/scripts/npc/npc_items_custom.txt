@@ -1,0 +1,28 @@
+"items"
+{
+    "item_custom_damage_boost"
+    {
+        "ID"                    "3000"  // Уникальный ID предмета
+        "BaseClass"             "item_datadriven"
+        "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemCost"              "1500"
+        "ItemShopTags"          "damage"
+        "ItemQuality"           "rare"
+        "ItemBaseLevel"         "1"
+        "ItemStockMax"          "0"
+        "ItemStockTime"         "0"
+        "ItemInitialCharges"    "0"
+
+        "Modifiers"
+        {
+            "modifier_custom_damage_boost"
+            {
+                "Passive"       "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"
+                }
+            }
+        }
+    }
+}

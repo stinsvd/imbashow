@@ -1,0 +1,40 @@
+"AddonInfo"
+{
+    "AddonSteamAppID"           "570"
+    "AddonTitle"                "DefenderSimba"
+
+    "AddonName"             "defendersimba"
+    "AddonDescription"      "Описание вашего аддона"
+    "Maps"
+    {
+        "imbaboss"           "imbaboss"
+    }
+    "AddonAuthor"               "Ваше Имя"
+    "AddonDescription"          "Описание вашего аддона"
+    "AddonURL0"                 "http://ваш_сайт.com"
+    "AddonVersion"              "1.0"
+
+    "RequiredDLC"
+    {
+        "DLC0" "570"
+    }
+
+    "Priority"                  "100"
+
+    "Dependencies"
+    {
+        "0"     "dota"
+    }
+
+    "LoadKV3Manifest"           "1"
+
+    "ResourceCompiler"
+    {
+        "Map"                   "1"
+        "Model"                 "1"
+        "Particle"              "1"
+        "Material"              "1"
+        "Sound"                 "1"
+        "Panorama"              "1"
+    }
+}

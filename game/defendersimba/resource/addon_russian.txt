@@ -1,0 +1,15 @@
+"lang"
+{
+    "Language"    "Russian"
+    "Tokens"
+    {
+        "random_boss_message"      "Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
+        "boss_chosen_message"      "%s1 станет финальным боссом!"
+
+        "npc_dota_wave_1" "Мелкий засранец 1"
+        "npc_dota_wave_2" "Голем Волны 2"
+        "npc_dota_wave_3" "Голем Волны 3"
+        "npc_dota_wave_4" "Голем Волны 4"
+        "npc_dota_wave_5" "Голем Волны 5"
+    }
+}

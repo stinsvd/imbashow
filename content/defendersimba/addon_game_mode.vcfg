@@ -1,0 +1,10 @@
+"CompilerOptions"
+{
+    "Panorama"        "1"
+    "Maps"            "0"
+    "Particles"       "1"
+    "Models"          "0"
+    "Materials"       "1"
+    "Sounds"          "0"
+    "Enabled"         "1"
+}

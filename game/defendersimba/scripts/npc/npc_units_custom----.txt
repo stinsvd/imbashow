@@ -1,0 +1,177 @@
+"npc_units_custom"
+{
+    // Волна 1
+    "npc_dota_wave_1"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "5"
+        "ModelScale"            "0.5"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "1"
+        "AttackDamageMax"       "1"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "5"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "320"
+
+        "StatusHealth"          "1000"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        //"LocalizedName"         "#npc_dota_wave_1_name"
+    }
+
+    // Волна 2
+    "npc_dota_wave_2"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "maps/backgrounds/models/pudge_arcana_creeps/pudge_arcana_creeps.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "6"
+        "ModelScale"            "1.0"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "55"
+        "AttackDamageMax"       "65"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "6"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "325"
+
+        "StatusHealth"          "1100"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "Ability1"              "golem_ability_wave_2"
+    }
+
+    // Волна 3
+    "npc_dota_wave_3"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/lane_creeps/creep_bad_melee/creep_bad_flagbearer_mega.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "7"
+        "ModelScale"            "1.0"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "60"
+        "AttackDamageMax"       "70"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "7"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "330"
+
+        "StatusHealth"          "1200"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "Ability1"              "golem_ability_wave_3"
+    }
+
+    // Волна 4
+    "npc_dota_wave_4"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/roshan/roshan.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "8"
+        "ModelScale"            "1.0"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "65"
+        "AttackDamageMax"       "75"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "8"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "335"
+
+        "StatusHealth"          "1300"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "Ability1"              "golem_ability_wave_4"
+    }
+
+    // Волна 5
+    "npc_dota_wave_5"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/baby_rosh_halloween/baby_rosh_dire/baby_rosh_dire.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "9"
+        "ModelScale"            "1.0"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "70"
+        "AttackDamageMax"       "80"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "9"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "340"
+
+        "StatusHealth"          "1400"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "Ability1"              "golem_ability_wave_5"
+    }
+}

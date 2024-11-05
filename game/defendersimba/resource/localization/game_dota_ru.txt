@@ -1,0 +1,7 @@
+// resource/localization/game_dota_ru.txt
+
+"npc_dota_wave_1_name" "Мелкий засранец 1"
+"npc_dota_wave_2_name" "Голем Волны 2"
+"npc_dota_wave_3_name" "Голем Волны 3"
+"npc_dota_wave_4_name" "Голем Волны 4"
+"npc_dota_wave_5_name" "Голем Волны 5"

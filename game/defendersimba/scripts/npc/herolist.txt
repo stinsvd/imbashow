@@ -1,0 +1,20 @@
+"CustomHeroList"
+{
+// str
+	"npc_dota_hero_alchemist"			"1"
+	"npc_dota_hero_axe"					"1"
+	"npc_dota_hero_chaos_knight"		"1"
+// agi
+	"npc_dota_hero_sniper"				"1"
+	"npc_dota_hero_bounty_hunter"		"1"
+	"npc_dota_hero_templar_assassin"	"1"
+// int
+	"npc_dota_hero_zuus"				"1"
+	"npc_dota_hero_furion"				"1"	
+	"npc_dota_hero_necrolyte"			"1"
+// uni
+	"npc_dota_hero_techies"				"1"
+	"npc_dota_hero_wisp"				"1"
+	"npc_dota_hero_sand_king"			"1"
+
+}

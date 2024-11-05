@@ -1,0 +1,9 @@
+"lang"
+{
+    "Language"    "Russian"
+    "Tokens"
+    {
+        "random_boss_message"      "Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
+        "boss_chosen_message"      "%s1 станет финальным боссом!"
+    }
+}
