@@ -9,7 +9,7 @@
         "Model"                 "models/creeps/lane_creeps/creep_bird_radiant/creep_bird_radiant_melee.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "5"
-        "ModelScale"            "1.5"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "50"
@@ -34,9 +34,9 @@
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
 
-        "BountyXP"                  "0"     // "опыт за убийство юнита"
-        "BountyGoldMin"             "0"     // минимальное золото 
-        "BountyGoldMax"             "0"     // максимальное золото
+        "BountyXP"                  "500"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "500"     // минимальное золото 
+        "BountyGoldMax"             "500"     // максимальное золото
 
     }
 
@@ -48,7 +48,7 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "15"
-        "ModelScale"            "1.5"
+        "ModelScale"            "1.1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "200"
@@ -73,6 +73,9 @@
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
 
+        "BountyXP"                  "750"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "1050"     // минимальное золото 
+        "BountyGoldMax"             "1050"     // максимальное золото
     }
 
 // Босс 25
@@ -81,7 +84,118 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
+        "Level"                 "25"
+        "ModelScale"            "1.2"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "70"
+        "AttackDamageMax"       "80"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "9"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "340"
+
+        "StatusHealth"          "1400"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "BountyXP"                  "1000"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "1400"     // минимальное золото 
+        "BountyGoldMax"             "1400"     // максимальное золото
+    }
+
+// Босс 35
+    "npc_dota_wave_mini_boss_35"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "35"
+        "ModelScale"            "1.3"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "70"
+        "AttackDamageMax"       "80"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "9"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "340"
+
+        "StatusHealth"          "1400"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "BountyXP"                  "1750"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "1750"     // минимальное золото 
+        "BountyGoldMax"             "1750"     // максимальное золото
+    }
+
+// Босс 45
+    "npc_dota_wave_mini_boss_45"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "45"
+        "ModelScale"            "1.4"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "70"
+        "AttackDamageMax"       "80"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "9"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "340"
+
+        "StatusHealth"          "1400"
+        "StatusHealthRegen"     "5"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "BountyXP"                  "2100"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "2100"     // минимальное золото 
+        "BountyGoldMax"             "2100"     // максимальное золото
+    }
+
+// Босс 55
+    "npc_dota_wave_mini_boss_55"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "55"
         "ModelScale"            "1.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -107,6 +221,9 @@
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
 
+        "BountyXP"                  "2800"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "2800"     // минимальное золото 
+        "BountyGoldMax"             "2800"     // максимальное золото
     }
 
 
