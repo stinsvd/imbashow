@@ -11,5 +11,15 @@
         "npc_dota_wave_3" "Голем Волны 3"
         "npc_dota_wave_4" "Голем Волны 4"
         "npc_dota_wave_5" "Голем Волны 5"
+
+        "item_ring_of_aquila_custom"                "Кольцо Аквилы"
+        "item_recipe_ring_of_aquila_custom"         "Рецепт: Кольцо Аквилы"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom"              "Ring of Aquila"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_strength"    "+$all"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_health"      "+$health"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_health_regen" "+$hp_regen"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_mana_regen"  "+$mana_regen"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_armor"       "+$armor"
+        "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_attack_speed" "+$attack"
     }
 }

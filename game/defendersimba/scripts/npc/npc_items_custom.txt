@@ -1,5 +1,83 @@
+#base "items/item_power_treads.kv"
+#base "items/item_butterfly.kv"
+#base "items/item_heart_of_tarrasque.kv"
+#base "items/item_bfury.kv"
+
 "items"
 {
+
+	"item_upgrade_scroll_1"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"240"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
+	"item_upgrade_scroll_2"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"480"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
+	"item_upgrade_scroll_3"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"720"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
+	"item_upgrade_scroll_4"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"960"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
+	"item_upgrade_scroll_5"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"1200"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
+	"item_upgrade_scroll_6"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"key_enique_2"
+
+		"ItemCost"						"1440"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+	}
+
 
 	"item_tpscroll"
 	{
@@ -69,4 +147,275 @@
             }
         }
     }
+
+ 
+	"item_recipe_platemail_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_platemail_2"
+		"ItemRequirements"
+		{
+			"01"						"item_platemail;item_platemail;item_platemail"
+		}
+	}
+    
+
+	"item_platemail_2"
+	{
+		"BaseClass"					"item_platemail"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"
+		"ItemShopTags"					"armor"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"platemail"
+		"SecretShop"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_armor"			"30"
+		}
+	}
+
+	"item_recipe_tiara_of_selemene_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_tiara_of_selemene_2"
+		"ItemRequirements"
+		{
+			"01"						"item_tiara_of_selemene;item_tiara_of_selemene;item_tiara_of_selemene"
+		}
+	}
+    
+
+	"item_tiara_of_selemene_2"
+	{
+		"BaseClass"					"item_tiara_of_selemene"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1800"
+		"ItemShopTags"					"regen_mana"
+		"ItemQuality"					"component"
+		"ItemAliases"					"tiara of selemene"
+		"SecretShop"					"1"		
+		//"SideShop"						"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_mana_regen"		"18"
+		}
+	}
+
+
+	"item_recipe_ring_of_tarrasque_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ring_of_tarrasque_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_tarrasque;item_ring_of_tarrasque;item_ring_of_tarrasque"
+		}
+	}
+    
+
+	"item_ring_of_tarrasque_2"
+	{	
+		"BaseClass"					"item_ring_of_tarrasque"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1800"
+		"ItemShopTags"					"regen_health"
+		"ItemQuality"					"component"
+		"ItemAliases"					"rot;ring of tarrasque"
+		"SecretShop"					"1"		
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health_regen"	"36"
+		}
+	}
+
+	"item_recipe_reaver_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_reaver_2"
+		"ItemRequirements"
+		{
+			"01"						"item_reaver;item_reaver;item_reaver"
+		}
+	}
+
+	"item_reaver_2"
+	{
+		"BaseClass"					"item_reaver"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2800"
+		"ItemShopTags"					"str"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"reaver"
+		"SecretShop"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"75"
+		}
+	}
+
+	"item_recipe_eagle_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eagle_2"
+		"ItemRequirements"
+		{
+			"01"						"item_eagle;item_eagle;item_eagle"
+		}
+	}
+	"item_eagle_2"
+	{
+		"BaseClass"					"item_eagle"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2800"
+		"ItemShopTags"					"agi"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"eaglesong"
+		"SecretShop"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_agility"			"75"
+		}
+	}
+	
+	"item_recipe_mystic_staff_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mystic_staff_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_staff;item_mystic_staff;item_mystic_staff"
+		}
+	}
+
+	"item_mystic_staff_2"
+	{
+		"BaseClass"					"item_mystic_staff"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2800"
+		"ItemShopTags"					"int"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"mystic staff"
+		"SecretShop"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"		"75"
+		}
+	}
+
+	"item_recipe_relic_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_relic_2"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_relic;item_relic"
+		}
+	}
+
+	"item_relic_2"
+	{
+		"BaseClass"					"item_relic"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3400"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"sacred relic"
+		"SecretShop"					"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"			"165"
+		}
+	}
 }

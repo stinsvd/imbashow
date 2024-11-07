@@ -1,0 +1,259 @@
+"DOTAAbilities"
+{
+	"item_recipe_ring_of_aquila_custom"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ring_of_aquila_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_bracer;item_wraith_band;item_null_talisman;item_upgrade_scroll_1"
+		}
+	}
+    
+	"item_ring_of_aquila_custom"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_ring_of_aquila"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+ 
+		"ItemShopTags"					""
+		"ItemAliases"					"roa;ring of aquila"
+ 		"ItemPurchasable"				"1"
+		"ItemSellable"					"0"
+
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		"AbilityValues"
+		{
+			"bonus_strength"			"9"
+			"bonus_agility"			"9"
+			"bonus_intellect"		"9"
+			"bonus_health_regen"		"0.75"
+			"bonus_health"			"50"
+			"bonus_mana_regen"		"1"
+			"bonus_attack_speed"		"5"
+			"bonus_armor"			"1.75"
+		}		
+	} 
+
+	"item_recipe_power_treads_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_aquila_custom;item_power_treads;item_upgrade_scroll_2"
+		}
+	}
+    
+	"item_power_treads_2"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"1400"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+  		
+		"AbilityValues"
+		{
+				"bonus_movement_speed"  "55"
+				"bonus_active_stat"			"10"
+                "bonus_all_stats"		"9"
+                "bonus_health_regen"		"0.75"
+                "bonus_health"			"50"
+                "bonus_mana_regen"		"1"
+                "bonus_attack_speed"		"30"
+                "bonus_armor"			"1.75"
+ 		}
+	}
+
+	"item_recipe_power_treads_3"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_3"
+		"ItemRequirements"
+		{
+			"01"						"item_power_treads_2;item_pers;item_upgrade_scroll_3"
+		}
+	}
+    "item_power_treads_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"1400"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+  		
+		"AbilityValues"
+		{
+				"bonus_movement_speed"  "55"
+				"bonus_active_stat"			"50"
+                "bonus_all_stats"		"30"
+                "bonus_health_regen"		"0.75"
+                "bonus_health"			"50"
+                "bonus_mana_regen"		"1"
+                "bonus_attack_speed"		"30"
+                "bonus_armor"			"1.75"
+ 		}
+	}
+
+
+	"item_recipe_power_treads_4"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_4"
+		"ItemRequirements"
+		{
+			"01"						"item_power_treads_3;item_ultimate_orb;item_upgrade_scroll_4"
+		}
+	}
+
+    "item_power_treads_4"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"1400"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+  		
+		"AbilityValues"
+		{
+				"bonus_movement_speed"  "55"
+				"bonus_active_stat"			"60"
+                "bonus_all_stats"		"40"
+                "bonus_health_regen"		"0.75"
+                "bonus_health"			"50"
+                "bonus_mana_regen"		"1"
+                "bonus_attack_speed"		"30"
+                "bonus_armor"			"1.75"
+ 		}
+	}
+
+	"item_recipe_power_treads_5"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_5"
+		"ItemRequirements"
+		{
+			"01"						"item_power_treads_4;item_ogre_axe;item_staff_of_wizardry;item_blade_of_alacrity;item_upgrade_scroll_5"
+		}
+	}
+
+    "item_power_treads_5"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"1400"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+  		
+		"AbilityValues"
+		{
+				"bonus_movement_speed"  "55"
+				"bonus_active_stat"			"100"
+                "bonus_all_stats"		"50"
+                "bonus_health_regen"		"0.75"
+                "bonus_health"			"50"
+                "bonus_mana_regen"		"1"
+                "bonus_attack_speed"		"30"
+                "bonus_armor"			"1.75"
+ 		}
+	}
+ 
+ 	"item_recipe_power_treads_6"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_6"
+		"ItemRequirements"
+		{
+			"01"						"item_power_treads_5;item_reaver;item_eagle;item_mystic_staff;item_upgrade_scroll_6"
+		}
+	}
+
+     "item_power_treads_6"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_power_treads"
+        "AbilityTextureName"            "item_power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"1400"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+  		
+		"AbilityValues"
+		{
+				"bonus_movement_speed"  "55"
+				"bonus_active_stat"			"100"
+                "bonus_all_stats"		"50"
+                "bonus_health_regen"		"0.75"
+                "bonus_health"			"50"
+                "bonus_mana_regen"		"1"
+                "bonus_attack_speed"		"30"
+                "bonus_armor"			"1.75"
+ 		}
+	}
+ 
+	   
+}
