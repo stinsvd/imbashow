@@ -1,29 +1,29 @@
 "DOTAUnits"
 { 
-        // Волна 1
+    // Волна 1
     "npc_dota_wave_1"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+        "Model"                 "models/creeps/lane_creeps/creep_bad_melee/creep_bad_flagbearer.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "5"
-        "ModelScale"            "0.5"
+        "Level"                 "1"
+        "ModelScale"            "0.3"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "1"
-        "AttackDamageMax"       "1"
+        "AttackDamageMin"       "5"
+        "AttackDamageMax"       "5"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "5"
+        "ArmorPhysical"         "1"
         "MagicalResistance"     "25"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "320"
 
-        "StatusHealth"          "1000"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "300"
+        "StatusHealthRegen"     "3"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -31,6 +31,10 @@
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
+
+        "BountyXP"                  "100"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "23"     // минимальное золото 
+        "BountyGoldMax"             "26"     // максимальное золото
 
         "LocalizedName"         "#npc_dota_wave_1_name"
     }
@@ -40,26 +44,26 @@
     "npc_dota_wave_2"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"
+        "Model"                 "models/creeps/lane_creeps/creep_bad_ranged_diretide/creep_bad_ranged_diretide.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "6"
-        "ModelScale"            "0.5"
+        "Level"                 "2"
+        "ModelScale"            "0.3"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "55"
-        "AttackDamageMax"       "65"
+        "AttackDamageMin"       "10"
+        "AttackDamageMax"       "10"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "6"
+        "ArmorPhysical"         "3"
         "MagicalResistance"     "25"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "325"
+        "MovementSpeed"         "320"
 
-        "StatusHealth"          "1100"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "400"
+        "StatusHealthRegen"     "4"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -74,25 +78,25 @@
     "npc_dota_wave_3"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_dragonspawn_b/n_creep_dragonspawn_b.vmdl"
+        "Model"                 "models/creeps/lane_creeps/ti9_chameleon_radiant/ti9_chameleon_radiant_melee.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "7"
-        "ModelScale"            "0.5"
+        "Level"                 "3"
+        "ModelScale"            "0.4"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "60"
-        "AttackDamageMax"       "70"
+        "AttackDamageMin"       "20"
+        "AttackDamageMax"       "20"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "7"
+        "ArmorPhysical"         "5"
         "MagicalResistance"     "25"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "330"
 
-        "StatusHealth"          "1200"
+        "StatusHealth"          "500"
         "StatusHealthRegen"     "5"
         "StatusMana"            "0"
 
@@ -108,14 +112,14 @@
     "npc_dota_wave_4"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "8"
-        "ModelScale"            "0.5"
+        "Level"                 "4"
+        "ModelScale"            "0.4"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "65"
-        "AttackDamageMax"       "75"
+        "AttackDamageMin"       "30"
+        "AttackDamageMax"       "30"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
@@ -126,8 +130,8 @@
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "335"
 
-        "StatusHealth"          "1300"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "600"
+        "StatusHealthRegen"     "6"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -142,14 +146,14 @@
     "npc_dota_wave_5"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "Model"                 "models/creeps/lane_creeps/creep_bird_radiant/creep_bird_radiant_melee.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
+        "Level"                 "5"
         "ModelScale"            "0.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "50"
+        "AttackDamageMax"       "50"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
@@ -160,8 +164,8 @@
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "800"
+        "StatusHealthRegen"     "8"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -180,24 +184,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_harpy_b/n_creep_harpy_b.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "0.7"
+        "Level"                 "6"
+        "ModelScale"            "0.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMax"       "70"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "10"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1000"
+        "StatusHealthRegen"     "10"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -214,26 +218,26 @@
     "npc_dota_wave_7"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/lane_creeps/creep_radiant_ranged_diretide/creep_radiant_ranged_diretide.vmdl"
+        "Model"                 "models/creeps/lane_creeps/creep_radiant_melee_diretide/creep_radiant_melee_diretide.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "0.7"
+        "Level"                 "7"
+        "ModelScale"            "0.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "90"
+        "AttackDamageMax"       "90"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "10"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1200"
+        "StatusHealthRegen"     "12"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -249,26 +253,26 @@
     "npc_dota_wave_8"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "0.7"
+        "Level"                 "8"
+        "ModelScale"            "0.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "100"
+        "AttackDamageMax"       "100"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "12"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
         "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealthRegen"     "14"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -287,23 +291,23 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_red.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "9"
-        "ModelScale"            "0.7"
+        "ModelScale"            "0.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "120"
+        "AttackDamageMax"       "120"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "14"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1500"
+        "StatusHealthRegen"     "15"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -319,26 +323,26 @@
     "npc_dota_wave_10"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.5"
+        "Level"                 "10"
+        "ModelScale"            "0.7"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "150"
+        "AttackDamageMax"       "150"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "15"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1600"
+        "StatusHealthRegen"     "16"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -357,24 +361,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "5"
-        "ModelScale"            "1.5"
+        "Level"                 "11"
+        "ModelScale"            "0.7"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "1"
-        "AttackDamageMax"       "1"
+        "AttackDamageMin"       "160"
+        "AttackDamageMax"       "160"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "5"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "16"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "320"
+        "MovementSpeed"         "340"
 
-        "StatusHealth"          "1000"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1700"
+        "StatusHealthRegen"     "17"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -392,24 +396,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "6"
-        "ModelScale"            "1.5"
+        "Level"                 "12"
+        "ModelScale"            "0.7"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "55"
-        "AttackDamageMax"       "65"
+        "AttackDamageMin"       "170"
+        "AttackDamageMax"       "170"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "6"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "17"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "325"
+        "MovementSpeed"         "340"
 
-        "StatusHealth"          "1100"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1800"
+        "StatusHealthRegen"     "18"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -426,24 +430,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_dragonspawn_b/n_creep_dragonspawn_b.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "7"
-        "ModelScale"            "1.5"
+        "Level"                 "13"
+        "ModelScale"            "0.7"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "60"
-        "AttackDamageMax"       "70"
+        "AttackDamageMin"       "180"
+        "AttackDamageMax"       "180"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "7"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "18"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "330"
+        "MovementSpeed"         "340"
 
-        "StatusHealth"          "1200"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "1900"
+        "StatusHealthRegen"     "19"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -460,24 +464,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "8"
-        "ModelScale"            "1.5"
+        "Level"                 "14"
+        "ModelScale"            "0.7"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "65"
-        "AttackDamageMax"       "75"
+        "AttackDamageMin"       "190"
+        "AttackDamageMax"       "190"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "8"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "19"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "335"
 
-        "StatusHealth"          "1300"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2000"
+        "StatusHealthRegen"     "20"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -494,24 +498,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.5"
+        "Level"                 "15"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "200"
+        "AttackDamageMax"       "200"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "20"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2000"
+        "StatusHealthRegen"     "20"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -530,24 +534,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_harpy_b/n_creep_harpy_b.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.7"
+        "Level"                 "16"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "220"
+        "AttackDamageMax"       "220"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "22"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2200"
+        "StatusHealthRegen"     "22"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -566,24 +570,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/lane_creeps/creep_radiant_ranged_diretide/creep_radiant_ranged_diretide.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.7"
+        "Level"                 "17"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "240"
+        "AttackDamageMax"       "240"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "24"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2400"
+        "StatusHealthRegen"     "24"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -591,6 +595,7 @@
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
+
 
     }
 
@@ -601,24 +606,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.7"
+        "Level"                 "18"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "260"
+        "AttackDamageMax"       "260"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "26"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2600"
+        "StatusHealthRegen"     "26"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -626,6 +631,7 @@
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
+
 
     }
 
@@ -636,24 +642,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_red.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "1.7"
+        "Level"                 "19"
+        "ModelScale"            "1"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "280"
+        "AttackDamageMax"       "280"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "28"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "2800"
+        "StatusHealthRegen"     "28"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -661,6 +667,7 @@
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
+
 
     }
 
@@ -671,24 +678,24 @@
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "9"
-        "ModelScale"            "2.0"
+        "Level"                 "20"
+        "ModelScale"            "1.2"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "300"
+        "AttackDamageMax"       "300"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
 
-        "ArmorPhysical"         "9"
-        "MagicalResistance"     "25"
+        "ArmorPhysical"         "30"
+        "MagicalResistance"     "30"
 
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-        "MovementSpeed"         "340"
+        "MovementSpeed"         "335"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "3000"
+        "StatusHealthRegen"     "30"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -707,7 +714,7 @@
         "Model"                 "models/creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "5"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.2"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "1"
@@ -745,7 +752,7 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "6"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.2"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "55"
@@ -779,7 +786,7 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_dragonspawn_b/n_creep_dragonspawn_b.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "7"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.2"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "60"
@@ -813,7 +820,7 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "8"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.2"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "65"
@@ -847,7 +854,7 @@
         "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
         "SoundSet"              "n_creep_GolemA"
         "Level"                 "9"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.3"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "70"
@@ -1048,5 +1055,6 @@
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
+
     }
 }

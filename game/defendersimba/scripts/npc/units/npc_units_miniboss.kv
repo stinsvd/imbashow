@@ -6,14 +6,14 @@
     "npc_dota_wave_mini_boss_5"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "Model"                 "models/creeps/lane_creeps/creep_bird_radiant/creep_bird_radiant_melee.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "10"
-        "ModelScale"            "2.5"
+        "Level"                 "5"
+        "ModelScale"            "1.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "70"
-        "AttackDamageMax"       "80"
+        "AttackDamageMin"       "50"
+        "AttackDamageMax"       "50"
         "AttackRange"           "100"
         "AttackRate"            "1.7"
         "AttackAnimationPoint"  "0.3"
@@ -24,8 +24,8 @@
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
         "MovementSpeed"         "340"
 
-        "StatusHealth"          "1400"
-        "StatusHealthRegen"     "5"
+        "StatusHealth"          "800"
+        "StatusHealthRegen"     "8"
         "StatusMana"            "0"
 
         "VisionDaytimeRange"    "1400"
@@ -34,17 +34,55 @@
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "HealthBarOffset"       "260"
 
+        "BountyXP"                  "0"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "0"     // минимальное золото 
+        "BountyGoldMax"             "0"     // максимальное золото
+
     }
 
-// Босс 10
+// Босс 15
 
-    "npc_dota_wave_mini_boss_10"
+    "npc_dota_wave_mini_boss_15"
     {
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
         "SoundSet"              "n_creep_GolemA"
-        "Level"                 "10"
-        "ModelScale"            "2.5"
+        "Level"                 "15"
+        "ModelScale"            "1.5"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "200"
+        "AttackDamageMax"       "200"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "20"
+        "MagicalResistance"     "30"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "335"
+
+        "StatusHealth"          "2000"
+        "StatusHealthRegen"     "20"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+    }
+
+// Босс 25
+    "npc_dota_wave_mini_boss_25"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "9"
+        "ModelScale"            "1.5"
 
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "70"
@@ -70,5 +108,6 @@
         "HealthBarOffset"       "260"
 
     }
+
 
 }

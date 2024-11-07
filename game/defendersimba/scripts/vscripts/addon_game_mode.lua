@@ -17,7 +17,7 @@ if GameMode == nil then
 end
 
 TRANSFER_FINAL_BOSS = 10
-WAVE_INTERVAL = 30
+WAVE_INTERVAL = 60
 
 
 GameMode.currentWave = 1        -- Текущая волна
