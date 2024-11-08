@@ -1,0 +1,25 @@
+"DOTAAbilities"
+{
+	"item_range_bf"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_range_bf"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//"AbilityTextureName"           "item_range_bf"  // Укажите нужное значение
+
+		"ItemCost"                      "1000"
+		"ItemShopTags"                  "damage;cleave"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "range_bf"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
+
+		"AbilityValues"
+		{
+			"bonus_strength"            "2"    // Бонус от item_circlet
+			"bonus_agility"             "2"    // Бонус от item_circlet
+			"bonus_intellect"           "2"    // Бонус от item_circlet
+			"splash_damage_percent"     "30"   // Урон сплэш-атаки как процент от основного урона
+			"splash_radius"             "200"  // Радиус сплэш-атаки
+		}
+	}
+}

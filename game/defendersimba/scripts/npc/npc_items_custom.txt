@@ -4,6 +4,16 @@
 #base "items/item_bfury.kv"
 #base "items/item_octarine_core.kv"
 #base "items/item_assault_cuirass.kv"
+#base "items/item_desolator_custom.kv"
+#base "items/item_daedalus.kv"
+#base "items/item_range_bf.kv"
+#base "items/item_range_btfury.kv"
+#base "items/item_mjollnir_custom.kv"
+#base "items/item_radiance_custom.kv"
+#base "items/item_shiva_custom.kv"
+#base "items/item_shivasguard.kv"
+#base "items/item_skadi_custom.kv"
+
 
 "items"
 {
