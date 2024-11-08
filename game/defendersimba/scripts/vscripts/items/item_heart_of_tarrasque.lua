@@ -25,6 +25,7 @@ function modifier_item_heart_of_tarrasque:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
     }
     return funcs
@@ -34,6 +35,7 @@ function modifier_item_heart_of_tarrasque:OnCreated()
     self.bonus_health = self:GetAbility():GetSpecialValueFor("bonus_health")
     self.bonus_strength = self:GetAbility():GetSpecialValueFor("bonus_strength")
     self.health_regen_pct = self:GetAbility():GetSpecialValueFor("health_regen_pct")
+    self.bonus_health_regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
 function modifier_item_heart_of_tarrasque:GetModifierHealthBonus()
@@ -46,4 +48,8 @@ end
 
 function modifier_item_heart_of_tarrasque:GetModifierHealthRegenPercentage()
     return self.health_regen_pct
+end
+
+function modifier_item_heart_of_tarrasque:GetModifierConstantHealthRegen()
+    return self.bonus_health_regen
 end

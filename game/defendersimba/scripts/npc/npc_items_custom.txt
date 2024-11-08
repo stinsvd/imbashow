@@ -2,6 +2,8 @@
 #base "items/item_butterfly.kv"
 #base "items/item_heart_of_tarrasque.kv"
 #base "items/item_bfury.kv"
+#base "items/item_octarine_core.kv"
+#base "items/item_assault_cuirass.kv"
 
 "items"
 {
@@ -12,7 +14,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_1"
 
-		"ItemCost"						"240"
+		"ItemCost"						"250"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
@@ -24,7 +26,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_2"
 
-		"ItemCost"						"480"
+		"ItemCost"						"500"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
@@ -36,7 +38,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_3"
 
-		"ItemCost"						"720"
+		"ItemCost"						"900"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
@@ -48,7 +50,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_4"
 
-		"ItemCost"						"960"
+		"ItemCost"						"1250"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
@@ -60,7 +62,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_5"
 
-		"ItemCost"						"1200"
+		"ItemCost"						"2000"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
@@ -72,7 +74,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"upgrade_scroll_6"
 
-		"ItemCost"						"1440"
+		"ItemCost"						"4500"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"1"
