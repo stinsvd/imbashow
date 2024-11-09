@@ -22,7 +22,7 @@ WAVE_INTERVAL = 60
 
 
 GameMode.currentWave = 1        -- Текущая волна
-GameMode.maxWaves = 30           -- Максимальное количество волн
+GameMode.maxWaves = 60           -- Максимальное количество волн
 
 -- Таблица для хранения выбора игроков
 GameMode.playerChoices = {}
@@ -90,7 +90,8 @@ function GameMode:OnGameRulesStateChange()
         print("Игра в состоянии предыгровой подготовки")
 
         NeutralManager:Init()
-
+        BossManager:Init()
+        
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
             local time = GameRules:GetDOTATime(true, true)

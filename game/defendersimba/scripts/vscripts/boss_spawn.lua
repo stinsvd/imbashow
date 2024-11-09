@@ -1,5 +1,5 @@
 -- Время респавна босса после его убийства (в секундах)
-BOSS_RESPAWN_TIME = 120
+BOSS_RESPAWN_TIME = 1
 
 if BossManager == nil then
     BossManager = class({})
