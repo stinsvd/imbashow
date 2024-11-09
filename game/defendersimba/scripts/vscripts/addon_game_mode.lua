@@ -4,6 +4,7 @@
 require('internal/util')
 require('libraries/timers')
 require('neutral_manager')
+require('boss_spawn')
 
 -- Подключаем модификатор
 require('modifiers/modifier_golem_ai')

@@ -1,6 +1,7 @@
 #base "units/npc_units_miniboss.kv"
 #base "units/npc_units_wave.kv"
 #base "units/npc_units_neutrals.kv"
+#base "units/npc_boss.kv"
 
 "npc_units_custom"
 {
