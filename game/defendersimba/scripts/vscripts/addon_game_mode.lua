@@ -91,6 +91,7 @@ function GameMode:OnGameRulesStateChange()
 
         NeutralManager:Init()
         BossManager:Init()
+        NeutralDireManager:Init()
         
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
