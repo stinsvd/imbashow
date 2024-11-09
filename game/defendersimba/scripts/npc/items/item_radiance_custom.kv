@@ -1,11 +1,29 @@
 "DOTAAbilities"
 {
+
+
+    "item_recipe_radiance_custom_1"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_1"
+            "ItemRequirements"
+            {
+                "01"                        "item_circlet;item_circlet;item_circlet;item_circlet;item_upgrade_scroll_1"
+            }
+        }
+
     "item_radiance_custom_1"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_radiance_custom"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        //"AbilityTextureName"           "item_radiance_custom"
+        "AbilityTextureName"           "item_radiance"
 
         "ItemCost"                      "1000"
         "ItemShopTags"                  "damage;unique"
@@ -23,12 +41,28 @@
         }
     }
 
+    "item_recipe_radiance_custom_2"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_2"
+            "ItemRequirements"
+            {
+                "01"                        "item_radiance_custom_1;item_blades_of_attack;item_crown;item_upgrade_scroll_2"
+            }
+        }
+
     "item_radiance_custom_2"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_radiance_custom"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        //"AbilityTextureName"           "item_radiance_custom"
+        "AbilityTextureName"           "item_radiance"
 
         "ItemCost"                      "2000"
         "ItemShopTags"                  "damage;unique"
@@ -46,12 +80,28 @@
         }
     }
 
+    "item_recipe_radiance_custom_3"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_3"
+            "ItemRequirements"
+            {
+                "01"                        "item_radiance_custom_2;item_broadsword;item_diadem;item_upgrade_scroll_3"
+            }
+        }
+
     "item_radiance_custom_3"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_radiance_custom"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        //"AbilityTextureName"           "item_radiance_custom"
+        "AbilityTextureName"           "item_radiance"
 
         "ItemCost"                      "3000"
         "ItemShopTags"                  "damage;unique"
@@ -69,12 +119,28 @@
         }
     }
 
+    "item_recipe_radiance_custom_4"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_4"
+            "ItemRequirements"
+            {
+                "01"                        "item_radiance_custom_3;item_claymore;item_ultimate_orb;item_upgrade_scroll_4"
+            }
+        }
+
     "item_radiance_custom_4"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_radiance_custom"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        //"AbilityTextureName"           "item_radiance_custom"
+        "AbilityTextureName"           "item_radiance"
 
         "ItemCost"                      "4000"
         "ItemShopTags"                  "damage;unique"
@@ -92,12 +158,28 @@
         }
     }
 
+    "item_recipe_radiance_custom_5"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_5"
+            "ItemRequirements"
+            {
+                "01"                        "item_radiance_custom_4;item_diadem;item_mithril_hammer;item_demon_edge;item_upgrade_scroll_5"
+            }
+        }
+
     "item_radiance_custom_5"
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_radiance_custom"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        //"AbilityTextureName"           "item_radiance_custom"
+        "AbilityTextureName"           "item_radiance"
 
         "ItemCost"                      "5000"
         "ItemShopTags"                  "damage;unique"
@@ -114,6 +196,22 @@
             "aura_damage"               "70"
         }
     }
+
+    "item_recipe_radiance_custom_6"
+        {       
+            "BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.mdl"
+            "ItemCost"                      "0" 
+            "ItemShopTags"                  ""
+            
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_radiance_custom_6"
+            "ItemRequirements"
+            {
+                "01"                        "item_radiance_custom_5;item_ultimate_orb;item_ultimate_orb;item_relic;item_upgrade_scroll_6"
+            }
+        }
 
     "item_radiance_custom_6"
     {

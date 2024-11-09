@@ -1,0 +1,9 @@
+Обновления:
+
+1.06
+- добавил рецепт item_recipe_daedalus_1-6 (не баланс)
+- добавил рецепт item_recipe_desolator_custom_1-6 (не баланс)
+- добавил рецепт item_recipe_mjollnir_custom_1-6 (не баланс)
+- добавил рецепт item_recipe_radiance_custom_1-6 (не баланс)
+- добавил рецепт item_recipe_range_btfury_1-6 (не баланс)
+- добавил рецепт item_recipe_skadi_custom_1-6 (не баланс)

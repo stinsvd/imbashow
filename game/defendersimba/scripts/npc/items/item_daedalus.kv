@@ -1,11 +1,28 @@
 "DOTAAbilities"
 {
+
+	"item_recipe_daedalus_1"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_1"
+			"ItemRequirements"
+			{
+				"01"						"item_blades_of_attack;item_blades_of_attack;item_upgrade_scroll_1"
+			}
+		}
+
 	"item_daedalus_1"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"  // Укажите нужное значение
+		"AbilityTextureName"           "item_lesser_crit"  // Укажите нужное значение
 
 		"ItemCost"                      "1600"
 		"ItemShopTags"                  "damage;crit"
@@ -21,12 +38,29 @@
 		}
 	}
 
+	"item_recipe_daedalus_2"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_2"
+			"ItemRequirements"
+			{
+				"01"						"item_daedalus_1;item_broadsword;item_upgrade_scroll_2"
+			}
+		}
+
+
 	"item_daedalus_2"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"
+		"AbilityTextureName"           "item_lesser_crit"
 
 		"ItemCost"                      "2100"
 		"ItemShopTags"                  "damage;crit"
@@ -41,12 +75,29 @@
 		}
 	}
 
+	"item_recipe_daedalus_3"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_3"
+			"ItemRequirements"
+			{
+				"01"						"item_daedalus_2;item_blades_of_attack;item_mithril_hammer;item_upgrade_scroll_3"
+			}
+		}
+
+
 	"item_daedalus_3"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"
+		"AbilityTextureName"           "item_greater_crit"
 
 		"ItemCost"                      "3200"
 		"ItemShopTags"                  "damage;crit"
@@ -61,12 +112,29 @@
 		}
 	}
 
+	"item_recipe_daedalus_4"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_4"
+			"ItemRequirements"
+			{
+				"01"						"item_daedalus_3;item_ogre_axe;item_demon_edge;item_upgrade_scroll_4"
+			}
+		}
+
+
 	"item_daedalus_4"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"
+		"AbilityTextureName"           "item_greater_crit"
 
 		"ItemCost"                      "5500"
 		"ItemShopTags"                  "damage;crit"
@@ -81,12 +149,29 @@
 		}
 	}
 
+	"item_recipe_daedalus_5"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_5"
+			"ItemRequirements"
+			{
+				"01"						"item_daedalus_4;item_mithril_hammer;item_relic;item_upgrade_scroll_5"
+			}
+		}
+
+
 	"item_daedalus_5"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"
+		"AbilityTextureName"           "item_greater_crit"
 
 		"ItemCost"                      "6500"
 		"ItemShopTags"                  "damage;crit"
@@ -101,12 +186,29 @@
 		}
 	}
 
+	"item_recipe_daedalus_6"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_daedalus_6"
+			"ItemRequirements"
+			{
+				"01"						"item_daedalus_5;item_rapier;item_relic;item_upgrade_scroll_6"
+			}
+		}
+
+
 	"item_daedalus_6"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_daedalus"
+		"AbilityTextureName"           "item_greater_crit"
 
 		"ItemCost"                      "7200"
 		"ItemShopTags"                  "damage;crit"

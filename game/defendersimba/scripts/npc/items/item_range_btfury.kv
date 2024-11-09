@@ -1,5 +1,23 @@
 "DOTAAbilities"
 {
+
+
+	"item_recipe_range_btfury_1"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_1"
+			"ItemRequirements"
+			{
+				"01"						"item_range_bf;item_ring_of_regen;item_sobi_mask;item_upgrade_scroll_1"
+			}
+		}
+
 	"item_range_btfury_1"
 	{
 		"BaseClass"                     "item_lua"
@@ -25,6 +43,22 @@
 			"splash_radius"             "200"
 		}
 	}
+
+	"item_recipe_range_btfury_2"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_2"
+			"ItemRequirements"
+			{
+				"01"						"item_range_btfury_1;item_blades_of_attack;item_gloves;item_upgrade_scroll_2"
+			}
+		}
 
 	"item_range_btfury_2"
 	{
@@ -52,12 +86,28 @@
 		}
 	}
 
+	"item_recipe_range_btfury_3"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_3"
+			"ItemRequirements"
+			{
+				"01"						"item_range_btfury_2;item_blitz_knuckles;item_cornucopia;item_upgrade_scroll_3"
+			}
+		}
+
 	"item_range_btfury_3"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_range_btfury"
+		"AbilityTextureName"           "item_dragon_lance"
 
 		"ItemCost"                      "3500"
 		"ItemShopTags"                  "damage;cleave"
@@ -78,12 +128,29 @@
 		}
 	}
 
+
+	"item_recipe_range_btfury_4"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_4"
+			"ItemRequirements"
+			{
+				"01"						"item_range_btfury_3;item_dragon_lance;item_demon_edge;item_upgrade_scroll_4"
+			}
+		}
+
 	"item_range_btfury_4"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_range_btfury"
+		"AbilityTextureName"           "item_dragon_lance"
 
 		"ItemCost"                      "4500"
 		"ItemShopTags"                  "damage;cleave"
@@ -104,12 +171,28 @@
 		}
 	}
 
+	"item_recipe_range_btfury_5"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_5"
+			"ItemRequirements"
+			{
+				"01"						"item_range_btfury_4;item_hyperstone;item_relic;item_upgrade_scroll_5"
+			}
+		}
+
 	"item_range_btfury_5"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_range_btfury"
+		"AbilityTextureName"           "item_dragon_lance"
 
 		"ItemCost"                      "5500"
 		"ItemShopTags"                  "damage;cleave"
@@ -130,12 +213,28 @@
 		}
 	}
 
+	"item_recipe_range_btfury_6"
+		{		
+			"BaseClass"						"item_datadriven"
+			"AbilityTextureName" 			"item_recipe"
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"ItemCost"						"0"	
+			"ItemShopTags"					""
+			
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_range_btfury_6"
+			"ItemRequirements"
+			{
+				"01"						"item_range_btfury_5;item_moon_shard;item_rapier;item_upgrade_scroll_6"
+			}
+		}
+
 	"item_range_btfury_6"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"AbilityTextureName"           "item_range_btfury"
+		"AbilityTextureName"           "item_dragon_lance"
 
 		"ItemCost"                      "6500"
 		"ItemShopTags"                  "damage;cleave"
