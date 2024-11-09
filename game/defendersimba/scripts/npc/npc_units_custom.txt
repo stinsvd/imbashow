@@ -2,6 +2,8 @@
 #base "units/npc_units_wave.kv"
 #base "units/npc_units_neutrals.kv"
 #base "units/npc_boss.kv"
+#base "units/npc_dota_neutral_dire.kv"
+
 
 "npc_units_custom"
 {
