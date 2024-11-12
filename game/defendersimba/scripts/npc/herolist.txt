@@ -14,7 +14,7 @@
 	"npc_dota_hero_necrolyte"			"1"
 // uni
 	"npc_dota_hero_techies"				"1"
-	"npc_dota_hero_wisp"				"1"
+	"npc_dota_hero_wisp"				"2"
 	"npc_dota_hero_sand_king"			"1"
 
 }
