@@ -2,44 +2,7 @@
 {
     "Language"    "Russian"
     "Tokens"
-    {
-		// To create a new key ( like $health ) just add the entry here
-		"dota_ability_variable_health"				"к здоровью"					// $health
-		"dota_ability_variable_mana"				"к мане"						// $mana
-		"dota_ability_variable_armor"				"к броне"						// $armor
-		"dota_ability_variable_damage"				"к урону"					// $damage
-		"dota_ability_variable_str"					"к силе"					// $str
-		"dota_ability_variable_int"					"к интеллекту"				// $int
-		"dota_ability_variable_agi"					"к ловкости"					// $agi
-		"dota_ability_variable_all"					"ко всем атрибутам"			// $all
-		"dota_ability_variable_primary_attribute"	"к основному атрибуту"			// $primary_attribute
-		"dota_ability_variable_attack"				"к скорости атаки"				// $attack
-		"dota_ability_variable_attack_pct"			"к базовой скорости атаки"	// $attack_pct
-		"dota_ability_variable_hp_regen"			"к восстановлению здоровья"		// $hp_regen
-		"dota_ability_variable_lifesteal"			"к вампиризму"					// $lifesteal
-		"dota_ability_variable_mana_regen"			"к восстановлению маны"			// $mana_regen
-		"dota_ability_variable_mana_regen_aura"		"к восстановлению маны в ауре"	// $mana_regen_aura
-		"dota_ability_variable_spell_amp"			"к урону от заклинаний"				// $spell_amp
-		"dota_ability_variable_debuff_amp"			"к длительности отрицательных эффектов"			// $debuff_amp
-		"dota_ability_variable_move_speed"			"к скорости передвижения"			// $move_speed
-		"dota_ability_variable_evasion"				"к уклонению"					// $evasion
-		"dota_ability_variable_spell_resist"		"к сопротивлению магии"			// $spell_resist
-		"dota_ability_variable_spell_lifesteal"		"к вампиризму заклинаниями"			// $spell_lifesteal
-		"dota_ability_variable_spell_lifesteal_creep"	"к вампиризму заклинаниями (от крипов)"	// $spell_lifesteal_creep
-		"dota_ability_variable_spell_lifesteal_hero"	"к вампиризму заклинаниями (от героев)"	// $spell_lifesteal_hero
-		"dota_ability_variable_selected_attrib"		"к выбранному атрибуту"		// $selected_attribute
-		"dota_ability_variable_attack_range"		"к дальности атаки <font color='#7d7d7d'>(в дальнем бою)</font>"	// $attack_range
-		"dota_ability_variable_attack_range_melee"	"к дальности атаки <font color='#7d7d7d'>(в ближнем бою)</font>"	// $attack_range_melee
-		"dota_ability_variable_cast_range"			"к дальности применения заклинаний"				// $cast_range
-		"dota_ability_variable_status_resist"		"к сопротивлению эффектам"			// $status_resist
-		"dota_ability_variable_projectile_speed"	"к скорости снарядов"			// $projectile_speed
-		"dota_ability_variable_manacost_reduction"	"к уменьшению расхода маны"		// $manacost_reduction
-		"dota_ability_variable_cooldown_reduction"	"к уменьшению перезарядок заклинаний"		// $cooldown_reduction 
-		"dota_ability_variable_max_mana_percentage"	"к максимальной мане"			// $max_mana_percentage
-		"dota_ability_variable_slow_resistance"		"к сопротивлению замедлениям"			// $slow_resistance
-		"dota_ability_variable_aoe_bonus"			"к радиусу заклинаний"					// $aoe_bonus
-
-    
+    {    
         "random_boss_message"      "Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
         "boss_chosen_message"      "%s1 станет финальным боссом!"
 
@@ -117,7 +80,118 @@
         "DOTA_Tooltip_ability_item_ring_of_aquila_custom_bonus_attack_speed" "+$attack"
 
 
+        // "item_upgrade_scroll_1"                                             "Рецепт первый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_1"                        "Рецепт первый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_1_Description"            "Доступен с начала игры"
+
+        "item_upgrade_scroll_2"                                             "Рецепт второй"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_2"                        "Рецепт второй"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_2_Description"            "Доступен с после убийства первого Босса"
+
+        "item_upgrade_scroll_3"                                             "Рецепт третий"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_3"                        "Рецепт третий"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_3_Description"            "Доступен с после убийства второго Босса"
+
+        "item_upgrade_scroll_4"                                             "Рецепт четвертый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_4"                        "Рецепт четвертый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_4_Description"            "Доступен с после убийства третьего Босса"
+
+        "item_upgrade_scroll_5"                                             "Рецепт пятый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_5"                        "Рецепт пятый"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_5_Description"            "Доступен с после убийства четвертого Босса"
+
+        "item_upgrade_scroll_6"                                             "Рецепт шестой"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_6"                        "Рецепт шестой"
+        "DOTA_Tooltip_ability_item_upgrade_scroll_6_Description"            "Доступен с после убийства пятого Босса"
+
+
+
+
+        // МИЛИ БФ 
+        "DOTA_Tooltip_ability_item_bfury_1"             "BF #1"
+        "DOTA_Tooltip_ability_item_bfury_1_bonus_damage"      "+$damage"
+        "DOTA_Tooltip_ability_item_bfury_1_bonus_hp_regen"    "+$hp_regen"
+        "DOTA_Tooltip_ability_item_bfury_1_bonus_mana_regen"        "+$mana_regen"
+        "DOTA_Tooltip_ability_item_bfury_1_cleave_damage"     "%ПРОРУБАЮЩИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_bfury_1_cleave_distance"     "ДАЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_bfury_1_bonus_attack_speed" "+$attack"
+
+
+        // РЕНДЖ БФ
+
+        "DOTA_Tooltip_ability_item_range_bf"             "BF RANGE #0"
+        "DOTA_Tooltip_ability_item_range_bf_bonus_strength"      "+$str"
+        "DOTA_Tooltip_ability_item_range_bf_bonus_agility"    "+$agi"
+        "DOTA_Tooltip_ability_item_range_bf_bonus_intellect"        "+$int"
+        "DOTA_Tooltip_ability_item_range_bf_splash_damage_percent"     "%ПРОРУБАЮЩИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_range_bf_splash_radius"     "ДАЛЬНОСТЬ:"
+
+
+        // КИРАСА
+
+        "DOTA_Tooltip_ability_item_assault_cuirass_1"  "Кираса богов #1"
+        "DOTA_Tooltip_ability_item_assault_cuirass_1_bonus_attack_speed" "+$attack"
+        "DOTA_Tooltip_ability_item_assault_cuirass_1_bonus_armor"   "+$armor"
+        "DOTA_Tooltip_ability_item_assault_cuirass_1_armor_reduction" "Снижение брони у вражеских существ:"
+        "DOTA_Tooltip_ability_item_assault_cuirass_1_aura_radius"   "Радиус действия:"
+
+
+        // БАБОЧКА
+
+        "DOTA_Tooltip_ability_item_butterfly_1"    "Меч Бориса Пули "
+        "DOTA_Tooltip_ability_item_butterfly_1_bonus_agility"   "+$agi"
+        "DOTA_Tooltip_ability_item_butterfly_1_bonus_attack_speed"    "+$attack"
+        "DOTA_Tooltip_ability_item_butterfly_1_bonus_evasion"   "+$evasion"
+        // "DOTA_Tooltip_ability_item_butterfly_1_bonus_damage"    "+$damage"
+
+
+
+
+
+
+        // To create a new key ( like $health ) just add the entry here
+        "dota_ability_variable_health"              "к здоровью"                    // $health
+        "dota_ability_variable_mana"                "к мане"                        // $mana
+        "dota_ability_variable_armor"               "к броне"                       // $armor
+        "dota_ability_variable_damage"              "к урону"                   // $damage
+        "dota_ability_variable_str"                 "к силе"                    // $str
+        "dota_ability_variable_int"                 "к интеллекту"              // $int
+        "dota_ability_variable_agi"                 "к ловкости"                    // $agi
+        "dota_ability_variable_all"                 "ко всем атрибутам"         // $all
+        "dota_ability_variable_primary_attribute"   "к основному атрибуту"          // $primary_attribute
+        "dota_ability_variable_attack"              "к скорости атаки"              // $attack
+        "dota_ability_variable_attack_pct"          "к базовой скорости атаки"  // $attack_pct
+        "dota_ability_variable_hp_regen"            "к восстановлению здоровья"     // $hp_regen
+        "dota_ability_variable_lifesteal"           "к вампиризму"                  // $lifesteal
+        "dota_ability_variable_mana_regen"          "к восстановлению маны"         // $mana_regen
+        "dota_ability_variable_mana_regen_aura"     "к восстановлению маны в ауре"  // $mana_regen_aura
+        "dota_ability_variable_spell_amp"           "к урону от заклинаний"             // $spell_amp
+        "dota_ability_variable_debuff_amp"          "к длительности отрицательных эффектов"         // $debuff_amp
+        "dota_ability_variable_move_speed"          "к скорости передвижения"           // $move_speed
+        "dota_ability_variable_evasion"             "к уклонению"                   // $evasion
+        "dota_ability_variable_spell_resist"        "к сопротивлению магии"         // $spell_resist
+        "dota_ability_variable_spell_lifesteal"     "к вампиризму заклинаниями"         // $spell_lifesteal
+        "dota_ability_variable_spell_lifesteal_creep"   "к вампиризму заклинаниями (от крипов)" // $spell_lifesteal_creep
+        "dota_ability_variable_spell_lifesteal_hero"    "к вампиризму заклинаниями (от героев)" // $spell_lifesteal_hero
+        "dota_ability_variable_selected_attrib"     "к выбранному атрибуту"     // $selected_attribute
+        "dota_ability_variable_attack_range"        "к дальности атаки <font color='#7d7d7d'>(в дальнем бою)</font>"    // $attack_range
+        "dota_ability_variable_attack_range_melee"  "к дальности атаки <font color='#7d7d7d'>(в ближнем бою)</font>"    // $attack_range_melee
+        "dota_ability_variable_cast_range"          "к дальности применения заклинаний"             // $cast_range
+        "dota_ability_variable_status_resist"       "к сопротивлению эффектам"          // $status_resist
+        "dota_ability_variable_projectile_speed"    "к скорости снарядов"           // $projectile_speed
+        "dota_ability_variable_manacost_reduction"  "к уменьшению расхода маны"     // $manacost_reduction
+        "dota_ability_variable_cooldown_reduction"  "к уменьшению перезарядок заклинаний"       // $cooldown_reduction 
+        "dota_ability_variable_max_mana_percentage" "к максимальной мане"           // $max_mana_percentage
+        "dota_ability_variable_slow_resistance"     "к сопротивлению замедлениям"           // $slow_resistance
+        "dota_ability_variable_aoe_bonus"           "к радиусу заклинаний"                  // $aoe_bonus
+
+
+
         // Error messages
         "error_boss_not_killed"                                  "Босс {level} не убит"
+
+
+
+
     }
 }
