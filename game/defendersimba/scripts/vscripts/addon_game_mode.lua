@@ -5,7 +5,7 @@ require('internal/util')
 require('libraries/timers')
 require('neutral_manager')
 require('boss_spawn')
-require('neutral_dire_manager')
+require('units/npc_dota_courier')
 
 -- Подключаем модификатор
 require('modifiers/modifier_golem_ai')
@@ -92,7 +92,7 @@ function GameMode:OnGameRulesStateChange()
 
         NeutralManager:Init()
         BossManager:Init()
-        NeutralDireManager:Init()
+        CourierManager:Init()
         
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()

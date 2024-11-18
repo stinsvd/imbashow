@@ -29,4 +29,14 @@ NEUTRAL_CAMPS = {
         {{unit = "npc_dota_neutral_6_3", count = 1}},
         {{unit = "npc_dota_neutral_6_1", count = 3}, {unit = "npc_dota_neutral_6_3", count = 1}},
     },
+    [7] = {
+        {{unit = "npc_dota_neutral_dire_1", count = 2}, {unit = "npc_dota_neutral_dire_2", count = 2}},
+        {{unit = "npc_dota_neutral_dire_2", count = 1}},
+        {{unit = "npc_dota_neutral_dire_1", count = 3}, {unit = "npc_dota_neutral_dire_1", count = 1}},
+    },
+    [8] = {
+        {{unit = "npc_dota_neutral_dire_1", count = 2}, {unit = "npc_dota_neutral_dire_2", count = 2}},
+        {{unit = "npc_dota_neutral_dire_2", count = 1}},
+        {{unit = "npc_dota_neutral_dire_1", count = 3}, {unit = "npc_dota_neutral_dire_1", count = 1}},
+    },
 }

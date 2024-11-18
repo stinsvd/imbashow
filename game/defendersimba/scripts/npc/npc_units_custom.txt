@@ -7,5 +7,20 @@
 
 "npc_units_custom"
 {
- 
+	 "dota_courier"
+	{
+	    "BaseClass"                  "npc_dota_courier"  // Базовый класс курьера
+	    "Model"                      "models/props_gameplay/donkey.vmdl"  // Модель
+	    "SoundSet"                   "Courier"  // Набор звуков
+	    "MovementCapabilities"       "DOTA_UNIT_CAP_MOVE_GROUND"  // Тип передвижения (земля)
+	    "HealthBarOffset"            "200"  // Смещение здоровья
+	    "StatusHealth"               "150"  // Здоровье
+	    "StatusHealthRegen"          "0"  // Регенерация здоровья
+	    "ModelScale"                 "1.0"  // Размер модели
+	    "AttackCapabilities"         "DOTA_UNIT_CAP_NO_ATTACK"  // Курьер не атакует
+	    "ArmorPhysical"              "0"  // Физическая броня
+	    "MovementSpeed"              "275"  // Скорость
+	    "VisionDaytimeRange"         "400"  // Дневной обзор
+	    "VisionNighttimeRange"       "400"  // Ночной обзор
+	}
 }
