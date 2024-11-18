@@ -1,0 +1,1 @@
+LinkLuaModifier("modifier_boss_buff", "modifiers/modifier_boss_buff", LUA_MODIFIER_MOTION_NONE)

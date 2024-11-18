@@ -8,6 +8,7 @@ end
 function BossManager:Init()
     -- Таблица точек для спавна боссов
     self.bossPoints = {}
+    self.bossKilled = {}
 
     -- Находим все точки спавна боссов, названные boss_1_point, boss_2_point, ..., boss_6_point
     for i = 1, 6 do
@@ -22,6 +23,10 @@ function BossManager:Init()
 
     -- Подписываемся на событие, чтобы респавнить босса после его убийства
     ListenToGameEvent("entity_killed", Dynamic_Wrap(BossManager, "OnEntityKilled"), self)
+end
+
+function BossManager:IsBossKilled(bossIndex)
+    return self.bossKilled[bossIndex] 
 end
 
 function BossManager:SpawnBoss(bossIndex)
@@ -39,6 +44,7 @@ function BossManager:OnEntityKilled(event)
     -- Проверяем, убит ли босс, у которого задан индекс
     if killedUnit.bossIndex then
         local bossIndex = killedUnit.bossIndex
+        self.bossKilled[bossIndex] = true
         print("Босс " .. bossIndex .. " убит, респавн через " .. BOSS_RESPAWN_TIME .. " секунд.")
         
         -- Запускаем таймер для респавна босса

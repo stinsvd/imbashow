@@ -3,10 +3,10 @@
 -- Подключаем необходимые библиотеки
 require('internal/util')
 require('libraries/timers')
+require('utils')
 require('neutral_manager')
 require('boss_spawn')
-require('units/npc_dota_courier')
-
+ 
 -- Подключаем модификатор
 require('modifiers/modifier_golem_ai')
 
@@ -18,7 +18,7 @@ if GameMode == nil then
     _G.GameMode = class({})
 end
 
-TRANSFER_FINAL_BOSS = 10
+TRANSFER_FINAL_BOSS = 1
 WAVE_INTERVAL = 60
 
 
@@ -64,7 +64,8 @@ function GameMode:InitGameMode()
 
     -- Устанавливаем время демонстрации героев в 0 секунд
     GameRules:SetShowcaseTime(0)
-
+    GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+    GameRules:GetGameModeEntity():SetUseTurboCouriers(true)
     -- Устанавливаем предыгровое время в 10 секунд
     GameRules:SetPreGameTime(10)
     GameRules:SetUseUniversalShopMode(true)
@@ -80,6 +81,9 @@ function GameMode:InitGameMode()
 
     -- Подписываемся на изменение состояния игры
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
+    ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
+    local mode = GameRules:GetGameModeEntity()
+    mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
 end
 
 -- Функция, вызываемая при изменении состояния игры
@@ -92,7 +96,7 @@ function GameMode:OnGameRulesStateChange()
 
         NeutralManager:Init()
         BossManager:Init()
-        CourierManager:Init()
+
         
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
@@ -136,6 +140,15 @@ function GameMode:OnPlayerChoseBoss(args)
     end
 end
 
+function GameMode:OnPlayerUsedAbility(event)
+	local abiltyName = event.abilityname 
+    local playerID = event.PlayerID
+    print("asads")
+    if abiltyName == "item_tpscroll" then
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        hero:AddItemByName("item_tpscroll")
+    end
+end
 -- Функция для проверки, когда все игроки сделали выбор
 function GameMode:StartChoiceCheckTimer()
     Timers:CreateTimer(1, function()
@@ -226,7 +239,7 @@ function GameMode:TransformPlayerToBoss()
         hero:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
         hero:SetOwner(player)
         hero:SetControllableByPlayer(playerID, true)
-
+        hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
   
         -- Обновляем количество игроков в командах
         GameMode:UpdateTeamPlayerCounts()
@@ -347,3 +360,31 @@ function GameMode:StartWaveSpawnTimer()
         end
     end)
 end
+
+function GameMode:OrderFilter(event)
+	local type = event.order_type
+	local playerId = event.issuer_player_id_const
+	local unit 
+
+	if event.units and event.units["0"] then 
+		unit = EntIndexToHScript(event.units["0"])
+	end
+
+	if type == DOTA_UNIT_ORDER_PURCHASE_ITEM then 
+        local item = event.shop_item_name
+ 
+        if string.sub(item, 1, 19) == "item_upgrade_scroll" then
+             local upgradeLevel  = tonumber(string.sub(item, 21)) 
+
+            if upgradeLevel ~= 1 then
+                if not BossManager:IsBossKilled(upgradeLevel - 1) then
+                    CreateHudError(PlayerResource:GetPlayer(playerId), "#error_boss_not_killed", {level = upgradeLevel - 1})
+                    return false
+                end
+            end
+        end
+	end
+
+	return true
+end
+

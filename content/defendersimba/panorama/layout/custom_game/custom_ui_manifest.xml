@@ -1,4 +1,7 @@
 ﻿<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/main.js"/>
+    </scripts>
     <Panel>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/vote_boss.xml" />
     </Panel>
