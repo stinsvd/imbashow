@@ -18,7 +18,7 @@ if GameMode == nil then
     _G.GameMode = class({})
 end
 
-TRANSFER_FINAL_BOSS = 1
+TRANSFER_FINAL_BOSS = 10
 WAVE_INTERVAL = 60
 
 

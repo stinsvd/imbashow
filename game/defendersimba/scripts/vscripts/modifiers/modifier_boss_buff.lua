@@ -38,10 +38,10 @@ function modifier_boss_buff:OnCreated()
         self.agilityGain = parent:GetAgilityGain()
         self.intellectGain = parent:GetIntellectGain()
     end
-    self.magicResistance = 100
-    self.incomingDamage = -100
-    self.statusResistance = 100
-    self.modelScale = 200
+    self.magicResistance = 30
+    self.incomingDamage = -15
+    self.statusResistance = 25
+    self.modelScale = 120
 end
 
 function modifier_boss_buff:GetModifierBonusStats_Strength()
