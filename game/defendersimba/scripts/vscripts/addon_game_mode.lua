@@ -6,7 +6,8 @@ require('libraries/timers')
 require('utils')
 require('neutral_manager')
 require('boss_spawn')
- 
+require('tables/wave_rewards')
+require('tables/boss_gold')
 -- Подключаем модификатор
 require('modifiers/modifier_golem_ai')
 
@@ -17,8 +18,12 @@ LinkLuaModifier("modifier_golem_ai", "modifiers/modifier_golem_ai", LUA_MODIFIER
 if GameMode == nil then
     _G.GameMode = class({})
 end
+ 
+
+RESPAWN_TIME = 15
 
 TRANSFER_FINAL_BOSS = 10
+BOSS_FIGHT_INTERVAL = 10
 WAVE_INTERVAL = 60
 
 
@@ -61,6 +66,9 @@ function GameMode:InitGameMode()
 
     -- Устанавливаем стратегическое время в 0 секунд
     GameRules:SetStrategyTime(10)
+    -- Устанавливаем максимальное количество игроков для каждой команды
+    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 6)  
+    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)   
 
     -- Устанавливаем время демонстрации героев в 0 секунд
     GameRules:SetShowcaseTime(0)
@@ -73,15 +81,14 @@ function GameMode:InitGameMode()
     if IsInToolsMode() then
         GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
     end
-    -- Отключаем задержку автозапуска игры
-    GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-
+  
     -- Устанавливаем начальное время суток на ночь (0.75 соответствует ночи)
     GameRules:SetTimeOfDay(0.75)
 
     -- Подписываемся на изменение состояния игры
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
     ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
+    ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
     local mode = GameRules:GetGameModeEntity()
     mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
 end
@@ -92,6 +99,8 @@ function GameMode:OnGameRulesStateChange()
     print("Game state changed to ", state)
 
     if state == DOTA_GAMERULES_STATE_PRE_GAME then
+        GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)   
+
         print("Игра в состоянии предыгровой подготовки")
 
         NeutralManager:Init()
@@ -219,8 +228,49 @@ function GameMode:ProcessPlayerChoices()
 end
 
  
- 
+function GameMode:OnEntityKilled(event)
+    local killedUnit = EntIndexToHScript(event.entindex_killed)
+    
+    if killedUnit:IsRealHero() then
+        killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
+    end
 
+    if killedUnit:HasModifier("modifier_golem_ai") then
+        local isCurrentWaveUnit = false
+        for i,unit in ipairs(self.waveUnits) do
+            if unit:GetEntityIndex() == killedUnit:GetEntityIndex() then
+                isCurrentWaveUnit = true
+                table.remove(self.waveUnits, i)
+                break
+            end
+        end
+
+        if isCurrentWaveUnit and #self.waveUnits == 0 then
+            self:GiveRewardWave()
+        end
+    end
+
+    if killedUnit:IsBossCreature() then
+        local reward = BOSS_GOLD[killedUnit:GetUnitName()]  
+        DeepPrintTable(reward)
+        if reward then
+            GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
+        end
+    end
+
+    if killedUnit:GetUnitName() == "npc_dota_boss_6" then
+        self:OpenGate()
+    end
+end
+
+function GameMode:OpenGate()
+    local gate = Entities:FindByName(nil, "gate")
+    local blocks = Entities:FindAllByName("gate_obstruction")
+    UTIL_Remove(gate)
+    for _,block in ipairs(blocks) do
+        block:Destroy()
+    end
+end
 -- Функция для преобразования игрока в финального босса
 function GameMode:TransformPlayerToBoss()
     local playerID = GameMode.bossPlayerID
@@ -230,6 +280,7 @@ function GameMode:TransformPlayerToBoss()
 
     -- Получаем текущего героя игрока
     local hero = player:GetAssignedHero()
+    self:SetBoss(hero)
     if hero then
         -- Переводим игрока в команду BADGUYS
         player:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
@@ -245,9 +296,26 @@ function GameMode:TransformPlayerToBoss()
         GameMode:UpdateTeamPlayerCounts()
     end
 
-    FindClearSpaceForUnit(hero, self:GetWaveSpawnPoint(), true)
+    self:StartBossFight()
+ end
+
+function GameMode:SetBoss(hero)
+    if hero:IsRealHero() then
+        self.boss = hero
+    end
 end
 
+
+function GameMode:GetBoss()
+    return self.boss
+end
+
+function GameMode:StartBossFight()
+    local boss = self:GetBoss()
+    if not boss then return end
+
+    FindClearSpaceForUnit(boss, self:GetWaveSpawnPoint(), true)
+end
 -- Функция для обновления количества игроков в командах
 function GameMode:UpdateTeamPlayerCounts()
     local goodGuysCount = 0
@@ -308,7 +376,7 @@ function GameMode:SpawnWave()
     local unitName = "npc_dota_wave_" .. GameMode.currentWave
  
     local spawnPoint = self:GetWaveSpawnPoint()
- 
+    self.waveUnits = {}
     -- Спавним 10 юнитов
     for i = 1, 10 do
         -- Смещаем точку спавна, чтобы юниты не накладывались друг на друга
@@ -317,7 +385,7 @@ function GameMode:SpawnWave()
 
         -- Спавним юнита
         local unit = CreateUnitByName(unitName, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
-
+        table.insert(self.waveUnits, unit)
         if unit then
             -- Добавляем модификатор AI
             unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
@@ -340,8 +408,18 @@ function GameMode:SpawnWave()
     if GameMode.currentWave == TRANSFER_FINAL_BOSS then 
         GameMode:TransformPlayerToBoss()
     end
+
+    if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
+        self:StartBossFight()
+    end
+
     -- Увеличиваем номер волны для следующего спавна
     GameMode.currentWave = GameMode.currentWave + 1
+end
+
+function GameMode:GiveRewardWave()
+    local reward = WAVE_REWARDS[self.currentWave]
+    GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
 end
 
 -- Функция для запуска таймера спавна волн каждые 30 секунд

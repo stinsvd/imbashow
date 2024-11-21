@@ -1,5 +1,25 @@
 "DOTAAbilities"
 {
+	"structure_passive"
+    {
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+        "Modifiers"
+        {
+            "modifier_hidden_passive"
+            {
+                    "Passive"			"1"
+                    "IsHidden"			"1"
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+
     // Способность волны 1
     "golem_ability_wave_1"
     {

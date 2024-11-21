@@ -1,0 +1,16 @@
+"AddonInfo"
+{
+	"maps" "imbaboss"
+	"IsPlayable" "1"
+	"MinimalPrecache" "0"
+	"HeroGuidesSupported" "0"
+	"ForceDefaultGuide" "0"
+	"EnablePickRules" "0"
+	"PenaltiesEnabled" "0"
+	"EventGame" "0"
+	"DrawCustomTeamHeroesOnMinimap" "1"
+	"imbaboss"
+	{
+		"MaxPlayers" "6"
+	}
+}

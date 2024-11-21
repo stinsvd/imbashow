@@ -24,7 +24,8 @@ function modifier_boss_buff:DeclareFunctions()
         MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
         MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-        MODIFIER_PROPERTY_MODEL_SCALE
+        MODIFIER_PROPERTY_MODEL_SCALE,
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, 
     }
 end
 
@@ -41,6 +42,7 @@ function modifier_boss_buff:OnCreated()
     self.magicResistance = 30
     self.incomingDamage = -30
     self.statusResistance = 30
+    self.cooldownReduce = 30
     self.modelScale = 120
 end
 
@@ -73,3 +75,9 @@ end
 function modifier_boss_buff:GetModifierModelScale()
     return self.modelScale
 end
+
+function modifier_boss_buff:GetModifierPercentageCooldownStacking()
+    return self.cooldownReduce
+end
+
+ 

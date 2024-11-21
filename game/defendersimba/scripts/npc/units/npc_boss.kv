@@ -4,28 +4,71 @@
     {
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_ancient_hulk.vmdl"
-        //"SoundSet"              "Hero_DoomBringer"
-        "Level"                 "10"
+         "Level"                 "10"
         "ModelScale"            "1.2"
-        "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "190"
-        "AttackDamageMax"       "200"
-        "AttackRate"            "0.3"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"  
-        "AttackRange"           "850"
-        "ArmorPhysical"         "25"
-        "MagicalResistance"     "30"
-        "MovementSpeed"         "550"
-        "StatusHealth"          "5000"
-        "StatusHealthRegen"     "99" 
-        "BountyXP"              "500"
-        "BountyGoldMin"         "700"
-        "BountyGoldMax"         "1000"
-        "LocalizedName"         "#npc_dota_boss_1"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+ 		"UseNeutralCreepBehavior"	"1"
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		"IsBossCreature"				"1"
+
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"300"
+ 
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+ 		"ArmorPhysical"				"10"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"120"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"90"		// Range within a target can be attacked.
+ 
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1250"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"315"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"5.5"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1100"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
     }
 
     "npc_dota_boss_2"
@@ -35,6 +78,8 @@
         //"SoundSet"              "Hero_LifeStealer"
         "Level"                 "15"
         "ModelScale"            "1.4"
+		"IsBossCreature"				"1"
+
         "UseNeutralCreepBehavior" "1"
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "350"
@@ -45,7 +90,9 @@
         "AttackRange"           "650"
         "ArmorPhysical"         "25"
         "MagicalResistance"     "35"
-        "MovementSpeed"         "550"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
         "StatusHealth"          "7000"
         "BountyXP"              "1500"
         "BountyGoldMin"         "2000"
@@ -71,7 +118,9 @@
         "AttackRange"           "650"
         "ArmorPhysical"         "40"
         "MagicalResistance"     "45"
-        "MovementSpeed"         "550"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
         "StatusHealth"          "9000"
         "BountyXP"              "2000"
         "BountyGoldMin"         "3500"
@@ -98,7 +147,9 @@
         "AttackRange"           "650"
         "ArmorPhysical"         "65"
         "MagicalResistance"     "55"
-        "MovementSpeed"         "650"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"650"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
         "StatusHealth"          "13000"
         "BountyXP"              "3000"
         "BountyGoldMin"         "4000"
@@ -124,7 +175,9 @@
         "AttackRange"           "650"
         "ArmorPhysical"         "100"
         "MagicalResistance"     "70"
-        "MovementSpeed"         "550"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
         "StatusHealth"          "15000"
         "BountyXP"              "4500"
         "BountyGoldMin"         "5500"
@@ -152,8 +205,10 @@
         "AttackRange"           "1500"
         "ArmorPhysical"         "150"
         "MagicalResistance"     "85"
-        "MovementSpeed"         "550"
-        "StatusHealth"          "17000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+        "StatusHealth"          "1"
         "StatusHealthRegen"     "999" 
         "BountyXP"              "5500"
         "BountyGoldMin"         "6200"

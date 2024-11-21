@@ -35,7 +35,7 @@ function NeutralManager:SpawnCamp(point)
 
     for _, npc in ipairs(camp) do
         for i = 1, npc.count do
-            local unit = CreateUnitByName(npc.unit, spawnPoint, true, nil, nil, DOTA_TEAM_NEUTRALS)
+            local unit = CreateUnitByName(npc.unit, spawnPoint + RandomVector(100), true, nil, nil, DOTA_TEAM_NEUTRALS)
             unit.neutralCamp = point
         end
     end
