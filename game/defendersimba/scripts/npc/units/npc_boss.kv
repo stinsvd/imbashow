@@ -11,8 +11,8 @@
 		"IsAncient"					"1"
 		"IsBossCreature"				"1"
 
-		"MinimapIcon"				"minimap_roshancamp"
-		"MinimapIconSize"			"300"
+		"MinimapIcon"				"minimap_death"
+		"MinimapIconSize"			"500"
  
 		// Abilities
 		//----------------------------------------------------------------
@@ -21,17 +21,18 @@
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
- 		"ArmorPhysical"				"10"			// Physical protection.
+ 		"ArmorPhysical"				"45"			// Physical protection.
+        "MagicalResistance"         "30"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"		// Damage range min.
-		"AttackDamageMax"			"120"		// Damage range max.
-		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackDamageMin"			"666"		// Damage range min.
+		"AttackDamageMax"			"666"		// Damage range max.
+		"AttackRate"				"0.3"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"90"		// Range within a target can be attacked.
+		"AttackRange"				"300"		// Range within a target can be attacked.
  
 
 		// Bounds
@@ -41,19 +42,19 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"1250"		// Experience earn.
+		"BountyXP"					"0"		// Experience earn.
 		"BountyGoldMin"				"0"		// Gold earned min.
 		"BountyGoldMax"				"0"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"315"		// Speed.			
+		"MovementSpeed"				"450"		// Speed.			
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"5.5"		// Health regeneration rate.
+		"StatusHealth"				"8000"		// Base health.
+		"StatusHealthRegen"			"75"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -78,29 +79,73 @@
         //"SoundSet"              "Hero_LifeStealer"
         "Level"                 "15"
         "ModelScale"            "1.4"
-		"IsBossCreature"				"1"
+        "UseNeutralCreepBehavior"   "1"
+        "ConsideredHero"            "1"
+        "IsAncient"                 "1"
+        "IsBossCreature"                "1"
 
-        "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "350"
-        "AttackDamageMax"       "450"
-        "AttackRate"            "0.5"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"  
-        "AttackRange"           "650"
-        "ArmorPhysical"         "25"
-        "MagicalResistance"     "35"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"550"		// Speed.
-		"MovementTurnRate"			"0.9"		// Turning rate.
-        "StatusHealth"          "7000"
-        "BountyXP"              "1500"
-        "BountyGoldMin"         "2000"
-        "BountyGoldMax"         "3000"
-        "LocalizedName"         "#npc_dota_boss_2"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+        "MinimapIcon"               "minimap_death"
+        "MinimapIconSize"           "500"
+ 
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        "ArmorPhysical"             "95"            // Physical protection.
+        "MagicalResistance"         "35"
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "999"       // Damage range min.
+        "AttackDamageMax"           "1111"       // Damage range max.
+        "AttackRate"                "0.5"       // Speed of attack.
+        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "800"       // Range within a target can be acquired.
+        "AttackRange"               "300"        // Range within a target can be attacked.
+ 
+
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "40"
+        "HealthBarOffset"           "170"
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"      // Experience earn.
+        "BountyGoldMin"             "0"     // Gold earned min.
+        "BountyGoldMax"             "0"     // Gold earned max.
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "450"       // Speed.           
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "12000"      // Base health.
+        "StatusHealthRegen"         "99"       // Health regeneration rate.
+        "StatusMana"                "1000"          // Base mana.
+        "StatusManaRegen"           "0.0"       // Mana regeneration rate.       
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1100"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1100"      // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                        // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
     }
+
+
     "npc_dota_boss_3"
     {
         "BaseClass"             "npc_dota_creature"
@@ -109,25 +154,70 @@
         "Level"                 "20"
         "ModelScale"            "1.7"
         "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "500"
-        "AttackDamageMax"       "700"
-        "AttackRate"            "0.5"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"  
-        "AttackRange"           "650"
-        "ArmorPhysical"         "40"
-        "MagicalResistance"     "45"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"550"		// Speed.
-		"MovementTurnRate"			"0.9"		// Turning rate.
-        "StatusHealth"          "9000"
-        "BountyXP"              "2000"
-        "BountyGoldMin"         "3500"
-        "BountyGoldMax"         "4500"
-        "LocalizedName"         "#npc_dota_boss_3"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+        "ConsideredHero"            "1"
+        "IsAncient"                 "1"
+        "IsBossCreature"                "1"
+
+        "MinimapIcon"               "minimap_death"
+        "MinimapIconSize"           "500"
+ 
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        "ArmorPhysical"             "95"            // Physical protection.
+        "MagicalResistance"         "35"
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "1333"       // Damage range min.
+        "AttackDamageMax"           "1333"       // Damage range max.
+        "AttackRate"                "0.5"       // Speed of attack.
+        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "800"       // Range within a target can be acquired.
+        "AttackRange"               "550"        // Range within a target can be attacked.
+ 
+
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "40"
+        "HealthBarOffset"           "170"
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"      // Experience earn.
+        "BountyGoldMin"             "0"     // Gold earned min.
+        "BountyGoldMax"             "0"     // Gold earned max.
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "450"       // Speed.           
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "15000"      // Base health.
+        "StatusHealthRegen"         "150"       // Health regeneration rate.
+        "StatusMana"                "1000"          // Base mana.
+        "StatusManaRegen"           "0.0"       // Mana regeneration rate.       
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1100"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1100"      // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                        // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
     }
 
     "npc_dota_boss_4"
@@ -137,26 +227,70 @@
         //"SoundSet"              "Hero_LifeStealer"
         "Level"                 "25"
         "ModelScale"            "2.0"
-        "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "800"
-        "AttackDamageMax"       "1000"
-        "AttackRate"            "0.3"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"  
-        "AttackRange"           "650"
-        "ArmorPhysical"         "65"
-        "MagicalResistance"     "55"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"650"		// Speed.
-		"MovementTurnRate"			"0.9"		// Turning rate.
-        "StatusHealth"          "13000"
-        "BountyXP"              "3000"
-        "BountyGoldMin"         "4000"
-        "BountyGoldMax"         "6000"
-        "LocalizedName"         "#npc_dota_boss_4"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+        "UseNeutralCreepBehavior"    "1"
+        "ConsideredHero"            "1"
+        "IsAncient"                 "1"
+        "IsBossCreature"                "1"
+
+        "MinimapIcon"               "minimap_death"
+        "MinimapIconSize"           "500"
+ 
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        "ArmorPhysical"             "130"            // Physical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "1999"       // Damage range min.
+        "AttackDamageMax"           "2000"       // Damage range max.
+        "AttackRate"                "0.3"       // Speed of attack.
+        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "800"       // Range within a target can be acquired.
+        "AttackRange"               "650"        // Range within a target can be attacked.
+ 
+
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "40"
+        "HealthBarOffset"           "170"
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"      // Experience earn.
+        "BountyGoldMin"             "0"     // Gold earned min.
+        "BountyGoldMax"             "0"     // Gold earned max.
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "450"       // Speed.           
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "18000"      // Base health.
+        "StatusHealthRegen"         "333"       // Health regeneration rate.
+        "StatusMana"                "1000"          // Base mana.
+        "StatusManaRegen"           "0.0"       // Mana regeneration rate.       
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1100"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1100"      // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                        // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
     }
     "npc_dota_boss_5"
     {
@@ -165,26 +299,70 @@
         //"SoundSet"              "Hero_DoomBringer"
         "Level"                 "30"
         "ModelScale"            "2.5"
-        "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "950"
-        "AttackDamageMax"       "1200"
-        "AttackRate"            "0.3"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"  
-        "AttackRange"           "650"
-        "ArmorPhysical"         "100"
-        "MagicalResistance"     "70"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"550"		// Speed.
-		"MovementTurnRate"			"0.9"		// Turning rate.
-        "StatusHealth"          "15000"
-        "BountyXP"              "4500"
-        "BountyGoldMin"         "5500"
-        "BountyGoldMax"         "7000"
-        "LocalizedName"         "#npc_dota_boss_5"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+        "UseNeutralCreepBehavior"    "1"
+        "ConsideredHero"            "1"
+        "IsAncient"                 "1"
+        "IsBossCreature"                "1"
+
+        "MinimapIcon"               "minimap_death"
+        "MinimapIconSize"           "500"
+ 
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        "ArmorPhysical"             "200"            // Physical protection.
+        "MagicalResistance"         "35"
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "2399"       // Damage range min.
+        "AttackDamageMax"           "2400"       // Damage range max.
+        "AttackRate"                "0.3"       // Speed of attack.
+        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "800"       // Range within a target can be acquired.
+        "AttackRange"               "650"        // Range within a target can be attacked.
+ 
+
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "40"
+        "HealthBarOffset"           "170"
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"      // Experience earn.
+        "BountyGoldMin"             "0"     // Gold earned min.
+        "BountyGoldMax"             "0"     // Gold earned max.
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "550"       // Speed.           
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "30000"      // Base health.
+        "StatusHealthRegen"         "455"       // Health regeneration rate.
+        "StatusMana"                "1000"          // Base mana.
+        "StatusManaRegen"           "0.0"       // Mana regeneration rate.       
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1100"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1100"      // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                        // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
     }
 
     "npc_dota_boss_6"
@@ -194,28 +372,69 @@
         //"SoundSet"              "Hero_LifeStealer"
         "Level"                 "50"
         "ModelScale"            "1.2"
-        "UseNeutralCreepBehavior" "1"
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "1100"
-        "AttackDamageMax"       "1400"
-        "Speed"           "700"
-        "AttackRate"            "0.25"
-        "AttackAnimationPoint"      "0.0"      
-        "AttackAcquisitionRange"    "1000"       
-        "AttackRange"           "1500"
-        "ArmorPhysical"         "150"
-        "MagicalResistance"     "85"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"550"		// Speed.
-		"MovementTurnRate"			"0.9"		// Turning rate.
-        "StatusHealth"          "1"
-        "StatusHealthRegen"     "999" 
-        "BountyXP"              "5500"
-        "BountyGoldMin"         "6200"
-        "BountyGoldMax"         "8300"
-        "LocalizedName"         "#npc_dota_boss_6"
-        "VisionDaytimeRange"        "1000"
-        "VisionNighttimeRange"      "1000"
+        "UseNeutralCreepBehavior"    "1"
+        "ConsideredHero"            "1"
+        "IsAncient"                 "1"
+        "IsBossCreature"                "1"
+
+        "MinimapIcon"               "minimap_death"
+        "MinimapIconSize"           "500"
+ 
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        "ArmorPhysical"             "275"            // Physical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "3499"       // Damage range min.
+        "AttackDamageMax"           "3500"       // Damage range max.
+        "AttackRate"                "0.25"       // Speed of attack.
+        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "800"       // Range within a target can be acquired.
+        "AttackRange"               "650"        // Range within a target can be attacked.
+ 
+
+        // Bounds
+        //----------------------------------------------------------------
+        "RingRadius"                "40"
+        "HealthBarOffset"           "170"
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"      // Experience earn.
+        "BountyGoldMin"             "0"     // Gold earned min.
+        "BountyGoldMax"             "0"     // Gold earned max.
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"             "650"       // Speed.           
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "35000"      // Base health.
+        "StatusHealthRegen"         "1500"       // Health regeneration rate.
+        "StatusMana"                "1000"          // Base mana.
+        "StatusManaRegen"           "0.0"       // Mana regeneration rate.       
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1100"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1100"      // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                        // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
     }
 
 

@@ -32,18 +32,18 @@ end
 function modifier_boss_buff:OnCreated()
     local parent = self:GetParent()
     self.parent = parent
-    self.multiplier = 3
+    self.multiplier = 4
 
     if IsServer() then
         self.strengthGain = parent:GetStrengthGain()
         self.agilityGain = parent:GetAgilityGain()
         self.intellectGain = parent:GetIntellectGain()
     end
-    self.magicResistance = 30
-    self.incomingDamage = -30
-    self.statusResistance = 30
-    self.cooldownReduce = 30
-    self.modelScale = 120
+    self.magicResistance = 55
+    self.incomingDamage = -55
+    self.statusResistance = 25
+    self.cooldownReduction = 50
+    self.modelScale = 105
 end
 
 function modifier_boss_buff:GetModifierBonusStats_Strength()
@@ -77,7 +77,7 @@ function modifier_boss_buff:GetModifierModelScale()
 end
 
 function modifier_boss_buff:GetModifierPercentageCooldownStacking()
-    return self.cooldownReduce
+    return self.cooldownReduction
 end
 
  
