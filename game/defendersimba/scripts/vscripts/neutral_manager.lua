@@ -10,7 +10,7 @@ SPAWN_TIME = 1
 function NeutralManager:Init() 
 
     
-    for level = 1, 8 do
+    for level = 1, 10 do
         local points = Entities:FindAllByName("creeps_"..level.."_point")
 
         for _, point in ipairs(points) do

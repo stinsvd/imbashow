@@ -29,14 +29,26 @@ NEUTRAL_CAMPS = {
         {{unit = "npc_dota_neutral_6_3", count = 1}},
         {{unit = "npc_dota_neutral_6_1", count = 3}, {unit = "npc_dota_neutral_6_3", count = 1}},
     },
+
+
     [7] = {
-        {{unit = "npc_dota_neutral_dire_1", count = 2}, {unit = "npc_dota_neutral_dire_2", count = 2}},
-        {{unit = "npc_dota_neutral_dire_2", count = 1}},
-        {{unit = "npc_dota_neutral_dire_1", count = 3}, {unit = "npc_dota_neutral_dire_1", count = 1}},
+        {{unit = "npc_dota_neutral_dire_1_1", count = 4}, {unit = "npc_dota_neutral_dire_1_2", count = 3}},
+        {{unit = "npc_dota_neutral_dire_1_3", count = 2}, {unit = "npc_dota_neutral_dire_1_1", count = 3}},
+        {{unit = "npc_dota_neutral_dire_1_1", count = 3}, {unit = "npc_dota_neutral_dire_1_3", count = 2}},
     },
     [8] = {
-        {{unit = "npc_dota_neutral_dire_1", count = 2}, {unit = "npc_dota_neutral_dire_2", count = 2}},
-        {{unit = "npc_dota_neutral_dire_2", count = 1}},
-        {{unit = "npc_dota_neutral_dire_1", count = 3}, {unit = "npc_dota_neutral_dire_1", count = 1}},
+        {{unit = "npc_dota_neutral_dire_2_1", count = 2}, {unit = "npc_dota_neutral_dire_2_2", count = 2}},
+        {{unit = "npc_dota_neutral_dire_2_3", count = 1}, {unit = "npc_dota_neutral_dire_2_1", count = 3}},
+        {{unit = "npc_dota_neutral_dire_2_1", count = 3}, {unit = "npc_dota_neutral_dire_2_3", count = 1}},
+    },
+    [9] = {
+        {{unit = "npc_dota_neutral_dire_3_1", count = 2}, {unit = "npc_dota_neutral_dire_3_2", count = 2}},
+        {{unit = "npc_dota_neutral_dire_3_3", count = 1}, {unit = "npc_dota_neutral_dire_3_1", count = 3}},
+        {{unit = "npc_dota_neutral_dire_3_1", count = 3}, {unit = "npc_dota_neutral_dire_3_3", count = 1}},
+    },
+    [10] = {
+        {{unit = "npc_dota_neutral_dire_4_1", count = 2}, {unit = "npc_dota_neutral_dire_4_2", count = 2}},
+        {{unit = "npc_dota_neutral_dire_4_3", count = 1}, {unit = "npc_dota_neutral_dire_4_1", count = 3}},
+        {{unit = "npc_dota_neutral_dire_4_1", count = 3}, {unit = "npc_dota_neutral_dire_4_3", count = 1}},
     },
 }

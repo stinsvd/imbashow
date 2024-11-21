@@ -31,7 +31,7 @@ end
 function modifier_boss_buff:OnCreated()
     local parent = self:GetParent()
     self.parent = parent
-    self.multiplier = 2
+    self.multiplier = 3
 
     if IsServer() then
         self.strengthGain = parent:GetStrengthGain()
@@ -39,8 +39,8 @@ function modifier_boss_buff:OnCreated()
         self.intellectGain = parent:GetIntellectGain()
     end
     self.magicResistance = 30
-    self.incomingDamage = -15
-    self.statusResistance = 25
+    self.incomingDamage = -30
+    self.statusResistance = 30
     self.modelScale = 120
 end
 
