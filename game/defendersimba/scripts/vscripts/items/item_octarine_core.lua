@@ -25,7 +25,7 @@ function modifier_item_octarine_core_custom:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MANA_BONUS,
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
         MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
@@ -40,7 +40,7 @@ end
 function modifier_item_octarine_core_custom:OnCreated()
     self.bonus_health = self:GetAbility():GetSpecialValueFor("bonus_health")
     self.bonus_mana = self:GetAbility():GetSpecialValueFor("bonus_mana")
-    self.magical_resistance = self:GetAbility():GetSpecialValueFor("magical_resistance")
+    self.bonusManaRegen = self.ability:GetSpecialValueFor("bonus_mana_regen")
     self.cooldown_reduction = self:GetAbility():GetSpecialValueFor("cooldown_reduction")
     self.bonus_intellect = self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end

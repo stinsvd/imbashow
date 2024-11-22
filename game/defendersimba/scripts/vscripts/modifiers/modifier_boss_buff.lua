@@ -25,24 +25,24 @@ function modifier_boss_buff:DeclareFunctions()
         MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_MODEL_SCALE,
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, 
+        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT, 
     }
 end
 
 function modifier_boss_buff:OnCreated()
     local parent = self:GetParent()
     self.parent = parent
-    self.multiplier = 4
+    self.multiplier = 3
 
     if IsServer() then
         self.strengthGain = parent:GetStrengthGain()
         self.agilityGain = parent:GetAgilityGain()
         self.intellectGain = parent:GetIntellectGain()
     end
-    self.magicResistance = 55
-    self.incomingDamage = -55
+    self.magicResistance = 25
+    self.incomingDamage = -15
     self.statusResistance = 25
-    self.cooldownReduction = 50
+    self.cooldown_reduction = 50
     self.modelScale = 105
 end
 
@@ -77,7 +77,7 @@ function modifier_boss_buff:GetModifierModelScale()
 end
 
 function modifier_boss_buff:GetModifierPercentageCooldownStacking()
-    return self.cooldownReduction
+    return self.cooldown_reduction
 end
 
  
