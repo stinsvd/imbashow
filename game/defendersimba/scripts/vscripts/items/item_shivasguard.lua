@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_item_shivasguard_custom", "items/item_shivasguard", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_shivasguard_custom_slow", "items/item_shivasguard", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_shivasguard_custom_debuff", "items/item_shivasguard", LUA_MODIFIER_MOTION_NONE)
 
 item_shivasguard_1 = class({})
 item_shivasguard_2 = item_shivasguard_1
@@ -82,6 +83,31 @@ function modifier_item_shivasguard_custom:IsHidden()
     return true
 end
 
+function modifier_item_shivasguard_custom:IsAura()
+    return true
+end
+
+function modifier_item_shivasguard_custom:GetModifierAura()
+    return "modifier_item_shivasguard_custom_debuff"
+end
+
+function modifier_item_shivasguard_custom:GetAuraRadius()
+    return self:GetAbility():GetSpecialValueFor("aura_radius")
+end
+
+function modifier_item_shivasguard_custom:GetAuraSearchTeam()
+    return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_item_shivasguard_custom:GetAuraSearchType()
+    return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+end
+
+function modifier_item_shivasguard_custom:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+ 
 function modifier_item_shivasguard_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
 end
@@ -90,6 +116,7 @@ function modifier_item_shivasguard_custom:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
     }
 end
 
@@ -97,6 +124,11 @@ function modifier_item_shivasguard_custom:OnCreated()
     local ability = self:GetAbility()
     self.bonusIntellect = ability:GetSpecialValueFor("bonus_intellect")
     self.bonusArmor = ability:GetSpecialValueFor("bonus_armor")
+    self.bonusHpRegen = ability:GetSpecialValueFor("bonus_hp_regen")
+end
+
+function modifier_item_shivasguard_custom:OnRefresh()
+    self:OnCreated()
 end
 
 function modifier_item_shivasguard_custom:GetModifierBonusStats_Intellect()
@@ -107,6 +139,12 @@ function modifier_item_shivasguard_custom:GetModifierPhysicalArmorBonus()
     return self.bonusArmor
 end
 
+function modifier_item_shivasguard_custom:GetModifierConstantHealthRegen()
+    return self.bonusHpRegen
+end
+
+
+
 modifier_item_shivasguard_custom_slow = class({})
 
 function modifier_item_shivasguard_custom_slow:IsDebuff()
@@ -116,7 +154,6 @@ end
 function modifier_item_shivasguard_custom_slow:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     }
 end
 
@@ -124,6 +161,33 @@ function modifier_item_shivasguard_custom_slow:GetModifierMoveSpeedBonus_Percent
     return self:GetAbility():GetSpecialValueFor("slow_movement_speed")
 end
 
-function modifier_item_shivasguard_custom_slow:GetModifierAttackSpeedBonus_Constant()
+
+modifier_item_shivasguard_custom_debuff = class({})
+
+function modifier_item_shivasguard_custom_debuff:IsHidden()
+    return false
+end
+
+function modifier_item_shivasguard_custom_debuff:IsDebuff()
+    return true
+end
+
+function modifier_item_shivasguard_custom_debuff:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, 
+        MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE,
+    }
+end
+
+function modifier_item_shivasguard_custom_debuff:GetModifierAttackSpeedBonus_Constant()
     return self:GetAbility():GetSpecialValueFor("aura_attack_speed")
+end
+
+function modifier_item_shivasguard_custom_debuff:GetModifierHPRegenAmplify_Percentage()
+    return self:GetAbility():GetSpecialValueFor("aura_heal_percent")
+end
+
+function modifier_item_shivasguard_custom_debuff:GetModifierHealAmplify_PercentageSource()
+    return self:GetAbility():GetSpecialValueFor("aura_heal_percent")
 end

@@ -78,6 +78,7 @@ item_power_treads_2 = class({})
 item_power_treads_3 = item_power_treads_2
 item_power_treads_4 = item_power_treads_2
 item_power_treads_5 = item_power_treads_2
+item_power_treads_6 = item_power_treads_2
 
 function item_power_treads_2:OnSpellStart()
     local caster = self:GetCaster()
@@ -85,7 +86,7 @@ function item_power_treads_2:OnSpellStart()
     local modifier = caster:FindModifierByName("modifier_item_power_treads_2")
 
     if not modifier then return end
-    print(modifier:GetStackCount())
+
     modifier:SetStackCount((modifier:GetStackCount() + 1)%3)
 end
 
@@ -105,7 +106,11 @@ end
 modifier_item_power_treads_2 = class({})
 
 function modifier_item_power_treads_2:IsHidden()
-    return true
+    return false
+end
+
+function modifier_item_power_treads_2:RemoveOnDeath()
+    return false
 end
 
 function modifier_item_power_treads_2:GetAttributes()
@@ -124,6 +129,10 @@ function modifier_item_power_treads_2:OnStackCountChanged(oldCount)
 
     self.activeStat = stats[stackCount] or "strength"
     ability.activeStat = stats[stackCount] or "strength"
+
+    if IsServer() then
+        self:GetParent():CalculateStatBonus(true)
+    end
 end
 
 function modifier_item_power_treads_2:OnCreated()

@@ -13,8 +13,8 @@
 #base "items/item_shiva_custom.kv"
 #base "items/item_shivasguard.kv"
 #base "items/item_skadi_custom.kv"
-
-
+#base "items/item_bloodstone.kv"
+#base "items/item_magical_crit.kv"
 "items"
 {
 

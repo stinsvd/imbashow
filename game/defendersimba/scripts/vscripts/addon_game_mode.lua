@@ -36,6 +36,7 @@ GameMode.playerChoices = {}
 -- Функция Precache загружает необходимые ресурсы перед началом игры
 function Precache(context)
     -- Предварительно загружаем юниты для всех волн
+    PrecacheResource("particle", "particles/generic/magic_crit.vpcf", context)
     for i = 1, GameMode.maxWaves do
         local unitName = "npc_dota_wave_" .. i
         PrecacheUnitByNameSync(unitName, context)
