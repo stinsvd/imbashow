@@ -134,4 +134,109 @@
             }
         }
     }
+
+    "boss_soul_passive"
+    {
+        "BaseClass"                 "ability_lua"
+		"ScriptFile"                    "abilities/boss_soul_passive"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        "AbilityValues"
+        {
+            "radius"        "900"
+            "tick"          "0.25"
+        }
+    }
+
+    "boss_silence"
+    {
+        "BaseClass"                 "ability_lua"
+		"ScriptFile"                    "abilities/boss_silence"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        "AbilityValues"
+        {
+            "radius"        "1200"
+            "duration"          "4"
+            "hp_percent"          "50"
+        }
+    }
+
+	"boss_sphere"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"BaseClass"				    	"ability_lua"
+		"AbilityTextureName"				"vengefulspirit_wave_of_terror_lua"
+		"ScriptFile"					"abilities/boss_sphere"
+		
+ 		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.55"
+
+		"AbilityCooldown"				"8"
+		"AbilityDuration"				"16"
+
+		"AbilityManaCost"				"40"
+
+		"AbilityValues"
+		{
+            "wave_speed"		"1250.0"
+            "wave_width"		"250"
+            "manacost_reduction"	"-100"
+            "tooltip_duration"	"16"
+            "vision_aoe"		"0"
+            "vision_duration"	"3.0 3.0 3.0 3.0"
+            "wave_damage"			"800"
+		}
+	}
+
+	"boss_stomp"
+	{
+		"BaseClass"				    	"ability_lua"
+		"ScriptFile"					"abilities/boss_stomp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+ 		"AbilityTextureName"			"centaur_hoof_stomp"
+ 		
+
+		"AbilityCastPoint"				"1.4"
+
+		"AbilityCooldown"				"15"
+
+		"AbilityValues"
+		{
+            "radius"		    "300"
+            "damage"            "400"
+            "duration"          "3" 
+		}
+	}
+
+	"roshan_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"bash_chance"
+			{
+				"value" "7"
+			}
+			"bonus_damage"
+			{
+				"value" "50"
+			}
+			"stun_duration"
+			{
+				"value" "1.65"
+			}
+		}
+	}
 }

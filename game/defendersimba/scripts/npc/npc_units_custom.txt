@@ -98,4 +98,44 @@
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
  
 	} 
+
+    "npc_boss_soul"
+    {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/elder_titan/ancestral_spirit.vmdl"
+        "SoundSet"              "n_creep_GolemA"
+        "Level"                 "1"
+        "ModelScale"            "0.7"
+
+		"Ability1"					  "boss_soul_passive"
+
+        "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+        "AttackDamageMin"       "0"
+        "AttackDamageMax"       "0"
+        "AttackRange"           "100"
+        "AttackRate"            "1.7"
+        "AttackAnimationPoint"  "0.3"
+
+        "ArmorPhysical"         "1"
+        "MagicalResistance"     "25"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "320"
+
+        "StatusHealth"          "300"
+        "StatusHealthRegen"     "3"
+        "StatusMana"            "0"
+
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "HealthBarOffset"       "260"
+
+        "BountyXP"                  "50"     // "опыт за убийство юнита"
+        "BountyGoldMin"             "50"     // минимальное золото 
+        "BountyGoldMax"             "50"     // максимальное золото
+     }
+
+
 }

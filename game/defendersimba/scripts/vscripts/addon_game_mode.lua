@@ -37,6 +37,11 @@ GameMode.playerChoices = {}
 function Precache(context)
     -- Предварительно загружаем юниты для всех волн
     PrecacheResource("particle", "particles/generic/magic_crit.vpcf", context)
+    PrecacheResource("particle", "particles/dark_moon/darkmoon_creep_warning.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf", context)
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context )  
+
     for i = 1, GameMode.maxWaves do
         local unitName = "npc_dota_wave_" .. i
         PrecacheUnitByNameSync(unitName, context)
@@ -234,6 +239,11 @@ function GameMode:OnEntityKilled(event)
     
     if killedUnit:IsRealHero() then
         killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
+
+        if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then 
+            local soul = GameMode:GetSoulBoss()
+            soul:Destroy()
+        end
     end
 
     if killedUnit:HasModifier("modifier_golem_ai") then
@@ -258,6 +268,8 @@ function GameMode:OnEntityKilled(event)
             GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
         end
     end
+
+
 
     if killedUnit:GetUnitName() == "npc_dota_boss_6" then
         self:OpenGate()
@@ -311,11 +323,30 @@ function GameMode:GetBoss()
     return self.boss
 end
 
+function GameMode:GetSoulBoss()
+    return self.soul
+end
+
+function GameMode:IsStartBossFight()
+    return self.bossFight 
+end
+
+function GameMode:SetStartBossFight(state)
+    self.bossFight = state
+end
+
+
 function GameMode:StartBossFight()
     local boss = self:GetBoss()
     if not boss then return end
+    local point = self:GetWaveSpawnPoint()
+    self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-    FindClearSpaceForUnit(boss, self:GetWaveSpawnPoint(), true)
+    Timers:CreateTimer(0.2, function()
+        soul:MoveToPosition(Vector(-10862, 10454, 0))
+    end)
+    FindClearSpaceForUnit(boss, point, true)
+    GameMode:SetStartBossFight(true)
 end
 -- Функция для обновления количества игроков в командах
 function GameMode:UpdateTeamPlayerCounts()

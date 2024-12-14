@@ -11,8 +11,7 @@
 	"npc_dota_hero_tidehunter"			"1"
 	"npc_dota_hero_tiny"				"1"
 	"npc_dota_hero_skeleton_king"		"1"
-
-
+ 
 // agi
 	"npc_dota_hero_medusa"				"1"
 	"npc_dota_hero_drow_ranger"			"0"
