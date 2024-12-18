@@ -1,0 +1,73 @@
+"DOTAAbilities"
+{
+	"item_recipe_ethereal_blade_1"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade_1"
+		"ItemRequirements"
+		{
+			"01"						"item_void_stone;item_upgrade_scroll_1"
+		}
+	}
+
+	"item_ethereal_blade_1"
+	{
+        "BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_ethereal_blade_custom"
+		"AbilityTextureName"            "item_ethereal_blade"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"22.0"	    
+		"AbilitySharedCooldown"			"ethereal"
+
+		"AbilityManaCost"				"100"
+		"ItemCost"						"5375"
+		"ItemShopTags"					"agi;str;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"eb;ethereal blade;eblade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_agility"			"8"
+				"bonus_strength"		"8"
+				"bonus_intellect"		"8"
+				"bonus_mana"			"300"
+				"bonus_health"			"300"
+				"bonus_mana_regen"		"3"
+				"bonus_damage"		    "50"
+
+                "blast_movement_slow"	"-80"
+				"duration"				"4.0"
+				"blast_agility_multiplier"			"1.5"
+				"blast_damage_base"			"50"
+ 				"ethereal_damage_bonus"	"-40"
+				"projectile_speed"	"1400"
+
+			    "bonus_spell_damage"		"150"
+		    	"spell_crit_multiplier"		"60"
+			    "slow_duration"				"1.5"
+                "cooldown_phylacrery"       "6"
+			    "slow_phylacrery"			"50"
+
+			    "crit_chance"			"30"
+			    "crit_multiplier"		"160"
+                "magical_crit_chance"       "50"
+                "magical_crit_multiplier"   "200"
+ 		}
+	}
+}

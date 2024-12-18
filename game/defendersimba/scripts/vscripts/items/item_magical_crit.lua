@@ -51,5 +51,4 @@ function modifier_item_magical_crit_custom:GetModifierTotalDamageOutgoing_Percen
 
         return self.critMultiplier - 100
     end
- 
 end
