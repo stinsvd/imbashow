@@ -16,6 +16,7 @@
 #base "items/item_bloodstone.kv"
 #base "items/item_magical_crit.kv"
 #base "items/item_ethereal_blade.kv"
+#base "items/item_satanic_custom.kv"
  
 
 "items"

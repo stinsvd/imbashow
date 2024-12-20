@@ -1,0 +1,54 @@
+"DOTAAbilities"
+{
+    "item_recipe_satanic_1"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_satanic_1"
+		"ItemRequirements"
+		{
+			"01"						"item_void_stone;item_upgrade_scroll_1"
+		}
+	}
+
+	"item_satanic_1"
+	{
+        "BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_satanic_custom"
+		"AbilityTextureName"            "item_satanic"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCooldown"				"30.0"
+
+		"ItemCost"						"5050"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"satanic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+			"bonus_strength"		"35"
+			"bonus_damage"			"25"
+			"lifesteal_percent"		"30"
+			"lifesteal_percent_activate"	"145"
+			"duration"		"6.0"
+
+			"bonus_mana_regen"		"1"
+			"bonus_armor"		"3"
+			"aura_mana_regen"		"1"
+			"aura_armor"			"2"
+			"aura_damage_percent"			"20"
+            "aura_radius"       "600"
+		}
+	}
+}
