@@ -638,6 +638,151 @@
 
 
 
+    //=========================================================================================================
+    // Axe
+    //=========================================================================================================
+    //Berserker's Call
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua" "Berserker's Call"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"	"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius" "Радиус способности:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" "Длительность:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor" "Дополнительная броня:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" "Дополнительная скорость атаки задетым врагам:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description" "Накладывает на врагов способность <font color='#FF3030'>Battle Hunger</font>."
 
+    //Battle Hunger
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua" "Battle Hunger"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"	"Приводит врага в бешенство, нанося ему урон от <font color='#FF3030'>силы</font>, крадет <font color='#FF3030'>силу</font> врага и замедляет скорость передвижения. Эффект от способности складывается."
+    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"			"Крадет <font color='#FF3030'>силу</font> только у вражеских Героев."
+    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"			"Обычные герои не могут сопротивляться ярости Могул-хана, и она калечит их, пока они не выместят ее на ком-нибудь."
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration" "Длительность:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow" "%Замедление передвижения врага:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus" "%Бонус скорости передвижение за врага:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str" "%Силы в урон:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_str_debuff" ""
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_str_bonus_per_hero" "Количество отбираемой силы у героев:"
+
+    "DOTA_Tooltip_modifier_axe_battle_hunger_lua" "Battle Hunger"
+    "DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff" "Battle Hunger"
+
+    // Counter Helix
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"	"Counter Helix"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"	"При получении и нанесении определённого количества ударов, герой крутит своим топором, нанося базовый урон и урон, зависящий от силы всем врагам вокруг."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"	"Кража <font color='#FF3030'>силы</font> происходит только у вражеских героев."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"	"Считаются удары как от самого героя, так и по нему."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note2"	"Длительность эффекта как на врагах, так и на самом герое обновляется при получении новых эффектов."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_duration" "Длительность:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need" "Атак для срабатывания:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage" "Базовый урон:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str" "%Силы в доп. урон:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_steal_str" "Кража силы:"
+
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua" "Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description" "Атак для срабатывания Counter Helix"
+
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff" "Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description" "Акс украл <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"	"Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"	"У вас украдено <font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+
+    // Culling Blade
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua"	"Culling Blade"
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Description"	"Герой находит слабую точку врага и наносит ему чистый урон, зависящий от силы. Если убить этой способностью вражеского героя или крипа то владелец на всегда получит силу. Каждые %counter_to_refresh% срабатываний способности <font color='#eeeeee'>Counter Helix</font> сбрасывает перезарядку  этой способности."
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_to_damage_pct" "%Силы в урон:"
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_creep" "Силы за крипа:"
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_hero" "Силы за героя:"
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Scepter_Description" "Способность теперь работает в радиусе %radius%."
+    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Note0"	"Сила получается за каждое добитое этой способностью существо."
+
+    "DOTA_Tooltip_modifier_axe_culling_blade_custom_lua"             "Бонус силы"
+    "DOTA_Tooltip_modifier_axe_culling_blade_custom_lua_Description" "Сейчас Акс получает (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной силы."
+
+    //врожденка
+    "DOTA_Tooltip_Ability_axe_innate_ability"             "Броня за полученый удар"
+    "DOTA_Tooltip_Ability_axe_innate_ability_Description" "За каждый полученый удар от врага, герой получает %armor_per_stack% к броне. Каждый эффект длится независимо от друг друга %duration% секунд."
+
+    "DOTA_Tooltip_modifier_axe_innate_ability" "Броня за полученый удар"
+    "DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
+
+    //=========================================================================================================
+    // Slardar
+    //=========================================================================================================
+
+ 		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"В начале действия способность Guardian Sprint даёт сопротивление замедлениям и ускоряет передвижение ещё сильнее."
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Владелец Corrosive Haze получает %armor_pct%%% от брони, отнятой у врагов этой способностью."
+		
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel"					"Seaborn Sentinel"
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_Description"		"Скорость передвижения, восстановление здоровья и броня героя увеличиваются, когда он находится в реке или пруду."
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_speed"			"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_regen"			"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_armor"			"ДОП. БРОНЯ:"
+		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_strength"		"ДОП. СИЛА:"
+		
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint"					"Guardian Sprint"
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Description"		"Герой стремительно скользит, передвигаясь значительно быстрее и проходя сквозь других существ."
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Lore"		"Мощный хвост змееногого стража, привыкший к морским глубинам, носит его и на суше."
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Note0"		"Не останавливает прерываемые заклинания."
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_bonus_speed"				"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_percent"		"%ПЕРВИЧНЫЙ БОНУС К СКОРОСТИ:"
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_slow_resistance"			"%СОПРОТИВЛЕНИЕ ЗАМЕДЛЕНИЯМ:"
+		"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_duration"		"ДЛИТЕЛЬНОСТЬ ПЕРВИЧНОГО БОНУСА:"
+		
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush"					"Slithereen Crush"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Description"		"Бьёт по земле, создавая небольшой пруд, оглушая наземных врагов неподалёку и нанося им урон. После оглушения враги будут замедлены."
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_scepter_description"		"Постепенно увеличивает восстановление здоровья, броню и сопротивление эффектам в пруду, достигая предела через %puddle_max_effect% секунд."
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_description"		"Увеличивает радиус удара и пруда. Способность ненадолго накладывает на жертв эффект Corrosive Haze."
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Lore"		"Мощь воды вкупе с её быстротой пробьёт даже самую сильную защиту."
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_stun_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_attack_slow"				"ЗАМЕДЛЕНИЕ АТАКИ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow_duration"		"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_radius"					"РАДИУС:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_duration"				"ДЛИТЕЛЬНОСТЬ ПРУДА:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_radius"					"РАДИУС ПРУДА:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_amp_duration"			"ДЛИТЕЛЬНОСТЬ CORROSIVE HAZE:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_hp_regen"				"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ В ПРУДЕ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_armor"					"ДОП. БРОНЯ В ПРУДЕ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_status_resistance"		"%ДОП. СОПРОТИВЛЕНИЕ ЭФФЕКТАМ В ПРУДЕ:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_strength_pct"			"%ДОП. СИЛА В ПРУДЕ:"
+		
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep"					"Bash of the Deep"
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Description"		"Пocлe кaждых %attack_count% aтaк гepoй oглушит и нaнecёт дoпoлнитeльный урон cвoeй cлeдующeй aтaкoй. Пассивно увeличивaeт урон oт aтaк влaдeльцa, кoгдa тoт нaхoдитcя в вoдe."
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Lore"		"Любoй, ктo пocягнёт на coкpoвищa глубин, вcтpeтитcя лицoм к лицу c их бecпoщaдным змeeнoгим cтpaжeм."
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Note0"		"Нe coчeтaeтcя c эффeктoм oт пpeдмeтa Skull Basher."
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage"				"ДOП. УРОН:"
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage_str_pct"		"%ДOП. УРОН ОТ СИЛЫ:"
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_duration"					"ДЛИТEЛЬНOСТЬ OГЛУШEНИЯ:"
+		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_river_damage"				"ДOП. УРОН В ВOДE:"
+		
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze"					"Corrosive Haze"
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Description"		"Уменьшает сопротивление цели физическому урону, даёт по ней обзор и раскрывает её невидимость. Жертва оставляет за собой водный след в течение %puddle_duration% секунд. <br><br> Каждое применение атакует жертву."
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Lore"		"Даже самая крепкая броня тает под натиском солёных вод океана."
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze_armor_reduction"		"СНИЖЕНИЕ БРОНИ:"
+		"DOTA_Tooltip_ability_slrdr_corrosive_haze_duration"			"ДЛИТЕЛЬНОСТЬ:"
+		
+		"DOTA_Tooltip_modifier_slrdr_guardian_sprint"					"Guardian Sprint"
+		"DOTA_Tooltip_modifier_slrdr_guardian_sprint_Description"		"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff"					"Slithereen Crush"
+		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff_Description"		"Под действием способности Slithereen Crush у Slardar. Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки снижена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_stun"		"Оглушение"
+		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep"					"Счётчик Bash of the Deep"
+		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_Description"		"Oглушaeт пocлe oпpeдeлённoгo кoличecтвa aтaк."
+		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash"					"Oглушeниe oт Bash of the Deep"
+		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash_description"		""
+		"DOTA_Tooltip_modifier_slrdr_corrosive_haze"					"Corrosive Haze"
+		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_Description"		"Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. \nВы видимы для Slardar и его союзников."
+		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff"					"Brineguard"
+		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff_Description"		"Броня увеличена на %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% за счёт действия Corrosive Haze на противников."
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_guardian_sprint_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Guardian Sprint"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Slithereen Crush"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_damage"			"+{s:bonus_crush_damage} к урону от Slithereen Crush"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_stun"				"+{s:bonus_stun_duration} сек. оглушения от Slithereen Crush"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_bash_of_the_deep_damage"			"+{s:bonus_bonus_damage_str_pct}% к урону от силы от Bash of the Deep"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_undispellable"		"Эффект от Corrosive Haze нельзя развеять"
+		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_armor"				"+{s:bonus_armor_reduction} к снижению брони от Corrosive Haze"
     }
 }

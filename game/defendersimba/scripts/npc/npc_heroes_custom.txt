@@ -1,7 +1,46 @@
 "DOTAHeroes"
 {
-    "npc_dota_hero_alchemist"
+	"npc_dota_hero_axe"
     {
-
+		"Ability1"		"axe_berserkers_call_lua"
+		"Ability2"		"axe_battle_hunger_lua"
+		"Ability3"		"axe_counter_helix_custom_lua"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"axe_culling_blade_custom_lua"
+		"Ability7"		"axe_innate_ability"
     }
+
+	"npc_dota_hero_slardar"
+	{
+		"Ability1"		"slrdr_guardian_sprint"
+		"Ability2"		"slrdr_slithereen_crush"
+		"Ability3"		"slrdr_bash_of_the_deep"
+		"Ability4"		"slrdr_seaborn_sentinel"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"slrdr_corrosive_haze"
+		"Ability10"		"special_bonus_unique_slrdr_guardian_sprint_cooldown"
+		"Ability11"		"special_bonus_unique_slrdr_slithereen_crush_stun"
+		"Ability12"		"special_bonus_hp_400"
+		"Ability13"		"special_bonus_unique_slrdr_bash_of_the_deep_damage"
+		"Ability14"		"special_bonus_unique_slrdr_slithereen_crush_damage"
+		"Ability15"		"special_bonus_unique_slrdr_corrosive_haze_armor"
+		"Ability16"		"special_bonus_unique_slrdr_slithereen_crush_cooldown"
+		"Ability17"		"special_bonus_unique_slrdr_corrosive_haze_undispellable"
+		"Facets"
+		{
+			"slardar_leg_day"
+			{
+				"Icon"				"speed"
+				"Color"				"Red"
+				"GradientID"		"2"
+			}
+			"slardar_brineguard"
+			{
+				"Icon"				"armor"
+				"Color"				"Purple"
+				"GradientID"		"1"
+			}
+		}
+	}
 }

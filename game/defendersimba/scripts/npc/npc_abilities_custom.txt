@@ -1,3 +1,6 @@
+#base "heroes/axe_abilities.kv"
+#base "heroes/slardar_abilities.kv"
+
 "DOTAAbilities"
 {
 	"structure_passive"
