@@ -17,8 +17,11 @@
 #base "items/item_magical_crit.kv"
 #base "items/item_ethereal_blade.kv"
 #base "items/item_satanic_custom.kv"
+#base "items/item_sheepstick_custom.kv"
+#base "items/item_diffusal_blade_custom.kv"
+#base "items/item_orchid_custom.kv"
+  
  
-
 "items"
 {
 

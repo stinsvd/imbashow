@@ -1,0 +1,77 @@
+"DOTAAbilities"
+{
+	"item_diffusal_blade_1"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_diffusal_blade_custom"
+        "AbilityTextureName"         	"item_diffusal_blade"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+ 		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"25"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+ 
+ 		"ItemCost"						"2500"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemPermanent"					"1"
+  		
+ 		"AbilityValues"
+		{
+			"bonus_agility"			"15"
+			"bonus_intellect"		"10"
+			"mana_break"	"40"
+			"illusion_mana_break"	"8"
+			"damage_per_burn"		"1"
+
+			"decrease_movement_speed"			"40"
+			"duration"	"4"
+		}
+	}
+ 
+	"item_diffusal_blade_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_diffusal_blade_custom"
+        "AbilityTextureName"         	"item_disperser"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+ 		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"25"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+ 
+ 		"ItemCost"						"2500"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemPermanent"					"1"
+ 
+ 		"AbilityValues"
+		{
+			"bonus_agility"			"15"
+			"bonus_intellect"		"10"
+			"mana_break"	"40"
+			"illusion_mana_break"	"8"
+			"damage_per_burn"		"1"
+
+			"bonus_movement_speed"				"40"
+			"decrease_movement_speed"			"40"
+			"duration"	"4"
+		}
+	}
+}
