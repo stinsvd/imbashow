@@ -75,6 +75,11 @@ function modifier_item_orchid_custom_debuff:GetEffectName()
 end
 
 
+function modifier_item_orchid_custom_debuff:GetEffectAttachType()
+	return PATTACH_OVERHEAD_FOLLOW 
+end
+
+
 function modifier_item_orchid_custom_debuff:CheckState()
 	local states = { [MODIFIER_STATE_SILENCED] = true }
 	return states
@@ -84,6 +89,9 @@ function modifier_item_orchid_custom_debuff:OnCreated()
     if IsServer() then
         self.damage_percent = self:GetAbility():GetSpecialValueFor("silence_damage_percent")
         self.total_damage = 0
+
+        local particle = ParticleManager:CreateParticle("particles/items2_fx/orchid.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        self:AddParticle(particle, false, false, -1, false, false)
     end
 end
 
@@ -125,7 +133,7 @@ function item_orchid_3:OnSpellStart()
     local target = self:GetCursorTarget()
     local duration = self:GetSpecialValueFor("silence_duration")
     
-    target:EmitSound("DOTA_Item.Orchid.Activate")
+    target:EmitSound("DOTA_Item.Bloodthorn.Activate")
     target:AddNewModifier(caster, self, "modifier_item_bloodthorn_custom_debuff", {duration = duration})
 end
 
@@ -141,8 +149,8 @@ function modifier_item_bloodthorn_custom_passive:DeclareFunctions()
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
-        MODIFIER_EVENT_ON_ATTACKED
+		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
+		MODIFIER_EVENT_ON_ATTACK_RECORD
         }
 end
 
@@ -156,7 +164,8 @@ function modifier_item_bloodthorn_custom_passive:OnCreated()
 	self.bonus_chance = self:GetAbility():GetSpecialValueFor("bonus_chance")
 	self.bonus_chance_damage = self:GetAbility():GetSpecialValueFor("bonus_chance_damage")
     self.parent = self:GetParent()
-    self.pierce_proc      = true
+	self.pierce_proc 			= false
+	self.pierce_records			= {}
 end
 
 function modifier_item_bloodthorn_custom_passive:OnRefresh()
@@ -172,25 +181,54 @@ function modifier_item_bloodthorn_custom_passive:CheckState()
     
 end
 
-function modifier_item_bloodthorn_custom_passive:OnAttacked(keys)
-    if keys.attacker == self.parent then
-        print("asdasd")
-  
-      if RollPercentage(self.bonus_chance) then
-        self.pierce_proc = true
-      end
-    end
-end
+
+
+-- function modifier_item_bloodthorn_custom_passive:GetModifierProcAttack_BonusDamage_Magical(keys)
+--     print("1234")
+--     if self.pierce_proc and not self:GetParent():IsIllusion() and not keys.target:IsBuilding() then
+--         SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.target, self.bonus_chance_damage, nil)
+--         self:GetParent():EmitSound("DOTA_Item.MKB.proc")
+--         self.pierce_proc = false
+--         return self.bonus_chance_damage
+--     end 
+--  end
 
 function modifier_item_bloodthorn_custom_passive:GetModifierProcAttack_BonusDamage_Magical(keys)
-    print("1234")
-    if self.pierce_proc and not self:GetParent():IsIllusion() and not keys.target:IsBuilding() then
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.target, self.bonus_chance_damage, nil)
-        self:GetParent():EmitSound("DOTA_Item.MKB.proc")
-        self.pierce_proc = false
-        return self.bonus_chance_damage
-    end 
- end
+	for _, record in pairs(self.pierce_records) do	
+		if record == keys.record then
+			table.remove(self.pierce_records, _)
+
+			if not self.parent:IsIllusion() and not keys.target:IsBuilding() then
+				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.target, self.bonus_chance_damage, nil)
+				
+				return self.bonus_chance_damage
+			end
+		end
+	end
+end
+
+function modifier_item_bloodthorn_custom_passive:OnAttackRecord(keys)
+	if keys.attacker == self.parent then
+		if self.pierce_proc then
+			table.insert(self.pierce_records, keys.record)
+			self.pierce_proc = false
+		end
+
+        if RollPercentage(self.bonus_chance) then
+			self.pierce_proc = true
+		end
+	end
+end
+
+function modifier_item_bloodthorn_custom_passive:CheckState()
+	local state = {}
+
+    if self.pierce_proc then
+		state = {[MODIFIER_STATE_CANNOT_MISS] = true}
+	end
+
+	return state
+end
 
 function modifier_item_bloodthorn_custom_passive:GetModifierAttackSpeedBonus_Constant()
     return self.bonus_attack_speed
@@ -222,6 +260,11 @@ function modifier_item_bloodthorn_custom_debuff:GetEffectName()
 end
 
 
+function modifier_item_bloodthorn_custom_debuff:GetEffectAttachType()
+	return PATTACH_OVERHEAD_FOLLOW 
+end
+
+
 function modifier_item_bloodthorn_custom_debuff:CheckState()
 	local states = { [MODIFIER_STATE_SILENCED] = true, 	[MODIFIER_STATE_EVADE_DISABLED] = true}
 	return states
@@ -230,14 +273,44 @@ end
 function modifier_item_bloodthorn_custom_debuff:OnCreated()
     if IsServer() then
         self.damage_percent = self:GetAbility():GetSpecialValueFor("silence_damage_percent")
+        self.debuff_damage_hero = self:GetAbility():GetSpecialValueFor("debuff_damage_hero")
+        self.debuff_damage_other = self:GetAbility():GetSpecialValueFor("debuff_damage_other")
+         
         self.total_damage = 0
+
+        local particle = ParticleManager:CreateParticle("particles/items2_fx/orchid.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        self:AddParticle(particle, false, false, -1, false, false)
     end
 end
 
 function modifier_item_bloodthorn_custom_debuff:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_TAKEDAMAGE
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
+end
+
+function modifier_item_bloodthorn_custom_debuff:OnAttackLanded(params)
+    local parent = self:GetParent()
+    if params.target ~= parent then return end
+
+    local damage = 0
+    if params.attacker:IsHero() then
+        damage = self.debuff_damage_hero
+    else
+        damage = self.debuff_damage_other
+    end
+    
+    ApplyDamage({
+        victim = parent,
+        attacker = params.attacker, 
+        damage = damage,
+        damage_type = DAMAGE_TYPE_MAGICAL,
+        ability = self:GetAbility()
+    })
+
+    parent:EmitSound("DOTA_Item.MKB.mele")
+    SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, parent, damage, nil)
 end
 
 function modifier_item_bloodthorn_custom_debuff:OnTakeDamage(params)
