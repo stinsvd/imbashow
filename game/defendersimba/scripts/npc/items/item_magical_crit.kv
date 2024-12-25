@@ -1,5 +1,22 @@
 "DOTAAbilities"
 {
+
+	"item_recipe_magical_crit_1"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_1"
+		"ItemRequirements"
+		{
+			"01"						"item_mantle;item_mantle;item_mantle;item_mantle;item_upgrade_scroll_1"
+		}
+	}
+
 	"item_magical_crit_1"
 	{
         "BaseClass"                     "item_lua"
@@ -20,4 +37,191 @@
 				"crit_multiplier"		"225"
 		}
 	}
+
+	"item_recipe_magical_crit_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_2"
+		"ItemRequirements"
+		{
+			"01"						"item_magical_crit_1;item_robe;item_robe;item_upgrade_scroll_2"
+		}
+	}
+
+	"item_magical_crit_2"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_magical_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"magical_crit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_intellect"			"30"
+				"bonus_spell_amp"			"30"
+				"crit_chance"			"30"
+				"crit_multiplier"		"225"
+		}
+	}
+
+"item_recipe_magical_crit_3"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_3"
+		"ItemRequirements"
+		{
+			"01"						"item_magical_crit_2;item_staff_of_wizardry;item_staff_of_wizardry;item_upgrade_scroll_3"
+		}
+	}
+
+	"item_magical_crit_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_magical_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"magical_crit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_intellect"			"30"
+				"bonus_spell_amp"			"30"
+				"crit_chance"			"30"
+				"crit_multiplier"		"225"
+		}
+	}
+
+	"item_recipe_magical_crit_4"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_4"
+		"ItemRequirements"
+		{
+			"01"						"item_magical_crit_3;item_robe;item_mystic_staff;item_upgrade_scroll_4"
+		}
+	}
+
+	"item_magical_crit_4"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_magical_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"magical_crit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_intellect"			"30"
+				"bonus_spell_amp"			"30"
+				"crit_chance"			"30"
+				"crit_multiplier"		"225"
+		}
+	}
+
+	"item_recipe_magical_crit_5"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_5"
+		"ItemRequirements"
+		{
+			"01"						"item_magical_crit_4;item_mystic_staff;item_mystic_staff;item_upgrade_scroll_5"
+		}
+	}
+
+	"item_magical_crit_5"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_magical_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"magical_crit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_intellect"			"30"
+				"bonus_spell_amp"			"30"
+				"crit_chance"			"30"
+				"crit_multiplier"		"225"
+		}
+	}
+
+	"item_recipe_magical_crit_6"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_magical_crit_6"
+		"ItemRequirements"
+		{
+			"01"						"item_magical_crit_5;item_mystic_staff_2;item_upgrade_scroll_6"
+		}
+	}
+
+	"item_magical_crit_6"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_magical_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"magical_crit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_intellect"			"30"
+				"bonus_spell_amp"			"30"
+				"crit_chance"			"30"
+				"crit_multiplier"		"225"
+		}
+	}
+
+
 }
