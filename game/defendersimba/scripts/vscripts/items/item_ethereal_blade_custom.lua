@@ -5,6 +5,11 @@ LinkLuaModifier("modifier_item_ethereal_blade_custom_phylacteria", "items/item_e
  
 
 item_ethereal_blade_1 = class({})
+item_ethereal_blade_2 = item_ethereal_blade_1
+item_ethereal_blade_3 = item_ethereal_blade_1
+item_ethereal_blade_4 = item_ethereal_blade_1
+item_ethereal_blade_5 = item_ethereal_blade_1
+item_ethereal_blade_6 = item_ethereal_blade_1
  
 function item_ethereal_blade_1:GetIntrinsicModifierName()
 	return "modifier_item_ethereal_blade_custom"

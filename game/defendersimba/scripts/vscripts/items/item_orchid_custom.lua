@@ -4,7 +4,12 @@ LinkLuaModifier("modifier_item_bloodthorn_custom_debuff", "items/item_orchid_cus
 LinkLuaModifier("modifier_item_orchid_custom_debuff", "items/item_orchid_custom.lua", LUA_MODIFIER_MOTION_NONE)
  
 item_orchid_1 = class({})
-
+item_orchid_2 = item_orchid_1
+item_orchid_3 = class({})
+item_orchid_4 = item_orchid_3
+item_orchid_5 = item_orchid_3
+item_orchid_6 = item_orchid_3
+ 
 function item_orchid_1:GetIntrinsicModifierName()
     return "modifier_item_orchid_custom_passive"
 end
@@ -122,9 +127,9 @@ function modifier_item_orchid_custom_debuff:DestroyOnExpire()
     end
 end
 
-item_orchid_3 = class({})
+item_bloodthorn_1 = class({})
 
-function item_orchid_3:GetIntrinsicModifierName()
+function item_bloodthorn_1:GetIntrinsicModifierName()
     return "modifier_item_bloodthorn_custom_passive"
 end
 

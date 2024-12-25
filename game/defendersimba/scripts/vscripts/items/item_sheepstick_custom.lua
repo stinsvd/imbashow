@@ -4,6 +4,8 @@ LinkLuaModifier("modifier_item_sheepstick_custom", "items/item_sheepstick_custom
 LinkLuaModifier("modifier_item_sheepstick_custom_hex", "items/item_sheepstick_custom", LUA_MODIFIER_MOTION_NONE)
  
 item_mage_slayer_1 = class({})
+item_mage_slayer_2 = item_mage_slayer_1
+item_mage_slayer_3 = item_mage_slayer_1
 
 function item_mage_slayer_1:GetIntrinsicModifierName()
     return "modifier_item_mage_slayer_custom"
@@ -112,6 +114,8 @@ end
 
 
 item_sheepstick_1 = class({})
+item_sheepstick_2 = item_sheepstick_1
+item_sheepstick_3 = item_sheepstick_1
 
 function item_sheepstick_1:GetIntrinsicModifierName()
     return "modifier_item_sheepstick_custom"

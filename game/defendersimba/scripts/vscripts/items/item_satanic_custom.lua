@@ -3,6 +3,11 @@ LinkLuaModifier("modifier_item_satanic_custom_buff", "items/item_satanic_custom"
 LinkLuaModifier("modifier_item_satanic_custom_active", "items/item_satanic_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_satanic_1 = class({})
+item_satanic_2 = item_satanic_1
+item_satanic_3 = item_satanic_1
+item_satanic_4 = item_satanic_1
+item_satanic_5 = item_satanic_1
+item_satanic_6 = item_satanic_1
 
 function item_satanic_1:GetIntrinsicModifierName()
     return "modifier_item_satanic_custom"

@@ -1,8 +1,8 @@
 -- addon_game_mode.lua
 
 -- Подключаем необходимые библиотеки
-require('internal/util')
 require('libraries/timers')
+require('internal/util')
 require('utils')
 require('neutral_manager')
 require('boss_spawn')

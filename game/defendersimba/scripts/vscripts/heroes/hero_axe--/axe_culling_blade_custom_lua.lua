@@ -3,6 +3,7 @@
 -- Способность наносит чистый урон во врага. С агнимом урон наносится в радиусе 500 от основной цели способности.
 -- Если способность убила врага или крипа то выдается сила на всегда в виде стаков.
 -- Каждое N-ое срабатывание способности "axe_counter_helix_custom_lua" сбрасывает перезарядку ультимейта.
+
 LinkLuaModifier("modifier_axe_culling_blade_custom_lua", "heroes/hero_axe/axe_culling_blade_custom_lua", LUA_MODIFIER_MOTION_NONE)
 
 axe_culling_blade_custom_lua = class({})
@@ -30,7 +31,7 @@ function axe_culling_blade_custom_lua:OnSpellStart()
         local str_per_creep = self:GetSpecialValueFor("str_per_creep") --стаков за крипа
         self.radius = self:GetSpecialValueFor("radius")
         local strength = caster:GetStrength()
-		local damage = strength * str_to_damage_pct -- Расчитываем урон от силы. Преобразуем целое число в процент.
+        local damage = strength * str_to_damage_pct -- Расчитываем урон от силы. Преобразуем целое число в процент.
 
         if caster:HasScepter() then -- если есть скипетр
             -- Находим врагов в радиусе
@@ -174,23 +175,21 @@ modifier_axe_culling_blade_custom_lua = class({
 })
 
 function modifier_axe_culling_blade_custom_lua:OnCreated()
-    if IsServer() then
-        -- Устанавливаем начальное количество стеков
-        self:SetStackCount(0)
-        
-        -- Глобальная переменная для отслеживания срабатываний другой абилки
-        _G.counter = 0 
-        
-        -- Получаем способность, связанную с модификатором
-        local ability = self:GetAbility()
-        --ability:StartCooldown(0.1)
-        
-        -- Запускаем таймер на 1 секунду
-        Timers:CreateTimer(1.0, function()
-            -- Запускаем интервал после задержки
-            self:StartIntervalThink(0.5)
-        end)
-    end
+    -- Устанавливаем начальное количество стеков
+    self:SetStackCount(0)
+    
+    -- Глобальная переменная для отслеживания срабатываний другой абилки
+    _G.counter = 0 
+    
+    -- Получаем способность, связанную с модификатором
+    local ability = self:GetAbility()
+    --ability:StartCooldown(0.1)
+    
+    -- Запускаем таймер на 1 секунду
+    Timers:CreateTimer(1.0, function()
+        -- Запускаем интервал после задержки
+        self:StartIntervalThink(0.5)
+    end)
 end
 
 function modifier_axe_culling_blade_custom_lua:OnIntervalThink()

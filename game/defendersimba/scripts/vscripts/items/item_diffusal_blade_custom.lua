@@ -3,8 +3,11 @@ LinkLuaModifier("modifier_item_diffusal_blade_self_active_custom", "items/item_d
 LinkLuaModifier("modifier_item_diffusal_blade_enemy_active_custom", "items/item_diffusal_blade_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_diffusal_blade_1 = class({})
-
+item_diffusal_blade_2 = item_diffusal_blade_1  
 item_diffusal_blade_3 = class({})
+item_diffusal_blade_4 = item_diffusal_blade_3
+item_diffusal_blade_5 = item_diffusal_blade_3
+item_diffusal_blade_6 = item_diffusal_blade_3
  
 function item_diffusal_blade_1:OnSpellStart()
     local target = self:GetCursorTarget()

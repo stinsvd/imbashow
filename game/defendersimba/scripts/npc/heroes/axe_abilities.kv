@@ -6,10 +6,9 @@
         "BaseClass" "ability_lua"
         "ScriptFile" "heroes/hero_axe/axe_innate_ability"
         "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName" "skillicon76"
-        "MaxLevel" "6"
+        "AbilityTextureName" ""
         "Innate" "1" // Врожденка!
-        "DependentOnAbility" "axe_culling_blade" // Прокачиватся от уровня другой абилки
+        "DependentOnAbility" "axe_culling_blade_custom_lua" // Прокачиватся от уровня другой абилки
         "AbilityValues"
         {
             "stack_per_attack"
@@ -18,7 +17,7 @@
             }
             "armor_per_stack"
             {
-                "value" "1 2 3 4 5 6" // стаки преобразуются в броню
+                "value" "1 2 3 4 5 6 7" // стаки преобразуются в броню
             }
             "duration"
             {
@@ -152,7 +151,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass" "ability_lua"
         "ScriptFile" "heroes/hero_axe/axe_counter_helix_custom_lua"
-        "AbilityTextureName" "counter_helix"
+        "AbilityTextureName" "axe_counter_helix"
         "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitDamageType" "DAMAGE_TYPE_PURE"
         "RequiredLevel" "1"
@@ -184,11 +183,11 @@
             }
             "base_damage"
             {
-                "value" "100 200 300 400 500 600" //  базовый урон
+                "value" "1 100 200 300 400 500 600" //  базовый урон
             }
             "damage_per_str"
             {
-                "value" "50 100" // процент от силы в урон
+                "value" "1 50 100" // процент от силы в урон
             }
             "steal_str"
             {
@@ -239,7 +238,7 @@
             }
             "counter_to_refresh"
             {
-                "value" "5"
+                "value" "5 4 3 2 1"
             }
             "radius"
             {

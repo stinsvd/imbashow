@@ -1,6 +1,11 @@
 LinkLuaModifier("modifier_item_bloodstone_custom", "items/item_bloodstone", LUA_MODIFIER_MOTION_NONE)
 
 item_bloodstone_1 = class({})
+item_bloodstone_2 = item_bloodstone_1
+item_bloodstone_3 = item_bloodstone_1
+item_bloodstone_4 = item_bloodstone_1
+item_bloodstone_5 = item_bloodstone_1
+item_bloodstone_6 = item_bloodstone_1
 
 function item_bloodstone_1:GetIntrinsicModifierName()
     return "modifier_item_bloodstone_custom"

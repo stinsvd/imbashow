@@ -1,6 +1,11 @@
 LinkLuaModifier("modifier_item_magical_crit_custom", "items/item_magical_crit", LUA_MODIFIER_MOTION_NONE)
 
 item_magical_crit_1 = class({})
+item_magical_crit_2 = item_magical_crit_1
+item_magical_crit_3 = item_magical_crit_1
+item_magical_crit_4 = item_magical_crit_1
+item_magical_crit_5 = item_magical_crit_1
+item_magical_crit_6 = item_magical_crit_1
 
 function item_magical_crit_1:GetIntrinsicModifierName()
     return "modifier_item_magical_crit_custom"
