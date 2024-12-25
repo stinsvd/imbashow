@@ -19,14 +19,16 @@ modifier_axe_innate_ability = class({
     IsDebuff = function(self) return false end, --Дэбафф?
     IsBuff = function(self) return true end, --Бафф
     RemoveOnDeath = function(self) return false end, --Удаляется после смерти
-    DeclareFunctions = function(self) return
-        {
-            MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, -- бонусная броня
-            MODIFIER_EVENT_ON_ATTACK_LANDED, -- эвент атаки по кому либо
-            MODIFIER_PROPERTY_TOOLTIP,-- отображение значений в модификаторе
-        } end,
 })
 
+function modifier_axe_innate_ability:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, -- бонусная броня
+        MODIFIER_EVENT_ON_ATTACK_LANDED, -- эвент атаки по кому либо
+        MODIFIER_PROPERTY_TOOLTIP,-- отображение значений в модификаторе
+    }
+end
+ 
 function modifier_axe_innate_ability:OnCreated()
     self.stacks = 0
     self:SetStackCount(1) -- Изначально 0 стаков тоесть ничего 
