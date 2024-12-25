@@ -1,5 +1,22 @@
 "DOTAAbilities"
 {
+
+	"item_recipe_orchid_1"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_1"
+		"ItemRequirements"
+		{
+			"01"						"item_robe;item_mantle;item_upgrade_scroll_1"
+		}
+	}
+
     "item_orchid_1"
 	{
         "BaseClass"                     "item_lua"
@@ -38,7 +55,261 @@
 		
 	}
 
+	"item_recipe_orchid_2"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_2"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid_1;item_blitz_knuckle;item_upgrade_scroll_2"
+		}
+	}
+
+    "item_orchid_2"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_orchid_custom"
+        "AbilityTextureName"         	"item_orchid"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		"AbilityManaCost"				"125"
+		"ItemCost"						"3275"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"orchid malevolence;silence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_attack_speed"	"40"
+				"bonus_damage"			"10"
+				"bonus_mana_regen"		"3.25"
+				"bonus_health_regen"	"6.0"
+				"bonus_intellect"		"10"
+				"silence_damage_percent"	"30"
+				"silence_duration"		"5"
+		}
+		
+	}
+
+	"item_recipe_orchid_3"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_3"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid_2;item_robe;item_oblivion_staff;item_upgrade_scroll_2"
+		}
+	}
+
+
    "item_orchid_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_orchid_custom"
+        "AbilityTextureName"         	"item_bloodthorn"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		"AbilityManaCost"				"125"
+		"ItemCost"						"3275"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"orchid malevolence;silence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_attack_speed"	"40"
+				"bonus_damage"			"10"
+				"bonus_mana_regen"		"3.25"
+				"bonus_health_regen"	"6.0"
+				"bonus_intellect"		"10"
+				"silence_damage_percent"	"30"
+				"silence_duration"		"5"
+
+                "bonus_chance"          "40"
+                "bonus_chance_damage"       "60"
+
+				"debuff_damage_hero"				"50"
+				"debuff_damage_other"				"25"
+		}
+		
+	}
+
+	"item_recipe_orchid_4"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_4"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid_3;item_robe;item_oblivion_staff;item_oblivion_staff;item_upgrade_scroll_4"
+		}
+	}
+
+
+   "item_orchid_4"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_orchid_custom"
+        "AbilityTextureName"         	"item_bloodthorn"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		"AbilityManaCost"				"125"
+		"ItemCost"						"3275"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"orchid malevolence;silence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_attack_speed"	"40"
+				"bonus_damage"			"10"
+				"bonus_mana_regen"		"3.25"
+				"bonus_health_regen"	"6.0"
+				"bonus_intellect"		"10"
+				"silence_damage_percent"	"30"
+				"silence_duration"		"5"
+
+                "bonus_chance"          "40"
+                "bonus_chance_damage"       "60"
+
+				"debuff_damage_hero"				"50"
+				"debuff_damage_other"				"25"
+		}
+		
+	}
+
+"item_recipe_orchid_5"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_5"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid_4;item_void_stone;item_hyperstone;item_mystic_staff;item_upgrade_scroll_5"
+		}
+	}
+
+
+   "item_orchid_5"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_orchid_custom"
+        "AbilityTextureName"         	"item_bloodthorn"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		"AbilityManaCost"				"125"
+		"ItemCost"						"3275"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"orchid malevolence;silence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		
+		"AbilityValues"
+		{
+				"bonus_attack_speed"	"40"
+				"bonus_damage"			"10"
+				"bonus_mana_regen"		"3.25"
+				"bonus_health_regen"	"6.0"
+				"bonus_intellect"		"10"
+				"silence_damage_percent"	"30"
+				"silence_duration"		"5"
+
+                "bonus_chance"          "40"
+                "bonus_chance_damage"       "60"
+
+				"debuff_damage_hero"				"50"
+				"debuff_damage_other"				"25"
+		}
+		
+	}
+
+	"item_recipe_orchid_6"
+	{		
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orchid_6"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid_5;tiara_of_selemene;item_moon_shard;item_upgrade_scroll_6"
+		}
+	}
+
+
+   "item_orchid_6"
 	{
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_orchid_custom"
