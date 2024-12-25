@@ -1,5 +1,22 @@
 "DOTAAbilities"
 {
+
+    "item_recipe_shivasguard_1"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_1"
+        "ItemRequirements"
+        {
+            "01"                        "item_ring_of_protection;item_ring_of_protection;item_crown;item_upgrade_scroll_1"
+        }
+    }
+
     "item_shivasguard_1"
     {
         "BaseClass"                     "item_lua"
@@ -31,4 +48,245 @@
         }
  
     }
+
+     "item_recipe_shivasguard_2"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_shivasguard_1;item_helm_of_iron_will;item_upgrade_scroll_2"
+        }
+    }
+
+    "item_shivasguard_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_shivasguard"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"          "item_shivasguard"
+
+        "ItemCost"                      "4700"
+        "AbilityCooldown"               "30"
+        "AbilityManaCost"               "100"
+        "ItemShopTags"                  "int;armor;slow"
+        "ItemQuality"                   "epic"
+
+        "AbilityValues"
+        {
+            "bonus_intellect"           "30"
+            "bonus_armor"               "15"
+            "bonus_hp_regen"               "15"
+            "blast_radius"                  "900"
+            "blast_speed"                   "350"
+            "blast_damage"                  "200"
+            "slow_movement_speed"           "-40"
+            "slow_duration"                 "4"
+            "aura_attack_speed"             "-40"
+            "aura_heal_percent"             "-25"
+            "aura_radius"                   "1200"
+            "vision_radius"                 "800"
+            "vision_duration"               "2"
+        }
+ 
+    }
+
+    "item_recipe_shivasguard_3"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_shivasguard_2;item_ring_of_regen;item_ring_of_regen;item_chainmail;item_chainmail;item_upgrade_scroll_3"
+        }
+    }
+
+    "item_shivasguard_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_shivasguard"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"          "item_shivasguard"
+
+        "ItemCost"                      "4700"
+        "AbilityCooldown"               "30"
+        "AbilityManaCost"               "100"
+        "ItemShopTags"                  "int;armor;slow"
+        "ItemQuality"                   "epic"
+
+        "AbilityValues"
+        {
+            "bonus_intellect"           "30"
+            "bonus_armor"               "15"
+            "bonus_hp_regen"               "15"
+            "blast_radius"                  "900"
+            "blast_speed"                   "350"
+            "blast_damage"                  "200"
+            "slow_movement_speed"           "-40"
+            "slow_duration"                 "4"
+            "aura_attack_speed"             "-40"
+            "aura_heal_percent"             "-25"
+            "aura_radius"                   "1200"
+            "vision_radius"                 "800"
+            "vision_duration"               "2"
+        }
+ 
+    }
+
+    "item_recipe_shivasguard_4"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_4"
+        "ItemRequirements"
+        {
+            "01"                        "item_shivasguard_3;item_platemail;item_diadem;item_diadem;item_upgrade_scroll_4"
+        }
+    }
+
+    "item_shivasguard_4"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_shivasguard"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"          "item_shivasguard"
+
+        "ItemCost"                      "4700"
+        "AbilityCooldown"               "30"
+        "AbilityManaCost"               "100"
+        "ItemShopTags"                  "int;armor;slow"
+        "ItemQuality"                   "epic"
+
+        "AbilityValues"
+        {
+            "bonus_intellect"           "30"
+            "bonus_armor"               "15"
+            "bonus_hp_regen"               "15"
+            "blast_radius"                  "900"
+            "blast_speed"                   "350"
+            "blast_damage"                  "200"
+            "slow_movement_speed"           "-40"
+            "slow_duration"                 "4"
+            "aura_attack_speed"             "-40"
+            "aura_heal_percent"             "-25"
+            "aura_radius"                   "1200"
+            "vision_radius"                 "800"
+            "vision_duration"               "2"
+        }
+ 
+    }
+
+     "item_recipe_shivasguard_5"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_5"
+        "ItemRequirements"
+        {
+            "01"                        "item_shivasguard_4;item_platemail;item_ultimate_orb;item_ring_of_health;item_upgrade_scroll_5"
+        }
+    }
+
+    "item_shivasguard_5"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_shivasguard"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"          "item_shivasguard"
+
+        "ItemCost"                      "4700"
+        "AbilityCooldown"               "30"
+        "AbilityManaCost"               "100"
+        "ItemShopTags"                  "int;armor;slow"
+        "ItemQuality"                   "epic"
+
+        "AbilityValues"
+        {
+            "bonus_intellect"           "30"
+            "bonus_armor"               "15"
+            "bonus_hp_regen"               "15"
+            "blast_radius"                  "900"
+            "blast_speed"                   "350"
+            "blast_damage"                  "200"
+            "slow_movement_speed"           "-40"
+            "slow_duration"                 "4"
+            "aura_attack_speed"             "-40"
+            "aura_heal_percent"             "-25"
+            "aura_radius"                   "1200"
+            "vision_radius"                 "800"
+            "vision_duration"               "2"
+        }
+ 
+    }
+
+     "item_recipe_shivasguard_6"
+    {       
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_shivasguard_6"
+        "ItemRequirements"
+        {
+            "01"                        "item_shivasguard_5;item_platemail;item_ultimate_orb;item_ultimate_orb;item_ring_of_tarrasque;item_upgrade_scroll_6"
+        }
+    }
+
+    "item_shivasguard_6"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_shivasguard"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"          "item_shivasguard"
+
+        "ItemCost"                      "4700"
+        "AbilityCooldown"               "30"
+        "AbilityManaCost"               "100"
+        "ItemShopTags"                  "int;armor;slow"
+        "ItemQuality"                   "epic"
+
+        "AbilityValues"
+        {
+            "bonus_intellect"           "30"
+            "bonus_armor"               "15"
+            "bonus_hp_regen"               "15"
+            "blast_radius"                  "900"
+            "blast_speed"                   "350"
+            "blast_damage"                  "200"
+            "slow_movement_speed"           "-40"
+            "slow_duration"                 "4"
+            "aura_attack_speed"             "-40"
+            "aura_heal_percent"             "-25"
+            "aura_radius"                   "1200"
+            "vision_radius"                 "800"
+            "vision_duration"               "2"
+        }
+ 
+    }
+
 }
