@@ -35,7 +35,7 @@ function BossManager:SpawnBoss(bossIndex)
     local bossName = "npc_dota_boss_" .. bossIndex
 
     -- Спавн юнита босса
-    local bossUnit = CreateUnitByName(bossName, spawnPoint, true, nil, nil, DOTA_TEAM_NEUTRALS)
+    local bossUnit = CreateUnitByName(bossName, spawnPoint, true, nil, nil, DOTA_TEAM_BADGUYS)
     bossUnit.bossIndex = bossIndex  -- привязываем индекс босса к юниту, чтобы знать, какой именно босс был убит
 end
 

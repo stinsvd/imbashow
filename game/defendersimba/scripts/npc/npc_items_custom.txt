@@ -24,7 +24,8 @@
  
 "items"
 {
-
+	"item_travel_boots_2"			"ITEM_REMOVE"
+	
 	"item_upgrade_scroll_1"
 	{
 		"BaseClass"						"item_datadriven"
@@ -126,33 +127,7 @@
 				"tp_cooldown"			"40"
 		}
 	}
-	
-	"item_travel_boots_2"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-
-		
-		"ItemCost"						"4500"
-		"ItemShopTags"					"teleport;move_speed"
-		"ItemQuality"					"common"
-		"ItemAliases"					"bot;boots of travel;tp"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"MaxUpgradeLevel"				"2"
-		"ItemBaseLevel"					"2"
-		"SuggestLategame"				"1"
-		"SpeciallyBannedFromNeutralSlot"		"1"
-		
-		"AbilityValues"
-		{
-			"bonus_movement_speed"	"110"
-			"maximum_distance"		"800"
-			"vision_radius"			"200"
-			"tp_cooldown"			"40"
- 		}
-	}
+ 
 
 	"item_tpscroll"
 	{

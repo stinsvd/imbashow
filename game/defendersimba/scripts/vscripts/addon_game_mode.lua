@@ -370,13 +370,14 @@ function GameMode:UpdateTeamPlayerCounts()
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, badGuysCount)
 end
 
-function GameMode:GetWaveSpawnPoint()
+function GameMode:GetWaveSpawnPoint(isForWave)
     local tables = {
         "tower1",
         "tower2",
         "tower3",
         "tower4",
         "tower5",
+        "baracks",
     }
 
     local spawnPoint
@@ -396,7 +397,7 @@ function GameMode:GetWaveSpawnPoint()
         if spawnPoint then break end
     end
 
-    if spawnPoint == nil then
+    if not isForWave and spawnPoint == nil then
       spawnPoint = Entities:FindByName(nil, "global_point")
     end
 
@@ -409,33 +410,36 @@ function GameMode:SpawnWave()
     -- Имя юнита для текущей волны
     local unitName = "npc_dota_wave_" .. GameMode.currentWave
  
-    local spawnPoint = self:GetWaveSpawnPoint()
+    local spawnPoint = self:GetWaveSpawnPoint(true)
+
     self.waveUnits = {}
-    -- Спавним 10 юнитов
-    for i = 1, 10 do
-        -- Смещаем точку спавна, чтобы юниты не накладывались друг на друга
-        local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
-        local spawnLocation = spawnPoint + offset
 
-        -- Спавним юнита
-        local unit = CreateUnitByName(unitName, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
-        table.insert(self.waveUnits, unit)
-        if unit then
-            -- Добавляем модификатор AI
-            unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
-        else
-            print("Не удалось заспавнить юнита:", unitName)
+    if spawnPoint then 
+        for i = 1, 10 do
+            -- Смещаем точку спавна, чтобы юниты не накладывались друг на друга
+            local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
+            local spawnLocation = spawnPoint + offset
+
+            -- Спавним юнита
+            local unit = CreateUnitByName(unitName, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+            table.insert(self.waveUnits, unit)
+            if unit then
+                -- Добавляем модификатор AI
+                unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
+            else
+                print("Не удалось заспавнить юнита:", unitName)
+            end
         end
-    end
 
-    if GameMode.currentWave%5 == 0 then
-        local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
-        local spawnLocation = spawnPoint + offset
+        if GameMode.currentWave%5 == 0 then
+            local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
+            local spawnLocation = spawnPoint + offset
 
-        local unit = CreateUnitByName("npc_dota_wave_mini_boss_" .. GameMode.currentWave, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+            local unit = CreateUnitByName("npc_dota_wave_mini_boss_" .. GameMode.currentWave, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-        if unit then
-            unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
+            if unit then
+                unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
+            end
         end
     end
 
@@ -447,7 +451,6 @@ function GameMode:SpawnWave()
         self:StartBossFight()
     end
 
-    -- Увеличиваем номер волны для следующего спавна
     GameMode.currentWave = GameMode.currentWave + 1
 end
 
