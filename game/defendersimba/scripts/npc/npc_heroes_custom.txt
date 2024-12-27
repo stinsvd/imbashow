@@ -43,4 +43,16 @@
 			}
 		}
 	}
+
+	"npc_dota_hero_bristleback_override"
+	{
+		"override_hero"				"npc_dota_hero_bristleback"					// Hero to override
+		"Ability1"					"bristleback_viscous_nasal_goo_custom"		// Ability 1
+		"Ability2"					"bristleback_quill_spray_custom"			// Ability 2
+		"Ability3"					"bristleback_bristleback_custom"			// Ability 3
+		"Ability4"					"bristleback_hairball_custom"				// Ability 4
+		"Ability5"					"generic_hidden"							// Ability 5
+		"Ability6"					"bristleback_warpath_custom"				// Ability 6
+		"Ability7"					"bristleback_prickly_custom"				// Ability 7 (Innate)
+	}
 }

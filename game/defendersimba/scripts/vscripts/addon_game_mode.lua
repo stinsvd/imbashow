@@ -484,11 +484,14 @@ function GameMode:OrderFilter(event)
         local item = event.shop_item_name
  
         if string.sub(item, 1, 19) == "item_upgrade_scroll" then
-             local upgradeLevel  = tonumber(string.sub(item, 21)) 
-
+            local upgradeLevel  = tonumber(string.sub(item, 21)) 
+            local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+            local team = hero:GetTeamNumber()
+            
             if upgradeLevel ~= 1 then
-                if not BossManager:IsBossKilled(upgradeLevel - 1) then
-                    CreateHudError(PlayerResource:GetPlayer(playerId), "#error_boss_not_killed", {level = upgradeLevel - 1})
+                local index = team == DOTA_TEAM_GOODGUYS and 1 or 2
+                if not BossManager:IsBossKilled(upgradeLevel - index) then
+                    CreateHudError(PlayerResource:GetPlayer(playerId), "#error_boss_not_killed", {level = upgradeLevel - index})
                     return false
                 end
             end

@@ -1,5 +1,6 @@
 #base "heroes/axe_abilities.kv"
 #base "heroes/slardar_abilities.kv"
+#base "heroes/bristleback_abilities.kv"
 
 "DOTAAbilities"
 {

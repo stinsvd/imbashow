@@ -26,6 +26,7 @@ function BossManager:Init()
 end
 
 function BossManager:IsBossKilled(bossIndex)
+    if bossIndex <= 0 then return true end
     return self.bossKilled[bossIndex] 
 end
 
