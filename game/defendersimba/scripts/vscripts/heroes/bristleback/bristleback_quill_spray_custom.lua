@@ -228,5 +228,5 @@ function modifier_bristleback_quill_spray_custom_armor:GetModifierPhysicalArmorB
 	self.armor_lock = false
 
 	local pierce = self:GetAbility():GetSpecialValueFor("creep_armor_pierce")
-	return armor - (armor * pierce / 100)
+	return -(armor * pierce / 100)
 end
