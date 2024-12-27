@@ -93,7 +93,7 @@ function axe_culling_blade_custom_lua:OnSpellStart()
                     ability = self,
                 })
             end
-            SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, target, damage, nil)
+            
             if not target:IsAlive() then -- если цель не выжила то добавляем стак
                 local count
                 if target:IsHero() then 
@@ -166,14 +166,12 @@ modifier_axe_culling_blade_custom_lua = class({
     IsDebuff = function(self) return false end,
     IsBuff = function(self) return true end,
     RemoveOnDeath = function(self) return false end,
+    DeclareFunctions = function(self) return
+        {
+            MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+            MODIFIER_PROPERTY_TOOLTIP,
+        } end,
 })
-
-function modifier_axe_culling_blade_custom_lua:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
 
 function modifier_axe_culling_blade_custom_lua:OnCreated()
     if IsServer() then
@@ -188,7 +186,7 @@ function modifier_axe_culling_blade_custom_lua:OnCreated()
         --ability:StartCooldown(0.1)
         
         -- Запускаем таймер на 1 секунду
-        Timers:CreateTimer(0.7, function()
+        Timers:CreateTimer(1.0, function()
             -- Запускаем интервал после задержки
             self:StartIntervalThink(0.5)
         end)

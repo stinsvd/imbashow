@@ -3,14 +3,11 @@ modifier_axe_berserkers_call_lua = class({
     IsHidden = function(self) return false end, -- скрыть иконку модификатора ?
     IsPurgable = function(self) return true end, --Развеивается?
     IsDebuff = function(self) return false end, --Дэбафф?
-})
-
-function modifier_axe_berserkers_call_lua:DeclareFunctions()
-	return {
+    DeclareFunctions = function(self) return
+	{
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, -- бонусная броня
-	}
-end
-
+	} end,
+})
 
 function modifier_axe_berserkers_call_lua:OnCreated( kv )
 	self.armor = self:GetAbility():GetSpecialValueFor( "bonus_armor" )

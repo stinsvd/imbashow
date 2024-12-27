@@ -4,15 +4,12 @@ modifier_axe_berserkers_call_lua_debuff = class({
     IsPurgable = function(self) return false end, -- Развеивается?
     IsDebuff = function(self) return true end, -- Дэбафф?
     IsStunDebuff = function(self) return false end,
-})
-
--- Initializations
-function modifier_axe_berserkers_call_lua_debuff:DeclareFunctions()
-    return {
+    DeclareFunctions = function(self) return
+    {
         MODIFIER_EVENT_ON_DEATH, -- бонусная броня
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT -- добавляем скорость атаки
-    }
-end
+    } end,
+})
 
 -- Initializations
 function modifier_axe_berserkers_call_lua_debuff:OnCreated(kv)

@@ -19,37 +19,32 @@ modifier_axe_innate_ability = class({
     IsDebuff = function(self) return false end, --Дэбафф?
     IsBuff = function(self) return true end, --Бафф
     RemoveOnDeath = function(self) return false end, --Удаляется после смерти
+    DeclareFunctions = function(self) return
+        {
+            MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, -- бонусная броня
+            MODIFIER_EVENT_ON_ATTACK_LANDED, -- эвент атаки по кому либо
+            MODIFIER_PROPERTY_TOOLTIP,-- отображение значений в модификаторе
+        } end,
 })
-
-function modifier_axe_innate_ability:DeclareFunctions() -- Выносить отдельно. Только так работает эвент атаки. Почему? хороший вопрос...
-    return {
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, -- бонусная броня
-        MODIFIER_EVENT_ON_ATTACK_LANDED, -- эвент атаки по кому либо
-        MODIFIER_PROPERTY_TOOLTIP,-- отображение значений в модификаторе
-    }
-end
-
-
 
 function modifier_axe_innate_ability:OnCreated()
     self.stacks = 0
-    self:SetStackCount(0) -- Изначально 0 стаков тоесть ничего 
+    self:SetStackCount(1) -- Изначально 0 стаков тоесть ничего 
+    print("врожденка OnCreated")
+
 end
 
-function modifier_axe_innate_ability:OnAttackLanded(event)
-    if IsServer() then
-        if event.target == self:GetParent() and (event.attacker:IsHero() or event.attacker:IsCreep() or event.attacker:IsCreepHero()) then -- кто меня ударил???
-            local stack_per_attack = self:GetAbility():GetSpecialValueFor("stack_per_attack") -- количества стаков за ОДИН УДАР!
-            local duration = self:GetAbility():GetSpecialValueFor("duration") -- Длительность каждого стака по отдельности
+function modifier_axe_innate_ability:OnAttackLanded(keys)
+    if keys.target == self:GetParent() and (keys.attacker:IsHero() or keys.attacker:IsCreep() or keys.attacker:IsCreepHero()) then -- кто меня ударил???
+        local stack_per_attack = self:GetAbility():GetSpecialValueFor("stack_per_attack") -- количества стаков за ОДИН УДАР!
+        local duration = self:GetAbility():GetSpecialValueFor("duration") -- Длительность каждого стака по отдельности
 
-            self.stacks = self.stacks + stack_per_attack
-            self:SetStackCount(self.stacks)
-
-            -- Устанавливаем таймер для удаления стаков
-            Timers:CreateTimer(duration, function()
-                self:RemoveStack(stack_per_attack) -- Удаляем стаки через duration
-            end)
-        end
+        self.stacks = self.stacks + stack_per_attack
+        self:SetStackCount(self.stacks)
+        -- Устанавливаем таймер для удаления стаков
+        Timers:CreateTimer(duration, function()
+            self:RemoveStack(stack_per_attack) -- Удаляем стаки через duration
+        end)
     end
 end
 

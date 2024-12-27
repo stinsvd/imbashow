@@ -5,15 +5,12 @@ modifier_axe_battle_hunger_lua = class({
     IsStunDebuff = function(self) return false end, -- Бафф
     RemoveOnDeath = function(self) return true end, -- Удаляется после смерти
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
-})
-
-
-function modifier_axe_battle_hunger_lua:DeclareFunctions()
-    return {
+    DeclareFunctions = function(self) return
+    {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
-    }
-end
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+    } end,
+})
 
 function modifier_axe_battle_hunger_lua:OnCreated(kv)
     self.bonus = self:GetAbility():GetSpecialValueFor("speed_bonus")

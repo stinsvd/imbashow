@@ -25,14 +25,11 @@ modifier_axe_counter_helix_custom_lua = class({
     IsBuff = function(self) return true end,
     RemoveOnDeath = function(self) return false end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
+    DeclareFunctions = function(self) return
+        {
+            MODIFIER_EVENT_ON_ATTACK_LANDED,
+        } end,
 })
-
-function modifier_axe_counter_helix_custom_lua:DeclareFunctions() -- Выносить отдельно. Только так работает эвент атаки. Почему? хороший вопрос...
-    return {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-    }
-end
-
 
 function modifier_axe_counter_helix_custom_lua:OnCreated()
     _G.counter = 0 --Глобальная переменная для отслеживания срабатываний другой абилки
@@ -56,6 +53,7 @@ function modifier_axe_counter_helix_custom_lua:OnAttackLanded(params)
         local currentStacks = self:GetStackCount()
         if currentStacks > 0 then
             self:SetStackCount(currentStacks - 1)
+            print("Stacks decreased to: " .. self:GetStackCount())
         end
 
         -- Проверяем, если стаков больше нет
@@ -67,6 +65,9 @@ function modifier_axe_counter_helix_custom_lua:OnAttackLanded(params)
             local attackNeed = ability:GetSpecialValueFor("attack_need")
             if attackNeed then
                 self:SetStackCount(attackNeed)
+                print("Stacks restored to: " .. self:GetStackCount())
+            else
+                print("attack_need is nil!")
             end
         end
     end
@@ -151,17 +152,12 @@ modifier_axe_counter_helix_custom_lua_buff = class({
     IsDebuff = function(self) return false end,
     IsBuff = function(self) return true end,
     RemoveOnDeath = function(self) return true end,
+    DeclareFunctions = function(self) return
+        {
+            MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+            MODIFIER_PROPERTY_TOOLTIP,
+        } end,
 })
-
-function modifier_axe_counter_helix_custom_lua_buff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
-
-
-
 
 function modifier_axe_counter_helix_custom_lua_buff:OnCreated()
     self.ability = self:GetAbility()
@@ -186,15 +182,12 @@ modifier_axe_counter_helix_custom_lua_debuff = class({
     IsDebuff = function(self) return true end,
     IsBuff = function(self) return false end,
     RemoveOnDeath = function(self) return true end,
+    DeclareFunctions = function(self) return
+        {
+            MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+            MODIFIER_PROPERTY_TOOLTIP,
+        } end,
 })
-
-
-function modifier_axe_counter_helix_custom_lua_debuff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
 
 function modifier_axe_counter_helix_custom_lua_debuff:OnCreated()
     local ability = self:GetAbility()
