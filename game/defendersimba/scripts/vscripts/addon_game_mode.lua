@@ -22,7 +22,7 @@ end
 
 RESPAWN_TIME = 15
 
-TRANSFER_FINAL_BOSS = 10
+TRANSFER_FINAL_BOSS = 1
 BOSS_FIGHT_INTERVAL = 5
 WAVE_INTERVAL = 60
 
@@ -158,10 +158,12 @@ end
 function GameMode:OnPlayerUsedAbility(event)
 	local abiltyName = event.abilityname 
     local playerID = event.PlayerID
-    print("asads")
+
     if abiltyName == "item_tpscroll" then
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-        hero:AddItemByName("item_tpscroll")
+        if not hero:HasItemInInventory("item_travel_boots") and not hero:HasItemInInventory("item_travel_boots_2") then 
+            hero:AddItemByName("item_tpscroll")
+        end
     end
 end
 -- Функция для проверки, когда все игроки сделали выбор

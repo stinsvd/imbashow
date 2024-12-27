@@ -784,5 +784,92 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_bash_of_the_deep_damage"			"+{s:bonus_bonus_damage_str_pct}% к урону от силы от Bash of the Deep"
 		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_undispellable"		"Эффект от Corrosive Haze нельзя развеять"
 		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_armor"				"+{s:bonus_armor_reduction} к снижению брони от Corrosive Haze"
+
+    //=========================================================================================================
+    // BRISTLEBACK
+    //=========================================================================================================
+
+		// BRISTLEBACK
+		// PRICKLY
+		"DOTA_Tooltip_Ability_bristleback_prickly_custom" "Prickly"
+		"DOTA_Tooltip_Ability_bristleback_prickly_custom_Description" "Герой наносит врагам позади на %amp_pct%%% больше урона. Крипы получают дополнительно %bonus_attack_speed% к скорости атаки когда атакуют в спину."
+
+
+		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff" "Prickly"
+		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description" "Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+
+
+		// VISCOUS NASAL GOO
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Description" "Обильно сморкается на жертв, снижая их броню на %duration% сек. Эффекты способности складываются, а время действия обновляется с каждым её применением. Quill Spray дополнительно наносит урон за каждый эффект."
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Lore" "Простуду, подхваченную в снегах, Ригварл делает своим преимуществом."
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_radius" "РАДИУС:"
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack" "СНИЖЕНИЕ БРОНИ ЗА ЭФФЕКТ:"
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_stack_limit" "МАКСИМУМ ЭФФЕКТОВ:"
+		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_spray_bonus_damage" "ДОП. УРОН ОТ QUILL SPRAY ЗА ЭФФЕКТ:"
+
+
+		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
+		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom_Description" "Теряет %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони."
+
+
+
+		// QUILL SPRAY
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom" "Quill Spray"
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Description" "Выпускает во все стороны иглы, нанося урон всем врагам вокруг себя. Жертвы получают дополнительный урон за каждое попадание иглами за последние %duration% сек.<br><br>Игнорирует %creep_armor_pierce%%% брони крипов."
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Lore" "Честь вышибалы — острый вопрос. Как и его шипы."
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_radius" "РАДИУС:"
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage" "%СИЛА В УРОН ЗА ЭФФЕКТ:"
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_base_damage" "%СИЛА В БАЗОВЫЙ УРОН:"
+
+
+		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom" "Quill Spray"
+		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom_Description" "Каждый эффект увеличивает урон от Quill Spray"
+
+
+
+		// BRISTLEBACK
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom" "Bristleback"
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description" "Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня."
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0" "Спиной героя считаются %back_angle% градусов от середины его спины."
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note1" "Боками героя считаются %side_angle% градусов от середины его спины."
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore" "Иногда бывает полезно повернуться спиной к врагу во время битвы."
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_side_damage_reduction" "%СНИЖЕНИЕ УРОНА ОТ АТАК С БОКОВ:"
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_back_damage_reduction" "%СНИЖЕНИЕ УРОНА ОТ АТАК В СПИНУ:"
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_quill_release_threshold" "ПОРОГ УРОНА:"
+
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description" "За каждое применение Quill Spray герой получает заряд, максимум %max_stacks%. При применении способности, герой выпускает все заряды в виде Quill Spray и провоцирует ближайших врагов."
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_radius" "РАДИУС ПРОВОКАЦИИ:"
+		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_duration" "ДЛИТЕЛЬНОСТЬ ПРОВОКАЦИИ:"
+
+
+		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom" "Bristleback"
+		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom_Description" "Активируйте что-бы выпустить все заряды!"
+
+
+
+		// HAIRBALL
+		"DOTA_Tooltip_Ability_bristleback_hairball_custom" "Hairball"
+		"DOTA_Tooltip_Ability_bristleback_hairball_custom_Description" "Отхаркивает в указанную область комок игл. Приземлившись, он лопается и применяет на всех врагов вокруг несколько эффектов Viscous Nasal Goo и один эффект Quill Spray."
+		"DOTA_Tooltip_Ability_bristleback_hairball_custom_radius" "РАДИУС:"
+		"DOTA_Tooltip_Ability_bristleback_hairball_custom_quill_stacks" "ЧИСЛО ЭФФЕКТОВ QUILL SPRAY:"
+		"DOTA_Tooltip_Ability_bristleback_hairball_custom_goo_stacks" "ЧИСЛО ЭФФЕКТОВ VISCOUS NASAL GOO:"
+
+
+
+		// WARPATH
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom" "Warpath"
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Description" "Герой нагоняет на себя ярость каждый раз, когда использует способность, повышая свои скорость передвижения и силу."
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Lore" "«Держи себя в руках», — часто наставляла его мама. Но в битве ярость всегда к месту."
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_str_ptc_per_stack" "%БОНУС К СИЛЕ ЗА ЭФФЕКТ:"
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_move_speed_per_stack" "%БОНУС К СКОРОСТИ ЗА ЭФФЕКТ:"
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_duration" "ДЛИТЕЛЬНОСТЬ ОДНОГО ЭФФЕКТА:"
+		"DOTA_Tooltip_Ability_bristleback_warpath_custom_max_stacks" "МАКС. ЭФФЕКТОВ:"
+
+		
+		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff" "Warpath"
+		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description" "Передвигается на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% быстрее и получает дополнительно %dMODIFIER_PROPERTY_TOOLTIP% к силе."
+
     }
 }
