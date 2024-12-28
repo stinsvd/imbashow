@@ -32,6 +32,7 @@
 	"npc_dota_hero_muerta"				"1"
 	"npc_dota_hero_silencer"			"1"
 	"npc_dota_hero_zuus"				"1"
+	"npc_dota_hero_oracle"				"1"
 
 // uni
 

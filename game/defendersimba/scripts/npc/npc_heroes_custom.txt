@@ -55,4 +55,22 @@
 		"Ability6"					"bristleback_warpath_custom"				// Ability 6
 		"Ability7"					"bristleback_prickly_custom"				// Ability 7 (Innate)
 	}
+
+	"npc_dota_hero_oracle"
+	{
+		"Ability1"		"orcl_fortunes_end"
+		"Ability2"		"orcl_fates_edict"
+		"Ability3"		"orcl_purifying_flames"
+		"Ability4"		"orcl_rain_of_destiny"
+		"Ability5"		"orcl_heal_supremacy"
+		"Ability6"		"orcl_false_promise"
+		"Ability10"		"special_bonus_unique_orcl_fortunes_end_duration"
+		"Ability11"		"special_bonus_unique_orcl_false_promise_armor"
+		"Ability12"		"special_bonus_unique_orcl_fortunes_end_damage_per_purge"
+		"Ability13"		"special_bonus_unique_orcl_purifying_flames_cooldown"
+		"Ability14"		"special_bonus_unique_orcl_fortunes_end_purge_constantly"
+		"Ability15"		"special_bonus_unique_orcl_purifying_flames_damage"
+		"Ability16"		"special_bonus_unique_orcl_fortunes_end_instacast"
+		"Ability17"		"special_bonus_unique_orcl_false_promise_duration"
+	}
 }
