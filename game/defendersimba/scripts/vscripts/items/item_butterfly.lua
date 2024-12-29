@@ -38,6 +38,11 @@ function modifier_item_butterfly_custom:OnCreated()
     self.bonus_evasion = self:GetAbility():GetSpecialValueFor("bonus_evasion")
 end
 
+
+function modifier_item_butterfly_custom:OnRefresh()
+    self:OnCreated()
+end
+
 function modifier_item_butterfly_custom:GetModifierBonusStats_Agility()
     return self.bonus_agility
 end
