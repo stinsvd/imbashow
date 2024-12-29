@@ -592,6 +592,253 @@
         "DOTA_Tooltip_ability_item_mjollnir_custom_6_lightning_damage"      "Урон:"
         "DOTA_Tooltip_ability_item_mjollnir_custom_6_lightning_radius"      "Радиус:"
 
+        //=========================================================================================================
+        // БЛАДСТОУН
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_bloodstone_1"       "БЛАДСТОУН #1"
+        "DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_1_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_1_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_1_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"     "Реген маны +$mana_regen"
+       
+        "DOTA_Tooltip_ability_item_bloodstone_2"       "БЛАДСТОУН #2"
+        "DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_2_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"     "Реген маны +$mana_regen"
+        
+        "DOTA_Tooltip_ability_item_bloodstone_3"       "БЛАДСТОУН #3"
+        "DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_3_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"     "Реген маны +$mana_regen"
+        
+        "DOTA_Tooltip_ability_item_bloodstone_4"       "БЛАДСТОУН #4"
+        "DOTA_Tooltip_ability_item_bloodstone_4_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_4_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_4_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_4_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_4_mana_regen"     "Реген маны +$mana_regen"
+        
+        "DOTA_Tooltip_ability_item_bloodstone_5"       "БЛАДСТОУН #5"
+        "DOTA_Tooltip_ability_item_bloodstone_5_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_5_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_5_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_5_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_5_mana_regen"     "Реген маны +$mana_regen"
+        
+        "DOTA_Tooltip_ability_item_bloodstone_6"       "БЛАДСТОУН #6"
+        "DOTA_Tooltip_ability_item_bloodstone_6_spell_lifesteal"    "Вампиризм заклинаниями +$spell_lifesteal"
+        "DOTA_Tooltip_ability_item_bloodstone_6_all"    "Бонус ко всем атрибутам +$all"
+        "DOTA_Tooltip_ability_item_bloodstone_6_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_bloodstone_6_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_6_mana_regen"     "Реген маны +$mana_regen"
+
+        //=========================================================================================================
+        // Дифуза
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_diffusal_blade_1"       "Дифуза #1"
+        "DOTA_Tooltip_ability_item_diffusal_blade_1_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_1_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_1_duration"       "Длительность:"
+        
+        "DOTA_Tooltip_ability_item_diffusal_blade_2"       "Дифуза #2"
+        "DOTA_Tooltip_ability_item_diffusal_blade_2_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_2_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_2_duration"       "Длительность:"
+
+        "DOTA_Tooltip_ability_item_diffusal_blade_3"       "Дифуза #3"
+        "DOTA_Tooltip_ability_item_diffusal_blade_3_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_3_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_3_duration"       "Длительность:"
+
+        "DOTA_Tooltip_ability_item_diffusal_blade_4"       "Дифуза #4"
+        "DOTA_Tooltip_ability_item_diffusal_blade_4_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_4_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_4_duration"       "Длительность:"
+
+        "DOTA_Tooltip_ability_item_diffusal_blade_5"       "Дифуза #5"
+        "DOTA_Tooltip_ability_item_diffusal_blade_5_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_5_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_5_duration"       "Длительность:"
+
+        "DOTA_Tooltip_ability_item_diffusal_blade_6"       "Дифуза #6"
+        "DOTA_Tooltip_ability_item_diffusal_blade_6_bonus_agility"  "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_diffusal_blade_6_bonus_intellect"    "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_diffusal_blade_6_duration"       "Длительность:"
+
+        //=========================================================================================================
+        // Этериал
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_ethereal_blade_1"        "Этериал #1"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_damage"   "Бонус к урону +$damage"
+        
+        "DOTA_Tooltip_ability_item_ethereal_blade_2"        "Этериал #2"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_damage"   "Бонус к урону +$damage"
+
+        "DOTA_Tooltip_ability_item_ethereal_blade_3"        "Этериал #3"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_damage"   "Бонус к урону +$damage"
+
+        "DOTA_Tooltip_ability_item_ethereal_blade_4"        "Этериал #4"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_damage"   "Бонус к урону +$damage"
+
+        "DOTA_Tooltip_ability_item_ethereal_blade_5"        "Этериал #5"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_damage"   "Бонус к урону +$damage"
+
+        "DOTA_Tooltip_ability_item_ethereal_blade_6"        "Этериал #6"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_agility"      "Бонус ловкости +$agi"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_strength"      "Бонус ловкости +$str"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_intellect"      "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_health"    "Бонус здоровья +$health"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_mana"    "Бонус маны +$mana"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_mana_regen"     "Реген маны +$mana_regen"
+        "DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_damage"   "Бонус к урону +$damage"
+
+        //=========================================================================================================
+        // Маг криты
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_magical_crit_1"      "Маг. криты #1"
+        "DOTA_Tooltip_ability_item_magical_crit_1_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_1_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_1_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_1_crit_multiplier"      "%СИЛА КРИТА:"
+
+        "DOTA_Tooltip_ability_item_magical_crit_2"      "Маг. криты #2"
+        "DOTA_Tooltip_ability_item_magical_crit_2_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_2_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_2_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_2_crit_multiplier"      "%СИЛА КРИТА:"
+
+        "DOTA_Tooltip_ability_item_magical_crit_3"      "Маг. криты #3"
+        "DOTA_Tooltip_ability_item_magical_crit_3_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_3_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_3_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_3_crit_multiplier"      "%СИЛА КРИТА:"
+
+        "DOTA_Tooltip_ability_item_magical_crit_4"      "Маг. криты #4"
+        "DOTA_Tooltip_ability_item_magical_crit_4_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_4_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_4_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_4_crit_multiplier"      "%СИЛА КРИТА:"
+
+        "DOTA_Tooltip_ability_item_magical_crit_5"      "Маг. криты #5"
+        "DOTA_Tooltip_ability_item_magical_crit_5_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_5_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_5_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_5_crit_multiplier"      "%СИЛА КРИТА:"
+
+        "DOTA_Tooltip_ability_item_magical_crit_6"      "Маг. криты #6"
+        "DOTA_Tooltip_ability_item_magical_crit_6_bonus_intellect"  "Бонус интелекта +$int"
+        "DOTA_Tooltip_ability_item_magical_crit_6_spell_amp"  "%Бонус маг. урона:"
+        "DOTA_Tooltip_ability_item_magical_crit_6_crit_chance"      "%Шанс маг. крита:"
+        "DOTA_Tooltip_ability_item_magical_crit_6_crit_multiplier"      "%СИЛА КРИТА:"
+        
+        //=========================================================================================================
+        // Орчид
+        //=========================================================================================================
+        
+        "DOTA_Tooltip_ability_item_orchid_1"        "Орчид #1"
+
+        "DOTA_Tooltip_ability_item_orchid_2"        "Орчид #2"
+
+        "DOTA_Tooltip_ability_item_orchid_3"        "Орчид #3"
+
+        "DOTA_Tooltip_ability_item_orchid_4"        "Орчид #4"
+
+        "DOTA_Tooltip_ability_item_orchid_5"        "Орчид #5"
+
+        "DOTA_Tooltip_ability_item_orchid_6"        "Орчид #6"
+
+        //=========================================================================================================
+        // Сатаник
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_satanic_1"       "Сатаник #1"
+
+        "DOTA_Tooltip_ability_item_satanic_2"       "Сатаник #2"
+        
+        "DOTA_Tooltip_ability_item_satanic_3"       "Сатаник #3"
+        
+        "DOTA_Tooltip_ability_item_satanic_4"       "Сатаник #4"
+        
+        "DOTA_Tooltip_ability_item_satanic_5"       "Сатаник #5"
+        
+        "DOTA_Tooltip_ability_item_satanic_6"       "Сатаник #6"
+
+        //=========================================================================================================
+        // Хекс
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_mage_slayer_1"       "Мейджслеер #1"
+
+        "DOTA_Tooltip_ability_item_mage_slayer_2"       "Мейджслеер #2"
+
+        "DOTA_Tooltip_ability_item_mage_slayer_3"       "Мейджслеер #3"
+
+        "DOTA_Tooltip_ability_item_recipe_heepstick_1"  "Хекс #1"
+
+        "DOTA_Tooltip_ability_item_recipe_heepstick_2"  "Хекс #2"
+
+        "DOTA_Tooltip_ability_item_recipe_heepstick_3"  "Хекс #3"
+
+        //=========================================================================================================
+        // Шива
+        //=========================================================================================================
+
+        "DOTA_Tooltip_ability_item_shivasguard_1"       "Шива #1"
+
+        "DOTA_Tooltip_ability_item_shivasguard_2"       "Шива #2"
+        
+        "DOTA_Tooltip_ability_item_shivasguard_3"       "Шива #3"
+        
+        "DOTA_Tooltip_ability_item_shivasguard_4"       "Шива #4"
+        
+        "DOTA_Tooltip_ability_item_shivasguard_5"       "Шива #5"
+        
+        "DOTA_Tooltip_ability_item_shivasguard_6"       "Шива #6"
+
+        //=========================================================================================================
+        // (название)
+        //=========================================================================================================
+
+
         // To create a new key ( like $health ) just add the entry here
         "dota_ability_variable_health"              "к здоровью"                    // $health
         "dota_ability_variable_mana"                "к мане"                        // $mana
