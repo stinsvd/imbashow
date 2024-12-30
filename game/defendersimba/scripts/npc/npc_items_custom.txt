@@ -150,7 +150,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"
-		"ItemCost"						"100"
+		"ItemCost"						"0"
 		"ItemShopTags"					"consumable;tutorial"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"tp;town portal scroll;teleport"
@@ -171,6 +171,29 @@
 				"tooltip_channel_time"			"1.0"
 		}
 	}
+
+	"item_aghanims_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"
+		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ags;shard;aghanim\'s shard;aghs"
+		
+		"ItemPermanent"					"0"
+		"ItemStockTime"					"0"			  
+		"ItemStockInitial"				"999"
+		"ItemStockMax"					"999"
+		"ItemInitialStockTime"			"0"
+
+		"SuggestLategame"				"1"
+	}
+	
 
     "item_custom_damage_boost"
     {

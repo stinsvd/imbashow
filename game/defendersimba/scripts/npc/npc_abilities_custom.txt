@@ -148,7 +148,7 @@
 
         "AbilityValues"
         {
-            "radius"        "900"
+            "radius"        "1500"
             "tick"          "0.25"
         }
     }
