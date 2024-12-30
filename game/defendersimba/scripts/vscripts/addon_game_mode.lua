@@ -33,6 +33,63 @@ GameMode.maxWaves = 60           -- Максимальное количеств�
 -- Таблица для хранения выбора игроков
 GameMode.playerChoices = {}
 
+HeroExpTable = {0}
+expTable = {
+    240,
+    400,
+    520,
+    600,
+    680,
+    760,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+    2000,
+    2200,
+    2400,
+    2600,
+    2800,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    7500,
+    -- После 30 лвла
+    8000,
+    8500,
+    9000,
+    9500,
+    10000,
+    10500,
+    11000,
+    11500,
+    12000,
+    12500,
+    13000,
+    13500,
+    14000,
+    14500,
+    15000,
+    15500,
+    16000,
+    16500,
+    17000,
+    17500
+}
+
+for i=2,#expTable + 1 do 
+	HeroExpTable[i] = HeroExpTable[i-1] + expTable[i-1]
+end
 -- Функция Precache загружает необходимые ресурсы перед началом игры
 function Precache(context)
     -- Предварительно загружаем юниты для всех волн
@@ -69,6 +126,9 @@ function GameMode:InitGameMode()
 
     -- Устанавливаем время выбора героев в 0 секунд
     GameRules:SetHeroSelectionTime(15)
+
+    GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true ) 
+	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( HeroExpTable )
 
     -- Устанавливаем стратегическое время в 0 секунд
     GameRules:SetStrategyTime(10)
@@ -293,7 +353,6 @@ function GameMode:TransformPlayerToBoss()
 
     if not player then return end
 
-    -- Получаем текущего героя игрока
     local hero = player:GetAssignedHero()
     self:SetBoss(hero)
     if hero then
@@ -307,6 +366,16 @@ function GameMode:TransformPlayerToBoss()
         hero:SetControllableByPlayer(playerID, true)
         hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
   
+        local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
+
+        courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)    
+
+        local pointName = "info_courier_spawn_dire"
+        local point =  Entities:FindByClassname(nil, pointName):GetAbsOrigin()
+ 
+        FindClearSpaceForUnit(courierPlayer, point, true)
+    	courierPlayer:RespawnUnit()
+
         -- Обновляем количество игроков в командах
         GameMode:UpdateTeamPlayerCounts()
     end
