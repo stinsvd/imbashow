@@ -38,6 +38,7 @@ function modifier_item_octarine_core_custom:GetModifierCastRangeBonusStacking()
 end
 
 function modifier_item_octarine_core_custom:OnCreated()
+    self.ability = self:GetAbility()
     self.bonus_health = self:GetAbility():GetSpecialValueFor("bonus_health")
     self.bonus_mana = self:GetAbility():GetSpecialValueFor("bonus_mana")
     self.bonusManaRegen = self.ability:GetSpecialValueFor("bonus_mana_regen")
@@ -53,8 +54,8 @@ function modifier_item_octarine_core_custom:GetModifierManaBonus()
     return self.bonus_mana
 end
 
-function modifier_item_octarine_core_custom:GetModifierMagicalResistanceBonus()
-    return self.magical_resistance
+function modifier_item_octarine_core_custom:GetModifierConstantManaRegen()
+    return self.bonusManaRegen
 end
 
 function modifier_item_octarine_core_custom:GetModifierPercentageCooldown()

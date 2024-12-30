@@ -149,7 +149,7 @@
 		 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"1"
 		"ItemCost"						"0"
 		"ItemShopTags"					"consumable;tutorial"
 		"ItemQuality"					"consumable"
