@@ -97,8 +97,34 @@ function modifier_bristleback_warpath_custom_buff:DeclareFunctions()
 		MODIFIER_PROPERTY_TOOLTIP,
 
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		MODIFIER_PROPERTY_MODEL_SCALE
 	}
+end
+
+function modifier_bristleback_warpath_custom_buff:OnTakeDamage( params )
+	local parent = self:GetParent()
+
+	local lifesteal_pct = self:GetAbility():GetSpecialValueFor("lifesteal_pct_per_stack") * self:GetStackCount()
+
+	if not IsServer() then return end
+	if params.attacker ~= parent then return end
+	if params.unit == parent then return end
+	if not params.unit:IsHero() or not params.unit:IsCreep() then return end
+
+	local lifesteal = params.damage * lifesteal_pct / 100
+	if params.unit:IsCreep() then
+		lifesteal = lifesteal * 0.4 --40% lifesteal for creeps
+	end
+
+	parent:HealWithParams(lifesteal, self:GetAbility(), true, true, parent, true)
+
+	local lifesteal_fx = ParticleManager:CreateParticle(
+		"particles/items3_fx/octarine_core_lifesteal.vpcf",
+		PATTACH_ABSORIGIN_FOLLOW,
+		caster
+	)
+	ParticleManager:SetParticleControl(lifesteal_fx, 0, caster:GetAbsOrigin())
 end
 
 function modifier_bristleback_warpath_custom_buff:GetModifierMoveSpeedBonus_Percentage()

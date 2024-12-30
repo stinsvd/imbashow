@@ -227,15 +227,19 @@ function modifier_bristleback_bristleback_custom:Spray( damage )
     end
 end
 
-function modifier_bristleback_bristleback_custom:OnAbilityFullyCast( params )
-    if not params.ability then return end
-	if params.unit ~= self:GetParent() then return end
-    if params.ability:GetName() ~= "bristleback_quill_spray_custom" then return end
-
+function modifier_bristleback_bristleback_custom:AddStack()
     local max_stacks = self:GetAbility():GetSpecialValueFor("max_stacks")
     if self:GetStackCount() < max_stacks then
         self:IncrementStackCount()
     end
+end
+
+function modifier_bristleback_bristleback_custom:OnAbilityFullyCast( params )
+    if not params.ability then return end
+    if params.unit ~= self:GetParent() then return end
+    if params.ability:GetName() ~= "bristleback_quill_spray_custom" then return end
+
+    self:AddStack()
 end
 
 ------------------------------------------------------------------
@@ -291,6 +295,8 @@ function modifier_bristleback_bristleback_custom_spray:Proc()
         if mod then
             mod:AddStack()
         end
+
+        self:AddStack()
     end
 end
 
