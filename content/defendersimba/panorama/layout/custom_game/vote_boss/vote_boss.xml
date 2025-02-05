@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="file://{resources}/layout/custom_game/vote_boss/vote_boss.css"/>
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/vote_boss/vote_boss.js"/>
+	</scripts>
+	<Panel class="root" hittest="false" >
+		<Panel id="vote_boss" hittest="false" >
+			<Panel id="text_and_rectangle_container" hittest="false" >
+				<Label id="vote_boss_text" text="Ты хочешь стать финальным боссом?" hittest="false" />
+				<Panel id="vote_boss_container" hittest="false" >
+					<Panel class="ConfirmButton Green" onactivate="ConfirmButton(0)" >
+						<Label text="Да"/>
+					</Panel>
+					<Panel class="ConfirmButton Red" onactivate="ConfirmButton(1)" >
+						<Label id="red_text" text="Нет" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

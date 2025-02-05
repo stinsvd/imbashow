@@ -97,7 +97,7 @@ function Precache(context)
     PrecacheResource("particle", "particles/dark_moon/darkmoon_creep_warning.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf", context)
-    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context )  
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context )
 
     for i = 1, GameMode.maxWaves do
         local unitName = "npc_dota_wave_" .. i
@@ -109,7 +109,7 @@ function Precache(context)
         local abilityName = "golem_ability_wave_" .. i
         PrecacheItemByNameSync(abilityName, context)
     end
-	
+
 	_G.GLOBAL_PRECACHE = _G.GLOBAL_PRECACHE or {}
 	local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
 	for k, v in pairs(units) do
@@ -140,14 +140,14 @@ function GameMode:InitGameMode()
     -- Устанавливаем время выбора героев в 0 секунд
     GameRules:SetHeroSelectionTime(15)
 
-    GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true ) 
+    GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( HeroExpTable )
 
     -- Устанавливаем стратегическое время в 0 секунд
     GameRules:SetStrategyTime(10)
     -- Устанавливаем максимальное количество игроков для каждой команды
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 6)  
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)   
+    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 6)
+    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 
     -- Устанавливаем время демонстрации героев в 0 секунд
     GameRules:SetShowcaseTime(0)
@@ -165,9 +165,11 @@ function GameMode:InitGameMode()
     GameRules:SetTimeOfDay(0.75)
 
     -- Подписываемся на изменение состояния игры
+	ListenToGameEvent("player_chat", Dynamic_Wrap(GameMode, "OnPlayerChat"), self)
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
     ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
+	CustomGameEventManager:RegisterListener("OnPlayerChoseBoss", Dynamic_Wrap(GameMode, "OnPlayerChoseBoss"))
     local mode = GameRules:GetGameModeEntity()
     mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
 end
@@ -184,8 +186,7 @@ function GameMode:OnGameRulesStateChange()
 
         NeutralManager:Init()
         BossManager:Init()
-
-        
+		
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
             local time = GameRules:GetDOTATime(true, true)
@@ -229,7 +230,7 @@ function GameMode:OnPlayerChoseBoss(args)
 end
 
 function GameMode:OnPlayerUsedAbility(event)
-	local abiltyName = event.abilityname 
+	local abiltyName = event.abilityname
     local playerID = event.PlayerID
 
     if abiltyName == "item_tpscroll" then
@@ -381,7 +382,7 @@ function GameMode:TransformPlayerToBoss()
   
         local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
 
-        courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)    
+        courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)
 
         local pointName = "info_courier_spawn_dire"
         local point =  Entities:FindByClassname(nil, pointName):GetAbsOrigin()
@@ -588,3 +589,12 @@ function GameMode:OrderFilter(event)
 	return true
 end
 
+function GameMode:OnPlayerChat(keys)
+	local cheats_on = GameRules:IsCheatMode()
+	local normal_text = keys.text
+	
+	if normal_text == "-resc" and cheats_on then
+		SendToServerConsole("script_reload")
+		SendToServerConsole("cl_script_reload")
+	end
+end

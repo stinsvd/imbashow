@@ -27,7 +27,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 
 		"ItemCost"						"2825"
 		"ItemShopTags"					"hard_to_tag"
@@ -37,14 +39,18 @@
 
 		"AbilityValues"
 		{
-				"bonus_magical_armor"	"10"
-				"bonus_attack_speed"	"10"
-				"bonus_mana_regen"		"2"
-				"bonus_intellect"		"10"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-				"spell_amp_debuff"		"20"
-				"duration"		"3"
-				"dps"	"25"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
+
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
 
@@ -74,7 +80,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 
 		"ItemCost"						"2825"
 		"ItemShopTags"					"hard_to_tag"
@@ -84,14 +92,18 @@
 
 		"AbilityValues"
 		{
-				"bonus_magical_armor"	"15"
-				"bonus_attack_speed"	"20"
-				"bonus_mana_regen"		"4"
-				"bonus_intellect"		"20"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-				"spell_amp_debuff"		"25"
-				"duration"		"3"
-				"dps"	"35"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
+
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
 
@@ -121,7 +133,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 
 		"ItemCost"						"2825"
 		"ItemShopTags"					"hard_to_tag"
@@ -131,14 +145,18 @@
 
 		"AbilityValues"
 		{
-				"bonus_magical_armor"	"20"
-				"bonus_attack_speed"	"35"
-				"bonus_mana_regen"		"6"
-				"bonus_intellect"		"30"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-				"spell_amp_debuff"		"30"
-				"duration"		"3"
-				"dps"	"50"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
+
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
 
@@ -168,9 +186,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
@@ -186,20 +206,18 @@
 		
 		"AbilityValues"
 		{
-			"bonus_intellect"		"40"
-			"bonus_mana_regen"		"8.5"
-            "bonus_magical_armor"	"25"
-            "bonus_attack_speed"	"50"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-			"sheep_duration"		"3"
-			"sheep_movement_speed"	"100"
-			"upgrade_radius"	"200"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
 
-            "spell_amp_debuff"		"35"
-            "duration"		"4"
-            "dps"	"70"
-
-    
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
 
@@ -228,9 +246,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
@@ -246,20 +265,18 @@
 		
 		"AbilityValues"
 		{
-			"bonus_intellect"		"50"
-			"bonus_mana_regen"		"10"
-            "bonus_magical_armor"	"30"
-            "bonus_attack_speed"	"60"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-			"sheep_duration"		"3.5"
-			"sheep_movement_speed"	"100"
-			"upgrade_radius"	"200"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
 
-            "spell_amp_debuff"		"40"
-            "duration"		"4"
-            "dps"	"100"
-
-    
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
 	
@@ -288,9 +305,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
@@ -306,21 +324,18 @@
 		
 		"AbilityValues"
 		{
-			"bonus_intellect"		"100"
-			"bonus_mana_regen"		"20"
-            "bonus_magical_armor"	"35"
-            "bonus_attack_speed"	"100"
+			"bonus_intellect"		"10 20 20 40 50 100"
+			"bonus_mana_regen"		"2 4 6 8.5 10 20"
+			"bonus_magical_armor"	"10 15 20 25 30 35"
+			"bonus_attack_speed"	"10 20 35 50 60 100"
 
-			"sheep_duration"		"4.5"
-			"sheep_movement_speed"	"100"
-			"upgrade_radius"	"200"
+			"sheep_duration"		"0 0 0 3 3.5 4.5"
+			"sheep_movement_speed"	"0 0 0 100 100 100"
+			"upgrade_radius"		"0 0 0 200 200 200"
 
-            "spell_amp_debuff"		"50"
-            "duration"		"5"
-            "dps"	"200"
-
-    
+			"spell_amp_debuff"		"20 25 30 35 40 50"
+			"duration"				"3 3 3 4 4 5"
+			"dps"					"25 35 50 70 100 200"
 		}
 	}
-
 }

@@ -181,11 +181,11 @@ function modifier_item_sheepstick_custom:GetModifierBonusStats_Intellect()
     return self.bonus_intellect
 end
 
-function modifier_item_mage_slayer_custom:GetModifierMagicalResistanceBonus()
+function modifier_item_sheepstick_custom:GetModifierMagicalResistanceBonus()
     return self.bonus_magical_armor
 end
 
-function modifier_item_mage_slayer_custom:GetModifierAttackSpeedBonus_Constant()
+function modifier_item_sheepstick_custom:GetModifierAttackSpeedBonus_Constant()
     return self.bonus_attack_speed
 end
 
