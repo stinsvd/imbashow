@@ -109,6 +109,19 @@ function Precache(context)
         local abilityName = "golem_ability_wave_" .. i
         PrecacheItemByNameSync(abilityName, context)
     end
+	
+	_G.GLOBAL_PRECACHE = _G.GLOBAL_PRECACHE or {}
+	local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+	for k, v in pairs(units) do
+		local unitKV = GetUnitKeyValuesByName(k)
+		if unitKV then
+			local model = unitKV.Model or "models/development/invisiblebox.vmdl"
+			if GLOBAL_PRECACHE[model] == nil then
+				PrecacheResource("model", model, context)
+				_G.GLOBAL_PRECACHE[model] = true
+			end
+		end
+	end
 
     -- Предварительно загружаем модификатор AI
     -- Не нужно кэшировать Lua-модификаторы
