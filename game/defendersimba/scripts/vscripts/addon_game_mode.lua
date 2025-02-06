@@ -137,6 +137,8 @@ end
 function GameMode:InitGameMode()
     print("GameMode инициализирован")
 
+	GameRules:EnableCustomGameSetupAutoLaunch(true)
+	GameRules:SetCustomGameSetupAutoLaunchDelay(0.5)
     -- Устанавливаем время выбора героев в 0 секунд
     GameRules:SetHeroSelectionTime(15)
 
@@ -158,9 +160,12 @@ function GameMode:InitGameMode()
     GameRules:SetUseUniversalShopMode(true)
     GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
     if IsInToolsMode() then
-        GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+		GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+		if GetMapName() == "test" then
+			SendToServerConsole("dota_easybuy 1")
+		end
     end
-  
+	
     -- Устанавливаем начальное время суток на ночь (0.75 соответствует ночи)
     GameRules:SetTimeOfDay(0.75)
 
@@ -180,7 +185,7 @@ function GameMode:OnGameRulesStateChange()
     print("Game state changed to ", state)
 
     if state == DOTA_GAMERULES_STATE_PRE_GAME then
-        GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)   
+        GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
 
         print("Игра в состоянии предыгровой подготовки")
 
@@ -381,11 +386,12 @@ function GameMode:TransformPlayerToBoss()
         hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
   
         local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
-
         courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)
-
+		UTIL_Remove(courierPlayer)
+		
         local pointName = "info_courier_spawn_dire"
         local point =  Entities:FindByClassname(nil, pointName):GetAbsOrigin()
+		courierPlayer = hero:SpawnCourierAtPosition(point)
  
         FindClearSpaceForUnit(courierPlayer, point, true)
     	courierPlayer:RespawnUnit()
@@ -425,10 +431,11 @@ function GameMode:StartBossFight()
     local boss = self:GetBoss()
     if not boss then return end
     local point = self:GetWaveSpawnPoint()
+	if self.soul then UTIL_Remove(self.soul) end
     self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
     Timers:CreateTimer(0.2, function()
-        soul:MoveToPosition(Vector(-10862, 10454, 0))
+        self.soul:MoveToPosition(Vector(-10862, 10454, 0))
     end)
     FindClearSpaceForUnit(boss, point, true)
     GameMode:SetStartBossFight(true)
@@ -527,7 +534,7 @@ function GameMode:SpawnWave()
     end
 
     if GameMode.currentWave == TRANSFER_FINAL_BOSS then 
-        GameMode:TransformPlayerToBoss()
+		GameMode:TransformPlayerToBoss()
     end
 
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
@@ -591,9 +598,10 @@ end
 
 function GameMode:OnPlayerChat(keys)
 	local cheats_on = GameRules:IsCheatMode()
+	local tools_on = IsInToolsMode()
 	local normal_text = keys.text
 	
-	if normal_text == "-resc" and cheats_on then
+	if normal_text == "-resc" and tools_on then
 		SendToServerConsole("script_reload")
 		SendToServerConsole("cl_script_reload")
 	end

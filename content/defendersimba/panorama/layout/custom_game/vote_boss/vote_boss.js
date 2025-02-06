@@ -1,4 +1,4 @@
-$.Schedule(4, () => {$("#vote_boss").AddClass("active1")})
+$.Schedule(1, () => {$("#vote_boss").AddClass("active1")})
 
 function ConfirmButton(choise) {
 	$("#vote_boss").RemoveClass("active1");

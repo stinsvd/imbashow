@@ -18,14 +18,14 @@ end
 
 function modifier_boss_buff:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, 
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
         MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_MODEL_SCALE,
-        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT, 
+        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT,
     }
 end
 
@@ -38,6 +38,7 @@ function modifier_boss_buff:OnCreated()
         self.strengthGain = parent:GetStrengthGain()
         self.agilityGain = parent:GetAgilityGain()
         self.intellectGain = parent:GetIntellectGain()
+		self:SetHasCustomTransmitterData(true)
     end
     self.magicResistance = 25
     self.incomingDamage = -25
@@ -45,17 +46,19 @@ function modifier_boss_buff:OnCreated()
     self.cooldown_reduction = 50
     self.modelScale = 105
 end
+function modifier_boss_buff:AddCustomTransmitterData() return {strengthGain = self.strengthGain, agilityGain = self.agilityGain, intellectGain = self.intellectGain} end
+function modifier_boss_buff:HandleCustomTransmitterData(data) self.strengthGain = data.strengthGain; self.agilityGain = data.agilityGain; self.intellectGain = data.intellectGain end
 
 function modifier_boss_buff:GetModifierBonusStats_Strength()
-    return (self.strengthGain * self.parent:GetLevel()) * (self.multiplier - 1)
+    return (self.strengthGain * (self.parent:GetLevel() or 1)) * (self.multiplier - 1)
 end
 
 function modifier_boss_buff:GetModifierBonusStats_Agility()
-    return (self.agilityGain * self.parent:GetLevel()) * (self.multiplier - 1)
+    return (self.agilityGain * (self.parent:GetLevel() or 1)) * (self.multiplier - 1)
 end
 
 function modifier_boss_buff:GetModifierBonusStats_Intellect()
-    return (self.intellectGain * self.parent:GetLevel()) * (self.multiplier - 1)
+    return (self.intellectGain * (self.parent:GetLevel() or 1)) * (self.multiplier - 1)
 end
 
 function modifier_boss_buff:GetModifierMagicalResistanceBonus()

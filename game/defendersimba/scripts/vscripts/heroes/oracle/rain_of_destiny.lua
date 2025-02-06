@@ -42,17 +42,20 @@ function modifier_orcl_rain_of_destiny_aura:OnIntervalThink()
 	self.currentTime = (self.currentTime or 0) + 0.1
 	if self.currentTime >= 1 / self.flames_per_second then
 		self.currentTime = 0
-		local flames = self:GetCaster():FindAbilityByName("orcl_purifying_flames")
+		local caster = self:GetCaster()
+		local flames = caster:FindAbilityByName("orcl_purifying_flames")
 		if flames and flames:IsTrained() then
-			local targets = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-			flames:OnSpellStart(targets[math.random(1, #targets)])
+			local targets = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			if #targets > 0 then
+				flames:OnSpellStart(targets[math.random(1, #targets)])
+			end
 		end
 	end
 end
 function modifier_orcl_rain_of_destiny_aura:OnDestroy()
 	if not IsServer() then return end
 	self:GetParent():StopSound("Hero_Oracle.RainOfDestiny")
-	self:GetParent():CarefulRemoveUnit()
+	self:GetParent():RemoveSelf()
 end
 function modifier_orcl_rain_of_destiny_aura:IsAura() return true end
 function modifier_orcl_rain_of_destiny_aura:GetAuraDuration() return 0.1 end

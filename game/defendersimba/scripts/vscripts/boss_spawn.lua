@@ -9,6 +9,11 @@ function BossManager:Init()
     -- Таблица точек для спавна боссов
     self.bossPoints = {}
     self.bossKilled = {}
+	if GetMapName() == "test" then
+		for i = 1, 6 do
+			self.bossKilled[i] = true
+		end
+	end
 
     -- Находим все точки спавна боссов, названные boss_1_point, boss_2_point, ..., boss_6_point
     for i = 1, 6 do

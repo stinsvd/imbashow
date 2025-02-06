@@ -40,12 +40,13 @@ function modifier_orcl_false_promise_buff:GetPriority() return MODIFIER_PRIORITY
 function modifier_orcl_false_promise_buff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 	self:OnRefresh()
-	self.heal = 0
-	self.damage = 0
 	
 	if not IsServer() then return end
 	self.damageInstances = {}
 	self.instanceCounter = 1
+	self.heal = 0
+	self.damage = 0
+	self:SetHasCustomTransmitterData(true)
 	
 	local owner = self:GetParent()
 	self.promise_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
@@ -55,39 +56,67 @@ function modifier_orcl_false_promise_buff:OnCreated()
 	self:AddParticle(self.promise_pfx, false, false, -1, false, false)
 	
 	self.overhead_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_indicator.vpcf", PATTACH_OVERHEAD_FOLLOW, owner)
+	ParticleManager:SetParticleControl(self.overhead_particle, 1, Vector(0, 0, 0))
+	ParticleManager:SetParticleControl(self.overhead_particle, 2, Vector(0, 0, 0))
 	self:AddParticle(self.overhead_particle, false, false, -1, true, true)
-	self:SetStackCount(0)
+
+	self:OnIntervalThink()
+	self:StartIntervalThink(1)
 end
 function modifier_orcl_false_promise_buff:OnRefresh()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 	self.isEnemy = self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber()
 	self.bonus_armor = self.isEnemy and 0 or self:GetAbility():GetSpecialValueFor("bonus_armor")
-	self.heal_amp_pct = self:GetAbility():GetSpecialValueFor("heal_amp_pct")
+	self.heal_amp_pct = (1 + (self:GetAbility():GetSpecialValueFor("heal_amp_pct") / 100))
 	self.scepter_spell_amp_bonus = self:GetAbility():GetSpecialValueFor("scepter_spell_amp_bonus")
 	self.scepter_bat_bonus = self:GetAbility():GetSpecialValueFor("scepter_bat_bonus")
+end
+function modifier_orcl_false_promise_buff:AddCustomTransmitterData() return {heal = self.heal, damage = self.damage} end
+function modifier_orcl_false_promise_buff:HandleCustomTransmitterData(data) self.heal = data.heal; self.damage = data.damage; end
+function modifier_orcl_false_promise_buff:OnIntervalThink()
+	if not IsServer() then return end
+	local heal = math.max(self.heal - self.damage, 0)
+	local damage = math.max(self.damage - self.heal, 0)
+	if self.promise_pfx then
+		ParticleManager:SetParticleControl(self.promise_pfx, 2, Vector(math.max((damage / self:GetParent():GetMaxHealth()) / 10, 0), 0, 0))
+	end
+	if self.overhead_particle then
+		ParticleManager:SetParticleControl(self.overhead_particle, 1, Vector(damage, 0, 0))
+		ParticleManager:SetParticleControl(self.overhead_particle, 2, Vector(heal, 0, 0))
+	end
+	
+	self:SendBuffRefreshToClients()
 end
 function modifier_orcl_false_promise_buff:OnRemoved()
 	if not IsServer() then return end
 	local owner = self:GetParent()
 	if owner:GetTeamNumber() == self:GetCaster():GetTeamNumber() then
-		if self:GetStackCount() >= 0 then
+		local choise = self.heal - self.damage
+		if choise >= 0 then
 			local heal_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, owner)
 			ParticleManager:ReleaseParticleIndex(heal_pfx)
 			
 			owner:EmitSound("Hero_Oracle.FalsePromise.Healed")
 			
-			local TrueHeal = self:GetStackCount()
+			local TrueHeal = choise
 			owner:HealWithParams(TrueHeal, self:GetAbility(), false, true, self:GetCaster(), false)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, owner, TrueHeal, nil)
-		elseif self:GetStackCount() < 0 then
+		elseif choise < 0 then
 			local damage_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_ABSORIGIN_FOLLOW, owner)
 			ParticleManager:ReleaseParticleIndex(damage_pfx)
 			
 			owner:EmitSound("Hero_Oracle.FalsePromise.Damaged")
 			
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, owner, self:GetStackCount() * (-1), nil)
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, owner, choise * (-1), nil)
 			
+			local damageLeft = choise
 			for i = 1, #self.damageInstances do
+				self.damageInstances[i].victim = EntIndexToHScript(self.damageInstances[i].victim)
+				self.damageInstances[i].attacker = EntIndexToHScript(self.damageInstances[i].attacker)
+				self.damageInstances[i].ability = EntIndexToHScript(self.damageInstances[i].ability)
+				local instanceDamage = math.min(damageLeft, self.damageInstances[i].damage)
+				damageLeft = damageLeft - instanceDamage
+				self.damageInstances[i].damage = instanceDamage
 				ApplyDamage(self.damageInstances[i])
 			end
 		end
@@ -109,19 +138,11 @@ function modifier_orcl_false_promise_buff:OnRemoved()
 		
 		SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, owner, self.damage, nil)
 		for i = 1, #self.damageInstances do
+			self.damageInstances[i].victim = EntIndexToHScript(self.damageInstances[i].victim)
+			self.damageInstances[i].attacker = EntIndexToHScript(self.damageInstances[i].attacker)
+			self.damageInstances[i].ability = EntIndexToHScript(self.damageInstances[i].ability)
 			ApplyDamage(self.damageInstances[i])
 		end
-	end
-end
-function modifier_orcl_false_promise_buff:OnStackCountChanged(old)
-	if not IsServer() then return end
-	local damage = self:GetStackCount() * (-1)
-	if self.promise_pfx then
-		ParticleManager:SetParticleControl(self.promise_pfx, 2, Vector(math.max((damage / self:GetParent():GetMaxHealth()) / 10, 0), 0, 0))
-	end
-	if self.overhead_particle then
-		ParticleManager:SetParticleControl(self.overhead_particle, 1, Vector(damage, 0, 0))
-		ParticleManager:SetParticleControl(self.overhead_particle, 2, Vector(damage * (-1), 0, 0))
 	end
 end
 function modifier_orcl_false_promise_buff:DeclareFunctions()
@@ -132,7 +153,7 @@ function modifier_orcl_false_promise_buff:DeclareFunctions()
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-		MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2
+		MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2,
 	}
 end
 function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(keys)
@@ -144,6 +165,7 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 	
 	if not attacker then return end
 	if not target then return end
+	if owner ~= target then return end
 	if damage <= 0 then return end
 	if keys.ability == self:GetAbility() then return end
 	
@@ -163,9 +185,9 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 	end
 	
 	self.damageInstances[self.instanceCounter] = {
-		victim = owner,
-		attacker = attacker,
-		ability = self:GetAbility(),
+		victim = owner:entindex(),
+		attacker = attacker:entindex(),
+		ability = self:GetAbility():entindex(),
 		damage = nil,
 		damage_type = keys.damage_type,
 		damage_flags = damage_flags,
@@ -174,7 +196,6 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 	
 	self.damageInstances[self.instanceCounter - 1].damage = damage
 	self.damage = self.damage + damage
-	self:SetStackCount(math.floor(self.heal - self.damage))
 	
 	local hit_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_attacked.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 	ParticleManager:SetParticleControlEnt(hit_pfx, 0, owner, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", owner:GetAbsOrigin(), true)
@@ -187,12 +208,7 @@ function modifier_orcl_false_promise_buff:GetModifierPhysicalArmorBonus() return
 function modifier_orcl_false_promise_buff:OnHealReceived(keys)
 	if not IsServer() then return end
 	if keys.unit ~= self:GetParent() then return end
-	
-	self.heal = self.heal + keys.gain * (1 + (self.heal_amp_pct / 100))
-	
-	self:SetStackCount(math.floor(self.heal - self.damage))
-	
---	self:GetParent():ModifyHealth(self:GetParent():GetHealth() - keys.gain, nil, false, 0)
+	self.heal = self.heal + keys.gain * self.heal_amp_pct
 end
 function modifier_orcl_false_promise_buff:GetModifierSpellAmplify_Percentage()
 	if self:GetCaster():HasScepter() then
@@ -211,14 +227,14 @@ function modifier_orcl_false_promise_buff:GetModifierBaseAttackTimeConstant()
 	end
 end
 function modifier_orcl_false_promise_buff:OnTooltip()
-	if self:GetStackCount() >= 0 then
-		return self:GetStackCount()
+	if (self.heal - self.damage) >= 0 then
+		return self.heal
 	end
 	return 0
 end
 function modifier_orcl_false_promise_buff:OnTooltip2()
-	if self:GetStackCount() < 0 then
-		return self:GetStackCount()
+	if (self.damage - self.heal) > 0 then
+		return self.damage
 	end
 	return 0
 end

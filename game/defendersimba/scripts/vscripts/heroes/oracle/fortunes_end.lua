@@ -140,9 +140,10 @@ function orcl_fortunes_end:OnProjectileHit_ExtraData(target, loc, data)
 		local targetPos = target:GetAbsOrigin()
 		local duration = math.max(maximum_duration * charge_pct, minimum_duration)
 		EmitSoundOnLocationWithCaster(targetPos, "Hero_Oracle.FortunesEnd.Target", caster)
-		local aoe_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_aoe.vpcf", PATTACH_WORLDORIGIN, caster)
-		ParticleManager:SetParticleControlEnt(aoe_pfx, 0, target, PATTACH_WORLDORIGIN, nil, targetPos, true)
+		local aoe_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_aoe.vpcf", PATTACH_ABSORIGIN, caster)
+		ParticleManager:SetParticleControlEnt(aoe_pfx, 0, target, PATTACH_ABSORIGIN, nil, targetPos, true)
 		ParticleManager:SetParticleControl(aoe_pfx, 2, Vector(radius, radius, radius))
+		ParticleManager:SetParticleControlEnt(aoe_pfx, 3, target, PATTACH_ABSORIGIN, nil, targetPos, true)
 		ParticleManager:ReleaseParticleIndex(aoe_pfx)
 		
 		local damageTable = {
@@ -180,11 +181,12 @@ function orcl_fortunes_end:OnProjectileHit_ExtraData(target, loc, data)
 		local targets = FindUnitsInRadius(caster:GetTeamNumber(), targetPos, nil, radius, team, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _, unit in pairs(targets) do
 			if unit ~= target then
+				local unitPos = unit:GetAbsOrigin()
 				isEnemy = unit:GetTeamNumber() ~= caster:GetTeamNumber() and not unit:HasModifier("modifier_orcl_false_promise_buff")
-				local impact_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_dmg.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:SetParticleControlEnt(impact_pfx, 0, unit, PATTACH_ABSORIGIN_FOLLOW, nil, unit:GetAbsOrigin(), true)
+				local impact_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_dmg.vpcf", PATTACH_POINT_FOLLOW, caster)
+				ParticleManager:SetParticleControlEnt(impact_pfx, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unitPos, true)
 				ParticleManager:SetParticleControlEnt(impact_pfx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", targetPos, true)
-				ParticleManager:SetParticleControlEnt(impact_pfx, 3, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControlEnt(impact_pfx, 3, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unitPos, true)
 				ParticleManager:ReleaseParticleIndex(impact_pfx)
 				
 				if purge_constantly > 0 then

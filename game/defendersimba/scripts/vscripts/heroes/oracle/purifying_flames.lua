@@ -68,27 +68,48 @@ end
 -- Purifying Flames Buff --
 modifier_orcl_purifying_flames_buff = modifier_orcl_purifying_flames_buff or class({})
 function modifier_orcl_purifying_flames_buff:IsDebuff() return false end
-function modifier_orcl_purifying_flames_buff:IgnoreTenacity() return true end
-function modifier_orcl_purifying_flames_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_orcl_purifying_flames_buff:IgnoreTenacity() return true end
+--function modifier_orcl_purifying_flames_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_orcl_purifying_flames_buff:GetTexture() return "oracle_purifying_flames" end
 function modifier_orcl_purifying_flames_buff:OnCreated(kv)
 	if not IsServer() then return end
-	local dd = kv.damage
-	local tick_rate = self:GetAbility():GetSpecialValueFor("tick_rate")
-	local heal_from_dd = self:GetAbility():GetSpecialValueFor("heal_from_dd")
-	self.heal_radius = self:GetAbility():GetSpecialValueFor("heal_radius")
-	self.radius_heal_pct = self:GetAbility():GetSpecialValueFor("radius_heal_pct")
-	self.heal_per_tick = dd * (heal_from_dd / 100) / (self:GetDuration() * tick_rate)
+	self.tick_rate = self:GetAbility():GetSpecialValueFor("tick_rate")
+	self.stacks = {}
+	self:OnRefresh(kv)
 	
 	local flames_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 	ParticleManager:SetParticleControlEnt(flames_pfx, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 	self:AddParticle(flames_pfx, false, false, -1, false, false)
 	
-	self:StartIntervalThink(tick_rate)
+	self:StartIntervalThink(self.tick_rate)
+end
+function modifier_orcl_purifying_flames_buff:OnRefresh(kv)
+	if not IsServer() then return end
+	local dd = kv.damage
+	local tick_rate = self:GetAbility():GetSpecialValueFor("tick_rate")
+	if self.tick_rate ~= tick_rate then
+		self.tick_rate = tick_rate
+		self:StartIntervalThink(self.tick_rate)
+	end
+	local heal_from_dd = self:GetAbility():GetSpecialValueFor("heal_from_dd")
+	self.heal_radius = self:GetAbility():GetSpecialValueFor("heal_radius")
+	self.radius_heal_pct = self:GetAbility():GetSpecialValueFor("radius_heal_pct")
+	self.heal_per_tick = dd * (heal_from_dd / 100)
+	
+	self:IncrementStackCount()
+	table.insert(self.stacks, {GameRules:GetGameTime(), kv.duration})
 end
 function modifier_orcl_purifying_flames_buff:OnIntervalThink()
 	if not IsServer() then return end
 	self:HealEffect(false)
+	
+	local currentTime = GameRules:GetGameTime()
+	for k, v in pairs(self.stacks) do
+		if currentTime >= v[1] + v[2] then
+			self.stacks[k] = nil
+			self:DecrementStackCount()
+		end
+	end
 end
 function modifier_orcl_purifying_flames_buff:HealEffect(removed)
 	if not IsServer() then return end
@@ -96,7 +117,8 @@ function modifier_orcl_purifying_flames_buff:HealEffect(removed)
 	if not ability then return end
 	local caster = self:GetCaster()
 	local target = self:GetParent()
-	local heal = removed and self.heal_per_tick * self:GetRemainingTime() or self.heal_per_tick
+	local heal_per_tick = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * self.tick_rate
+	local heal = removed and heal_per_tick * self:GetRemainingTime() or heal_per_tick
 	target:HealWithParams(heal, ability, false, true, caster, false)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, heal, nil)
 	
