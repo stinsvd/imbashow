@@ -73,7 +73,7 @@ function modifier_orcl_purifying_flames_buff:IsDebuff() return false end
 function modifier_orcl_purifying_flames_buff:GetTexture() return "oracle_purifying_flames" end
 function modifier_orcl_purifying_flames_buff:OnCreated(kv)
 	if not IsServer() then return end
-	self.tick_rate = self:GetAbility():GetSpecialValueFor("tick_rate")
+	self.tick_rate = FrameTime()	--self:GetAbility():GetSpecialValueFor("tick_rate")
 	self.stacks = {}
 	self:OnRefresh(kv)
 	
@@ -86,11 +86,13 @@ end
 function modifier_orcl_purifying_flames_buff:OnRefresh(kv)
 	if not IsServer() then return end
 	local dd = kv.damage
+	--[[
 	local tick_rate = self:GetAbility():GetSpecialValueFor("tick_rate")
 	if self.tick_rate ~= tick_rate then
 		self.tick_rate = tick_rate
 		self:StartIntervalThink(self.tick_rate)
 	end
+	]]
 	local heal_from_dd = self:GetAbility():GetSpecialValueFor("heal_from_dd")
 	self.heal_radius = self:GetAbility():GetSpecialValueFor("heal_radius")
 	self.radius_heal_pct = self:GetAbility():GetSpecialValueFor("radius_heal_pct")
@@ -120,7 +122,12 @@ function modifier_orcl_purifying_flames_buff:HealEffect(removed)
 	local heal_per_tick = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * self.tick_rate
 	local heal = removed and heal_per_tick * self:GetRemainingTime() or heal_per_tick
 	target:HealWithParams(heal, ability, false, true, caster, false)
-	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, heal, nil)
+	self.numbersThink = (self.numbersThink or 0) + self.tick_rate
+	if self.numbersThink >= 0.5 then
+		self.numbersThink = 0
+		local numbers = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * 0.5
+		SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, numbers, nil)
+	end
 	
 	if self.heal_radius > 0 then
 		heal = heal * (self.radius_heal_pct / 100)
