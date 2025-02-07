@@ -1,11 +1,11 @@
 "DOTAAbilities"
 {
 	"item_recipe_butterfly_1"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -15,34 +15,35 @@
 			"01"						"item_gloves;item_slippers;item_slippers;item_upgrade_scroll_1"
 		}
 	}
-    
+
 	"item_butterfly_1"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
-		"AbilityTextureName" 			"butterfly_1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-     	"ItemCost"						"5450"
+		"AbilityTextureName" 			"butterfly_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{
-			"bonus_agility"			"12"
-			"bonus_attack_speed"	"20"
-			"bonus_evasion"			"5"
-			"bonus_damage"			"0"
+			"bonus_agility"			"12 18 28 55 60 150"
+			"bonus_attack_speed"	"20 35 45 50 110 125"
+			"bonus_evasion"			"5 10 20 25 25 30"
+			"bonus_damage"			"0 15 35 60 120 150"
 		}
 	}
 
 	"item_recipe_butterfly_2"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -53,33 +54,34 @@
 		}
 	}
 
-    "item_butterfly_2"
+	"item_butterfly_2"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"butterfly_2"
-		"ItemCost"						"5450"
+		"AbilityTextureName"			"butterfly_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{
-			"bonus_agility"			"18"
-			"bonus_attack_speed"	"35"
-			"bonus_evasion"			"10"
-			"bonus_damage"			"15"
+			"bonus_agility"			"12 18 28 55 60 150"
+			"bonus_attack_speed"	"20 35 45 50 110 125"
+			"bonus_evasion"			"5 10 20 25 25 30"
+			"bonus_damage"			"0 15 35 60 120 150"
 		}
 	}
 
 	"item_recipe_butterfly_3"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -90,17 +92,18 @@
 		}
 	}
 
-    "item_butterfly_3"
+	"item_butterfly_3"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"butterfly_3"
-		"ItemCost"						"5450"
+		"AbilityTextureName"			"butterfly_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{
@@ -110,33 +113,35 @@
 			"bonus_damage"			"35"
 		}
 	}
-	"item_recipe_butterfly_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_butterfly_4"
-			"ItemRequirements"
-			{
-				"01"						"item_butterfly_3;item_blade_of_alacrity;item_blade_of_alacrity;item_demon_edge;item_upgrade_scroll_4"
-			}
-		}
 
-    "item_butterfly_4"
+	"item_recipe_butterfly_4"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_4"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_3;item_blade_of_alacrity;item_blade_of_alacrity;item_demon_edge;item_upgrade_scroll_4"
+		}
+	}
+
+	"item_butterfly_4"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"butterfly_4"
-		"ItemCost"						"5450"
+		"AbilityTextureName"			"butterfly_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{
@@ -146,33 +151,35 @@
 			"bonus_damage"			"60"
 		}
 	}
-	"item_recipe_butterfly_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_butterfly_5"
-			"ItemRequirements"
-			{
-				"01"						"item_butterfly_4;item_hyperstone;item_relic;item_upgrade_scroll_5"
-			}
-		}
 
-    "item_butterfly_5"
+	"item_recipe_butterfly_5"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_5"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_4;item_hyperstone;item_relic;item_upgrade_scroll_5"
+		}
+	}
+
+	"item_butterfly_5"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"butterfly_5"
-		"ItemCost"						"5450"
+		"AbilityTextureName"			"butterfly_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{
@@ -182,33 +189,35 @@
 			"bonus_damage"			"120"
 		}
 	}
-	"item_recipe_butterfly_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_butterfly_6"
-			"ItemRequirements"
-			{
-				"01"						"item_butterfly_5;item_eagle_2;item_upgrade_scroll_6"
-			}
-		}
 
-    "item_butterfly_6"
+	"item_recipe_butterfly_6"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_6"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_5;item_eagle_2;item_upgrade_scroll_6"
+		}
+	}
+
+	"item_butterfly_6"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_butterfly"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"butterfly_6"
-		"ItemCost"						"5450"
+		"AbilityTextureName"			"butterfly_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilityValues"
 		{

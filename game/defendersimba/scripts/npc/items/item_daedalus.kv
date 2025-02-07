@@ -1,21 +1,20 @@
 "DOTAAbilities"
 {
-
 	"item_recipe_daedalus_1"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_1"
-			"ItemRequirements"
-			{
-				"01"						"item_blades_of_attack;item_blades_of_attack;item_upgrade_scroll_1"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_1"
+		"ItemRequirements"
+		{
+			"01"						"item_blades_of_attack;item_blades_of_attack;item_upgrade_scroll_1"
 		}
+	}
 
 	"item_daedalus_1"
 	{
@@ -23,8 +22,8 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_1"
-
-		"ItemCost"                      "1600"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
@@ -32,27 +31,27 @@
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "16"   // Бонус от двух Blades of Attack
-			"crit_chance"                "15"   // Шанс критического удара
-			"crit_multiplier"            "150"  // Множитель критического урона
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 
 	"item_recipe_daedalus_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_2"
-			"ItemRequirements"
-			{
-				"01"						"item_daedalus_1;item_broadsword;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_2"
+		"ItemRequirements"
+		{
+			"01"						"item_daedalus_1;item_broadsword;item_upgrade_scroll_2"
 		}
+	}
 
 
 	"item_daedalus_2"
@@ -61,35 +60,35 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_2"
-
-		"ItemCost"                      "2100"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "32"  // Бонус от Broadsword
-			"crit_chance"                "20"  // Повышенный шанс критического удара
-			"crit_multiplier"            "160"
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 
 	"item_recipe_daedalus_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_3"
-			"ItemRequirements"
-			{
-				"01"						"item_daedalus_2;item_blades_of_attack;item_mithril_hammer;item_upgrade_scroll_3"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_3"
+		"ItemRequirements"
+		{
+			"01"						"item_daedalus_2;item_blades_of_attack;item_mithril_hammer;item_upgrade_scroll_3"
 		}
+	}
 
 
 	"item_daedalus_3"
@@ -98,35 +97,35 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_3"
-
-		"ItemCost"                      "3200"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "52"  // Бонус от Blades of Attack и Mithril Hammer
-			"crit_chance"                "25"
-			"crit_multiplier"            "170"
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 
 	"item_recipe_daedalus_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_4"
-			"ItemRequirements"
-			{
-				"01"						"item_daedalus_3;item_ogre_axe;item_demon_edge;item_upgrade_scroll_4"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_4"
+		"ItemRequirements"
+		{
+			"01"						"item_daedalus_3;item_ogre_axe;item_demon_edge;item_upgrade_scroll_4"
 		}
+	}
 
 
 	"item_daedalus_4"
@@ -135,35 +134,35 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_4"
-
-		"ItemCost"                      "5500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "92"  // Бонус от Claymore и Demon Edge
-			"crit_chance"                "30"
-			"crit_multiplier"            "180"
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 
 	"item_recipe_daedalus_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_5"
-			"ItemRequirements"
-			{
-				"01"						"item_daedalus_4;item_mithril_hammer;item_relic;item_upgrade_scroll_5"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_5"
+		"ItemRequirements"
+		{
+			"01"						"item_daedalus_4;item_mithril_hammer;item_relic;item_upgrade_scroll_5"
 		}
+	}
 
 
 	"item_daedalus_5"
@@ -172,35 +171,35 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_5"
-
-		"ItemCost"                      "6500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "137" // Бонус от Mithril Hammer и Relic
-			"crit_chance"                "35"
-			"crit_multiplier"            "190"
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 
 	"item_recipe_daedalus_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_daedalus_6"
-			"ItemRequirements"
-			{
-				"01"						"item_daedalus_5;item_rapier;item_relic;item_upgrade_scroll_6"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_daedalus_6"
+		"ItemRequirements"
+		{
+			"01"						"item_daedalus_5;item_rapier;item_relic;item_upgrade_scroll_6"
 		}
+	}
 
 
 	"item_daedalus_6"
@@ -209,17 +208,17 @@
 		"ScriptFile"                    "items/item_daedalus"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           	"daedalus_6"
-
-		"ItemCost"                      "7200"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"                  "damage;crit"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "daedalus"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "237" // Бонус от Relic и Rapier
-			"crit_chance"                "45"  // Наивысший шанс критического удара
-			"crit_multiplier"            "250" // Наивысший множитель критического урона
+			"bonus_damage"				"16 32 52 92 137 237"
+			"crit_chance"				"15 20 25 30 35 45"
+			"crit_multiplier"			"150 160 170 180 190 250"
 		}
 	}
 }

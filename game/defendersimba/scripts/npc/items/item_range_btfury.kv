@@ -1,22 +1,20 @@
 "DOTAAbilities"
 {
-
-
 	"item_recipe_range_btfury_1"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_1"
-			"ItemRequirements"
-			{
-				"01"						"item_range_bf;item_ring_of_regen;item_sobi_mask;item_upgrade_scroll_1"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_1"
+		"ItemRequirements"
+		{
+			"01"						"item_range_bf;item_ring_of_regen;item_sobi_mask;item_upgrade_scroll_1"
 		}
+	}
 
 	"item_range_btfury_1"
 	{
@@ -24,38 +22,39 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_1"
-
-		"ItemCost"                      "1500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "15"
-			"bonus_attack_speed"        "10"
-			"bonus_health_regen"        "2"
-			"bonus_mana_regen"          "1"
-			"splash_damage_percent"     "35"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 
 	"item_recipe_range_btfury_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_2"
-			"ItemRequirements"
-			{
-				"01"						"item_range_btfury_1;item_blades_of_attack;item_gloves;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_2"
+		"ItemRequirements"
+		{
+			"01"						"item_range_btfury_1;item_blades_of_attack;item_gloves;item_upgrade_scroll_2"
 		}
+	}
 
 	"item_range_btfury_2"
 	{
@@ -63,38 +62,39 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_2"
-
-		"ItemCost"                      "2500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "20"
-			"bonus_attack_speed"        "20"
-			"bonus_health_regen"        "4"
-			"bonus_mana_regen"          "2"
-			"splash_damage_percent"     "40"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 
 	"item_recipe_range_btfury_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_3"
-			"ItemRequirements"
-			{
-				"01"						"item_range_btfury_2;item_blitz_knuckles;item_cornucopia;item_upgrade_scroll_3"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_3"
+		"ItemRequirements"
+		{
+			"01"						"item_range_btfury_2;item_blitz_knuckles;item_cornucopia;item_upgrade_scroll_3"
 		}
+	}
 
 	"item_range_btfury_3"
 	{
@@ -102,39 +102,40 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_3"
-
-		"ItemCost"                      "3500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "35"
-			"bonus_attack_speed"        "45"
-			"bonus_health_regen"        "8"
-			"bonus_mana_regen"          "5"
-			"splash_damage_percent"     "45"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 
 
 	"item_recipe_range_btfury_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_4"
-			"ItemRequirements"
-			{
-				"01"						"item_range_btfury_3;item_dragon_lance;item_demon_edge;item_upgrade_scroll_4"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_4"
+		"ItemRequirements"
+		{
+			"01"						"item_range_btfury_3;item_dragon_lance;item_demon_edge;item_upgrade_scroll_4"
 		}
+	}
 
 	"item_range_btfury_4"
 	{
@@ -142,38 +143,39 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_4"
-
-		"ItemCost"                      "4500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "60"
-			"bonus_attack_speed"        "100"
-			"bonus_health_regen"        "10"
-			"bonus_mana_regen"          "8"
-			"splash_damage_percent"     "50"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 
 	"item_recipe_range_btfury_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_5"
-			"ItemRequirements"
-			{
-				"01"						"item_range_btfury_4;item_hyperstone;item_relic;item_upgrade_scroll_5"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_5"
+		"ItemRequirements"
+		{
+			"01"						"item_range_btfury_4;item_hyperstone;item_relic;item_upgrade_scroll_5"
 		}
+	}
 
 	"item_range_btfury_5"
 	{
@@ -181,38 +183,39 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_5"
-
-		"ItemCost"                      "5500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "110"
-			"bonus_attack_speed"        "100"
-			"bonus_health_regen"        "15"
-			"bonus_mana_regen"          "12"
-			"splash_damage_percent"     "65"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 
 	"item_recipe_range_btfury_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_range_btfury_6"
-			"ItemRequirements"
-			{
-				"01"						"item_range_btfury_5;item_moon_shard;item_rapier;item_upgrade_scroll_6"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_range_btfury_6"
+		"ItemRequirements"
+		{
+			"01"						"item_range_btfury_5;item_moon_shard;item_rapier;item_upgrade_scroll_6"
 		}
+	}
 
 	"item_range_btfury_6"
 	{
@@ -220,20 +223,21 @@
 		"ScriptFile"                    "items/item_range_btfury"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"            "rangebf_6"
-
-		"ItemCost"                      "6500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"                  "damage;cleave"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "range_btfury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "450"
-			"bonus_attack_speed"        "200"
-			"bonus_health_regen"        "20"
-			"bonus_mana_regen"          "15"
-			"splash_damage_percent"     "85"
-			"splash_radius"             "200"
+			"bonus_damage"				"15 20 35 60 110 450"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"bonus_health_regen"		"2 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"splash_damage_percent"		"35 40 45 50 65 85"
+			"splash_radius"				"200"
 		}
 	}
 }

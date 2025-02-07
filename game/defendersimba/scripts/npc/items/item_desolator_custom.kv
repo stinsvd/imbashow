@@ -1,22 +1,20 @@
 "DOTAAbilities"
 {
-
-
 	"item_recipe_desolator_custom_1"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_1"
-			"ItemRequirements"
-			{
-				"01"						"item_blades_of_attack;item_blight_stone;item_upgrade_scroll_1"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_1"
+		"ItemRequirements"
+		{
+			"01"						"item_blades_of_attack;item_blight_stone;item_upgrade_scroll_1"
 		}
+	}
 
 	"item_desolator_custom_1"
 	{
@@ -24,8 +22,8 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator_1"
-
-		"ItemCost"                      "1600"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
@@ -33,28 +31,28 @@
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "15"   // Урон от Blades of Attack и Blight Stone
-			"armor_reduction"            "3"   // Снижение брони
-			"armor_reduction_duration"   "7"   // Длительность снижения брони
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 
 
 	"item_recipe_desolator_custom_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_2"
-			"ItemRequirements"
-			{
-				"01"						"item_desolator_custom_1;item_broadsword;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_custom_1;item_broadsword;item_upgrade_scroll_2"
 		}
+	}
 
 	"item_desolator_custom_2"
 	{
@@ -62,36 +60,36 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator2"
-
-		"ItemCost"                      "2100"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "35"  // Урон от Broadsword
-			"armor_reduction"            "5"   // Снижение брони
-			"armor_reduction_duration"   "7"
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 
 
 	"item_recipe_desolator_custom_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_3"
-			"ItemRequirements"
-			{
-				"01"						"item_desolator_custom_2;item_blades_of_attack;item_mithril_hammer;item_upgrade_scroll_3"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_3"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_custom_2;item_blades_of_attack;item_mithril_hammer;item_upgrade_scroll_3"
 		}
+	}
 
 	"item_desolator_custom_3"
 	{
@@ -99,36 +97,36 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator_3"
-
-		"ItemCost"                      "3200"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "65"  // Урон от Blades of Attack и Mithril Hammer
-			"armor_reduction"            "10"
-			"armor_reduction_duration"   "7"
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 
 
 	"item_recipe_desolator_custom_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_4"
-			"ItemRequirements"
-			{
-				"01"						"item_desolator_custom_3;item_demon_edge;item_claymore;item_upgrade_scroll_4"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_4"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_custom_3;item_demon_edge;item_claymore;item_upgrade_scroll_4"
 		}
+	}
 
 	"item_desolator_custom_4"
 	{
@@ -136,35 +134,35 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator_4"
-
-		"ItemCost"                      "5500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "125"  // Урон от Demon Edge и Claymore
-			"armor_reduction"            "12"
-			"armor_reduction_duration"   "7"
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 
 	"item_recipe_desolator_custom_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_5"
-			"ItemRequirements"
-			{
-				"01"						"item_desolator_custom_4;item_mithril_hammer;item_relic;item_upgrade_scroll_5"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_5"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_custom_4;item_mithril_hammer;item_relic;item_upgrade_scroll_5"
 		}
+	}
 
 	"item_desolator_custom_5"
 	{
@@ -172,35 +170,35 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator_5"
-
-		"ItemCost"                      "6500"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "200" // Урон от Mithril Hammer и Relic
-			"armor_reduction"            "15"
-			"armor_reduction_duration"   "7"
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 
 	"item_recipe_desolator_custom_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_desolator_custom_6"
-			"ItemRequirements"
-			{
-				"01"						"item_desolator_custom_5;item_relic;item_rapier;item_upgrade_scroll_6"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_custom_6"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_custom_5;item_relic;item_rapier;item_upgrade_scroll_6"
 		}
+	}
 
 	"item_desolator_custom_6"
 	{
@@ -208,17 +206,17 @@
 		"ScriptFile"                    "items/item_desolator_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"           "desolator_6"
-
-		"ItemCost"                      "7200"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"                  "damage;armor_reduction"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "deso;desolator"
 
 		"AbilityValues"
 		{
-			"bonus_damage"               "450" // Урон от Relic и Rapier
-			"armor_reduction"            "22"
-			"armor_reduction_duration"   "7"
+			"bonus_damage"					"15 35 65 125 200 450"
+			"armor_reduction"				"3 5 10 12 15 22"
+			"armor_reduction_duration"		"7"
 		}
 	}
 }

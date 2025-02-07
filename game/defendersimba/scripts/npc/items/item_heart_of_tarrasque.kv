@@ -1,12 +1,11 @@
 "DOTAAbilities"
 {
- 
 	"item_recipe_heart_of_tarrasque_1"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -16,37 +15,37 @@
 			"01"						"item_fluffy_hat;item_fluffy_hat;item_gauntlets;item_gauntlets;item_upgrade_scroll_1"
 		}
 	}
- 
- 	"item_heart_of_tarrasque_1"
+
+	"item_heart_of_tarrasque_1"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_1"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"12"
-			"bonus_health"	    	"200"
-			"health_regen_pct"		"0.5"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
- 
+
 	"item_recipe_heart_of_tarrasque_2"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -56,38 +55,37 @@
 			"01"						"item_heart_of_tarrasque_1;item_belt_of_strength;item_ring_of_regen;item_ring_of_regen;item_upgrade_scroll_2"
 		}
 	}
- 
-    "item_heart_of_tarrasque_2"
+
+	"item_heart_of_tarrasque_2"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_2"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"18"
-			"bonus_health_regen"	"3"
-			"bonus_health"	    	"500"
-            "health_regen_pct"		"1"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
- 
+
 	"item_recipe_heart_of_tarrasque_3"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -97,38 +95,37 @@
 			"01"						"item_heart_of_tarrasque_2;item_vitality_booster;item_ogre_axe;item_upgrade_scroll_3"
 		}
 	}
- 
-    "item_heart_of_tarrasque_3"
+
+	"item_heart_of_tarrasque_3"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_3"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"28"
-			"bonus_health_regen"	"10"
-			"bonus_health"	    	"750"
-            "health_regen_pct"		"1.25"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
- 
+
 	"item_recipe_heart_of_tarrasque_4"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -138,38 +135,37 @@
 			"01"						"item_heart_of_tarrasque_3;item_ring_of_tarrasque;item_ring_of_tarrasque;item_ogre_axe;item_upgrade_scroll_4"
 		}
 	}
- 
-    "item_heart_of_tarrasque_4"
+
+	"item_heart_of_tarrasque_4"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_4"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"40"
-			"bonus_health_regen"	"30"
-			"bonus_health"	    	"850"
-            "health_regen_pct"		"2"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
- 
+
 	"item_recipe_heart_of_tarrasque_5"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -179,38 +175,37 @@
 			"01"						"item_heart_of_tarrasque_4;item_ring_of_tarrasque_2;item_upgrade_scroll_5"
 		}
 	}
- 
-    "item_heart_of_tarrasque_5"
+
+	"item_heart_of_tarrasque_5"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_5"   
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"60"
-			"bonus_health_regen"	"50"
-			"bonus_health"	    	"1000"
-            "health_regen_pct"		"2.5"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
- 
+
 	"item_recipe_heart_of_tarrasque_6"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -220,29 +215,28 @@
 			"01"						"item_heart_of_tarrasque_5;item_reaver_2;item_upgrade_scroll_6"
 		}
 	}
- 
-    "item_heart_of_tarrasque_6"
+
+	"item_heart_of_tarrasque_6"
 	{
 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_heart_of_tarrasque"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"tarrasque_6"   
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"tarrasque_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
- 		"AbilityValues"
+		"AbilityValues"
 		{
-			"bonus_strength"		"140"
-			"bonus_health_regen"	"70"
-			"bonus_health"	    	"1500"
-            "health_regen_pct"		"3.5"
+			"bonus_strength"		"12 18 28 40 60 140"
+			"bonus_health_regen"	"0 3 10 30 50 70"
+			"bonus_health"			"200 500 750 850 1000 1500"
+			"health_regen_pct"		"0.5 1 1.25 2 2.5 3.5"
 		}
 	}
 }

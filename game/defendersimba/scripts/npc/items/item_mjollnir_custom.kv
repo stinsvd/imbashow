@@ -1,243 +1,248 @@
 "DOTAAbilities"
 {
-
 	"item_recipe_mjollnir_custom_1"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_1"
-			"ItemRequirements"
-			{
-				"01"						"item_javelin;item_upgrade_scroll_1"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_1"
+		"ItemRequirements"
+		{
+			"01"						"item_javelin;item_upgrade_scroll_1"
 		}
+	}
 
 	"item_mjollnir_custom_1"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           	"mjollnir_1"
-
-		"ItemCost"                      "2800"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "24"
-			"bonus_attack_speed"        "25"
-			"lightning_chance"          "20"
-			"lightning_damage"          "25"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"    // Шанс дополнительного урона от MKB
-			"mkb_bonus_damage"          "10"    // Новый параметр для настройки урона от MKB
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 
 	"item_recipe_mjollnir_custom_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_2"
-			"ItemRequirements"
-			{
-				"01"						"item_mjollnir_custom_1;item_gloves;item_gloves;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir_custom_1;item_gloves;item_gloves;item_upgrade_scroll_2"
 		}
+	}
 
 	"item_mjollnir_custom_2"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "mjollnir_2"
-
-		"ItemCost"                      "3400"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "30"
-			"bonus_attack_speed"        "35"
-			"lightning_chance"          "20"
-			"lightning_damage"          "100"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"
-			"mkb_bonus_damage"          "25"
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 
 	"item_recipe_mjollnir_custom_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_3"
-			"ItemRequirements"
-			{
-				"01"						"item_mjollnir_custom_2;item_broadsword;item_blitz_knuckles;item_upgrade_scroll_3"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir_custom_2;item_broadsword;item_blitz_knuckles;item_upgrade_scroll_3"
 		}
+	}
 
 	"item_mjollnir_custom_3"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "mjollnir_3"
-
-		"ItemCost"                      "4000"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "30"
-			"bonus_attack_speed"        "35"
-			"lightning_chance"          "20"
-			"lightning_damage"          "200"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"
-			"mkb_bonus_damage"          "40"
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 
 	"item_recipe_mjollnir_custom_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_4"
-			"ItemRequirements"
-			{
-				"01"						"item_mjollnir_custom_3;item_claymore;item_mithril_hammer;item_upgrade_scroll_4"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir_custom_3;item_claymore;item_mithril_hammer;item_upgrade_scroll_4"
 		}
+	}
 
 	"item_mjollnir_custom_4"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "mjollnir_4"
-
-		"ItemCost"                      "4600"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "30"
-			"bonus_attack_speed"        "35"
-			"lightning_chance"          "20"
-			"lightning_damage"          "250"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"
-			"mkb_bonus_damage"          "75"
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 
 	"item_recipe_mjollnir_custom_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_5"
-			"ItemRequirements"
-			{
-				"01"						"item_mjollnir_custom_4;item_hyperstone;item_gloves;item_demon_edge;item_upgrade_scroll_5"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir_custom_4;item_hyperstone;item_gloves;item_demon_edge;item_upgrade_scroll_5"
 		}
+	}
 
 	"item_mjollnir_custom_5"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "mjollnir_5"
-
-		"ItemCost"                      "5300"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "60"
-			"bonus_attack_speed"        "65"
-			"lightning_chance"          "30"
-			"lightning_damage"          "500"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"
-			"mkb_bonus_damage"          "150"
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 
 	"item_recipe_mjollnir_custom_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_mjollnir_custom_6"
-			"ItemRequirements"
-			{
-				"01"						"item_mjollnir_custom_5;item_moon_shard;item_monkey_king_bar;item_upgrade_scroll_6"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjollnir_custom_6"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir_custom_5;item_moon_shard;item_monkey_king_bar;item_upgrade_scroll_6"
 		}
+	}
 
 	"item_mjollnir_custom_6"
 	{
-		"BaseClass"                     "item_lua"
-		"ScriptFile"                    "items/item_mjollnir_custom"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "mjollnir_6"
-
-		"ItemCost"                      "6000"
-		"ItemShopTags"                  "damage;attack_speed"
-		"ItemQuality"                   "epic"
-		"ItemAliases"                   "mjollnir_custom"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjollnir_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjollnir_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"ItemShopTags"					"damage;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjollnir_custom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_damage"              "80"
-			"bonus_attack_speed"        "80"
-			"lightning_chance"          "30"
-			"lightning_damage"          "1000"
-			"lightning_radius"          "500"
-			"mkb_damage_chance"         "85"
-			"mkb_bonus_damage"          "200"
+			"bonus_damage"				"24 30 30 30 60 80"
+			"bonus_attack_speed"		"25 35 35 35 65 80"
+			"lightning_chance"			"20 20 20 20 30 30"
+			"lightning_damage"			"25 100 200 250 500 1000"
+			"lightning_radius"			"500"
+			"mkb_damage_chance"			"85"
+			"mkb_bonus_damage"			"10 25 40 75 150 200"
 		}
 	}
 }

@@ -12,11 +12,12 @@ function item_bfury_1:GetIntrinsicModifierName()
 end
 
 function item_bfury_1:OnSpellStart()
-    local target = self:GetCursorTarget()
-
-    if target  then
-        target:CutDown(self:GetCaster():GetTeamNumber())
-    end
+	local target = self:GetCursorTarget()
+	if target and target.CutDown then
+		target:CutDown(self:GetCaster():GetTeamNumber())
+	else
+		GridNav:DestroyTreesAroundPoint(target:GetAbsOrigin(), 10, true)
+	end
 end
 
 modifier_item_bfury_custom = class({})

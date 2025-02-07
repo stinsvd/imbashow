@@ -31,7 +31,6 @@ end
 
 function modifier_item_desolator_custom:OnCreated()
     self.bonusDamage = self:GetAbility():GetSpecialValueFor("bonus_damage")
-    self.armorReduction = self:GetAbility():GetSpecialValueFor("armor_reduction")
     self.armorReductionDuration = self:GetAbility():GetSpecialValueFor("armor_reduction_duration")
 end
 
@@ -45,18 +44,19 @@ function modifier_item_desolator_custom:OnAttackLanded(params)
             self:GetParent(),
             self:GetAbility(),
             "modifier_item_desolator_custom_debuff",
-            { duration = self.armorReductionDuration }
+            { duration = self.armorReductionDuration * (1 - params.target:GetStatusResistance()) }
         )
     end
 end
 
 -- Модификатор дебаффа, который уменьшает броню цели
-modifier_item_desolator_custom_debuff = class({})
-
+modifier_item_desolator_custom_debuff = modifier_item_desolator_custom_debuff or class({})
+function modifier_item_desolator_custom_debuff:IsHidden() return false end
+function modifier_item_desolator_custom_debuff:OnCreated() self:OnRefresh() end
+function modifier_item_desolator_custom_debuff:OnRefresh()
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction")
+end
 function modifier_item_desolator_custom_debuff:DeclareFunctions()
-    return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS }
+    return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
 end
-
-function modifier_item_desolator_custom_debuff:GetModifierPhysicalArmorBonus()
-    return -self:GetAbility():GetSpecialValueFor("armor_reduction")
-end
+function modifier_item_desolator_custom_debuff:GetModifierPhysicalArmorBonus() return self.armor_reduction * (-1) end

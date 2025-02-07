@@ -2,7 +2,8 @@
 #base "heroes/slardar_abilities.kv"
 #base "heroes/bristleback_abilities.kv"
 #base "heroes/oracle_abilities.kv"
- 
+#base "heroes/warlock.txt"
+
 "DOTAAbilities"
 {
 	"structure_passive"

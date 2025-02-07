@@ -73,4 +73,52 @@
 		"Ability16"		"special_bonus_unique_orcl_fortunes_end_instacast"
 		"Ability17"		"special_bonus_unique_orcl_false_promise_duration"
 	}
+	
+	"npc_dota_hero_warlock"
+	{
+		"Model"				"models/items/warlock/golem/puppet_summoner_golem/puppet_summoner_golem.vmdl"
+		"SoundSet"			"Hero_WarlockGolem"
+		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_warlock_golem.vsndevts"
+		"DisableWearables"	"1"
+
+		"Ability1"		"infrnl_stomp"				//"warlock_fatal_bonds"
+		"Ability2"		"infrnl_flaming_fists"		//"warlock_shadow_word"
+		"Ability3"		"infrnl_immolation"			//"warlock_upheaval"
+		"Ability4"		"generic_hidden"			//"warlock_eldritch_summoning"
+		"Ability5"		"generic_hidden"			//"generic_hidden"
+		"Ability6"		"infrnl_eonite_heart"		//"warlock_rain_of_chaos"
+		"Ability7"		"infrnl_burning_spirit"		//"warlock_eldritch_summoning"
+		"Ability10"		"special_bonus_unique_warlock_5"
+		"Ability11"		"special_bonus_unique_warlock_upheaval_aoe"
+		"Ability12"		"special_bonus_unique_warlock_10"
+		"Ability13"		"special_bonus_unique_warlock_7"
+		"Ability14"		"special_bonus_unique_warlock_4"
+		"Ability15"		"special_bonus_unique_warlock_3"
+		"Ability16"		"special_bonus_unique_warlock_2"
+		"Ability17"		"special_bonus_unique_warlock_1"
+
+		"Facets"
+		{
+			"warlock_golem" 
+			{
+				"Icon"				"summons"
+				"Color"				"Red"
+				"GradientID"		"0"
+			}
+			"warlock_grimoire"
+			{
+				"Icon"				"xp"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"warlock_black_grimoire"
+					}
+				}
+			}
+		}
+	}
 }

@@ -29,52 +29,54 @@ function item_shivasguard_1:OnSpellStart()
     caster:EmitSound("DOTA_Item.ShivasGuard.Activate")
 
     -- Установка начального радиуса и таймера
-    caster.shivas_guard_current_radius = 0
-    Timers:CreateTimer(0, function()
-        if caster.shivas_guard_current_radius < blast_radius then
-            caster.shivas_guard_current_radius = caster.shivas_guard_current_radius + blast_speed * 0.03
+	caster.shivas_guard_current_radius = 0
+	local radius = 0
+	local units = {}
+	Timers:CreateTimer(0, function()
+		if radius < blast_radius then
+			radius = radius + blast_speed * 0.03
 
-            -- Обеспечение обзора
-            self:CreateVisibilityNode(caster:GetAbsOrigin(), vision_radius, vision_duration)
+			-- Обеспечение обзора
+			self:CreateVisibilityNode(caster:GetAbsOrigin(), vision_radius, vision_duration)
 
-            -- Поиск врагов в текущем радиусе
-            local enemies = FindUnitsInRadius(
-                caster:GetTeamNumber(),
-                caster:GetAbsOrigin(),
-                nil,
-                caster.shivas_guard_current_radius,
-                DOTA_UNIT_TARGET_TEAM_ENEMY,
-                DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-                DOTA_UNIT_TARGET_FLAG_NONE,
-                FIND_ANY_ORDER,
-                false
-            )
+			-- Поиск врагов в текущем радиусе
+			local enemies = FindUnitsInRadius(
+				caster:GetTeamNumber(),
+				caster:GetAbsOrigin(),
+				nil,
+				radius,
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				DOTA_UNIT_TARGET_FLAG_NONE,
+				FIND_ANY_ORDER,
+				false
+			)
 
-            for _, enemy in ipairs(enemies) do
-                if not enemy:HasModifier("modifier_item_shivasguard_custom_slow") then
-                    ApplyDamage({
-                        victim = enemy,
-                        attacker = caster,
-                        damage = blast_damage,
-                        damage_type = DAMAGE_TYPE_MAGICAL,
-                        ability = self,
-                    })
-                    
-                    -- Эффект удара волны
-                    local impact_particle = ParticleManager:CreateParticle("particles/items2_fx/shivas_guard_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
-                    ParticleManager:SetParticleControl(impact_particle, 1, enemy:GetAbsOrigin())
-                    ParticleManager:ReleaseParticleIndex(impact_particle)
+			for _, enemy in ipairs(enemies) do
+				if not units[enemy:entindex()] then
+					units[enemy:entindex()] = true
+					ApplyDamage({
+						victim = enemy,
+						attacker = caster,
+						damage = blast_damage,
+						damage_type = DAMAGE_TYPE_MAGICAL,
+						ability = self,
+					})
+					
+					-- Эффект удара волны
+					local impact_particle = ParticleManager:CreateParticle("particles/items2_fx/shivas_guard_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
+					ParticleManager:SetParticleControl(impact_particle, 1, enemy:GetAbsOrigin())
+					ParticleManager:ReleaseParticleIndex(impact_particle)
 
-                    -- Применение замедления
-                    enemy:AddNewModifier(caster, self, "modifier_item_shivasguard_custom_slow", {duration = slow_duration})
-                end
-            end
-            return 0.03  -- повторяет таймер каждые 0.03 сек до достижения радиуса
-        else
-            caster.shivas_guard_current_radius = 0
-            return nil  -- остановка таймера
-        end
-    end)
+					-- Применение замедления
+					enemy:AddNewModifier(caster, self, "modifier_item_shivasguard_custom_slow", {duration = slow_duration * (1 - enemy:GetStatusResistance())})
+				end
+			end
+			return 0.03  -- повторяет таймер каждые 0.03 сек до достижения радиуса
+		else
+			return nil  -- остановка таймера
+		end
+	end)
 end
 
 modifier_item_shivasguard_custom = class({})
@@ -145,49 +147,37 @@ end
 
 
 
-modifier_item_shivasguard_custom_slow = class({})
-
-function modifier_item_shivasguard_custom_slow:IsDebuff()
-    return true
+modifier_item_shivasguard_custom_slow = modifier_item_shivasguard_custom_slow or class({})
+function modifier_item_shivasguard_custom_slow:IsHidden() return false end
+function modifier_item_shivasguard_custom_slow:IsDebuff() return true end
+function modifier_item_shivasguard_custom_slow:OnCreated() self:OnRefresh() end
+function modifier_item_shivasguard_custom_slow:OnRefresh()
+    self.slow_movement_speed = self:GetAbility():GetSpecialValueFor("slow_movement_speed")
 end
-
 function modifier_item_shivasguard_custom_slow:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
     }
 end
-
-function modifier_item_shivasguard_custom_slow:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("slow_movement_speed")
-end
+function modifier_item_shivasguard_custom_slow:GetModifierMoveSpeedBonus_Percentage() return self.slow_movement_speed end
 
 
-modifier_item_shivasguard_custom_debuff = class({})
-
-function modifier_item_shivasguard_custom_debuff:IsHidden()
-    return false
-end
-
-function modifier_item_shivasguard_custom_debuff:IsDebuff()
-    return true
-end
-
+modifier_item_shivasguard_custom_debuff = modifier_item_shivasguard_custom_debuff or class({})
+function modifier_item_shivasguard_custom_debuff:IsHidden() return false end
+function modifier_item_shivasguard_custom_debuff:IsDebuff() return true end
 function modifier_item_shivasguard_custom_debuff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, 
+        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE,
     }
 end
-
 function modifier_item_shivasguard_custom_debuff:GetModifierAttackSpeedBonus_Constant()
-    return self:GetAbility():GetSpecialValueFor("aura_attack_speed")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_attack_speed") end
 end
-
 function modifier_item_shivasguard_custom_debuff:GetModifierHPRegenAmplify_Percentage()
-    return self:GetAbility():GetSpecialValueFor("aura_heal_percent")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_heal_percent") end
 end
-
 function modifier_item_shivasguard_custom_debuff:GetModifierHealAmplify_PercentageSource()
-    return self:GetAbility():GetSpecialValueFor("aura_heal_percent")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_heal_percent") end
 end

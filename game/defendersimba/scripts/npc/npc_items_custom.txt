@@ -186,9 +186,9 @@
 		"ItemAliases"					"ags;shard;aghanim\'s shard;aghs"
 		
 		"ItemPermanent"					"0"
-		"ItemStockTime"					"0"			  
-		"ItemStockInitial"				"999"
-		"ItemStockMax"					"999"
+		"ItemStockTime"					"0"
+		"ItemStockInitial"				"-1"
+		"ItemStockMax"					"-1"
 		"ItemInitialStockTime"			"0"
 
 		"SuggestLategame"				"1"

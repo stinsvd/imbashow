@@ -1,12 +1,11 @@
 "DOTAAbilities"
 {
- 
- 	"item_recipe_bfury_1"
-	{		
+	"item_recipe_bfury_1"
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -16,286 +15,288 @@
 			"01"						"item_ring_of_regen;item_sobi_mask;item_quelling_blade;item_upgrade_scroll_1"
 		}
 	}
-    
+
 	"item_bfury_1"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_1"      
+		"AbilityTextureName"			"btfury_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"10"
-			"bonus_hp_regen"			"3"
-			"bonus_mana_regen"			"1"
-			"cleave_damage"				"45"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"10"
 		}
 	}
 
 	"item_recipe_bfury_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_bfury_2"
-			"ItemRequirements"
-			{
-				"01"						"item_bfury_1;item_gloves;item_blades_of_attack;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_2"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_1;item_gloves;item_blades_of_attack;item_upgrade_scroll_2"
 		}
+	}
 
 	"item_bfury_2"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_2"      
+		"AbilityTextureName"			"btfury_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"55"
-			"bonus_hp_regen"			"4"
-			"bonus_mana_regen"			"2"
-			"cleave_damage"				"15"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"20"
 		}
 	}
 
 	"item_recipe_bfury_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_bfury_3"
-			"ItemRequirements"
-			{
-				"01"						"item_bfury_2;item_blitz_knuckles;cornucopia;item_upgrade_scroll_3"
-			}
-		}
-
-
-    "item_bfury_3"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_3"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_2;item_blitz_knuckles;cornucopia;item_upgrade_scroll_3"
+		}
+	}
+
+	"item_bfury_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_3"      
+		"AbilityTextureName"			"btfury_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"55"
-			"bonus_hp_regen"			"8"
-			"bonus_mana_regen"			"5"
-			"cleave_damage"				"75"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"45"
 		}
 	}
 
 	"item_recipe_bfury_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_bfury_4"
-			"ItemRequirements"
-			{
-				"01"						"item_bfury_3;item_hyperstone;item_demon_edge;item_upgrade_scroll_4"
-			}
-		}
-
-
-    "item_bfury_4"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_4"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_3;item_hyperstone;item_demon_edge;item_upgrade_scroll_4"
+		}
+	}
+
+	"item_bfury_4"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_4"      
+		"AbilityTextureName"			"btfury_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"90"
-			"bonus_hp_regen"			"10"
-			"bonus_mana_regen"			"8"
-			"cleave_damage"				"75"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"100"
 		}
 	}
 
 	"item_recipe_bfury_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_bfury_5"
-			"ItemRequirements"
-			{
-				"01"						"item_bfury_4;item_ring_of_tarrasque;tiara_of_selemene;item_relic;item_upgrade_scroll_5"
-			}
-		}
-
-
-    "item_bfury_5"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_5"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_4;item_ring_of_tarrasque;tiara_of_selemene;item_relic;item_upgrade_scroll_5"
+		}
+	}
+
+	"item_bfury_5"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_5"      
+		"AbilityTextureName"			"btfury_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"150"
-			"bonus_hp_regen"			"15"
-			"bonus_mana_regen"			"12"
-			"cleave_damage"				"90"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"100"
 		}
 	}
 
 	"item_recipe_bfury_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_bfury_6"
-			"ItemRequirements"
-			{
-				"01"						"item_bfury_5;item_moon_shard;item_rapier;item_upgrade_scroll_6"
-			}
-		}
-
-
-    "item_bfury_6"
 	{
-		"BaseClass"							"item_lua"		
-		"ScriptFile"					"items/item_bfury"												 
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_6"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_5;item_moon_shard;item_rapier;item_upgrade_scroll_6"
+		}
+	}
+
+	"item_bfury_6"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bfury"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-    	"AbilityTextureName"            "btfury_6"      
+		"AbilityTextureName"			"btfury_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
 
-		"ItemCost"						"4130"
+		"AbilitySharedCooldown"			"bfury"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		
 		"AbilityValues"
 		{
-			"bonus_damage"				"600"
-			"bonus_hp_regen"			"20"
-			"bonus_mana_regen"			"15"
-			"cleave_damage"				"110"
+			"bonus_damage"				"10 55 55 90 150 600"
+			"bonus_hp_regen"			"3 4 8 10 15 20"
+			"bonus_mana_regen"			"1 2 5 8 12 15"
+			"bonus_attack_speed"		"10 20 45 100 100 200"
+			"cleave_damage"				"45 15 75 75 90 110"
 			"cleave_starting_width"		"150"
 			"cleave_ending_width"		"360"
 			"cleave_distance"			"650"
-			"bonus_attack_speed"		"200"
 		}
 	}
 }

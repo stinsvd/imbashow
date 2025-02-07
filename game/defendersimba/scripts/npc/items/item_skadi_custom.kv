@@ -1,254 +1,272 @@
 "DOTAAbilities"
 {
-
-
 	"item_recipe_skadi_custom_1"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_1"
-			"ItemRequirements"
-			{
-				"01"						"item_orb_of_corrosion;item_upgrade_scroll_1"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_1"
+		"ItemRequirements"
+		{
+			"01"						"item_orb_of_corrosion;item_upgrade_scroll_1"
 		}
+	}
 
 	"item_skadi_custom_1"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_1"
-
-		"ItemCost"                      "1600"
+		"AbilityTextureName"			"skadi_custom_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "5"
-			"bonus_agility"             "5"
-			"bonus_intellect"           "5"
-			"bonus_health_regen"        "1.5"
-			"bonus_damage"              "10"
-			"slow_movement_speed"       "-15"
-			"slow_attack_speed"         "-10"
-			"slow_duration"             "3"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 
 	"item_recipe_skadi_custom_2"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_2"
-			"ItemRequirements"
-			{
-				"01"						"item_skadi_custom_1;item_crown;item_crown;item_upgrade_scroll_2"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_2"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi_custom_1;item_crown;item_crown;item_upgrade_scroll_2"
 		}
+	}
 
 	"item_skadi_custom_2"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_2"
-
-		"ItemCost"                      "4000"
+		"AbilityTextureName"			"skadi_custom_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "10"
-			"bonus_agility"             "10"
-			"bonus_intellect"           "10"
-			"bonus_health_regen"        "4"
-			"bonus_damage"              "20"
-			"slow_movement_speed"       "-25"
-			"slow_attack_speed"         "-20"
-			"slow_duration"             "3"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 
 	"item_recipe_skadi_custom_3"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_3"
-			"ItemRequirements"
-			{
-				"01"						"item_skadi_custom_2;item_diadem;item_diadem;item_upgrade_scroll_3"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_3"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi_custom_2;item_diadem;item_diadem;item_upgrade_scroll_3"
 		}
+	}
 
 	"item_skadi_custom_3"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_3"
-
-		"ItemCost"                      "6000"
+		"AbilityTextureName"			"skadi_custom_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "15"
-			"bonus_agility"             "15"
-			"bonus_intellect"           "15"
-			"bonus_health_regen"        "6"
-			"bonus_damage"              "35"
-			"slow_movement_speed"       "-35"
-			"slow_attack_speed"         "-25"
-			"slow_duration"             "3"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 
 	"item_recipe_skadi_custom_4"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_4"
-			"ItemRequirements"
-			{
-				"01"						"item_skadi_custom_3;item_crown;item_ultimate_orb;item_upgrade_scroll_4"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_4"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi_custom_3;item_crown;item_ultimate_orb;item_upgrade_scroll_4"
 		}
+	}
 
 	"item_skadi_custom_4"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_4"
-
-		"ItemCost"                      "8000"
+		"AbilityTextureName"			"skadi_custom_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "30"
-			"bonus_agility"             "30"
-			"bonus_intellect"           "30"
-			"bonus_health_regen"        "30"
-			"health_bonus"              "500"
-			"mana_bonus"                "400"
-			"slow_movement_speed"       "-40"
-			"slow_attack_speed"         "-30"
-			"slow_duration"             "3"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 
-
 	"item_recipe_skadi_custom_5"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_5"
-			"ItemRequirements"
-			{
-				"01"						"item_skadi_custom_4;item_ultimate_orb;item_ultimate_orb;item_upgrade_scroll_5"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_5"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi_custom_4;item_ultimate_orb;item_ultimate_orb;item_upgrade_scroll_5"
 		}
+	}
 
 	"item_skadi_custom_5"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_5"
-		"ItemCost"                      "9200"
+		"AbilityTextureName"			"skadi_custom_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "40"
-			"bonus_agility"             "40"
-			"bonus_intellect"           "40"
-			"bonus_health_regen"        "12"
-			"evasion"                   "20"
-			"health_bonus"              "750"
-			"mana_bonus"                "500"
-			"slow_movement_speed"       "-45"
-			"slow_attack_speed"         "-35"
-			"slow_duration"             "3"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 
 	"item_recipe_skadi_custom_6"
-		{		
-			"BaseClass"						"item_datadriven"
-			"AbilityTextureName" 			"item_recipe"
-			"Model"							"models/props_gameplay/recipe.mdl"
-			"ItemCost"						"0"	
-			"ItemShopTags"					""
-			
-			"ItemRecipe"					"1"
-			"ItemResult"					"item_skadi_custom_6"
-			"ItemRequirements"
-			{
-				"01"						"item_skadi_custom_5;item_reaver;item_mystic_staff;item_eagle;item_upgrade_scroll_6"
-			}
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_custom_6"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi_custom_5;item_reaver;item_mystic_staff;item_eagle;item_upgrade_scroll_6"
 		}
+	}
 
 	"item_skadi_custom_6"
 	{
 		"BaseClass"                     "item_lua"
 		"ScriptFile"                    "items/item_skadi_custom"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"           "skadi_custom_6"
-
-		"ItemCost"                      "10200"
+		"AbilityTextureName"			"skadi_custom_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"                  "damage;regen;armor;slow"
 		"ItemQuality"                   "epic"
 		"ItemAliases"                   "skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"AbilityValues"
 		{
-			"bonus_strength"            "60"
-			"bonus_agility"             "60"
-			"bonus_intellect"           "60"
-			"bonus_health_regen"        "15"
-			"health_bonus"              "1000"
-			"mana_bonus"                "750"
-			"slow_movement_speed"       "-50"
-			"slow_attack_speed"         "-40"
-			"slow_duration"             "4"
+			"bonus_strength"			"5 10 15 30 40 60"
+			"bonus_agility"				"5 10 15 30 40 60"
+			"bonus_intellect"			"5 10 15 30 40 60"
+			"bonus_armor"				"3 5 7 9 11 13"
+			"bonus_attack_speed"		"25 30 35 40 45 50"
+			"health_bonus"				"0 0 0 500 750 1000"
+			"mana_bonus"				"0 0 0 400 500 750"
+			"slow_movement_speed"		"-15 -25 -35 -40 -45 -50"
+			"slow_attack_speed"			"-10 -20 -25 -30 -35 -40"
+			"heal_reduction"			"-40"
+			"slow_duration"				"3 3 3 3 3 4"
 		}
 	}
 }

@@ -27,9 +27,8 @@ function modifier_item_skadi_custom:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_EVASION_CONSTANT,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MANA_BONUS,
         MODIFIER_EVENT_ON_ATTACK_LANDED
@@ -41,9 +40,8 @@ function modifier_item_skadi_custom:OnCreated()
     self.bonusStrength = ability:GetSpecialValueFor("bonus_strength")
     self.bonusAgility = ability:GetSpecialValueFor("bonus_agility")
     self.bonusIntellect = ability:GetSpecialValueFor("bonus_intellect")
-    self.bonusHealthRegen = ability:GetSpecialValueFor("bonus_health_regen")
-    self.bonusDamage = ability:GetSpecialValueFor("bonus_damage")
-    self.evasion = ability:GetSpecialValueFor("evasion")
+    self.bonusArmor = ability:GetSpecialValueFor("bonus_armor")
+    self.bonusAttackSpeed = ability:GetSpecialValueFor("bonus_attack_speed")
     self.healthBonus = ability:GetSpecialValueFor("health_bonus")
     self.manaBonus = ability:GetSpecialValueFor("mana_bonus")
     self.slowDuration = ability:GetSpecialValueFor("slow_duration")
@@ -61,16 +59,12 @@ function modifier_item_skadi_custom:GetModifierBonusStats_Intellect()
     return self.bonusIntellect
 end
 
-function modifier_item_skadi_custom:GetModifierConstantHealthRegen()
-    return self.bonusHealthRegen
+function modifier_item_skadi_custom:GetModifierPhysicalArmorBonus()
+    return self.bonusArmor
 end
 
-function modifier_item_skadi_custom:GetModifierPreAttack_BonusDamage()
-    return self.bonusDamage
-end
-
-function modifier_item_skadi_custom:GetModifierEvasion_Constant()
-    return self.evasion
+function modifier_item_skadi_custom:GetModifierAttackSpeedBonus_Constant()
+    return self.bonusAttackSpeed
 end
 
 function modifier_item_skadi_custom:GetModifierHealthBonus()
@@ -85,25 +79,34 @@ function modifier_item_skadi_custom:OnAttackLanded(params)
     if IsServer() then
         local parent = self:GetParent()
         if params.attacker == parent and params.target:IsAlive() and not params.target:IsMagicImmune() then
-            params.target:AddNewModifier(parent, self:GetAbility(), "modifier_item_skadi_custom_slow", {duration = self.slowDuration})
+            params.target:AddNewModifier(parent, self:GetAbility(), "modifier_item_skadi_custom_slow", {duration = self.slowDuration * (1 - params.target:GetStatusResistance())})
         end
     end
 end
 
-modifier_item_skadi_custom_slow = class({})
-
-function modifier_item_skadi_custom_slow:IsDebuff()
-    return true
+modifier_item_skadi_custom_slow = modifier_item_skadi_custom_slow or class({})
+function modifier_item_skadi_custom_slow:IsDebuff() return true end
+function modifier_item_skadi_custom_slow:GetStatusEffectName() return "particles/status_fx/status_effect_frost_lich.vpcf" end
+function modifier_item_skadi_custom_slow:StatusEffectPriority() return 10 end
+function modifier_item_skadi_custom_slow:OnCreated() self:OnRefresh() end
+function modifier_item_skadi_custom_slow:OnRefresh()
+	self.slow_movement_speed = self:GetAbility():GetSpecialValueFor("slow_movement_speed")
+	self.slow_attack_speed = self:GetAbility():GetSpecialValueFor("slow_attack_speed")
+	self.heal_reduction = self:GetAbility():GetSpecialValueFor("heal_reduction")
 end
-
 function modifier_item_skadi_custom_slow:DeclareFunctions()
-    return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT }
+    return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET,
+		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
+	}
 end
-
-function modifier_item_skadi_custom_slow:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("slow_movement_speed")
-end
-
-function modifier_item_skadi_custom_slow:GetModifierAttackSpeedBonus_Constant()
-    return self:GetAbility():GetSpecialValueFor("slow_attack_speed")
-end
+function modifier_item_skadi_custom_slow:GetModifierMoveSpeedBonus_Percentage() return self.slow_movement_speed end
+function modifier_item_skadi_custom_slow:GetModifierAttackSpeedBonus_Constant() return self.slow_attack_speed end
+function modifier_item_skadi_custom_slow:GetModifierHealAmplify_PercentageTarget() return self.heal_reduction end
+function modifier_item_skadi_custom_slow:GetModifierHPRegenAmplify_Percentage() return self.heal_reduction end
+function modifier_item_skadi_custom_slow:GetModifierLifestealRegenAmplify_Percentage() return self.heal_reduction end
+function modifier_item_skadi_custom_slow:GetModifierSpellLifestealRegenAmplify_Percentage() return self.heal_reduction end

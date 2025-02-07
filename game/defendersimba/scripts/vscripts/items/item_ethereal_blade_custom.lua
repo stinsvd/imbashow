@@ -45,7 +45,7 @@ function item_ethereal_blade_1:OnSpellStart()
     ProjectileManager:CreateTrackingProjectile(projectile)
 end
 
-function item_ethereal_blade_1:OnProjectileHit(target, location)	
+function item_ethereal_blade_1:OnProjectileHit(target, location)
 	if target and not target:IsMagicImmune() then
         local caster = self:GetCaster()
 
@@ -60,20 +60,21 @@ function item_ethereal_blade_1:OnProjectileHit(target, location)
 			target:AddNewModifier(caster, self, "modifier_item_ethereal_blade_custom_ethereal", {duration = duration})
 		else
 			target:AddNewModifier(caster, self, "modifier_item_ethereal_blade_custom_ethereal", {duration = duration * (1 - target:GetStatusResistance())})
-						
+			
 			local damageTable = {
 				victim 			= target,
-				damage 			= caster:GetPrimaryStatValue() * blast_agility_multiplier + blast_damage_base,
+				damage 			= (caster:GetPrimaryStatValue() * blast_agility_multiplier) + blast_damage_base,
 				damage_type		= DAMAGE_TYPE_MAGICAL,
 				damage_flags 	= DOTA_DAMAGE_FLAG_NONE,
 				attacker 		= caster,
 				ability 		= self
 			}
-									
-			ApplyDamage(damageTable)		
+			
+			ApplyDamage(damageTable)
 		end
 	end
 end
+
 
 modifier_item_ethereal_blade_custom_ethereal = class({})
 
@@ -87,7 +88,7 @@ end
 
 function modifier_item_ethereal_blade_custom_ethereal:StatusEffectPriority()
     return MODIFIER_PRIORITY_SUPER_ULTRA
-  end
+end
 
 function modifier_item_ethereal_blade_custom_ethereal:OnCreated()
 	self.ability					= self:GetAbility()
@@ -251,7 +252,7 @@ end
 function modifier_item_ethereal_blade_custom:GetModifierTotalDamageOutgoing_Percentage(event)
     local parent = self:GetParent()
     local attacker = event.attacker
-  
+	
     if (
     attacker == self:GetParent() and
     event.damage_category == DOTA_DAMAGE_CATEGORY_SPELL  and
@@ -271,22 +272,11 @@ function modifier_item_ethereal_blade_custom:GetModifierTotalDamageOutgoing_Perc
 end
 
 modifier_item_ethereal_blade_custom_cooldown = class({})
-
-function modifier_item_ethereal_blade_custom_cooldown:IsHidden()
-    return false
-end
-
-function modifier_item_ethereal_blade_custom_cooldown:RemoveOnDeath()
-    return false
-end
-
-function modifier_item_ethereal_blade_custom_cooldown:IsPurgable()
-    return false
-end
-
-function modifier_item_ethereal_blade_custom_cooldown:IsPurgeException()
-    return false
-end
+function modifier_item_ethereal_blade_custom_cooldown:IsHidden() return false end
+function modifier_item_ethereal_blade_custom_cooldown:IsDebuff() return true end
+function modifier_item_ethereal_blade_custom_cooldown:RemoveOnDeath() return false end
+function modifier_item_ethereal_blade_custom_cooldown:IsPurgable() return false end
+function modifier_item_ethereal_blade_custom_cooldown:IsPurgeException() return false end
 
 
 modifier_item_ethereal_blade_custom_phylacteria = class({

@@ -8,15 +8,8 @@ function item_ring_of_aquila_custom:GetIntrinsicModifierName()
 end
 
 modifier_item_ring_of_aquila_custom= class({})
-
-function modifier_item_ring_of_aquila_custom:IsHidden()
-    return true
-end
-
-function modifier_item_ring_of_aquila_custom:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
+function modifier_item_ring_of_aquila_custom:IsHidden() return true end
+function modifier_item_ring_of_aquila_custom:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_ring_of_aquila_custom:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
@@ -33,7 +26,7 @@ end
 function modifier_item_ring_of_aquila_custom:OnCreated()
     local ability = self:GetAbility()
     self.bonus_attack_speed = ability:GetSpecialValueFor("bonus_attack_speed")
-    self.bonus_armor = ability:GetSpecialValueFor("bonus_armor") 
+    self.bonus_armor = ability:GetSpecialValueFor("bonus_armor")
     self.bonus_mana_regen = ability:GetSpecialValueFor("bonus_mana_regen")
     self.bonus_strength = ability:GetSpecialValueFor("bonus_strength")
     self.bonus_agility = ability:GetSpecialValueFor("bonus_agility")
@@ -82,8 +75,7 @@ item_power_treads_6 = item_power_treads_2
 
 function item_power_treads_2:OnSpellStart()
     local caster = self:GetCaster()
-    local ability = self
-    local modifier = caster:FindModifierByName("modifier_item_power_treads_2")
+    local modifier = caster:FindModifierByName(self:GetIntrinsicModifierName())
 
     if not modifier then return end
 
@@ -104,19 +96,8 @@ function item_power_treads_2:GetIntrinsicModifierName()
 end
 
 modifier_item_power_treads_2 = class({})
-
-function modifier_item_power_treads_2:IsHidden()
-    return false
-end
-
-function modifier_item_power_treads_2:RemoveOnDeath()
-    return false
-end
-
-function modifier_item_power_treads_2:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
+function modifier_item_power_treads_2:IsHidden() return true end
+function modifier_item_power_treads_2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_power_treads_2:OnStackCountChanged(oldCount)
     local stackCount = self:GetStackCount()
     local ability = self:GetAbility()
@@ -141,7 +122,7 @@ function modifier_item_power_treads_2:OnCreated()
     self.bonus_all_stats = ability:GetSpecialValueFor("bonus_all_stats")
     self.bonus_movement_speed = ability:GetSpecialValueFor("bonus_movement_speed")
     self.bonus_health_regen = ability:GetSpecialValueFor("bonus_health_regen")
-    self.bonus_health = ability:GetSpecialValueFor("bonus_health") 
+    self.bonus_health = ability:GetSpecialValueFor("bonus_health")
     self.bonus_mana_regen = ability:GetSpecialValueFor("bonus_mana_regen")
     self.bonus_attack_speed = ability:GetSpecialValueFor("bonus_attack_speed")
     self.bonus_armor = ability:GetSpecialValueFor("bonus_armor")
@@ -154,7 +135,7 @@ end
 function modifier_item_power_treads_2:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS, 
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
@@ -192,14 +173,13 @@ end
 
 
 function modifier_item_power_treads_2:GetModifierBonusStats_Strength()
-    return (self.activeStat == "strength" and self.bonus_active_stat or  0) + self.bonus_all_stats 
+    return (self.activeStat == "strength" and self.bonus_active_stat or  0) + self.bonus_all_stats
 end
 
 function modifier_item_power_treads_2:GetModifierBonusStats_Agility()
-    return (self.activeStat == "agility" and self.bonus_active_stat or  0) + self.bonus_all_stats 
+    return (self.activeStat == "agility" and self.bonus_active_stat or  0) + self.bonus_all_stats
 end
 
 function modifier_item_power_treads_2:GetModifierBonusStats_Intellect()
-    return (self.activeStat == "intellect" and self.bonus_active_stat or  0) + self.bonus_all_stats 
+    return (self.activeStat == "intellect" and self.bonus_active_stat or  0) + self.bonus_all_stats
 end
- 

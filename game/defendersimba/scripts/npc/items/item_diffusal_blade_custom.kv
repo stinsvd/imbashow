@@ -1,332 +1,320 @@
 "DOTAAbilities"
 {
-
-	"item_recipe_diffusal_blade_1"
-	{		
+	"item_recipe_diffusal_blade_cus_1"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_1"
+		"ItemResult"					"item_diffusal_blade_cus_1"
 		"ItemRequirements"
 		{
 			"01"						"item_boots_of_elves;item_slippers;item_mantle;item_upgrade_scroll_1"
 		}
 	}
 
-
-	"item_diffusal_blade_1"
+	"item_diffusal_blade_cus_1"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffusal_1"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffusal_1"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
+
 		"AbilitySharedCooldown"			"diffus1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		"ItemPermanent"					"1"
-  		
- 		"AbilityValues"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilityValues"
 		{
-			"bonus_agility"			"15"
-			"bonus_intellect"		"10"
-			"mana_break"	"10"
-			"illusion_mana_break"	"8"
-			"damage_per_burn"		"1"
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
 
-			"decrease_movement_speed"			"40"
-			"duration"	"4"
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
- 
-	"item_recipe_diffusal_blade_2"
-	{		
+
+	"item_recipe_diffusal_blade_cus_2"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_2"
+		"ItemResult"					"item_diffusal_blade_cus_2"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_1;item_boots_of_elves;item_slippers;item_robe;item_upgrade_scroll_2"
+			"01"						"item_diffusal_blade_cus_1;item_boots_of_elves;item_slippers;item_robe;item_upgrade_scroll_2"
 		}
 	}
 
-
-	"item_diffusal_blade_2"
+	"item_diffusal_blade_cus_2"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffus2"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffus2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
-		"AbilitySharedCooldown"			"diffusal"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
+
+		"AbilitySharedCooldown"			"diffus1"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
-		"ItemAliases"					"diffusal blade 2"
-		"ItemPermanent"					"1"
-  		
- 		"AbilityValues"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilityValues"
 		{
-			"bonus_agility"			"20"
-			"bonus_intellect"		"15"
-			"mana_break"	"30"
-			"illusion_mana_break"	"10"
-			"damage_per_burn"		"1"
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
 
-			"decrease_movement_speed"			"40"
-			"duration"	"4"
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
 
-	"item_recipe_diffusal_blade_3"
-	{		
+	"item_recipe_diffusal_blade_cus_3"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_3"
+		"ItemResult"					"item_diffusal_blade_cus_3"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_2;item_boots_of_elves;item_blade_of_alacrity;item_robe;item_upgrade_scroll_3"
+			"01"						"item_diffusal_blade_cus_2;item_boots_of_elves;item_blade_of_alacrity;item_robe;item_upgrade_scroll_3"
 		}
 	}
 
-
-	"item_diffusal_blade_3"
+	"item_diffusal_blade_cus_3"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffus3"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffus3"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
-		"AbilitySharedCooldown"			"diffusal"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
+
+		"AbilitySharedCooldown"			"diffus1"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		"ItemPermanent"					"1"
- 
- 		"AbilityValues"
-		{
-			"bonus_agility"			"30"
-			"bonus_intellect"		"20"
-			"mana_break"	"40"
-			"illusion_mana_break"	"15"
-			"damage_per_burn"		"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-			"bonus_movement_speed"				"40"
-			"decrease_movement_speed"			"40"
-			"duration"	"4"
+		"AbilityValues"
+		{
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
+
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
 
-	"item_recipe_diffusal_blade_4"
-	{		
+	"item_recipe_diffusal_blade_cus_4"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_4"
+		"ItemResult"					"item_diffusal_blade_cus_4"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_3;item_eagle;item_robe;item_upgrade_scroll_4"
+			"01"						"item_diffusal_blade_cus_3;item_eagle;item_robe;item_upgrade_scroll_4"
 		}
 	}
 
-
-	"item_diffusal_blade_4"
+	"item_diffusal_blade_cus_4"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffus4"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffus4"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
-		"AbilitySharedCooldown"			"diffusal"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
+
+		"AbilitySharedCooldown"			"diffus1"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		"ItemPermanent"					"1"
- 
- 		"AbilityValues"
-		{
-			"bonus_agility"			"45"
-			"bonus_intellect"		"25"
-			"mana_break"	"50"
-			"illusion_mana_break"	"20"
-			"damage_per_burn"		"2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-			"bonus_movement_speed"				"40"
-			"decrease_movement_speed"			"40"
-			"duration"	"5"
+		"AbilityValues"
+		{
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
+
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
 
-		"item_recipe_diffusal_blade_5"
-	{		
+	"item_recipe_diffusal_blade_cus_5"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_5"
+		"ItemResult"					"item_diffusal_blade_cus_5"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_4;item_eagle;item_staff_of_wizardry;item_staff_of_wizardry;item_upgrade_scroll_5"
+			"01"						"item_diffusal_blade_cus_4;item_eagle;item_staff_of_wizardry;item_staff_of_wizardry;item_upgrade_scroll_5"
 		}
 	}
 
-
-	"item_diffusal_blade_5"
+	"item_diffusal_blade_cus_5"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffus5"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffus5"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
-		"AbilitySharedCooldown"			"diffusal"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
+
+		"AbilitySharedCooldown"			"diffus1"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		"ItemPermanent"					"1"
- 
- 		"AbilityValues"
-		{
-			"bonus_agility"			"60"
-			"bonus_intellect"		"30"
-			"mana_break"	"70"
-			"illusion_mana_break"	"30"
-			"damage_per_burn"		"3"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-			"bonus_movement_speed"				"40"
-			"decrease_movement_speed"			"40"
-			"duration"	"5"
+		"AbilityValues"
+		{
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
+
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
 
-		"item_recipe_diffusal_blade_6"
-	{		
+	"item_recipe_diffusal_blade_cus_6"
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_diffusal_blade_6"
+		"ItemResult"					"item_diffusal_blade_cus_6"
 		"ItemRequirements"
 		{
-			"01"						"item_diffusal_blade_5;item_eagle_2;item_upgrade_scroll_6"
+			"01"						"item_diffusal_blade_cus_5;item_eagle_2;item_upgrade_scroll_6"
 		}
 	}
 
-
-	"item_diffusal_blade_6"
+	"item_diffusal_blade_cus_6"
 	{
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_diffusal_blade_custom"
-        "AbilityTextureName"         	"diffus6"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_diffusal_blade_custom"
+		"AbilityTextureName"         	"diffus6"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
- 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"25"
-		"AbilitySharedCooldown"			"diffusal"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
- 
- 		"ItemCost"						"2500"
+
+		"AbilitySharedCooldown"			"diffus1"
 		"ItemShopTags"					"agi;int;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"diffusal blade 1"
-		"ItemPermanent"					"1"
- 
- 		"AbilityValues"
-		{
-			"bonus_agility"			"120"
-			"bonus_intellect"		"50"
-			"mana_break"	"80"
-			"illusion_mana_break"	40
-			"damage_per_burn"		"4"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-			"bonus_movement_speed"				"40"
-			"decrease_movement_speed"			"40"
-			"duration"	"5"
+		"AbilityValues"
+		{
+			"bonus_agility"				"15 20 30 45 60 120"
+			"bonus_intellect"			"10 15 20 25 30 50"
+			"mana_break"				"10 30 40 50 70 80"
+			"illusion_mana_break"		"8 10 15 20 30 40"
+			"damage_per_burn"			"1 1 1 2 3 4"
+
+			"bonus_movement_speed"		"40"
+			"decrease_movement_speed"	"40"
+			"duration"					"4 4 4 5 5 5"
 		}
 	}
-
 }

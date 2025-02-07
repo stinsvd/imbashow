@@ -1,13 +1,11 @@
 "DOTAAbilities"
-
 {
-
 	"item_recipe_octarine_core_1"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -17,39 +15,38 @@
 			"01"						"item_mantle;item_mantle;item_ring_of_basilius;item_upgrade_scroll_1"
 		}
 	}
- 
 
 	"item_octarine_core_1"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"octarine1"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
 		"ItemShopTags"					"int;mana_regen;cooldown"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_intellect"		"9"
-			"bonus_mana"			"100"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"3"
-			"bonus_mana_regen"		"2.5"
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
-	
+
 	"item_recipe_octarine_core_2"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -59,38 +56,38 @@
 			"01"						"item_octarine_core_1;item_sobi_mask;item_sobi_mask;item_robe;item_upgrade_scroll_2"
 		}
 	}
- 
+
 	"item_octarine_core_2"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"octarine2"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
 		"ItemShopTags"					"int;mana_regen;cooldown"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_intellect"		"12"
-			"bonus_mana"			"250"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"5"
-			"bonus_mana_regen"		"7"
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
-		
+
 	"item_recipe_octarine_core_3"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -100,39 +97,38 @@
 			"01"						"item_octarine_core_2;item_void_stone;item_staff_of_wizardry;item_upgrade_scroll_3"
 		}
 	}
- 
 
 	"item_octarine_core_3"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"octarine3"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
 		"ItemShopTags"					"int;mana_regen;cooldown"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_intellect"		"25"
-			"bonus_mana"			"400"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"10"
-			"bonus_mana_regen"		"9"
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
-		
+
 	"item_recipe_octarine_core_4"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -142,40 +138,38 @@
 			"01"						"item_octarine_core_3;item_energy_booster;item_energy_booster;item_aether_lens;item_upgrade_scroll_4"
 		}
 	}
- 
+
 	"item_octarine_core_4"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"			"octarine4"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
 		"ItemShopTags"					"int;mana_regen;cooldown;cast_range_bonus"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_intellect"		"35"
-			"bonus_mana"			"1000"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"15"
-			"bonus_mana_regen"		"12"
-			"cast_range_bonus"		"200"                 // добавляется от Aether Lens
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
-	
-		
+
 	"item_recipe_octarine_core_5"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -185,41 +179,38 @@
 			"01"						"item_octarine_core_4;item_soul_booster;tiara_of_selemene;item_upgrade_scroll_5"
 		}
 	}
- 
-
 
 	"item_octarine_core_5"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"octarine5"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
 		"ItemShopTags"					"int;mana_regen;cooldown;cast_range_bonus"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"800"
-			"bonus_intellect"		"40"
-			"bonus_mana"			"1550"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"20"
-			"bonus_mana_regen"		"15"
-			"cast_range_bonus"		"275"                   // добавляется от Aether Lens
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
-		
+
 	"item_recipe_octarine_core_6"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -229,32 +220,29 @@
 			"01"						"item_octarine_core_5;item_mystic_staff_2;item_upgrade_scroll_6"
 		}
 	}
- 
 
-	
 	"item_octarine_core_6"
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_octarine_core"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"octarine6"
-
-		"ItemCost"						"5200"
+		"AbilityTextureName"			"octarine6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
 		"ItemShopTags"					"int;mana_regen;cooldown"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"octarine core;octarine"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"SuggestLategame"				"1"
 		
 		"AbilityValues"
 		{
-			"bonus_health"			"1500"
-			"bonus_intellect"		"110"
-			"bonus_mana"			"2500"
-			"magical_resistance"	"0"
-			"cooldown_reduction"	"25"
-			"bonus_mana_regen"		"20"
-			"cast_range_bonus"		"350"   
+			"bonus_health"			"0 0 0 0 800 1500"
+			"bonus_intellect"		"9 12 25 35 40 110"
+			"bonus_mana"			"100 250 400 1000 1550 2500"
+			"bonus_mana_regen"		"2.5 7 9 12 15 20"
+			"cooldown_reduction"	"3 5 10 15 20 25"
+			"cast_range_bonus"		"0 0 0 200 275 350"
 		}
 	}
 }

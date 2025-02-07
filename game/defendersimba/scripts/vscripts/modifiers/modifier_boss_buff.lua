@@ -25,7 +25,7 @@ function modifier_boss_buff:DeclareFunctions()
         MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_MODEL_SCALE,
-        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT,
+		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING,
     }
 end
 
@@ -82,5 +82,3 @@ end
 function modifier_boss_buff:GetModifierPercentageCooldownStacking()
     return self.cooldown_reduction
 end
-
- 

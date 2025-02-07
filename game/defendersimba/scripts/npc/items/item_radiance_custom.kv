@@ -1,238 +1,236 @@
 "DOTAAbilities"
 {
+	"item_recipe_radiance_custom_1"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_1"
+		"ItemRequirements"
+		{
+			"01"                        "item_circlet;item_circlet;item_circlet;item_circlet;item_upgrade_scroll_1"
+		}
+	}
 
+	"item_radiance_custom_1"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_1"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-    "item_recipe_radiance_custom_1"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_1"
-            "ItemRequirements"
-            {
-                "01"                        "item_circlet;item_circlet;item_circlet;item_circlet;item_upgrade_scroll_1"
-            }
-        }
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 
-    "item_radiance_custom_1"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_1"
+	"item_recipe_radiance_custom_2"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_2"
+		"ItemRequirements"
+		{
+			"01"                        "item_radiance_custom_1;item_blades_of_attack;item_crown;item_upgrade_scroll_2"
+		}
+	}
 
-        "ItemCost"                      "1000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
+	"item_radiance_custom_2"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_2"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-        "AbilityValues"
-        {
-            "bonus_damage"              "20"
-            "bonus_strength"            "8"
-            "bonus_agility"             "8"
-            "bonus_intellect"           "8"
-            "aura_radius"               "900"
-            "aura_damage"               "50"
-        }
-    }
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 
-    "item_recipe_radiance_custom_2"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_2"
-            "ItemRequirements"
-            {
-                "01"                        "item_radiance_custom_1;item_blades_of_attack;item_crown;item_upgrade_scroll_2"
-            }
-        }
+	"item_recipe_radiance_custom_3"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_3"
+		"ItemRequirements"
+		{
+			"01"                        "item_radiance_custom_2;item_broadsword;item_diadem;item_upgrade_scroll_3"
+		}
+	}
 
-    "item_radiance_custom_2"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_2"
+	"item_radiance_custom_3"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_3"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-        "ItemCost"                      "2000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 
-        "AbilityValues"
-        {
-            "bonus_damage"              "30"
-            "bonus_strength"            "10"
-            "bonus_agility"             "10"
-            "bonus_intellect"           "10"
-            "aura_radius"               "900"
-            "aura_damage"               "100"
-        }
-    }
+	"item_recipe_radiance_custom_4"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_4"
+		"ItemRequirements"
+		{
+			"01"                        "item_radiance_custom_3;item_claymore;item_ultimate_orb;item_upgrade_scroll_4"
+		}
+	}
 
-    "item_recipe_radiance_custom_3"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_3"
-            "ItemRequirements"
-            {
-                "01"                        "item_radiance_custom_2;item_broadsword;item_diadem;item_upgrade_scroll_3"
-            }
-        }
+	"item_radiance_custom_4"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_4"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-    "item_radiance_custom_3"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_3"
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 
-        "ItemCost"                      "3000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
+	"item_recipe_radiance_custom_5"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_5"
+		"ItemRequirements"
+		{
+			"01"                        "item_radiance_custom_4;item_diadem;item_mithril_hammer;item_demon_edge;item_upgrade_scroll_5"
+		}
+	}
 
-        "AbilityValues"
-        {
-            "bonus_damage"              "40"
-            "bonus_strength"            "12"
-            "bonus_agility"             "12"
-            "bonus_intellect"           "12"
-            "aura_radius"               "900"
-            "aura_damage"               "200"
-        }
-    }
+	"item_radiance_custom_5"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_5"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-    "item_recipe_radiance_custom_4"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_4"
-            "ItemRequirements"
-            {
-                "01"                        "item_radiance_custom_3;item_claymore;item_ultimate_orb;item_upgrade_scroll_4"
-            }
-        }
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 
-    "item_radiance_custom_4"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_4"
+	"item_recipe_radiance_custom_6"
+	{
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe"
+		"Model"                         "models/props_gameplay/recipe.mdl"
+		"ItemCost"                      "0"
+		"ItemShopTags"                  ""
+		
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_radiance_custom_6"
+		"ItemRequirements"
+		{
+			"01"                        "item_radiance_custom_5;item_ultimate_orb;item_ultimate_orb;item_relic;item_upgrade_scroll_6"
+		}
+	}
 
-        "ItemCost"                      "4000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
+	"item_radiance_custom_6"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_radiance_custom"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "radiance_6"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"ItemShopTags"                  "damage;unique"
+		"ItemQuality"                   "epic"
+		"ItemAliases"                   "radiance_custom"
 
-        "AbilityValues"
-        {
-            "bonus_damage"              "50"
-            "bonus_strength"            "15"
-            "bonus_agility"             "15"
-            "bonus_intellect"           "15"
-            "aura_radius"               "1000"
-            "aura_damage"               "350"
-        }
-    }
-
-    "item_recipe_radiance_custom_5"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_5"
-            "ItemRequirements"
-            {
-                "01"                        "item_radiance_custom_4;item_diadem;item_mithril_hammer;item_demon_edge;item_upgrade_scroll_5"
-            }
-        }
-
-    "item_radiance_custom_5"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_5"
-
-        "ItemCost"                      "5000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
-
-        "AbilityValues"
-        {
-            "bonus_damage"              "60"
-            "bonus_strength"            "18"
-            "bonus_agility"             "18"
-            "bonus_intellect"           "18"
-            "aura_radius"               "1100"
-            "aura_damage"               "500"
-        }
-    }
-
-    "item_recipe_radiance_custom_6"
-        {       
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "ItemCost"                      "0" 
-            "ItemShopTags"                  ""
-            
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_radiance_custom_6"
-            "ItemRequirements"
-            {
-                "01"                        "item_radiance_custom_5;item_ultimate_orb;item_ultimate_orb;item_relic;item_upgrade_scroll_6"
-            }
-        }
-
-    "item_radiance_custom_6"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_radiance_custom"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"            "radiance_6"
-
-        "ItemCost"                      "6000"
-        "ItemShopTags"                  "damage;unique"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "radiance_custom"
-
-        "AbilityValues"
-        {
-            "bonus_damage"              "80"
-            "bonus_strength"            "20"
-            "bonus_agility"             "20"
-            "bonus_intellect"           "20"
-            "aura_radius"               "1200"
-            "aura_damage"               "600"
-        }
-    }
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 30 40 50 60 80"
+			"bonus_strength"		"8 10 12 15 18 20"
+			"bonus_agility"			"8 10 12 15 18 20"
+			"bonus_intellect"		"8 10 12 15 18 20"
+			"aura_radius"			"900 900 900 1000 1100 1200"
+			"aura_damage"			"50 100 200 350 500 600"
+		}
+	}
 }

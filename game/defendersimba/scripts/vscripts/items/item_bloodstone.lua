@@ -57,7 +57,7 @@ function item_bloodstone_1:OnSpellStart()
     dagonTarget(target)
 
     for _, enemy in pairs(enemies) do
-        if enemy ~= target then    
+        if enemy ~= target then
             if targetCount >= max_targets then break end
             dagonTarget(enemy)
        end
@@ -123,31 +123,37 @@ function modifier_item_bloodstone_custom:GetModifierConstantManaRegen()
     return self.bonus_mp_regen
 end
 
-function modifier_item_bloodstone_custom:OnTakeDamage( keys )
-	if keys.attacker == self:GetParent() and not keys.unit:IsBuilding() and not keys.unit:IsOther() then		
-		if self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and keys.damage_category == DOTA_DAMAGE_CATEGORY_SPELL and keys.inflictor and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL then
-			self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
-			ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
-			
-			-- "However, when attacking illusions, the heal is not affected by the illusion's changed incoming damage values."
-			-- This is EXTREMELY rough because I am not aware of any functions that can explicitly give you the incoming/outgoing damage of an illusion, or to give you the "displayed" damage when you're hitting illusions, which show numbers as if you were hitting a non-illusion.
-			if keys.unit:IsIllusion() then
-				if keys.damage_type == DAMAGE_TYPE_PHYSICAL and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
-					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
-				elseif keys.damage_type == DAMAGE_TYPE_MAGICAL and keys.unit.GetMagicalArmorValue then
-					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetMagicalArmorValue()))
-				elseif keys.damage_type == DAMAGE_TYPE_PURE then
-					keys.damage = keys.original_damage
-				end
-			end
-            local spell_lifesteal =   self:GetAbility():GetSpecialValueFor("spell_lifesteal") 
+function modifier_item_bloodstone_custom:OnTakeDamage(keys)
+	if not IsServer() then return end
+	local target = keys.unit
+	local attacker = keys.attacker
+	if attacker ~= self:GetParent() then return end
+	print(keys.damage, keys.original_damage)
+	if attacker:FindAllModifiersByName(self:GetName())[1] ~= self then return end
+	if target:IsBuilding() or target:IsOther() then return end
+	if not keys.inflictor or keys.damage_category ~= DOTA_DAMAGE_CATEGORY_SPELL then return end
 
-            if keys.inflictor and keys.inflictor == self:GetAbility() then
-                spell_lifesteal =   self:GetAbility():GetSpecialValueFor("spell_lifesteal_active") 
-            end
+	if bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) == DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL then return end
+	if bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
+	local damage = keys.damage
+	if damage <= 0 then return end
 
-             keys.attacker:Heal(math.max(keys.damage, 0) * (spell_lifesteal) * 0.01, keys.attacker)				
+	local lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
+	ParticleManager:SetParticleControl(lifesteal_pfx, 0, attacker:GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(lifesteal_pfx)
+
+	-- "However, when attacking illusions, the heal is not affected by the illusion's changed incoming damage values."
+	-- This is EXTREMELY rough because I am not aware of any functions that can explicitly give you the incoming/outgoing damage of an illusion, or to give you the "displayed" damage when you're hitting illusions, which show numbers as if you were hitting a non-illusion.
+	if target:IsIllusion() then
+		if keys.damage_type == DAMAGE_TYPE_PHYSICAL and target.GetPhysicalArmorValue and GetReductionFromArmor then
+			damage = keys.original_damage * (1 - GetReductionFromArmor(target:GetPhysicalArmorValue(false)))
+		elseif keys.damage_type == DAMAGE_TYPE_MAGICAL and target.GetMagicalArmorValue then
+			damage = keys.original_damage * (1 - GetReductionFromArmor(target:GetMagicalArmorValue()))
+		elseif keys.damage_type == DAMAGE_TYPE_PURE then
+			damage = keys.original_damage
 		end
 	end
+
+	local spell_lifesteal = keys.inflictor == self:GetAbility() and self:GetAbility():GetSpecialValueFor("spell_lifesteal_active") or self:GetAbility():GetSpecialValueFor("spell_lifesteal")
+	attacker:HealWithParams(damage * (spell_lifesteal / 100), self:GetAbility(), false, true, attacker, true)
 end

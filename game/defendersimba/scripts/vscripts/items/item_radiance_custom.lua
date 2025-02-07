@@ -43,18 +43,11 @@ function modifier_item_radiance_custom:OnCreated()
 
     if IsServer() then
         -- Создаем частицу ауры
-        self.particle = ParticleManager:CreateParticle("particles/items_fx/radiance.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-        ParticleManager:SetParticleControl(self.particle, 1, Vector(self.radius, 0, 0)) -- Устанавливаем радиус частицы
-        self:AddParticle(self.particle, false, false, -1, false, false) -- Привязываем частицу к модификатору
+        local particle = ParticleManager:CreateParticle("particles/items_fx/radiance.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        ParticleManager:SetParticleControl(particle, 1, Vector(self.radius, 0, 0)) -- Устанавливаем радиус частицы
+        self:AddParticle(particle, false, false, -1, false, false) -- Привязываем частицу к модификатору
 
         self:StartIntervalThink(1.0)  -- Аура будет наносить урон каждую секунду
-    end
-end
-
-function modifier_item_radiance_custom:OnDestroy()
-    if IsServer() and self.particle then
-        ParticleManager:DestroyParticle(self.particle, false)
-        ParticleManager:ReleaseParticleIndex(self.particle)
     end
 end
 
@@ -75,7 +68,17 @@ function modifier_item_radiance_custom:GetModifierPreAttack_BonusDamage()
 end
 
 function modifier_item_radiance_custom:OnIntervalThink()
+	if not IsServer() then return end
+	if not self:GetAbility() then return end
     local parent = self:GetParent()
+    local level = self:GetAbility():GetLevel()
+    local other_modifiers = parent:FindAllModifiersByName(self:GetName())
+    for _, modifier in pairs(other_modifiers) do
+        if modifier ~= self and modifier:GetAbility():GetLevel() > level then
+            return
+        end
+    end
+	
     local enemies = FindUnitsInRadius(
         parent:GetTeamNumber(),
         parent:GetAbsOrigin(),

@@ -1,12 +1,11 @@
 "DOTAAbilities"
 {
-
 	"item_recipe_bloodstone_1"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -21,44 +20,42 @@
 	{
  		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_bloodstone"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
  		"AbilityTextureName" 			"bloodstone_1"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"100"
- 				"spell_lifesteal_active"		"25"
- 				"max_targets"		"3"
- 				"radius"		"200"
-
- 				"bonus_all_stats"			"5"
- 				"bonus_health"			"100"
-				"bonus_mana"			"100"
-				"bonus_mp_regen"		"1"
-				"spell_lifesteal"		"5"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
 	}
 
 	"item_recipe_bloodstone_2"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -75,42 +72,43 @@
 		"ScriptFile"					"items/item_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   		"AbilityTextureName" 			"bloodstone_2"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"300"
- 				"spell_lifesteal_active"		"35"
- 				"max_targets"		"4"
- 				"radius"		"300"
-
- 				"bonus_all_stats"			"10"
- 				"bonus_health"			"200"
-				"bonus_mana"			"200"
-				"bonus_mp_regen"		"3"
-				"spell_lifesteal"		"10"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
 	}
 
 	"item_recipe_bloodstone_3"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -127,42 +125,43 @@
 		"ScriptFile"					"items/item_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   		"AbilityTextureName" 			"bloodstone_3"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"500"
- 				"spell_lifesteal_active"		"50"
- 				"max_targets"		"5"
- 				"radius"		"400"
-
- 				"bonus_all_stats"			"15"
- 				"bonus_health"			"450"
-				"bonus_mana"			"450"
-				"bonus_mp_regen"		"8"
-				"spell_lifesteal"		"15"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
 	}
 
 	"item_recipe_bloodstone_4"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -179,42 +178,43 @@
 		"ScriptFile"					"items/item_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   		"AbilityTextureName" 			"bloodstone_4"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"800"
- 				"spell_lifesteal_active"		"75"
- 				"max_targets"		"6"
- 				"radius"		"500"
-
- 				"bonus_all_stats"		"20"
- 				"bonus_health"			"650"
-				"bonus_mana"			"650"
-				"bonus_mp_regen"		"12"
-				"spell_lifesteal"		"20"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
-	}	
+	}
 
 	"item_recipe_bloodstone_5"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -231,42 +231,43 @@
 		"ScriptFile"					"items/item_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   		"AbilityTextureName" 			"bloodstone_5"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"1100"
- 				"spell_lifesteal_active"		"100"
- 				"max_targets"		"8"
- 				"radius"		"550"
-
- 				"bonus_all_stats"			"30"
- 				"bonus_health"			"950"
-				"bonus_mana"			"950"
-				"bonus_mp_regen"		"18"
-				"spell_lifesteal"		"25"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
 	}
 
 	"item_recipe_bloodstone_6"
-	{		
+	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -283,34 +284,34 @@
 		"ScriptFile"					"items/item_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   		"AbilityTextureName" 			"bloodstone_6"
- 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
-		"AbilityManaCost"				"0"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+ 		"AbilityCastRange"				"0 700 750 800 850 900"
+ 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0 35 32 29 26 23"
+		"AbilityManaCost"				"0 120 140 160 180 200"
 
- 		"ItemCost"						"4400"
+		"AbilitySharedCooldown"			"dagon"
  		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"1"
 		"SuggestLategame"				"1"
 		
  		"AbilityValues"
 		{
- 				"damage"			"1500"
- 				"spell_lifesteal_active"		"100"
- 				"max_targets"		"10"
- 				"radius"		"600"
-
- 				"bonus_all_stats"			"40"
- 				"bonus_health"			"1500"
-				"bonus_mana"			"1500"
-				"bonus_mp_regen"		"22"
-				"spell_lifesteal"		"35"
-
+			"bonus_all_stats"			"5 10 15 20 30 40"
+			"bonus_health"				"100 200 450 650 950 1500"
+			"bonus_mana"				"100 200 450 650 950 1500"
+			"bonus_mp_regen"			"1 3 8 12 18 22"
+			"spell_lifesteal"			"5 10 15 20 25 35"
+			"damage"					"0 300 500 800 1100 1500"
+			"spell_lifesteal_active"	"25 35 50 75 100 100"
+			"max_targets"				"0 4 5 6 8 10"
+			"radius"					"0 300 400 500 550 600"
 		}
-	}	
-
+	}
 }

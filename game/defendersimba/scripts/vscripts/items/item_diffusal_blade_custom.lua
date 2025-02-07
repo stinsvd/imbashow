@@ -1,51 +1,48 @@
 LinkLuaModifier("modifier_item_diffusal_blade_passive_custom", "items/item_diffusal_blade_custom", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_diffusal_blade_self_active_custom", "items/item_diffusal_blade_custom", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_diffusal_blade_enemy_active_custom", "items/item_diffusal_blade_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_diffusal_blade_active_custom", "items/item_diffusal_blade_custom", LUA_MODIFIER_MOTION_NONE)
 
-item_diffusal_blade_1 = class({})
-item_diffusal_blade_2 = item_diffusal_blade_1  
-item_diffusal_blade_3 = class({})
-item_diffusal_blade_4 = item_diffusal_blade_3
-item_diffusal_blade_5 = item_diffusal_blade_3
-item_diffusal_blade_6 = item_diffusal_blade_3
- 
-function item_diffusal_blade_1:OnSpellStart()
+item_diffusal_blade_cus_1 = item_diffusal_blade_cus_1 or class({})
+item_diffusal_blade_cus_2 = item_diffusal_blade_cus_1
+item_diffusal_blade_cus_3 = item_diffusal_blade_cus_3 or class({})
+item_diffusal_blade_cus_4 = item_diffusal_blade_cus_3
+item_diffusal_blade_cus_5 = item_diffusal_blade_cus_3
+item_diffusal_blade_cus_6 = item_diffusal_blade_cus_3
+
+function item_diffusal_blade_cus_1:OnSpellStart()
     local target = self:GetCursorTarget()
     local duration = self:GetSpecialValueFor("duration")
-    local team = self:GetCaster():GetTeamNumber()
 
     EmitSoundOn("DOTA_Item.DiffusalBlade.Target", target)
 
-    target:AddNewModifier(self:GetCaster(), self, "modifier_item_diffusal_blade_enemy_active_custom", {duration = duration})
+	target:AddNewModifier(self:GetCaster(), self, "modifier_diffusal_blade_active_custom", {duration = duration * (1 - target:GetStatusResistance())})
 end
 
-function item_diffusal_blade_1:GetIntrinsicModifierName()
+function item_diffusal_blade_cus_1:GetIntrinsicModifierName()
     return "modifier_item_diffusal_blade_passive_custom"
 end
 
- 
-function item_diffusal_blade_3:OnSpellStart()
+
+function item_diffusal_blade_cus_3:OnSpellStart()
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     local duration = self:GetSpecialValueFor("duration")
-    local team = self:GetCaster():GetTeamNumber()
 
     EmitSoundOn("DOTA_Item.DiffusalBlade.Target", caster)
 
     caster:Purge(false, true, false, false, false)
-    caster:AddNewModifier(caster, self, "modifier_item_diffusal_blade_self_active_custom", {duration = duration})
+    caster:AddNewModifier(caster, self, "modifier_diffusal_blade_active_custom", {duration = duration})
     if target == caster then return end
 
-    if target:GetTeamNumber() == caster:GetTeamNumber() then 
+    if target:GetTeamNumber() == caster:GetTeamNumber() then
         target:Purge(false, true, false, false, false)
-        target:AddNewModifier(caster, self, "modifier_item_diffusal_blade_self_active_custom", {duration = duration})
-    else 
+    else
         target:Purge(true, false, false, false, false)
-        target:AddNewModifier(self:GetCaster(), self, "modifier_item_diffusal_blade_enemy_active_custom", {duration = duration})
+        duration = duration * (1 - target:GetStatusResistance())
     end
+	target:AddNewModifier(caster, self, "modifier_diffusal_blade_active_custom", {duration = duration})
 end
 
-function item_diffusal_blade_3:GetIntrinsicModifierName()
+function item_diffusal_blade_cus_3:GetIntrinsicModifierName()
     return "modifier_item_diffusal_blade_passive_custom"
 end
 
@@ -109,68 +106,20 @@ function modifier_item_diffusal_blade_passive_custom:GetModifierProcAttack_Bonus
     return 0
 end
 
-modifier_item_diffusal_blade_self_active_custom = class({})
 
-function modifier_item_diffusal_blade_self_active_custom:IsHidden()
-    return false
+modifier_diffusal_blade_active_custom = class({})
+function modifier_diffusal_blade_active_custom:IsHidden() return false end
+function modifier_diffusal_blade_active_custom:GetEffectName() return "particles/items_fx/disperser_buff.vpcf" end
+function modifier_diffusal_blade_active_custom:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_diffusal_blade_active_custom:OnCreated() self:OnRefresh() end
+function modifier_diffusal_blade_active_custom:OnRefresh()
+	local ms_bonus = self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
+	local ms_reduc = self:GetAbility():GetSpecialValueFor("decrease_movement_speed")
+	self.bonus_movement_speed = (self:GetParent():GetTeamNumber() == self:GetCaster():GetTeamNumber()) and ms_bonus or (ms_reduc * (-1))
 end
-
-function modifier_item_diffusal_blade_self_active_custom:IsDebuff()
-    return false
-end
-
-function modifier_item_diffusal_blade_self_active_custom:DeclareFunctions()
+function modifier_diffusal_blade_active_custom:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 end
-
-function modifier_item_diffusal_blade_self_active_custom:OnCreated()
-    if IsServer() then
-        self.particle_fx = ParticleManager:CreateParticle("particles/items_fx/disperser_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    end
-end
-
-function modifier_item_diffusal_blade_self_active_custom:OnDestroy()
-    if IsServer() and self.particle_fx then
-        ParticleManager:DestroyParticle(self.particle_fx, false)
-        ParticleManager:ReleaseParticleIndex(self.particle_fx)
-    end
-end
-
-function modifier_item_diffusal_blade_self_active_custom:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
-end
-
-modifier_item_diffusal_blade_enemy_active_custom = class({})
-
-function modifier_item_diffusal_blade_enemy_active_custom:IsHidden()
-    return false
-end
-
-function modifier_item_diffusal_blade_enemy_active_custom:IsDebuff()
-    return true
-end
-
-function modifier_item_diffusal_blade_enemy_active_custom:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
-    }
-end
-
-function modifier_item_diffusal_blade_enemy_active_custom:OnCreated()
-    if IsServer() then
-        self.particle_fx = ParticleManager:CreateParticle("particles/items_fx/diffusal_slow.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    end
-end
-
-function modifier_item_diffusal_blade_enemy_active_custom:OnDestroy()
-    if IsServer() and self.particle_fx then
-        ParticleManager:DestroyParticle(self.particle_fx, false)
-        ParticleManager:ReleaseParticleIndex(self.particle_fx)
-    end
-end
-
-function modifier_item_diffusal_blade_enemy_active_custom:GetModifierMoveSpeedBonus_Percentage()
-    return -self:GetAbility():GetSpecialValueFor("decrease_movement_speed")
-end
+function modifier_diffusal_blade_active_custom:GetModifierMoveSpeedBonus_Percentage() return self.bonus_movement_speed end

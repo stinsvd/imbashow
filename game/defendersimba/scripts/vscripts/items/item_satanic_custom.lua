@@ -49,7 +49,7 @@ function modifier_item_satanic_custom_active:OnAttackLanded(params)
 	local parent = self:GetParent()
 	if params.attacker == parent and not params.target:IsBuilding() then
 		local lifesteal = params.damage * (self.lifesteal_percent_activate / 100)
-		parent:HealWithParams(lifesteal, ability, true, false, parent, false)
+		parent:HealWithParams(lifesteal, ability, true, true, parent, false)
 
 		local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.attacker)
 		ParticleManager:ReleaseParticleIndex(particle)
@@ -70,7 +70,7 @@ function modifier_item_satanic_custom:IsAuraActiveOnDeath() return false end
 function modifier_item_satanic_custom:GetAuraRadius() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_radius") end end
 function modifier_item_satanic_custom:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_INVULNERABLE end
 function modifier_item_satanic_custom:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
-function modifier_item_satanic_custom:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_item_satanic_custom:GetAuraSearchType() return DOTA_UNIT_TARGET_HEROES_AND_CREEPS end
 function modifier_item_satanic_custom:GetModifierAura() return "modifier_item_satanic_custom"..self.level.."_buff" end
 function modifier_item_satanic_custom:GetAuraEntityReject(target)
 	local level = self.level
@@ -136,7 +136,7 @@ function modifier_item_satanic_custom_buff:OnAttackLanded(params)
 		local lifesteal_pct = ability:GetSpecialValueFor("lifesteal_percent")
 		
 		local lifesteal = (params.damage * lifesteal_pct) / 100
-		parent:HealWithParams(lifesteal, ability, true, false, parent, false)
+		parent:HealWithParams(lifesteal, ability, true, true, parent, false)
 
 		local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.attacker)
 		ParticleManager:ReleaseParticleIndex(particle)

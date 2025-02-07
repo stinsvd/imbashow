@@ -95,7 +95,7 @@
 		"item"		"item_butterfly_1"
 		"item"		"item_daedalus_1"
 		"item"		"item_desolator_custom_1"
-		"item"		"item_diffusal_blade_1"
+		"item"		"item_diffusal_blade_cus_1"
 		"item"		"item_ethereal_blade_1"
 		"item"		"item_heart_of_tarrasque_1"
 		"item"		"item_magical_crit_1"
