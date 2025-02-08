@@ -373,11 +373,11 @@
 		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_3"					"Radiance #3"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_damage"		"+$damage"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_strength"	"+$str"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_agility"		"+$agi"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_intellect"	"+$int"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_damage"		"+$damage"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_strength"	"+$str"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_agility"		"+$agi"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_4"					"Radiance #4"
 		"DOTA_Tooltip_ability_item_radiance_custom_4_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
@@ -583,7 +583,7 @@
 		//=========================================================================================================
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_1"					"Ethereal Blade #1"
-		"DOTA_Tooltip_ability_item_ethereal_blade_1_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_1_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_intellect"		"+$int"
@@ -593,7 +593,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_damage"			"+$damage"
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_2"					"Ethereal Blade #2"
-		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_intellect"		"+$int"
@@ -603,7 +603,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_bonus_damage"			"+$damage"
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_3"					"Ethereal Blade #3"
-		"DOTA_Tooltip_ability_item_ethereal_blade_3_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_3_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_intellect"		"+$int"
@@ -613,7 +613,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_bonus_damage"			"+$damage"
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_4"					"Ethereal Blade #4"
-		"DOTA_Tooltip_ability_item_ethereal_blade_4_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_4_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_intellect"		"+$int"
@@ -623,7 +623,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_4_bonus_damage"			"+$damage"
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_5"					"Ethereal Blade #5"
-		"DOTA_Tooltip_ability_item_ethereal_blade_5_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_5_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_intellect"		"+$int"
@@ -633,7 +633,7 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_5_bonus_damage"			"+$damage"
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_6"					"Ethereal Blade #6"
-		"DOTA_Tooltip_ability_item_ethereal_blade_6_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
+		"DOTA_Tooltip_ability_item_ethereal_blade_6_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_intellect"		"+$int"
@@ -1253,8 +1253,9 @@
 //=========================================================================================================
 // Infernal (Warlock)
 //=========================================================================================================
+	"npc_dota_hero_warlock"					"Infernal"
 	"DOTA_Tooltip_ability_infrnl_stomp"					"Infernal Stomp"
-	"DOTA_Tooltip_ability_infrnl_stomp_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. \n<h1>Upgrade</h1> Increases impact damage by +%up_impact_base_damage%. <br> Increases burning damage by +%up_burn_base_damage%."
+	"DOTA_Tooltip_ability_infrnl_stomp_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. <br><br> Grants %shards_per_cast% Archon's Shard on cast. \n<h1>Upgrade</h1> Increases impact damage by +%up_impact_base_damage%. <br> Increases burning damage by +%up_burn_base_damage%."
 	"DOTA_Tooltip_ability_infrnl_stomp_impact_base_damage"		"BASE IMPACT DAMAGE:"
 	"DOTA_Tooltip_ability_infrnl_stomp_burn_base_damage"		"BASE BURN DAMAGE:"
 	"DOTA_Tooltip_ability_infrnl_stomp_impact_maxhp_damage"		"%MAX HP IMPACT DAMAGE:"
@@ -1266,21 +1267,21 @@
 	"DOTA_Tooltip_ability_infrnl_flaming_fists_hpleft_damage"		"%MISSING HEALTH DAMAGE:"
 	
 	"DOTA_Tooltip_ability_infrnl_immolation"					"Immolation"
-	"DOTA_Tooltip_ability_infrnl_immolation_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. <br><br> First costs mana to activate, then health to maintain. <br><br> Gives a random <b>upgrade</b> every %up_time% seconds of continuous maintenance. \n<h1>Upgrade</h1> Increases base damage per second by +%up_base_damage_per_second%."
+	"DOTA_Tooltip_ability_infrnl_immolation_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. <br><br> Initially costs mana to activate, then health to maintain. <br><br> Grants %up_shards% Archon's Shard every %up_time% seconds of continuous maintenance. \n<h1>Upgrade</h1> Increases base damage per second by +%up_base_damage_per_second%."
 	"DOTA_Tooltip_ability_infrnl_immolation_shard_description"		"Increases radius by %bonus_radius%."
 	"DOTA_Tooltip_ability_infrnl_immolation_note0"		"Consumes %health_per_second%%% current health per second to maintain."
 	"DOTA_Tooltip_ability_infrnl_immolation_base_damage_per_second"			"BASE DAMAGE PER SECOND:"
 	"DOTA_Tooltip_ability_infrnl_immolation_maxhp_damage_per_second"		"%MAX HP DAMAGE PER SECOND:"
 	
 	"DOTA_Tooltip_ability_infrnl_eonite_heart"					"Eonite Heart"
-	"DOTA_Tooltip_ability_infrnl_eonite_heart_description"		"Grants immunity to effects and increases health. \n<h1>Upgrade</h1> Sets the target on fire, dealing +%up_burn_damage% magical damage per second, and reduces magic resistance by %burn_magic_resistance%%% for %burn_duration% seconds."
+	"DOTA_Tooltip_ability_infrnl_eonite_heart_description"		"Allows the use of Eonite's power, increasing your health and granting debuff immunity. <br><br> Grants %shards_per_cast% Archon's Shard on cast. \n<h1>Upgrade</h1> Sets the target on fire, dealing +%up_burn_damage% magical damage per second and reduces magic resistance by %burn_magic_resistance%%% for %burn_duration% seconds."
 	"DOTA_Tooltip_ability_infrnl_eonite_heart_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_infrnl_eonite_heart_bonus_health_pct"		"%HEALTH BONUS:"
 	"DOTA_Tooltip_ability_infrnl_eonite_heart_burn_damage"			"BURN DAMAGE:"
 	
 	"DOTA_Tooltip_ability_infrnl_burning_spirit"					"Burning Spirit"
-	"DOTA_Tooltip_ability_infrnl_burning_spirit_description"		"Each time the golem uses an ability, it gains a spirit upgrade. <br><br> Can gain one of the following improvements: <br> - +%bonus_health% health <br> - +%bonus_mana% mana <br> - +%bonus_hp_regen% health regeneration <br> - +%bonus_gold% gold * hero level <br> - +%bonus_exp% experience * hero level <br> - <b>Upgrade</b> for Infernal Stomp <br> - <b>Upgrade</b> for Flaming Fists <br> - <b>Upgrade</b> for Immolation <br> - <b>Upgrade</b> for Eonite Heart"
-	"DOTA_Tooltip_ability_infrnl_burning_spirit_scepter_description"		"Grants %upgrades_per_cast% improvements per cast."
+	"DOTA_Tooltip_ability_infrnl_burning_spirit_description"		"The Infernal enhances his spirit every time he absorbs an Archon's Shard. <br><br> Each absorbed Archon's Shard grants one of the following enhancements: <br> - +%bonus_health% health <br> - +%bonus_mana% mana <br> - +%bonus_hp_regen% health regeneration <br> - +%bonus_gold% gold * hero level <br> - +%bonus_exp% experience * hero level <br> - <b>Upgrade</b> for Infernal Stomp <br> - <b>Upgrade</b> for Flaming Fists <br> - <b>Upgrade</b> for Immolation <br> - <b>Upgrade</b> for Eonite Heart"
+	"DOTA_Tooltip_ability_infrnl_burning_spirit_scepter_description"		"Each absorbed Archon's Shard grants %upgrades_per_cast% upgrades."
 	
 	"DOTA_Tooltip_modifier_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_modifier_infrnl_immolation_description"		"Deals magical damage in the area."
@@ -1288,5 +1289,6 @@
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_description"		"Grants debuff immunity. Health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%."
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Eonite Heart Burn"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Deals magical damage. Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"
     }
 }

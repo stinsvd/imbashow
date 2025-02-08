@@ -7,9 +7,7 @@ end
 -- Время спавна нейтралов
 SPAWN_TIME = 1
 
-function NeutralManager:Init() 
-
-    
+function NeutralManager:Init()
     for level = 1, 10 do
         local points = Entities:FindAllByName("creeps_"..level.."_point")
 
@@ -35,7 +33,7 @@ function NeutralManager:SpawnCamp(point)
 
     for _, npc in ipairs(camp) do
         for i = 1, npc.count do
-            local unit = CreateUnitByName(npc.unit, spawnPoint + RandomVector(100), true, nil, nil, DOTA_TEAM_NEUTRALS)
+            local unit = CreateUnitByName(npc.unit, spawnPoint + RandomVector(RandomInt(25, 125)), true, nil, nil, DOTA_TEAM_NEUTRALS)
             unit.neutralCamp = point
         end
     end
@@ -47,11 +45,11 @@ function NeutralManager:OnEntityKilled(event)
     if killedUnit.neutralCamp then
         local point = killedUnit.neutralCamp
         point.countUnits = point.countUnits - 1
-        print(point.countUnits)
+	--	print(point.countUnits)
         if point.countUnits <= 0 then
             Timers:CreateTimer(SPAWN_TIME, function()
                 self:SpawnCamp(point)
-            end)   
+            end)
         end
     end
 end

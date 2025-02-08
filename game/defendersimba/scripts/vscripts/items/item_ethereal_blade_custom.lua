@@ -21,28 +21,20 @@ function item_ethereal_blade_1:OnSpellStart()
 	
  	local duration					=	self:GetSpecialValueFor("duration")
  	local projectile_speed			=	self:GetSpecialValueFor("projectile_speed")
- 	
-	local target = self:GetCursorTarget()
  
     caster:EmitSound("DOTA_Item.EtherealBlade.Activate")
 
-    local projectile = {
-        Target 				= target,
-        Source 				= caster,
-        Ability 			= self,
-        EffectName 			= "particles/items_fx/ethereal_blade.vpcf",
-        iMoveSpeed			= projectile_speed,
-        vSourceLoc 			= self:GetCaster(),
-        bDrawsOnMinimap 	= false,
-        bDodgeable 			= true,
-        bIsAttack 			= false,
-        bVisibleToEnemies 	= true,
-        bReplaceExisting 	= false,
-        flExpireTime 		= GameRules:GetGameTime() + 20,
-        bProvidesVision 	= false,
-    }
-    
-    ProjectileManager:CreateTrackingProjectile(projectile)
+	local projectile = {
+		Target = target,
+		Source = caster,
+		Ability = self,
+		EffectName = "particles/items_fx/ethereal_blade.vpcf",
+		iMoveSpeed = projectile_speed,
+		bDodgeable = true,
+		bVisibleToEnemies = true,
+		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+	}
+	ProjectileManager:CreateTrackingProjectile(projectile)
 end
 
 function item_ethereal_blade_1:OnProjectileHit(target, location)
@@ -227,7 +219,7 @@ function modifier_item_ethereal_blade_custom:OnSpellTargetReady(params)
     local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage")
     local damageCrit = self:GetAbility():GetSpecialValueFor("spell_crit_multiplier")
 
-    if damageCrit then 
+    if damageCrit then
         damage = damage + parent:GetAverageTrueAttackDamage(nil) * (damageCrit/100)
     end
 

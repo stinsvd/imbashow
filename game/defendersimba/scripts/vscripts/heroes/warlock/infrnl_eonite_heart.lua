@@ -18,6 +18,13 @@ function infrnl_eonite_heart:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	
 	caster:EmitSound("Hero_Leshrac.Nihilism.Cast")
+	local upgrade = caster:FindModifierByName("modifier_infrnl_burning_spirit")
+	if upgrade then
+		local shards_per_cast = self:GetSpecialValueFor("shards_per_cast")
+		for i = 1, shards_per_cast do
+			upgrade:IncrementStackCount()
+		end
+	end
 	caster:AddNewModifier(caster, self, "modifier_infrnl_eonite_heart", {duration = duration})
 end
 
@@ -26,7 +33,7 @@ modifier_infrnl_eonite_heart = modifier_infrnl_eonite_heart or class({})
 function modifier_infrnl_eonite_heart:IsHidden() return false end
 function modifier_infrnl_eonite_heart:IsPurgable() return false end
 function modifier_infrnl_eonite_heart:GetStatusEffectName() return "particles/custom/abilities/heroes/infrnl_eonite_heart/status_effect_infrnl_eonite_heart.vpcf" end
-function modifier_infrnl_eonite_heart:StatusEffectPriority() return 1 end
+function modifier_infrnl_eonite_heart:StatusEffectPriority() return 100 end
 function modifier_infrnl_eonite_heart:GetEffectName() return "particles/custom/abilities/heroes/infrnl_eonite_heart/infrnl_eonite_heart_ambient.vpcf" end
 function modifier_infrnl_eonite_heart:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_infrnl_eonite_heart:OnCreated() self:OnRefresh() end

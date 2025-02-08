@@ -8,11 +8,6 @@ require('neutral_manager')
 require('boss_spawn')
 require('tables/wave_rewards')
 require('tables/boss_gold')
--- Подключаем модификатор
-require('modifiers/modifier_golem_ai')
-
--- Регистрируем модификатор
-LinkLuaModifier("modifier_golem_ai", "modifiers/modifier_golem_ai", LUA_MODIFIER_MOTION_NONE)
 
 -- Объявляем класс GameMode
 if GameMode == nil then
@@ -97,7 +92,9 @@ function Precache(context)
     PrecacheResource("particle", "particles/dark_moon/darkmoon_creep_warning.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf", context)
-    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context )
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context)
+	PrecacheUnitByNameSync("npc_dota_badguys_tower_cus", context)
+	PrecacheUnitByNameSync("npc_dota_goodguys_tower_cus", context)
 
     for i = 1, GameMode.maxWaves do
         local unitName = "npc_dota_wave_" .. i
@@ -173,6 +170,7 @@ function GameMode:InitGameMode()
 	ListenToGameEvent("player_chat", Dynamic_Wrap(GameMode, "OnPlayerChat"), self)
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
     ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
+    ListenToGameEvent("dota_ability_channel_finished", Dynamic_Wrap(GameMode, "OnPlayerChannelAbility"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
 	CustomGameEventManager:RegisterListener("OnPlayerChoseBoss", Dynamic_Wrap(GameMode, "OnPlayerChoseBoss"))
     local mode = GameRules:GetGameModeEntity()
@@ -195,11 +193,8 @@ function GameMode:OnGameRulesStateChange()
         -- Запускаем таймер для показа сообщения на отметке -00:05
         Timers:CreateTimer(function()
             local time = GameRules:GetDOTATime(true, true)
-            print("Текущее игровое время: ", time)
-
             if time >= -5 and not GameMode.dialogShown then
                 GameMode.dialogShown = true
-
 
                 -- Начинаем проверять выбор игроков
                 GameMode:StartChoiceCheckTimer()
@@ -209,8 +204,57 @@ function GameMode:OnGameRulesStateChange()
                 return 1.0  -- Проверяем каждую секунду
             end
         end)
+		
+		GameMode.TowersTable = {
+			{key = "tower1", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower2", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower3", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower4", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower5", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower6", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower7", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "tower8", _1 = {unit = -1}, _2 = {unit = -1}},
+			{key = "baracks", _1 = {unit = -1}, _2 = {unit = -1}},
+		}
+		for _, towers in ipairs(GameMode.TowersTable) do
+			local tower_1 = Entities:FindByName(nil, towers.key.."_1")
+			local tower_2 = Entities:FindByName(nil, towers.key.."_2")
+			local team = string.match(towers.key, "tower[1-3]") and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
+			local nameT = string.match(towers.key, "tower[1-3]") and "npc_dota_goodguys_tower_cus" or "npc_dota_badguys_tower_cus"
+			local t1 = towers._1
+			local t2 = towers._2
+			if t1.unit == -1 then
+				local unit = CreateUnitByName(nameT, tower_1:GetAbsOrigin(), true, nil, nil, team)
+				unit.entName = {towers.key, "_1"}
+				t1.unit = unit:entindex()
+				t1.team = team
+				unit:SetAbsOrigin(tower_1:GetAbsOrigin())
+				unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+			end
+			if t2.unit == -1 then
+				local unit = CreateUnitByName(nameT, tower_2:GetAbsOrigin(), true, nil, nil, team)
+				unit.entName = {towers.key, "_2"}
+				t2.unit = unit:entindex()
+				t2.team = team
+				unit:SetAbsOrigin(tower_2:GetAbsOrigin())
+				unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+			end
+		end
     elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         print("Игра началась")
+
+		for _, towers in pairs(GameMode.TowersTable) do
+			local t1 = towers._1
+			local t2 = towers._2
+			if t1.unit ~= -1 then
+				local unit = EntIndexToHScript(t1.unit)
+				unit:RemoveModifierByName("modifier_invulnerable")
+			end
+			if t2.unit ~= -1 then
+				local unit = EntIndexToHScript(t2.unit)
+				unit:RemoveModifierByName("modifier_invulnerable")
+			end
+		end
 
         -- Обрабатываем результаты выбора игроков
         GameMode:ProcessPlayerChoices()
@@ -240,10 +284,39 @@ function GameMode:OnPlayerUsedAbility(event)
 
     if abiltyName == "item_tpscroll" then
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-        if not hero:HasItemInInventory("item_travel_boots") and not hero:HasItemInInventory("item_travel_boots_2") then 
+        if not hero:HasItemInInventory("item_travel_boots") and not hero:HasItemInInventory("item_travel_boots_2") then
             hero:AddItemByName("item_tpscroll")
         end
     end
+end
+function GameMode:OnPlayerChannelAbility(event)
+	local abiltyName = event.abilityname
+	local caster = EntIndexToHScript(event.caster_entindex)
+	local interrupted = event.interrupted
+
+	if interrupted == 0 then
+		if abiltyName == "item_tpscroll" then
+			local pos = caster:GetAbsOrigin()
+			local buildings = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, 9999999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_CLOSEST, false)
+			if #buildings > 0 then
+				local building_pos = buildings[1]:GetAbsOrigin()
+				local diraction = (building_pos - pos):Normalized()
+				local distance = 0
+				local step = 20
+				while distance < 9999999 do
+					local checkPos = pos + diraction * distance
+					if GridNav:CanFindPath(building_pos, checkPos) then
+						GridNav:DestroyTreesAroundPoint(checkPos, 150, true)
+						FindClearSpaceForUnit(caster, checkPos, true)
+						break
+					end
+					distance = distance + step
+				end
+			end
+		--	GridNav:DestroyTreesAroundPoint(caster:GetAbsOrigin(), 150, true)
+		--	caster:AddNewModifier(caster, nil, "modifier_rune_haste", {duration = 5})
+		end
+	end
 end
 -- Функция для проверки, когда все игроки сделали выбор
 function GameMode:StartChoiceCheckTimer()
@@ -344,7 +417,7 @@ function GameMode:OnEntityKilled(event)
 
     if killedUnit:IsBossCreature() then
         local reward = BOSS_GOLD[killedUnit:GetUnitName()]  
-        DeepPrintTable(reward)
+	--	DeepPrintTable(reward)
         if reward then
             GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
         end
@@ -390,9 +463,9 @@ function GameMode:TransformPlayerToBoss()
 		UTIL_Remove(courierPlayer)
 		
         local pointName = "info_courier_spawn_dire"
-        local point =  Entities:FindByClassname(nil, pointName):GetAbsOrigin()
-		courierPlayer = hero:SpawnCourierAtPosition(point)
- 
+        local point = Entities:FindByClassname(nil, pointName):GetAbsOrigin()
+		courierPlayer = player:SpawnCourierAtPosition(point)
+		
         FindClearSpaceForUnit(courierPlayer, point, true)
     	courierPlayer:RespawnUnit()
 
@@ -459,39 +532,61 @@ function GameMode:UpdateTeamPlayerCounts()
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, goodGuysCount)
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, badGuysCount)
 end
+--[[
+function GameMode:GetWaveSpawnPoint(isForWave)
+	local tables = {
+		"tower1",
+		"tower2",
+		"tower3",
+		"tower4",
+		"tower5",
+		"baracks",
+	}
+
+	local spawnPoint
+
+	for i, name in ipairs(tables) do
+		local towers = Entities:FindAllByName(name)
+
+		if #towers ~= 0 then
+			for _,tower in ipairs(towers) do
+				if tower:IsAlive() then
+					spawnPoint = Entities:FindByName(nil, name.. "_point"):GetAbsOrigin()
+					break
+				end
+			end
+		end
+
+		if spawnPoint then break end
+	end
+
+	if not isForWave and spawnPoint == nil then
+	spawnPoint = Entities:FindByName(nil, "global_point")
+	end
+
+	return spawnPoint
+end
+]]
 
 function GameMode:GetWaveSpawnPoint(isForWave)
-    local tables = {
-        "tower1",
-        "tower2",
-        "tower3",
-        "tower4",
-        "tower5",
-        "baracks",
-    }
+	local spawnPoint
+	
+	local towersTable = GameMode.TowersTable
+	for _, towers in ipairs(towersTable) do
+		local tower_1Unit = EntIndexToHScript(towers._1.unit)
+		local tower_2Unit = EntIndexToHScript(towers._2.unit)
+		
+		if tower_1Unit and tower_2Unit and tower_1Unit:IsAlive() and tower_2Unit:IsAlive() and towers._1.team == DOTA_TEAM_BADGUYS and towers._2.team == DOTA_TEAM_BADGUYS then
+			spawnPoint = Entities:FindByName(nil, towers.key.."_point"):GetAbsOrigin()
+			break
+		end
+	end
 
-    local spawnPoint
+	if not isForWave and spawnPoint == nil then
+		spawnPoint = Entities:FindByName(nil, "global_point"):GetAbsOrigin()
+	end
 
-    for i,name in ipairs(tables) do
-        local towers = Entities:FindAllByName(name)
-
-        if #towers ~= 0 then 
-            for _,tower in ipairs(towers) do
-                if tower:IsAlive() then 
-                    spawnPoint = Entities:FindByName(nil, name.. "_point"):GetAbsOrigin()
-                    break
-                end
-            end
-        end
-
-        if spawnPoint then break end
-    end
-
-    if not isForWave and spawnPoint == nil then
-      spawnPoint = Entities:FindByName(nil, "global_point")
-    end
-
-    return spawnPoint
+	return spawnPoint
 end
 
 function GameMode:SpawnWave()
@@ -504,7 +599,7 @@ function GameMode:SpawnWave()
 
     self.waveUnits = {}
 
-    if spawnPoint then 
+    if spawnPoint then
         for i = 1, 10 do
             -- Смещаем точку спавна, чтобы юниты не накладывались друг на друга
             local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
@@ -517,7 +612,7 @@ function GameMode:SpawnWave()
                 -- Добавляем модификатор AI
                 unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
             else
-                print("Не удалось заспавнить юнита:", unitName)
+		--		print("Не удалось заспавнить юнита:", unitName)
             end
         end
 
@@ -533,8 +628,8 @@ function GameMode:SpawnWave()
         end
     end
 
-    if GameMode.currentWave == TRANSFER_FINAL_BOSS then 
-		GameMode:TransformPlayerToBoss()
+    if GameMode.currentWave == TRANSFER_FINAL_BOSS then
+	--	GameMode:TransformPlayerToBoss()
     end
 
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
@@ -569,17 +664,21 @@ end
 function GameMode:OrderFilter(event)
 	local type = event.order_type
 	local playerId = event.issuer_player_id_const
-	local unit 
-
-	if event.units and event.units["0"] then 
+	local ability = EntIndexToHScript(event.entindex_ability)
+	local position
+	if event.position_x and event.position_y and event.position_z then
+		position = Vector(event.position_x, event.position_y, event.position_z)
+	end
+	local unit
+	if event.units and event.units["0"] then
 		unit = EntIndexToHScript(event.units["0"])
 	end
 
-	if type == DOTA_UNIT_ORDER_PURCHASE_ITEM then 
+	if type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
         local item = event.shop_item_name
  
         if string.sub(item, 1, 19) == "item_upgrade_scroll" then
-            local upgradeLevel  = tonumber(string.sub(item, 21)) 
+            local upgradeLevel  = tonumber(string.sub(item, 21))
             local hero = PlayerResource:GetSelectedHeroEntity(playerId)
             local team = hero:GetTeamNumber()
             

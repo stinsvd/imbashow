@@ -43,6 +43,7 @@ function modifier_infrnl_immolation:IsHidden() return false end
 function modifier_infrnl_immolation:OnCreated()
 	self.radius = self:GetAbility():GetSpecialValueFor("radius")
 	self.interval = self:GetAbility():GetSpecialValueFor("interval")
+	self.up_shards = self:GetAbility():GetSpecialValueFor("up_shards")
 	
 	if not IsServer() then return end
 	local caster = self:GetCaster()
@@ -74,10 +75,10 @@ function modifier_infrnl_immolation:OnIntervalThink()
 	local caster = self:GetCaster()
 	local owner = self:GetParent()
 	
-	local health_per_second = ability:GetSpecialValueFor("health_per_second")
---	caster:Script_ReduceMana(health_per_second * self.interval, ability)
-	caster:ModifyHealth(caster:GetHealth() - health_per_second * self.interval, nil, false, 0)
-	if caster:GetHealth() < health_per_second * self.interval then
+	local health_per_second = ability:GetHealthCost(-1) * self.interval --ability:GetSpecialValueFor("health_per_second")
+--	caster:Script_ReduceMana(health_per_second, ability)
+	caster:ModifyHealth(caster:GetHealth() - health_per_second, nil, false, 0)
+	if caster:GetHealth() < health_per_second then
 		if ability:GetToggleState() then
 			ability:ToggleAbility()
 		end
@@ -88,8 +89,11 @@ function modifier_infrnl_immolation:OnIntervalThink()
 	if self.upTime >= up_time then
 		local upgrade = caster:FindModifierByName("modifier_infrnl_burning_spirit")
 		if upgrade then
-			upgrade:Upgrade(RandomInt(1, 9))
-			self.upTime = self.upTime - up_time
+			for i = 1, self.up_shards do
+			--	upgrade:Upgrade()
+				upgrade:IncrementStackCount()
+				self.upTime = self.upTime - up_time
+			end
 		end
 	end
 	

@@ -55,6 +55,7 @@
 				"value"							"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
+			"shards_per_cast"			"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -82,7 +83,7 @@
 				"value"							"0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"currhp_damage"
+			"hpleft_damage"
 			{
 				"value"							"0.5 1 2 4 8 16 32"
 				"CalculateSpellDamageTooltip"	"1"
@@ -137,6 +138,7 @@
 				"value"							"20"
 				"CalculateSpellDamageTooltip"	"0"
 			}
+			"up_shards"						"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -175,6 +177,7 @@
 				"value"							"25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
+			"shards_per_cast"			"1"
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"

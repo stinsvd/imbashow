@@ -7,7 +7,7 @@
 
 "npc_units_custom"
 {
-		"npc_dota_courier"
+	"npc_dota_courier"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -22,11 +22,11 @@
 		// Abilities
 		//----------------------------------------------------------------		
 		"Ability1"					"courier_take_stash_items"
-		"Ability2"					"courier_go_to_secretshop"		
+		"Ability2"					"courier_go_to_secretshop"
 		"Ability3"					"courier_return_stash_items"
-		"Ability4"					"courier_burst"	
-		"Ability5"					"courier_transfer_items"	
-		"Ability6"					"courier_shield"		
+		"Ability4"					"courier_burst"
+		"Ability5"					"courier_transfer_items"
+		"Ability6"					"courier_shield"
 		"Ability7"					"courier_morph"
 		"Ability8"					"courier_take_stash_and_transfer_items"
 		"Ability9"					"courier_transfer_items_to_other_player"
@@ -91,25 +91,25 @@
 	}
 
 
-	 "dota_courier"
+	"dota_courier"
 	{
-	    "BaseClass"                  "npc_dota_courier"  // Базовый класс курьера
-	    "Model"                      "models/props_gameplay/donkey.vmdl"  // Модель
-	    "SoundSet"                   "Courier"  // Набор звуков
-	    "MovementCapabilities"       "DOTA_UNIT_CAP_MOVE_GROUND"  // Тип передвижения (земля)
-	    "HealthBarOffset"            "200"  // Смещение здоровья
-	    "StatusHealth"               "150"  // Здоровье
-	    "StatusHealthRegen"          "0"  // Регенерация здоровья
-	    "ModelScale"                 "1.0"  // Размер модели
-	    "AttackCapabilities"         "DOTA_UNIT_CAP_NO_ATTACK"  // Курьер не атакует
-	    "ArmorPhysical"              "0"  // Физическая броня
-	    "MovementSpeed"              "275"  // Скорость
-	    "VisionDaytimeRange"         "400"  // Дневной обзор
-	    "VisionNighttimeRange"       "400"  // Ночной обзор
+		"BaseClass"                  "npc_dota_courier"  // Базовый класс курьера
+		"Model"                      "models/props_gameplay/donkey.vmdl"  // Модель
+		"SoundSet"                   "Courier"  // Набор звуков
+		"MovementCapabilities"       "DOTA_UNIT_CAP_MOVE_GROUND"  // Тип передвижения (земля)
+		"HealthBarOffset"            "200"  // Смещение здоровья
+		"StatusHealth"               "150"  // Здоровье
+		"StatusHealthRegen"          "0"  // Регенерация здоровья
+		"ModelScale"                 "1.0"  // Размер модели
+		"AttackCapabilities"         "DOTA_UNIT_CAP_NO_ATTACK"  // Курьер не атакует
+		"ArmorPhysical"              "0"  // Физическая броня
+		"MovementSpeed"              "275"  // Скорость
+		"VisionDaytimeRange"         "400"  // Дневной обзор
+		"VisionNighttimeRange"       "400"  // Ночной обзор
 	}
 
 
-    "npc_gate"
+	"npc_gate"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -304,6 +304,139 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
-	}	
+	}
+	
+//=============
+// Good Tower
+//=============
+	"npc_dota_goodguys_tower_cus"
+	{
+		"BaseClass"					"npc_dota_building"
+		"Model"						"models/props_structures/tower_good.vmdl"
+		"SoundSet"					"Tower.Water"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+		
+		"Ability1"					"creep_siege"
+		
+		"ArmorPhysical"				"12"
+		"MagicalResistance"			"0"
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"88"
+		"AttackDamageMax"			"92"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"BaseAttackSpeed"			"110"
+		"AttackRate"				"0.9"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"700"
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"			"750"
+		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+		
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1"
+		
+		"StatusHealth"				"1800"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"800"
+		
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"500"
+		}
+	}
 
+//============
+// Bad Tower
+//============
+	"npc_dota_badguys_tower_cus"
+	{
+		"BaseClass"					"npc_dota_building"
+		"Model"						"models/props_structures/dire_tower002.vmdl"
+		"SoundSet"					"Tower.Fire"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+		
+		"Ability1"					"creep_siege"
+		
+		"ArmorPhysical"				"12"
+		"MagicalResistance"			"0"
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"88"
+		"AttackDamageMax"			"92"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"BaseAttackSpeed"			"110"
+		"AttackRate"				"0.9"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"700"
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_bad.vpcf"
+		"ProjectileSpeed"			"750"
+		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+		
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"120"
+		"HealthBarOffset"			"280"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1"
+		
+		"StatusHealth"				"1800"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"800"
+		
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"500"
+		}
+	}
 }

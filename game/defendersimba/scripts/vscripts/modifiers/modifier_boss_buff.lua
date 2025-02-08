@@ -44,7 +44,7 @@ function modifier_boss_buff:OnCreated()
     self.incomingDamage = -25
     self.statusResistance = 50
     self.cooldown_reduction = 50
-    self.modelScale = 105
+    self.modelScale = 80
 end
 function modifier_boss_buff:AddCustomTransmitterData() return {strengthGain = self.strengthGain, agilityGain = self.agilityGain, intellectGain = self.intellectGain} end
 function modifier_boss_buff:HandleCustomTransmitterData(data) self.strengthGain = data.strengthGain; self.agilityGain = data.agilityGain; self.intellectGain = data.intellectGain end

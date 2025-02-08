@@ -28,6 +28,14 @@ function infrnl_stomp:OnSpellStart()
 	
 	caster:EmitSound("Hero_Huskar.Inner_Fire.Cast")
 	
+	local upgrade = caster:FindModifierByName("modifier_infrnl_burning_spirit")
+	if upgrade then
+		local shards_per_cast = self:GetSpecialValueFor("shards_per_cast")
+		for i = 1, shards_per_cast do
+			upgrade:IncrementStackCount()
+		end
+	end
+	
 	CreateModifierThinker(caster, self, "modifier_infrnl_stomp", {duration = burn_duration}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
 	
 	local damageTable = {
