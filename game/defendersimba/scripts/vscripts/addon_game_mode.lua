@@ -629,7 +629,7 @@ function GameMode:SpawnWave()
     end
 
     if GameMode.currentWave == TRANSFER_FINAL_BOSS then
-	--	GameMode:TransformPlayerToBoss()
+		GameMode:TransformPlayerToBoss()
     end
 
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then

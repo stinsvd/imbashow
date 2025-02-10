@@ -6,6 +6,9 @@
         "random_boss_message"      "Do you want to become the final boss? Please type 'Yes' or 'No' in chat."
         "boss_chosen_message"      "%s1 has become the final boss!"
 
+		"npc_dota_badguys_tower_cus"		"Tower"
+		"npc_dota_badguys_tower_cus"		"Tower"
+
 
 
 		//=========================================================================================================

@@ -67,6 +67,9 @@
         "npc_dota_wave_59" "Голем Волны 5"
         "npc_dota_wave_60" "Голем Волны 5"
 
+		"npc_dota_badguys_tower_cus"		"Башня"
+		"npc_dota_badguys_tower_cus"		"Башня"
+
 
         // "item_upgrade_scroll_1"                                             "Рецепт первый"
         "DOTA_Tooltip_ability_item_upgrade_scroll_1"                        "Рецепт первый"

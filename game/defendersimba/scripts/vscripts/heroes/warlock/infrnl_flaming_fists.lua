@@ -35,6 +35,7 @@ function modifier_infrnl_flaming_fists:OnAttackLanded(keys)
 	if not target then return end
 	local attacker = keys.attacker
 	if not attacker then return end
+	if target:IsBuilding() or target:IsOther() then return end
 	if attacker:PassivesDisabled() then return end
 	if self:GetParent() == attacker then
 		local targetPos = target:GetAbsOrigin()
