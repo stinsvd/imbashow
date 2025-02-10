@@ -17,6 +17,8 @@ modifier_item_skadi_custom = class({})
 function modifier_item_skadi_custom:IsHidden()
     return true
 end
+function modifier_item_skadi_custom:IsPurgable() return false end
+function modifier_item_skadi_custom:IsPermanent() return true end
 
 function modifier_item_skadi_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
@@ -76,12 +78,14 @@ function modifier_item_skadi_custom:GetModifierManaBonus()
 end
 
 function modifier_item_skadi_custom:OnAttackLanded(params)
-    if IsServer() then
-        local parent = self:GetParent()
-        if params.attacker == parent and params.target:IsAlive() and not params.target:IsMagicImmune() then
-            params.target:AddNewModifier(parent, self:GetAbility(), "modifier_item_skadi_custom_slow", {duration = self.slowDuration * (1 - params.target:GetStatusResistance())})
-        end
-    end
+	if not IsServer() then return end
+	local target = keys.target
+	local attacker = keys.attacker
+	if not target then return end
+	if not attacker then return end
+	if attacker ~= self:GetParent() then return end
+	if target:IsBuilding() or target:IsOther() or target:IsMagicImmune() then return end
+	target:AddNewModifier(attacker, self:GetAbility(), "modifier_item_skadi_custom_slow", {duration = self.slowDuration * (1 - target:GetStatusResistance())})
 end
 
 modifier_item_skadi_custom_slow = modifier_item_skadi_custom_slow or class({})

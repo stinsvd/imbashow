@@ -16,6 +16,8 @@ modifier_item_magical_crit_custom = class({})
 function modifier_item_magical_crit_custom:IsHidden()
     return true
 end
+function modifier_item_magical_crit_custom:IsPurgable() return false end
+function modifier_item_magical_crit_custom:IsPermanent() return true end
 
 function modifier_item_magical_crit_custom:OnCreated()
     self.critChance = self:GetAbility():GetSpecialValueFor("crit_chance")

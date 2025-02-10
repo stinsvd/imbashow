@@ -84,6 +84,8 @@ modifier_item_shivasguard_custom = class({})
 function modifier_item_shivasguard_custom:IsHidden()
     return true
 end
+function modifier_item_shivasguard_custom:IsPurgable() return false end
+function modifier_item_shivasguard_custom:IsPermanent() return true end
 
 function modifier_item_shivasguard_custom:IsAura()
     return true

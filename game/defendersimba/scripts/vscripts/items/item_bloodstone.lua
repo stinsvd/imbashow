@@ -69,6 +69,8 @@ modifier_item_bloodstone_custom = class({})
 function modifier_item_bloodstone_custom:IsHidden()
     return true
 end
+function modifier_item_bloodstone_custom:IsPurgable() return false end
+function modifier_item_bloodstone_custom:IsPermanent() return true end
 
 function modifier_item_bloodstone_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

@@ -27,6 +27,8 @@ end
 modifier_item_orchid_custom_passive = class({})
 
 function modifier_item_orchid_custom_passive:IsHidden() return true end
+function modifier_item_orchid_custom_passive:IsPurgable() return false end
+function modifier_item_orchid_custom_passive:IsPermanent() return true end
 
 function modifier_item_orchid_custom_passive:DeclareFunctions()
     return {

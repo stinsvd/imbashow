@@ -16,6 +16,8 @@ modifier_item_mjollnir_custom = class({})
 function modifier_item_mjollnir_custom:IsHidden()
     return true
 end
+function modifier_item_mjollnir_custom:IsPurgable() return false end
+function modifier_item_mjollnir_custom:IsPermanent() return true end
 
 function modifier_item_mjollnir_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

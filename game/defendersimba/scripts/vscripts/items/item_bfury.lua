@@ -25,6 +25,8 @@ modifier_item_bfury_custom = class({})
 function modifier_item_bfury_custom:IsHidden()
     return true
 end
+function modifier_item_bfury_custom:IsPurgable() return false end
+function modifier_item_bfury_custom:IsPermanent() return true end
 
 function modifier_item_bfury_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

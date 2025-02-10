@@ -9,6 +9,8 @@ end
 
 modifier_item_ring_of_aquila_custom= class({})
 function modifier_item_ring_of_aquila_custom:IsHidden() return true end
+function modifier_item_ring_of_aquila_custom:IsPurgable() return false end
+function modifier_item_ring_of_aquila_custom:IsPermanent() return true end
 function modifier_item_ring_of_aquila_custom:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_ring_of_aquila_custom:DeclareFunctions()
     local funcs = {
@@ -97,6 +99,8 @@ end
 
 modifier_item_power_treads_2 = class({})
 function modifier_item_power_treads_2:IsHidden() return true end
+function modifier_item_power_treads_2:IsPurgable() return false end
+function modifier_item_power_treads_2:IsPermanent() return true end
 function modifier_item_power_treads_2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_power_treads_2:OnStackCountChanged(oldCount)
     local stackCount = self:GetStackCount()

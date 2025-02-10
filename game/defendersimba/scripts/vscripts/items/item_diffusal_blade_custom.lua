@@ -52,6 +52,8 @@ modifier_item_diffusal_blade_passive_custom = class({})
 function modifier_item_diffusal_blade_passive_custom:IsHidden()
     return true
 end
+function modifier_item_diffusal_blade_passive_custom:IsPurgable() return false end
+function modifier_item_diffusal_blade_passive_custom:IsPermanent() return true end
 
 function modifier_item_diffusal_blade_passive_custom:DeclareFunctions()
     return {

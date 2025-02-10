@@ -17,6 +17,8 @@ modifier_item_daedalus_custom = class({})
 function modifier_item_daedalus_custom:IsHidden()
     return true
 end
+function modifier_item_daedalus_custom:IsPurgable() return false end
+function modifier_item_daedalus_custom:IsPermanent() return true end
 
 function modifier_item_daedalus_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

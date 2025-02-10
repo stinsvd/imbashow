@@ -16,6 +16,8 @@ modifier_item_range_btfury_custom = class({})
 function modifier_item_range_btfury_custom:IsHidden()
     return true
 end
+function modifier_item_range_btfury_custom:IsPurgable() return false end
+function modifier_item_range_btfury_custom:IsPermanent() return true end
 
 function modifier_item_range_btfury_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

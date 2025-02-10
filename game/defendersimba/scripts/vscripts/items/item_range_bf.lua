@@ -11,6 +11,8 @@ modifier_item_range_bf_custom = class({})
 function modifier_item_range_bf_custom:IsHidden()
     return true
 end
+function modifier_item_range_bf_custom:IsPurgable() return false end
+function modifier_item_range_bf_custom:IsPermanent() return true end
 
 function modifier_item_range_bf_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

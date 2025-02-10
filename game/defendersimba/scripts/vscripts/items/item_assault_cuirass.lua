@@ -16,6 +16,8 @@ function item_assault_cuirass_1:GetIntrinsicModifierName() return "modifier_item
 
 modifier_item_assault_cuirass_custom = modifier_item_assault_cuirass_custom or class({})
 function modifier_item_assault_cuirass_custom:IsHidden() return true end
+function modifier_item_assault_cuirass_custom:IsPurgable() return false end
+function modifier_item_assault_cuirass_custom:IsPermanent() return true end
 function modifier_item_assault_cuirass_custom:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_assault_cuirass_custom:OnCreated()
 	self.level = self:GetAbility():GetLevel()

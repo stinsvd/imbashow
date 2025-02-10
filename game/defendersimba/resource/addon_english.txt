@@ -1277,9 +1277,10 @@
 	"DOTA_Tooltip_ability_infrnl_immolation_maxhp_damage_per_second"		"%MAX HP DAMAGE PER SECOND:"
 	
 	"DOTA_Tooltip_ability_infrnl_eonite_heart"					"Eonite Heart"
-	"DOTA_Tooltip_ability_infrnl_eonite_heart_description"		"Allows the use of Eonite's power, increasing your health and granting debuff immunity. <br><br> Grants %shards_per_cast% Archon's Shard on cast. \n<h1>Upgrade</h1> Sets the target on fire, dealing +%up_burn_damage% magical damage per second and reduces magic resistance by %burn_magic_resistance%%% for %burn_duration% seconds."
+	"DOTA_Tooltip_ability_infrnl_eonite_heart_description"		"Allows the use of Eonite's power, increasing your health and granting %bonus_status_resist%%% bonus status resistance. <br><br> Grants %shards_per_cast% Archon's Shard on cast. \n<h1>Upgrade</h1> Sets the target on fire, dealing +%up_burn_damage% magical damage per second and reduces magic resistance by %burn_magic_resistance%%% for %burn_duration% seconds."
 	"DOTA_Tooltip_ability_infrnl_eonite_heart_duration"				"DURATION:"
-	"DOTA_Tooltip_ability_infrnl_eonite_heart_bonus_health_pct"		"%HEALTH BONUS:"
+	"DOTA_Tooltip_ability_infrnl_eonite_heart_bonus_health_pct"		"%BONUS HEALTH:"
+	"DOTA_Tooltip_ability_infrnl_eonite_heart_bonus_status_resist"	"%BONUS STATUS RESISTANCE:"
 	"DOTA_Tooltip_ability_infrnl_eonite_heart_burn_damage"			"BURN DAMAGE:"
 	
 	"DOTA_Tooltip_ability_infrnl_burning_spirit"					"Burning Spirit"
@@ -1289,7 +1290,7 @@
 	"DOTA_Tooltip_modifier_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_modifier_infrnl_immolation_description"		"Deals magical damage in the area."
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart"					"Eonite Heart"
-	"DOTA_Tooltip_modifier_infrnl_eonite_heart_description"		"Grants debuff immunity. Health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%."
+	"DOTA_Tooltip_modifier_infrnl_eonite_heart_description"		"Health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%. Status Resistance increased by %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%%."
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Eonite Heart Burn"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Deals magical damage. Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"

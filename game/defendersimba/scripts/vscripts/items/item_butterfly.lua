@@ -16,6 +16,8 @@ modifier_item_butterfly_custom = class({})
 function modifier_item_butterfly_custom:IsHidden()
     return true
 end
+function modifier_item_butterfly_custom:IsPurgable() return false end
+function modifier_item_butterfly_custom:IsPermanent() return true end
 
 function modifier_item_butterfly_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

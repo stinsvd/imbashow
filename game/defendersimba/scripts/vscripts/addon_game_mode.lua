@@ -13,11 +13,10 @@ require('tables/boss_gold')
 if GameMode == nil then
     _G.GameMode = class({})
 end
- 
 
 RESPAWN_TIME = 15
 
-TRANSFER_FINAL_BOSS = 1
+TRANSFER_FINAL_BOSS = 11
 BOSS_FIGHT_INTERVAL = 5
 WAVE_INTERVAL = 60
 
@@ -171,6 +170,7 @@ function GameMode:InitGameMode()
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
     ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
     ListenToGameEvent("dota_ability_channel_finished", Dynamic_Wrap(GameMode, "OnPlayerChannelAbility"), self)
+	ListenToGameEvent("npc_spawned", Dynamic_Wrap(GameMode, "OnNPCSpawned"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
 	CustomGameEventManager:RegisterListener("OnPlayerChoseBoss", Dynamic_Wrap(GameMode, "OnPlayerChoseBoss"))
     local mode = GameRules:GetGameModeEntity()
@@ -387,14 +387,23 @@ function GameMode:ProcessPlayerChoices()
 
 end
 
- 
+
+function GameMode:OnNPCSpawned(keys)
+	local npc = EntIndexToHScript(keys.entindex)
+	if keys.is_respawn == 0 then
+		if npc:IsHero() then
+			npc:AddNewModifier(npc, nil, "modifier_generic_handler", {})
+		end
+	end
+end
+
 function GameMode:OnEntityKilled(event)
     local killedUnit = EntIndexToHScript(event.entindex_killed)
     
     if killedUnit:IsRealHero() then
         killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
 
-        if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then 
+        if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then
             local soul = GameMode:GetSoulBoss()
             soul:Destroy()
         end

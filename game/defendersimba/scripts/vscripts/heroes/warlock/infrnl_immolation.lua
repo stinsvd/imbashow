@@ -40,6 +40,7 @@ end
 
 modifier_infrnl_immolation = modifier_infrnl_immolation or class({})
 function modifier_infrnl_immolation:IsHidden() return false end
+function modifier_infrnl_immolation:IsPurgable() return false end
 function modifier_infrnl_immolation:OnCreated()
 	self.radius = self:GetAbility():GetSpecialValueFor("radius")
 	self.interval = self:GetAbility():GetSpecialValueFor("interval")

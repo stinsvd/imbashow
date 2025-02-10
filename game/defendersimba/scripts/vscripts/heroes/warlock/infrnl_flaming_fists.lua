@@ -21,7 +21,7 @@ function modifier_infrnl_flaming_fists:OnRefresh()
 		attacker = self:GetCaster(),
 		ability = self:GetAbility(),
 		damage = nil,
-		damage_type = DAMAGE_TYPE_PURE,
+		damage_type = DAMAGE_TYPE_MAGICAL,
 	}
 end
 function modifier_infrnl_flaming_fists:DeclareFunctions()

@@ -16,6 +16,8 @@ modifier_item_heart_of_tarrasque = class({})
 function modifier_item_heart_of_tarrasque:IsHidden()
     return true
 end
+function modifier_item_heart_of_tarrasque:IsPurgable() return false end
+function modifier_item_heart_of_tarrasque:IsPermanent() return true end
 
 function modifier_item_heart_of_tarrasque:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

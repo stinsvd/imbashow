@@ -60,6 +60,8 @@ function modifier_item_satanic_custom_active:OnTooltip() return self.lifesteal_p
 
 modifier_item_satanic_custom = modifier_item_satanic_custom or class({})
 function modifier_item_satanic_custom:IsHidden() return true end
+function modifier_item_satanic_custom:IsPurgable() return false end
+function modifier_item_satanic_custom:IsPermanent() return true end
 function modifier_item_satanic_custom:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_satanic_custom:OnCreated()
 	self.level = self:GetAbility():GetLevel()

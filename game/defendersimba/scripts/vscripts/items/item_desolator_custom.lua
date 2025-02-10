@@ -17,6 +17,8 @@ modifier_item_desolator_custom = class({})
 function modifier_item_desolator_custom:IsHidden()
     return true
 end
+function modifier_item_desolator_custom:IsPurgable() return false end
+function modifier_item_desolator_custom:IsPermanent() return true end
 
 function modifier_item_desolator_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

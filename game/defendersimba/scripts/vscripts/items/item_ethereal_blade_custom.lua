@@ -48,7 +48,7 @@ function item_ethereal_blade_1:OnProjectileHit(target, location)
         local blast_agility_multiplier	=	self:GetSpecialValueFor("blast_agility_multiplier")
         local blast_damage_base	=	self:GetSpecialValueFor("blast_damage_base")
 
-		if target:GetTeam() == caster:GetTeam() then
+		if target:GetTeamNumber() == caster:GetTeamNumber() then
 			target:AddNewModifier(caster, self, "modifier_item_ethereal_blade_custom_ethereal", {duration = duration})
 		else
 			target:AddNewModifier(caster, self, "modifier_item_ethereal_blade_custom_ethereal", {duration = duration * (1 - target:GetStatusResistance())})
@@ -73,6 +73,8 @@ modifier_item_ethereal_blade_custom_ethereal = class({})
 function modifier_item_ethereal_blade_custom_ethereal:IsHidden()
 	return false
 end
+function modifier_item_ethereal_blade_custom_ethereal:IsPurgable() return false end
+function modifier_item_ethereal_blade_custom_ethereal:IsPermanent() return true end
 
 function modifier_item_ethereal_blade_custom_ethereal:GetStatusEffectName()
 	return "particles/status_fx/status_effect_ghost.vpcf"

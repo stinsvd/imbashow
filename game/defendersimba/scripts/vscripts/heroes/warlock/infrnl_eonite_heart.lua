@@ -40,6 +40,7 @@ function modifier_infrnl_eonite_heart:OnCreated() self:OnRefresh() end
 function modifier_infrnl_eonite_heart:OnRefresh()
 	self.bonus_health_pct = self:GetAbility():GetSpecialValueFor("bonus_health_pct")
 	self.bonus_model_scale = self:GetAbility():GetSpecialValueFor("bonus_model_scale")
+	self.bonus_status_resist = self:GetAbility():GetSpecialValueFor("bonus_status_resist")
 	self.burn_damage = self:GetAbility():GetSpecialValueFor("burn_damage")
 	self.burn_duration = self:GetAbility():GetSpecialValueFor("burn_duration")
 end
@@ -47,11 +48,13 @@ function modifier_infrnl_eonite_heart:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
 		MODIFIER_PROPERTY_MODEL_SCALE,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
 function modifier_infrnl_eonite_heart:GetModifierExtraHealthPercentage() return self.bonus_health_pct end
 function modifier_infrnl_eonite_heart:GetModifierModelScale() return self.bonus_model_scale end
+function modifier_infrnl_eonite_heart:GetModifierStatusResistanceStacking() return self.bonus_status_resist end
 function modifier_infrnl_eonite_heart:OnAttackLanded(keys)
 	if not IsServer() then return end
 	if self.burn_damage <= 0 then return end
@@ -68,11 +71,6 @@ function modifier_infrnl_eonite_heart:OnAttackLanded(keys)
 		if target:IsOther() then return end
 		target:AddNewModifier(attacker, self:GetAbility(), "modifier_infrnl_eonite_heart_burn", {duration = self.burn_duration * (1 - target:GetStatusResistance())})
 	end
-end
-function modifier_infrnl_eonite_heart:CheckState()
-	return {
-		[MODIFIER_STATE_DEBUFF_IMMUNE] = true,
-	}
 end
 
 modifier_infrnl_eonite_heart_burn = modifier_infrnl_eonite_heart_burn or class({})

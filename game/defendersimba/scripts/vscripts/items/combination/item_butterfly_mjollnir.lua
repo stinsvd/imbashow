@@ -11,6 +11,8 @@ modifier_item_butterfly_mjollnir = class({})
 function modifier_item_butterfly_mjollnir:IsHidden()
     return true
 end
+function modifier_item_butterfly_mjollnir:IsPurgable() return false end
+function modifier_item_butterfly_mjollnir:IsPermanent() return true end
 
 function modifier_item_butterfly_mjollnir:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

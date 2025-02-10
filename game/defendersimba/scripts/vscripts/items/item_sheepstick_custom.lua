@@ -16,6 +16,8 @@ modifier_item_mage_slayer_custom = class({})
 function modifier_item_mage_slayer_custom:IsHidden()
     return true
 end
+function modifier_item_mage_slayer_custom:IsPurgable() return false end
+function modifier_item_mage_slayer_custom:IsPermanent() return true end
 
 function modifier_item_mage_slayer_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
@@ -33,7 +35,7 @@ end
 
 function modifier_item_mage_slayer_custom:OnCreated()
     self.bonus_magical_armor = self:GetAbility():GetSpecialValueFor("bonus_magical_armor")
-    self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed") 
+    self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
     self.bonus_intellect = self:GetAbility():GetSpecialValueFor("bonus_intellect")
     self.bonus_mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
@@ -59,10 +61,15 @@ function modifier_item_mage_slayer_custom:GetModifierConstantManaRegen()
 end
 
 function modifier_item_mage_slayer_custom:OnAttackLanded(keys)
-    if keys.attacker == self:GetParent() and not keys.target:IsMagicImmune() then
-        local duration = self:GetAbility():GetSpecialValueFor("duration")
-        keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_mage_slayer_custom_debuff", {duration = duration})
-    end
+	if not IsServer() then return end
+	local target = keys.target
+	local attacker = keys.attacker
+	if not target then return end
+	if not attacker then return end
+	if attacker ~= self:GetParent() then return end
+	if target:IsBuilding() or target:IsOther() or target:IsMagicImmune() then return end
+	local duration = self:GetAbility():GetSpecialValueFor("duration")
+	target:AddNewModifier(attacker, self:GetAbility(), "modifier_item_mage_slayer_custom_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 end
 
 modifier_item_mage_slayer_custom_debuff = class({})
@@ -131,7 +138,7 @@ function item_sheepstick_1:OnSpellStart()
     
     local particle = ParticleManager:CreateParticle("particles/items_fx/item_sheepstick.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:ReleaseParticleIndex(particle)
-    target:AddNewModifier(self:GetCaster(), self, "modifier_item_sheepstick_custom_hex", {duration = duration})
+    target:AddNewModifier(self:GetCaster(), self, "modifier_item_sheepstick_custom_hex", {duration = duration * (1 - target:GetStatusResistance())})
     target:EmitSound("DOTA_Item.Sheepstick.Activate")
 end
 
@@ -139,6 +146,7 @@ modifier_item_sheepstick_custom = class({})
 
 function modifier_item_sheepstick_custom:IsHidden() return true end
 function modifier_item_sheepstick_custom:IsPurgable() return false end
+function modifier_item_sheepstick_custom:IsPermanent() return true end
 
 function modifier_item_sheepstick_custom:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
@@ -167,10 +175,15 @@ function modifier_item_sheepstick_custom:OnRefresh()
 end
 
 function modifier_item_sheepstick_custom:OnAttackLanded(keys)
-    if keys.attacker == self:GetParent() and not keys.target:IsMagicImmune() then
-        local duration = self:GetAbility():GetSpecialValueFor("duration")
-        keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_mage_slayer_custom_debuff", {duration = duration})
-    end
+	if not IsServer() then return end
+	local target = keys.target
+	local attacker = keys.attacker
+	if not target then return end
+	if not attacker then return end
+	if attacker ~= self:GetParent() then return end
+	if target:IsBuilding() or target:IsOther() or target:IsMagicImmune() then return end
+	local duration = self:GetAbility():GetSpecialValueFor("duration")
+	target:AddNewModifier(attacker, self:GetAbility(), "modifier_item_mage_slayer_custom_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 end
 
 function modifier_item_sheepstick_custom:GetModifierConstantManaRegen()
