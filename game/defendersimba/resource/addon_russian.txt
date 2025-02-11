@@ -5,6 +5,10 @@
     {    
         "random_boss_message"      "Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
         "boss_chosen_message"      "%s1 станет финальным боссом!"
+		"VoteBossTitle"			"Ты хочешь стать финальным боссом?"
+		"VoteBossConfirm"		"Да"
+		"VoteBossDecline"		"Нет"
+		"WaveTimerNumber"		"Волна: {d:current_wave}"
 
         "npc_dota_wave_1" "Мелкий засранец 1"
         "npc_dota_wave_2" "Голем Волны 2"
@@ -424,6 +428,12 @@
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_6"					"Этериал #6"
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_Description"		"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%. <br><br> Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_agility_multiplier% * его основной атрибут + %blast_damage_base%. <br> Длительность: %duration% сек. \n<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага, отдельно нанесёт ему ещё (%bonus_spell_damage% + %spell_crit_multiplier%%% от атаки владельца) урона и замедлит его на %slow_phylacrery%%%. <br> Длительность: %slow_duration% сек. <br> Перезарядка: %cooldown_phylacrery% сек. \n<h1>Пассивное: Spell Strike</h1> Способности с вероятностью в %crit_chance%%% могут нанести %crit_multiplier%%% урона."
+
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_ethereal"					"Ether Blast"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_ethereal_Description"		"Находится в бесплотном облике. Получает увеличенный на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE%%% магический урон, не может атаковать или быть целью атаки. Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_cooldown"					"Перезарядка Empower Spell"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_phylacteria"					"Phylactery"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_phylacteria_Description"		"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		//=========================================================================================================
 		// Маг криты

@@ -1,0 +1,19 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/wave/wave.js"/>
+	</scripts>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="file://{resources}/layout/custom_game/wave/wave.css"/>
+	</styles>
+	<Panel class="Wave_Root" hittest="false" >
+		<Panel id="WaveTimerMain" class="WaveTimerMain hidden" hittest="false" >
+			<Panel id="WaveTimerContainer" hittest="false" >
+				<ProgressBar id="WaveTimerProgressBar" hittest="false" value="1.0" >
+					<Label id="WaveTimerText" class="WaveTimerText" hittest="false" text="23/60" />
+				</ProgressBar>
+				<Label id="WaveName" hittest="false" text="#WaveTimerNumber" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

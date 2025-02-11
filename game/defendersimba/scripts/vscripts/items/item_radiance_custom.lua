@@ -71,35 +71,29 @@ end
 
 function modifier_item_radiance_custom:OnIntervalThink()
 	if not IsServer() then return end
-	if not self:GetAbility() then return end
-    local parent = self:GetParent()
-    local level = self:GetAbility():GetLevel()
-    local other_modifiers = parent:FindAllModifiersByName(self:GetName())
-    for _, modifier in pairs(other_modifiers) do
-        if modifier ~= self and modifier:GetAbility():GetLevel() > level then
-            return
-        end
-    end
+	local ability = self:GetAbility()
+	if not ability then return end
+	local parent = self:GetParent()
+	if not parent or not parent:IsAlive() then return end
+	local level = ability:GetLevel()
+	local other_modifiers = parent:FindAllModifiersByName(self:GetName())
+	for _, modifier in pairs(other_modifiers) do
+		if modifier ~= self and modifier:GetAbility():GetLevel() > level then
+			return
+		end
+	end
 	
-    local enemies = FindUnitsInRadius(
-        parent:GetTeamNumber(),
-        parent:GetAbsOrigin(),
-        nil,
-        self.radius,
-        DOTA_UNIT_TARGET_TEAM_ENEMY,
-        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        DOTA_UNIT_TARGET_FLAG_NONE,
-        FIND_ANY_ORDER,
-        false
-    )
+	local enemies = FindUnitsInRadius( parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-    for _, enemy in pairs(enemies) do
-        ApplyDamage({
-            victim = enemy,
-            attacker = parent,
-            damage = self.burn_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL,
-            ability = self:GetAbility()
-        })
-    end
+	local damageTable = {
+		victim = nil,
+		attacker = parent,
+		ability = ability,
+		damage = self.burn_damage,
+		damage_type = DAMAGE_TYPE_MAGICAL,
+	}
+	for _, enemy in pairs(enemies) do
+		damageTable.victim = enemy
+		ApplyDamage(damageTable)
+	end
 end

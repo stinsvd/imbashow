@@ -16,12 +16,12 @@ end
 
 RESPAWN_TIME = 15
 
-TRANSFER_FINAL_BOSS = 11
+TRANSFER_FINAL_BOSS = 1
 BOSS_FIGHT_INTERVAL = 5
 WAVE_INTERVAL = 60
 
 
-GameMode.currentWave = 1        -- Текущая волна
+GameMode.currentWave = 0        -- Текущая волна
 GameMode.maxWaves = 60           -- Максимальное количество волн
 
 -- Таблица для хранения выбора игроков
@@ -187,23 +187,9 @@ function GameMode:OnGameRulesStateChange()
 
         print("Игра в состоянии предыгровой подготовки")
 
+		CustomNetTables:SetTableValue("game_options", "creepLevel", {current = 1})
         NeutralManager:Init()
         BossManager:Init()
-		
-        -- Запускаем таймер для показа сообщения на отметке -00:05
-        Timers:CreateTimer(function()
-            local time = GameRules:GetDOTATime(true, true)
-            if time >= -5 and not GameMode.dialogShown then
-                GameMode.dialogShown = true
-
-                -- Начинаем проверять выбор игроков
-                GameMode:StartChoiceCheckTimer()
-
-                return nil  -- Останавливаем таймер
-            else
-                return 1.0  -- Проверяем каждую секунду
-            end
-        end)
 		
 		GameMode.TowersTable = {
 			{key = "tower1", _1 = {unit = -1}, _2 = {unit = -1}},
@@ -243,6 +229,7 @@ function GameMode:OnGameRulesStateChange()
     elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         print("Игра началась")
 
+		--[[
 		for _, towers in pairs(GameMode.TowersTable) do
 			local t1 = towers._1
 			local t2 = towers._2
@@ -255,27 +242,27 @@ function GameMode:OnGameRulesStateChange()
 				unit:RemoveModifierByName("modifier_invulnerable")
 			end
 		end
+		]]
+		GameMode:RefreshTowersInvul()
 
         -- Обрабатываем результаты выбора игроков
         GameMode:ProcessPlayerChoices()
 
         -- Запускаем спавн волн
-        GameMode:StartWaveSpawnTimer()
+	--	GameMode:StartWaveSpawnTimer()
+		GameRules:GetGameModeEntity():SetThink("WaveSpawnThink", GameMode, "WaveThink", 0.1)
     end
 end
 
-
--- Функция для обработки выбора игрока
 function GameMode:OnPlayerChoseBoss(args)
-    local playerID = args.PlayerID
-    local choice = args.choice
+	local playerID = args.PlayerID
+	local choice = args.choice
 
-    if playerID ~= nil and choice ~= nil then
-        print("Игрок", playerID, "сделал выбор:", choice)
+	if playerID ~= nil and choice ~= nil then
+		print("Игрок", playerID, "сделал выбор:", choice)
 
-        -- Сохраняем выбор игрока
-        GameMode.playerChoices[playerID] = choice
-    end
+		GameMode.playerChoices[playerID] = choice
+	end
 end
 
 function GameMode:OnPlayerUsedAbility(event)
@@ -318,28 +305,6 @@ function GameMode:OnPlayerChannelAbility(event)
 		end
 	end
 end
--- Функция для проверки, когда все игроки сделали выбор
-function GameMode:StartChoiceCheckTimer()
-    Timers:CreateTimer(1, function()
-        local allPlayersMadeChoice = true
-        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-            if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
-                if GameMode.playerChoices[playerID] == nil then
-                    allPlayersMadeChoice = false
-                    break
-                end
-            end
-        end
-
-        if allPlayersMadeChoice then
-            print("Все игроки сделали выбор")
-            return nil  -- Останавливаем таймер
-        else
-            -- Продолжаем проверять каждую секунду
-            return 1.0
-        end
-    end)
-end
 
 -- Функция для обработки выборов игроков
 function GameMode:ProcessPlayerChoices()
@@ -348,7 +313,7 @@ function GameMode:ProcessPlayerChoices()
     -- Собираем игроков, выбравших "Да"
     local bossCandidates = {}
     for playerID, choice in pairs(GameMode.playerChoices) do
-        if choice == 1 then
+        if choice == 0 then
             table.insert(bossCandidates, playerID)
         end
     end
@@ -361,7 +326,7 @@ function GameMode:ProcessPlayerChoices()
         -- Если никто не выбрал "Да", выбираем случайного игрока
         local allPlayers = {}
         for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-            if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+            if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
                 table.insert(allPlayers, playerID)
             end
         end
@@ -405,6 +370,7 @@ function GameMode:OnEntityKilled(event)
 
         if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then
             local soul = GameMode:GetSoulBoss()
+			GameMode:SetStartBossFight(false)
             soul:Destroy()
         end
     end
@@ -425,7 +391,7 @@ function GameMode:OnEntityKilled(event)
     end
 
     if killedUnit:IsBossCreature() then
-        local reward = BOSS_GOLD[killedUnit:GetUnitName()]  
+        local reward = BOSS_GOLD[killedUnit:GetUnitName()]
 	--	DeepPrintTable(reward)
         if reward then
             GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
@@ -455,34 +421,40 @@ function GameMode:TransformPlayerToBoss()
     if not player then return end
 
     local hero = player:GetAssignedHero()
-    self:SetBoss(hero)
-    if hero then
-        -- Переводим игрока в команду BADGUYS
-        player:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
-        PlayerResource:SetCustomTeamAssignment(playerID, DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
+	Timers:CreateTimer(0.1, function()
+		if not hero or hero:IsNull() then return end
+		if not hero:IsAlive() then
+			hero:RespawnUnit()
+		end
+		self:SetBoss(hero)
+		if hero then
+			-- Переводим игрока в команду BADGUYS
+			player:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
+			PlayerResource:SetCustomTeamAssignment(playerID, DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
 
-        -- Меняем команду героя
-        hero:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
-        hero:SetOwner(player)
-        hero:SetControllableByPlayer(playerID, true)
-        hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
-  
-        local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
-        courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)
-		UTIL_Remove(courierPlayer)
-		
-        local pointName = "info_courier_spawn_dire"
-        local point = Entities:FindByClassname(nil, pointName):GetAbsOrigin()
-		courierPlayer = player:SpawnCourierAtPosition(point)
-		
-        FindClearSpaceForUnit(courierPlayer, point, true)
-    	courierPlayer:RespawnUnit()
+			-- Меняем команду героя
+			hero:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
+			hero:SetOwner(player)
+			hero:SetControllableByPlayer(playerID, true)
+			hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
+	
+			local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
+			courierPlayer:SetTeam(DOTA_TEAM_BADGUYS)
+			UTIL_Remove(courierPlayer)
+			
+			local pointName = "info_courier_spawn_dire"
+			local point = Entities:FindByClassname(nil, pointName):GetAbsOrigin()
+			courierPlayer = player:SpawnCourierAtPosition(point)
+			
+			FindClearSpaceForUnit(courierPlayer, point, true)
+			courierPlayer:RespawnUnit()
 
-        -- Обновляем количество игроков в командах
-        GameMode:UpdateTeamPlayerCounts()
-    end
+			-- Обновляем количество игроков в командах
+			GameMode:UpdateTeamPlayerCounts()
+		end
 
-    self:StartBossFight()
+		self:StartBossFight()
+	end)
  end
 
 function GameMode:SetBoss(hero)
@@ -501,7 +473,7 @@ function GameMode:GetSoulBoss()
 end
 
 function GameMode:IsStartBossFight()
-    return self.bossFight 
+    return self.bossFight
 end
 
 function GameMode:SetStartBossFight(state)
@@ -597,9 +569,47 @@ function GameMode:GetWaveSpawnPoint(isForWave)
 
 	return spawnPoint
 end
+function GameMode:RefreshTowersInvul()
+	local towersTable = GameMode.TowersTable
+	local RTowers = {}
+	local DTowers = {}
+
+	for i, towers in ipairs(towersTable) do
+		local tower_1Unit = EntIndexToHScript(towers._1.unit)
+		local tower_2Unit = EntIndexToHScript(towers._2.unit)
+
+		if tower_1Unit and tower_2Unit and tower_1Unit:IsAlive() and tower_2Unit:IsAlive() then
+			if tower_1Unit:GetTeamNumber() == tower_2Unit:GetTeamNumber() then
+				table.insert(tower_1Unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and RTowers or DTowers, {tower_1Unit, tower_2Unit})
+			end
+		end
+	end
+	for i = 1, #RTowers do
+		local newTower = RTowers[i+1]
+		if newTower then
+			RTowers[i][1]:AddNewModifier(RTowers[i][1], nil, "modifier_invulnerable", {})
+			RTowers[i][2]:AddNewModifier(RTowers[i][2], nil, "modifier_invulnerable", {})
+		else
+			RTowers[i][1]:RemoveModifierByName("modifier_invulnerable")
+			RTowers[i][2]:RemoveModifierByName("modifier_invulnerable")
+		end
+	end
+	for i = #DTowers, 1, -1 do
+		local newTower = DTowers[i-1]
+		if newTower then
+			DTowers[i][1]:AddNewModifier(DTowers[i][1], nil, "modifier_invulnerable", {})
+			DTowers[i][2]:AddNewModifier(DTowers[i][2], nil, "modifier_invulnerable", {})
+		else
+			DTowers[i][1]:RemoveModifierByName("modifier_invulnerable")
+			DTowers[i][2]:RemoveModifierByName("modifier_invulnerable")
+		end
+	end
+end
 
 function GameMode:SpawnWave()
     if GameMode.currentWave > GameMode.maxWaves then return end
+
+    GameMode.currentWave = GameMode.currentWave + 1
 
     -- Имя юнита для текущей волны
     local unitName = "npc_dota_wave_" .. GameMode.currentWave
@@ -644,8 +654,6 @@ function GameMode:SpawnWave()
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
         self:StartBossFight()
     end
-
-    GameMode.currentWave = GameMode.currentWave + 1
 end
 
 function GameMode:GiveRewardWave()
@@ -668,6 +676,20 @@ function GameMode:StartWaveSpawnTimer()
             return WAVE_INTERVAL  -- Повторяем каждые 30 секунд
         end
     end)
+end
+function GameMode:WaveSpawnThink()
+	local interval = 0.1
+	local options = CustomNetTables:GetTableValue("game_options", "waveOptions") or {waveInterval = WAVE_INTERVAL, waveTimer = 0, currentWave = GameMode.currentWave, maxWaves = GameMode.maxWaves}
+	if options then
+		if options.waveTimer <= 0 then
+			GameMode:SpawnWave()
+			options.waveTimer = WAVE_INTERVAL
+			options.currentWave = GameMode.currentWave
+		end
+		options.waveTimer = options.waveTimer - interval
+		CustomNetTables:SetTableValue("game_options", "waveOptions", options)
+	end
+	return GameMode.currentWave > GameMode.maxWaves and nil or interval
 end
 
 function GameMode:OrderFilter(event)
@@ -699,6 +721,14 @@ function GameMode:OrderFilter(event)
                 end
             end
         end
+	end
+	if type == DOTA_UNIT_ORDER_CAST_POSITION then
+		if ability and ability:GetAbilityName() == "item_tpscroll" then
+			local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+			if hero == GameMode:GetBoss() then
+				
+			end
+		end
 	end
 
 	return true

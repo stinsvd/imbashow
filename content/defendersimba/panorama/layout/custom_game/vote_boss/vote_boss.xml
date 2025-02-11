@@ -9,13 +9,13 @@
 	<Panel class="root" hittest="false" >
 		<Panel id="vote_boss" hittest="false" >
 			<Panel id="text_and_rectangle_container" hittest="false" >
-				<Label id="vote_boss_text" text="Ты хочешь стать финальным боссом?" hittest="false" />
+				<Label id="vote_boss_text" text="#VoteBossTitle" hittest="false" />
 				<Panel id="vote_boss_container" hittest="false" >
 					<Panel class="ConfirmButton Green" onactivate="ConfirmButton(0)" >
-						<Label text="Да"/>
+						<Label text="#VoteBossConfirm"/>
 					</Panel>
 					<Panel class="ConfirmButton Red" onactivate="ConfirmButton(1)" >
-						<Label id="red_text" text="Нет" />
+						<Label id="red_text" text="#VoteBossDecline" />
 					</Panel>
 				</Panel>
 			</Panel>

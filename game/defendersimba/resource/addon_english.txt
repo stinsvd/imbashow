@@ -5,6 +5,10 @@
     {
         "random_boss_message"      "Do you want to become the final boss? Please type 'Yes' or 'No' in chat."
         "boss_chosen_message"      "%s1 has become the final boss!"
+		"VoteBossTitle"			"Do you want to become the final boss?"
+		"VoteBossConfirm"		"Yes"
+		"VoteBossDecline"		"No"
+		"WaveTimerNumber"		"Wave: {d:current_wave}"
 
 		"npc_dota_badguys_tower_cus"		"Tower"
 		"npc_dota_badguys_tower_cus"		"Tower"
@@ -644,6 +648,12 @@
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_mana_regen"				"+$mana_regen"
 		"DOTA_Tooltip_ability_item_ethereal_blade_6_bonus_damage"			"+$damage"
+
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_ethereal"					"Ether Blast"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_ethereal_Description"		"Ethereal Form. Taking %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE%%% increased magic damage and cannot attack or be attacked. Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_cooldown"					"Empower Spell Cooldown"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_phylacteria"					"Phylactery"
+		"DOTA_Tooltip_modifier_item_ethereal_blade_custom_phylacteria_Description"		"Movement slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		//=========================================================================================================
 		// Маг криты

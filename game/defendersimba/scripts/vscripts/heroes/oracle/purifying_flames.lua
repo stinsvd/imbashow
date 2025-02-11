@@ -113,14 +113,14 @@ function modifier_orcl_purifying_flames_buff:OnIntervalThink()
 		end
 	end
 end
-function modifier_orcl_purifying_flames_buff:HealEffect(removed)
+function modifier_orcl_purifying_flames_buff:HealEffect(removed, healEfficiency)
 	if not IsServer() then return end
 	local ability = self:GetAbility()
 	if not ability then return end
 	local caster = self:GetCaster()
 	local target = self:GetParent()
 	local heal_per_tick = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * self.tick_rate
-	local heal = removed and heal_per_tick * self:GetRemainingTime() or heal_per_tick
+	local heal = (removed and heal_per_tick * self:GetRemainingTime() or heal_per_tick) * ((healEfficiency or 100) / 100)
 	target:HealWithParams(heal, ability, false, true, caster, false)
 	self.numbersThink = (self.numbersThink or 0) + self.tick_rate
 	if self.numbersThink >= 0.5 then

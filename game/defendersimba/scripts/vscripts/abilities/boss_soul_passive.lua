@@ -21,12 +21,11 @@ function modifier_boss_soul_passive:OnCreated()
     self.boss = GameMode:GetBoss()
     self:StartIntervalThink(ability:GetSpecialValueFor("tick"))
 end
- 
+
 function modifier_boss_soul_passive:OnIntervalThink()
     if IsClient() then return end
     local unit = self:GetParent()
 
- 
     if not self.boss or not self.boss:IsAlive() then return end
     local enemies = FindUnitsInRadius(
         unit:GetTeamNumber(),
@@ -45,17 +44,16 @@ function modifier_boss_soul_passive:OnIntervalThink()
             unit:Stop()
             self.isUnitStoped = true
         end
-     else 
+     else
         self.isUnitStoped = false
         unit:MoveToPosition(Vector(-10862, 10454, 0))
     end
     local distance = (unit:GetAbsOrigin() - self.boss:GetAbsOrigin()):Length2D()
- 
+
     if distance > self.radius then
         FindClearSpaceForUnit(self.boss, unit:GetAbsOrigin(), true)
     end
 end
- 
 
 function modifier_boss_soul_passive:CheckState()
     return {
@@ -64,7 +62,3 @@ function modifier_boss_soul_passive:CheckState()
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true
     }
 end
-
-
-
- 

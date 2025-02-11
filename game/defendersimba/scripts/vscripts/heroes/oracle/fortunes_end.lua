@@ -213,15 +213,12 @@ function orcl_fortunes_end:PurgeAndCheck(target, isEnemy)
 	local caster = self:GetCaster()
 	local old = #target:FindAllModifiers()
 	if not isEnemy then
-		local heal = 0
-		local healEfficiency = self:GetSpecialValueFor("flames_heal_efficiency")
-		local flames = target:FindAllModifiersByName("modifier_orcl_purifying_flames_buff")
-		for _, buff in pairs(flames) do
-			buff:HealEffect(true)
+		local flames = target:FindModifierByName("modifier_orcl_purifying_flames_buff")
+		if flames then
+			old = old + flames:GetStackCount()
+			local healEfficiency = self:GetSpecialValueFor("flames_heal_efficiency")
+			flames:HealEffect(true, healEfficiency)
 		end
-		heal = heal * (healEfficiency / 100)
-		target:HealWithParams(heal, self, false, true, caster, false)
-		SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, heal, nil)
 	end
 	
 	target:Purge(isEnemy, not isEnemy, false, false, false)
