@@ -25,6 +25,7 @@ function modifier_towers_changer:OnRemoved(params)
 				towerTable.team = team
 				unit:SetAbsOrigin(self:GetParent():GetAbsOrigin())
 				unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+				unit:RemoveModifierByName("modifier_invulnerable")
 				GameMode:RefreshTowersInvul()
 			end
 		end

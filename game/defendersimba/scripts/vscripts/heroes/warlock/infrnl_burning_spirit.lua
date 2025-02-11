@@ -118,6 +118,7 @@ function modifier_infrnl_burning_spirit:Upgrade(num)
 	if not self:GetAbility() then return end
 	local buff = num or RandomInt(1, 9)
 	local count = self:GetAbility():GetSpecialValueFor("upgrades_per_cast")
+	local infrnlStats = CustomNetTables:GetTableValue("heroes_stats", "Infernal") or {}
 	for i = 1, count do
 		local owner = self:GetParent()
 	--	print(buff)
@@ -153,6 +154,7 @@ function modifier_infrnl_burning_spirit:Upgrade(num)
 		end
 		self:SendBuffRefreshToClients()
 		
+		CustomNetTables:SetTableValue("heroes_stats", "Infernal", self.allUpgrades)
 		if owner.CalculateStatBonus ~= nil then
 			owner:CalculateStatBonus(false)
 		end

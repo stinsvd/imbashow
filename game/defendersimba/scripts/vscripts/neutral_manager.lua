@@ -28,7 +28,11 @@ end
 
 function NeutralManager:UnlockNeutralCamp(level)
 	local points = Entities:FindAllByName("creeps_"..level.."_point")
-
+	
+	if level == 6 then
+		GameMode:TransformPlayerToBoss()
+	end
+	
 	for _, point in ipairs(points) do
 		point.level = level
 		self:SpawnCamp(point)

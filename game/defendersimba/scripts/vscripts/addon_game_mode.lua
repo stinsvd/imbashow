@@ -16,7 +16,7 @@ end
 
 RESPAWN_TIME = 15
 
-TRANSFER_FINAL_BOSS = 1
+TRANSFER_FINAL_BOSS = 11
 BOSS_FIGHT_INTERVAL = 5
 WAVE_INTERVAL = 60
 
@@ -81,7 +81,7 @@ expTable = {
     17500
 }
 
-for i=2,#expTable + 1 do 
+for i=2,#expTable + 1 do
 	HeroExpTable[i] = HeroExpTable[i-1] + expTable[i-1]
 end
 -- Функция Precache загружает необходимые ресурсы перед началом игры
@@ -369,9 +369,9 @@ function GameMode:OnEntityKilled(event)
         killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
 
         if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then
-            local soul = GameMode:GetSoulBoss()
+		--	local soul = GameMode:GetSoulBoss()
 			GameMode:SetStartBossFight(false)
-            soul:Destroy()
+        --	soul:Destroy()
         end
     end
 
@@ -482,17 +482,17 @@ end
 
 
 function GameMode:StartBossFight()
-    local boss = self:GetBoss()
-    if not boss then return end
-    local point = self:GetWaveSpawnPoint()
-	if self.soul then UTIL_Remove(self.soul) end
-    self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+	local boss = self:GetBoss()
+	if not boss then return end
+	local point = self:GetWaveSpawnPoint()
+--	if self.soul then UTIL_Remove(self.soul) end
+--	self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-    Timers:CreateTimer(0.2, function()
-        self.soul:MoveToPosition(Vector(-10862, 10454, 0))
-    end)
-    FindClearSpaceForUnit(boss, point, true)
-    GameMode:SetStartBossFight(true)
+	Timers:CreateTimer(0.2, function()
+		self.soul:MoveToPosition(Vector(-10862, 10454, 0))
+	end)
+	FindClearSpaceForUnit(boss, point, true)
+	GameMode:SetStartBossFight(true)
 end
 -- Функция для обновления количества игроков в командах
 function GameMode:UpdateTeamPlayerCounts()
@@ -594,7 +594,7 @@ function GameMode:RefreshTowersInvul()
 			RTowers[i][2]:RemoveModifierByName("modifier_invulnerable")
 		end
 	end
-	for i = #DTowers, 1, -1 do
+	for i = 1, #DTowers do
 		local newTower = DTowers[i-1]
 		if newTower then
 			DTowers[i][1]:AddNewModifier(DTowers[i][1], nil, "modifier_invulnerable", {})
@@ -648,7 +648,7 @@ function GameMode:SpawnWave()
     end
 
     if GameMode.currentWave == TRANSFER_FINAL_BOSS then
-		GameMode:TransformPlayerToBoss()
+	--	GameMode:TransformPlayerToBoss()
     end
 
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then

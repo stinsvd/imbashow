@@ -13,6 +13,7 @@ end
 function modifier_golem_ai:OnCreated(kv)
     if IsServer() then
         local golem = self:GetParent()
+	--	golem:SetAcquisitionRange(1600)
 
         -- Координаты вражеской базы
         local enemy_base = Vector(-10562, 10484, 634)
@@ -24,7 +25,7 @@ function modifier_golem_ai:OnCreated(kv)
         golem:MoveToPositionAggressive(self.target_point)
 
         -- Запускаем периодический вызов функции Think
-        self:StartIntervalThink(1.0)
+        self:StartIntervalThink(0.5)
     end
 end
 
@@ -61,8 +62,19 @@ function modifier_golem_ai:OnIntervalThink()
                     -- Атакуем первого врага
                     golem:MoveToTargetToAttack(enemies[1])
                 else
-                    -- Продолжаем движение к вражеской базе
-                    golem:MoveToPositionAggressive(self.target_point)
+					local target
+					local buildings = FindUnitsInRadius(golem:GetTeamNumber(), golem:GetAbsOrigin(), nil, 2000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
+					for i = 1, #buildings do
+						if not buildings[i]:IsAttackImmune() or not buildings[i]:IsInvulnerable() then
+							target = buildings[i]
+							break
+						end
+					end
+					if target then
+						golem:MoveToPositionAggressive(target:GetAbsOrigin())
+					else
+						golem:MoveToPositionAggressive(self.target_point)
+					end
                 end
             end
         end
