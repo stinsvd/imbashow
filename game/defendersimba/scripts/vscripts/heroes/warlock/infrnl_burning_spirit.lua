@@ -30,7 +30,9 @@ function modifier_infrnl_burning_spirit:OnCreated()
 end
 function modifier_infrnl_burning_spirit:OnStackCountChanged(old)
 	if not IsServer() then return end
-	self:StartIntervalThink(1)
+	if old <= 0 then
+		self:StartIntervalThink(1)
+	end
 end
 function modifier_infrnl_burning_spirit:OnIntervalThink()
 	if not IsServer() then return end
@@ -68,13 +70,13 @@ function modifier_infrnl_burning_spirit:DeclareFunctions()
 	}
 end
 function modifier_infrnl_burning_spirit:GetModifierHealthBonus()
-	if self.allUpgrades then return self.allUpgrades.bonus_health end
+	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_health * self:GetAbility():GetSpecialValueFor("bonus_health") end
 end
 function modifier_infrnl_burning_spirit:GetModifierManaBonus()
-	if self.allUpgrades then return self.allUpgrades.bonus_mana end
+	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_mana * self:GetAbility():GetSpecialValueFor("bonus_mana") end
 end
 function modifier_infrnl_burning_spirit:GetModifierConstantHealthRegen()
-	if self.allUpgrades then return self.allUpgrades.bonus_hp_regen end
+	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_hp_regen * self:GetAbility():GetSpecialValueFor("bonus_hp_regen") end
 end
 --[[
 function modifier_infrnl_burning_spirit:OnAbilityExecuted(keys)
@@ -123,11 +125,11 @@ function modifier_infrnl_burning_spirit:Upgrade(num)
 		local owner = self:GetParent()
 	--	print(buff)
 		if buff == 1 then
-			self.allUpgrades.bonus_health = self.allUpgrades.bonus_health + self:GetAbility():GetSpecialValueFor("bonus_health")
+			self.allUpgrades.bonus_health = self.allUpgrades.bonus_health + 1
 		elseif buff == 2 then
-			self.allUpgrades.bonus_mana = self.allUpgrades.bonus_mana + self:GetAbility():GetSpecialValueFor("bonus_mana")
+			self.allUpgrades.bonus_mana = self.allUpgrades.bonus_mana + 1
 		elseif buff == 3 then
-			self.allUpgrades.bonus_hp_regen = self.allUpgrades.bonus_hp_regen + self:GetAbility():GetSpecialValueFor("bonus_hp_regen")
+			self.allUpgrades.bonus_hp_regen = self.allUpgrades.bonus_hp_regen + 1
 		elseif buff == 4 then
 			local bonus_gold = self:GetAbility():GetSpecialValueFor("bonus_gold") * owner:GetLevel()
 			local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, owner)

@@ -154,9 +154,9 @@ function GameMode:InitGameMode()
     -- Устанавливаем предыгровое время в 10 секунд
     GameRules:SetPreGameTime(10)
     GameRules:SetUseUniversalShopMode(true)
-    GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
+--    GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
     if IsInToolsMode() then
-		GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
+--		GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
 		if GetMapName() == "test" then
 			SendToServerConsole("dota_easybuy 1")
 		end
@@ -174,22 +174,31 @@ function GameMode:InitGameMode()
     ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
 	CustomGameEventManager:RegisterListener("OnPlayerChoseBoss", Dynamic_Wrap(GameMode, "OnPlayerChoseBoss"))
     local mode = GameRules:GetGameModeEntity()
+	mode:SetCustomBackpackSwapCooldown(0)
     mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
 end
 
 -- Функция, вызываемая при изменении состояния игры
 function GameMode:OnGameRulesStateChange()
-    local state = GameRules:State_Get()
-    print("Game state changed to ", state)
+	local state = GameRules:State_Get()
+	print("Game state changed to ", state)
 
-    if state == DOTA_GAMERULES_STATE_PRE_GAME then
-        GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
+	if state == DOTA_GAMERULES_STATE_PRE_GAME then
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
+		for i = 0, PlayerResource:GetPlayerCount() - 1 do
+			if not PlayerResource:HasSelectedHero(i) then
+				local player = PlayerResource:GetPlayer(i)
+				if player then
+					player:MakeRandomHeroSelection()
+				end
+			end
+		end
 
-        print("Игра в состоянии предыгровой подготовки")
+		print("Игра в состоянии предыгровой подготовки")
 
 		CustomNetTables:SetTableValue("game_options", "creepLevel", {current = 1})
-        NeutralManager:Init()
-        BossManager:Init()
+		NeutralManager:Init()
+		BossManager:Init()
 		
 		GameMode.TowersTable = {
 			{key = "tower1", _1 = {unit = -1}, _2 = {unit = -1}},
@@ -205,29 +214,32 @@ function GameMode:OnGameRulesStateChange()
 		for _, towers in ipairs(GameMode.TowersTable) do
 			local tower_1 = Entities:FindByName(nil, towers.key.."_1")
 			local tower_2 = Entities:FindByName(nil, towers.key.."_2")
-			local team = string.match(towers.key, "tower[1-3]") and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
-			local nameT = string.match(towers.key, "tower[1-3]") and "npc_dota_goodguys_tower_cus" or "npc_dota_badguys_tower_cus"
-			local t1 = towers._1
-			local t2 = towers._2
-			if t1.unit == -1 then
-				local unit = CreateUnitByName(nameT, tower_1:GetAbsOrigin(), true, nil, nil, team)
-				unit.entName = {towers.key, "_1"}
-				t1.unit = unit:entindex()
-				t1.team = team
-				unit:SetAbsOrigin(tower_1:GetAbsOrigin())
-				unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
-			end
-			if t2.unit == -1 then
-				local unit = CreateUnitByName(nameT, tower_2:GetAbsOrigin(), true, nil, nil, team)
-				unit.entName = {towers.key, "_2"}
-				t2.unit = unit:entindex()
-				t2.team = team
-				unit:SetAbsOrigin(tower_2:GetAbsOrigin())
-				unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+			if tower_1 and tower_2 then
+				local team = string.match(towers.key, "tower[1-4]") and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
+				local nameT = string.match(towers.key, "tower[1-4]") and "npc_dota_goodguys_tower_cus" or "npc_dota_badguys_tower_cus"
+				local t1 = towers._1
+				local t2 = towers._2
+				if t1.unit == -1 then
+					local unit = CreateUnitByName(nameT, tower_1:GetAbsOrigin(), true, nil, nil, team)
+					unit.entName = {towers.key, "_1"}
+					t1.unit = unit:entindex()
+					t1.team = team
+					unit:SetAbsOrigin(tower_1:GetAbsOrigin())
+					unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+				end
+				if t2.unit == -1 then
+					local unit = CreateUnitByName(nameT, tower_2:GetAbsOrigin(), true, nil, nil, team)
+					unit.entName = {towers.key, "_2"}
+					t2.unit = unit:entindex()
+					t2.team = team
+					unit:SetAbsOrigin(tower_2:GetAbsOrigin())
+					unit:AddNewModifier(unit, nil, "modifier_towers_changer", {})
+				end
 			end
 		end
-    elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-        print("Игра началась")
+		GameMode:RefreshTowersInvul()
+	elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		print("Игра началась")
 
 		--[[
 		for _, towers in pairs(GameMode.TowersTable) do
@@ -245,13 +257,13 @@ function GameMode:OnGameRulesStateChange()
 		]]
 		GameMode:RefreshTowersInvul()
 
-        -- Обрабатываем результаты выбора игроков
-        GameMode:ProcessPlayerChoices()
+		-- Обрабатываем результаты выбора игроков
+		GameMode:ProcessPlayerChoices()
 
-        -- Запускаем спавн волн
+		-- Запускаем спавн волн
 	--	GameMode:StartWaveSpawnTimer()
 		GameRules:GetGameModeEntity():SetThink("WaveSpawnThink", GameMode, "WaveThink", 0.1)
-    end
+	end
 end
 
 function GameMode:OnPlayerChoseBoss(args)
@@ -355,11 +367,12 @@ end
 
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-	if keys.is_respawn == 0 then
-		if npc:IsHero() then
+	if not npc then return end
+--	if keys.is_respawn == 0 then
+--		if npc:IsHero() then
 			npc:AddNewModifier(npc, nil, "modifier_generic_handler", {})
-		end
-	end
+--		end
+--	end
 end
 
 function GameMode:OnEntityKilled(event)
@@ -415,6 +428,7 @@ function GameMode:OpenGate()
 end
 -- Функция для преобразования игрока в финального босса
 function GameMode:TransformPlayerToBoss()
+	if GameMode:GetBoss() then return end
     local playerID = GameMode.bossPlayerID
     local player = PlayerResource:GetPlayer(playerID)
 
@@ -465,7 +479,7 @@ end
 
 
 function GameMode:GetBoss()
-    return self.boss
+	return self.boss
 end
 
 function GameMode:GetSoulBoss()
@@ -480,17 +494,21 @@ function GameMode:SetStartBossFight(state)
     self.bossFight = state
 end
 
-
 function GameMode:StartBossFight()
 	local boss = self:GetBoss()
 	if not boss then return end
 	local point = self:GetWaveSpawnPoint()
---	if self.soul then UTIL_Remove(self.soul) end
---	self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+	--[[
+	if self.soul then UTIL_Remove(self.soul) end
+	self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
 	Timers:CreateTimer(0.2, function()
 		self.soul:MoveToPosition(Vector(-10862, 10454, 0))
 	end)
+	]]
+	if not boss:IsAlive() then
+		boss:RespawnUnit()
+	end
 	FindClearSpaceForUnit(boss, point, true)
 	GameMode:SetStartBossFight(true)
 end
@@ -552,8 +570,7 @@ end
 function GameMode:GetWaveSpawnPoint(isForWave)
 	local spawnPoint
 	
-	local towersTable = GameMode.TowersTable
-	for _, towers in ipairs(towersTable) do
+	for _, towers in ipairs(GameMode.TowersTable) do
 		local tower_1Unit = EntIndexToHScript(towers._1.unit)
 		local tower_2Unit = EntIndexToHScript(towers._2.unit)
 		
@@ -581,27 +598,97 @@ function GameMode:RefreshTowersInvul()
 		if tower_1Unit and tower_2Unit and tower_1Unit:IsAlive() and tower_2Unit:IsAlive() then
 			if tower_1Unit:GetTeamNumber() == tower_2Unit:GetTeamNumber() then
 				table.insert(tower_1Unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and RTowers or DTowers, {tower_1Unit, tower_2Unit})
+			else
+				table.insert(tower_1Unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and RTowers or DTowers, {tower_1Unit, tower_2Unit})
+				table.insert(tower_2Unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and RTowers or DTowers, {tower_1Unit, tower_2Unit})
 			end
 		end
 	end
-	for i = 1, #RTowers do
+	--[[
+	for i = #RTowers, 1, -1 do
+		local tower1 = RTowers[i][1]
+		local tower2 = RTowers[i][2]
 		local newTower = RTowers[i+1]
-		if newTower then
-			RTowers[i][1]:AddNewModifier(RTowers[i][1], nil, "modifier_invulnerable", {})
-			RTowers[i][2]:AddNewModifier(RTowers[i][2], nil, "modifier_invulnerable", {})
+		if newTower and ((tower1:GetTeamNumber() == DOTA_TEAM_GOODGUYS) or (tower2:GetTeamNumber() == DOTA_TEAM_GOODGUYS)) then
+			tower1:AddNewModifier(tower1, nil, "modifier_invulnerable", {}):SetStackCount((#RTowers - i) + 1)
+			tower2:AddNewModifier(tower2, nil, "modifier_invulnerable", {}):SetStackCount((#RTowers - i) + 1)
 		else
-			RTowers[i][1]:RemoveModifierByName("modifier_invulnerable")
-			RTowers[i][2]:RemoveModifierByName("modifier_invulnerable")
+			tower1:RemoveModifierByName("modifier_invulnerable")
+			tower2:RemoveModifierByName("modifier_invulnerable")
 		end
+		tower1:AddNewModifier(tower1, nil, "modifier_towers_tier", {}):SetStackCount((#RTowers - i) + 1)
+		tower2:AddNewModifier(tower2, nil, "modifier_towers_tier", {}):SetStackCount((#RTowers - i) + 1)
 	end
 	for i = 1, #DTowers do
+		local tower1 = DTowers[i][1]
+		local tower2 = DTowers[i][2]
 		local newTower = DTowers[i-1]
-		if newTower then
-			DTowers[i][1]:AddNewModifier(DTowers[i][1], nil, "modifier_invulnerable", {})
-			DTowers[i][2]:AddNewModifier(DTowers[i][2], nil, "modifier_invulnerable", {})
+		if newTower and ((tower1:GetTeamNumber() == DOTA_TEAM_BADGUYS) or (tower2:GetTeamNumber() == DOTA_TEAM_BADGUYS)) then
+			tower1:AddNewModifier(tower1, nil, "modifier_invulnerable", {}):SetStackCount(i)
+			tower2:AddNewModifier(tower2, nil, "modifier_invulnerable", {}):SetStackCount(i)
 		else
-			DTowers[i][1]:RemoveModifierByName("modifier_invulnerable")
-			DTowers[i][2]:RemoveModifierByName("modifier_invulnerable")
+			tower1:RemoveModifierByName("modifier_invulnerable")
+			tower2:RemoveModifierByName("modifier_invulnerable")
+		end
+		tower1:AddNewModifier(tower1, nil, "modifier_towers_tier", {}):SetStackCount(i)
+		tower2:AddNewModifier(tower2, nil, "modifier_towers_tier", {}):SetStackCount(i)
+	end
+	]]
+	for _, teamTowers in ipairs({RTowers, DTowers}) do
+		for i = #teamTowers, 1, -1 do
+			local tower1, tower2 = unpack(teamTowers[i])
+			local stacks
+			local newTower
+			if teamTowers == RTowers then
+				stacks = #teamTowers - i + 1
+				newTower = teamTowers[i + 1]
+			else
+				stacks = i
+				newTower = teamTowers[i - 1]
+			end
+			
+			if newTower and (tower1:GetTeamNumber() == tower2:GetTeamNumber()) then
+				tower1:AddNewModifier(tower1, nil, "modifier_invulnerable", {}):SetStackCount(stacks)
+				tower2:AddNewModifier(tower2, nil, "modifier_invulnerable", {}):SetStackCount(stacks)
+			else
+				tower1:RemoveModifierByName("modifier_invulnerable")
+				tower2:RemoveModifierByName("modifier_invulnerable")
+			end
+			tower1:AddNewModifier(tower1, nil, "modifier_towers_tier", {}):SetStackCount(stacks)
+			tower2:AddNewModifier(tower2, nil, "modifier_towers_tier", {}):SetStackCount(stacks)
+
+			if not tower1:HasModifier("modifier_invulnerable_cus") then
+				tower1:AddNewModifier(tower1, nil, "modifier_invulnerable_cus", {})
+			end
+			if not tower2:HasModifier("modifier_invulnerable_cus") then
+				tower2:AddNewModifier(tower2, nil, "modifier_invulnerable_cus", {})
+			end
+		end
+	end
+
+	local RThrone = Entities:FindByName(nil, "dota_goodguys_fort")
+	if RThrone then
+		if #RTowers ~= 0 then
+			RThrone:AddNewModifier(RThrone, nil, "modifier_invulnerable", {}):SetStackCount(#RTowers)
+		else
+			RThrone:RemoveModifierByName("modifier_invulnerable")
+		end
+
+		if not RThrone:HasModifier("modifier_invulnerable_cus") then
+			RThrone:AddNewModifier(RThrone, nil, "modifier_invulnerable_cus", {})
+		end
+	end
+
+	local DThrone = Entities:FindByName(nil, "dota_badguys_fort")
+	if DThrone then
+		if #DTowers ~= 0 then
+			DThrone:AddNewModifier(DThrone, nil, "modifier_invulnerable", {}):SetStackCount(#DTowers)
+		else
+			DThrone:RemoveModifierByName("modifier_invulnerable")
+		end
+
+		if not DThrone:HasModifier("modifier_invulnerable_cus") then
+			DThrone:AddNewModifier(DThrone, nil, "modifier_invulnerable_cus", {})
 		end
 	end
 end
@@ -613,7 +700,7 @@ function GameMode:SpawnWave()
 
     -- Имя юнита для текущей волны
     local unitName = "npc_dota_wave_" .. GameMode.currentWave
- 
+
     local spawnPoint = self:GetWaveSpawnPoint(true)
 
     self.waveUnits = {}
@@ -735,12 +822,35 @@ function GameMode:OrderFilter(event)
 end
 
 function GameMode:OnPlayerChat(keys)
+	local playerID = keys.playerid
 	local cheats_on = GameRules:IsCheatMode()
 	local tools_on = IsInToolsMode()
 	local normal_text = keys.text
+	local text = string.pipei(string.trim(string.lower(keys.text)))
 	
-	if normal_text == "-resc" and tools_on then
+	if normal_text == "-resc" and cheats_on then
 		SendToServerConsole("script_reload")
 		SendToServerConsole("cl_script_reload")
+	end
+	if normal_text == "-imtheboss" and cheats_on then
+		GameMode.bossPlayerID = playerID
+		GameMode:TransformPlayerToBoss()
+	end
+
+	if AllowedToDo(playerID) then
+		if text[1] == "-kb" then
+			local value = tonumber(text[2])
+			local value2 = tonumber(text[3])
+			if value and value2 then
+				CustomGameEventManager:Send_ServerToAllClients("ShowBossKilledNotif", {text = value, delay = value2})
+			end
+		end
+
+		if text[1] == "-hero" then
+			local name = tostring(text[2])
+			if name then
+				PlayerResource:GetPlayer(playerID):SetSelectedHero("npc_dota_hero_"..name)
+			end
+		end
 	end
 end

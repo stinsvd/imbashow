@@ -44,7 +44,7 @@ function modifier_item_assault_cuirass_custom:GetAuraRadius()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_radius") end
 end
 function modifier_item_assault_cuirass_custom:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
-function modifier_item_assault_cuirass_custom:GetAuraSearchType() return DOTA_UNIT_TARGET_HEROES_AND_CREEPS end
+function modifier_item_assault_cuirass_custom:GetAuraSearchType() return DOTA_UNIT_TARGET_HEROES_AND_CREEPS + DOTA_UNIT_TARGET_BUILDING end
 function modifier_item_assault_cuirass_custom:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NONE end
 function modifier_item_assault_cuirass_custom:GetModifierAura() return "modifier_assault_cuirass"..self.level.."_armor_reduction" end
 function modifier_item_assault_cuirass_custom:GetAuraEntityReject(target)

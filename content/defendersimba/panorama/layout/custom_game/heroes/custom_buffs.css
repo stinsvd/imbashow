@@ -1,0 +1,46 @@
+.CustomBuffPanelMain {
+	width: 100%;
+	height: 100%;
+}
+
+.panel_hidden {
+	opacity: 0;
+}
+
+#WarlockBuffPanel {
+	flow-children: down;
+	margin-left: 70px;
+}
+
+.BuffPanel {
+	align: left top;
+	height: 40px;
+	flow-children: right;
+	border: 2px solid black;
+	box-shadow: fill black 0px 0px 12px -5px;
+}
+
+.Buff {
+	height: 36px;
+	width: 36px;
+	border-radius: 2px;
+}
+
+.BuffIcon {
+	width: 100%;
+	height: 100%;
+}
+
+.remain_time_count {
+	font-size: 16px;
+	color: white;
+	text-shadow: 0px 0px 5px 7 black;
+	text-overflow: shrink;
+	align: left bottom;
+	margin-left: 5%;
+}
+
+.DisableModifier {
+	saturation: 0;
+	wash-color: #777777;
+}

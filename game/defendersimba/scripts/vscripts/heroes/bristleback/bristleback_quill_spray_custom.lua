@@ -1,224 +1,214 @@
-bristleback_quill_spray_custom = class({})
-LinkLuaModifier( "modifier_bristleback_quill_spray_custom", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_bristleback_quill_spray_custom_stack", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_bristleback_quill_spray_custom_armor", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_bristleback_quill_spray_custom", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bristleback_quill_spray_custom_armor", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bb_quill_spray_berserk", "heroes/bristleback/bristleback_quill_spray_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bristleback_warpath_custom_ignore", "heroes/bristleback/bristleback_warpath_custom", LUA_MODIFIER_MOTION_NONE)
 
---------------------------------------------------------------------------------
 
-function bristleback_quill_spray_custom:MakeSpray( count, hairball )
-    local caster = self:GetCaster()
-
+bristleback_quill_spray_custom = bristleback_quill_spray_custom or class({})
+function bristleback_quill_spray_custom:Precache(context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bristleback/bristleback_quill_spray_hit.vpcf", context)
+end
+function bristleback_quill_spray_custom:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+function bristleback_quill_spray_custom:OnSpellStart(ignore_warpath, ignore_bristleback, newLoc)
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local source = newLoc or caster:GetAbsOrigin()
 	local radius = self:GetSpecialValueFor("radius")
-	local stack_damage = caster:GetStrength() * self:GetSpecialValueFor("quill_str_stack_damage") / 100
-	local base_damage = caster:GetStrength() * self:GetSpecialValueFor("quill_str_base_damage") / 100
 	local stack_duration = self:GetSpecialValueFor("duration")
+	local base_damage = self:GetSpecialValueFor("quill_str_base_damage")
+	local bonus_quill_str_stack_damage = self:GetSpecialValueFor("bonus_quill_str_stack_damage")
+	local stack_damage = self:GetSpecialValueFor("quill_str_stack_damage") + (caster:GetModifierStackCount("modifier_bristleback_quill_spray_custom", caster) * bonus_quill_str_stack_damage)
+	if caster.GetStrength then
+		base_damage = caster:GetStrength() * base_damage / 100
+		stack_damage = caster:GetStrength() * stack_damage / 100
+	end
 
-    local source = caster
-    if hairball then source = hairball end
+	if not newLoc then
+		caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2)
+		caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
+	end
 
-    if not hairball then
-        caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2)
-        caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
-    end
-
-    local enemies = FindUnitsInRadius(
-		self:GetCaster():GetTeamNumber(),
-		source:GetAbsOrigin(),
-		nil,
-		radius,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-		0,
-		false
-	)
-
-    local damage_table = {
+	local damage_table = {
+		victim = nil,
 		attacker = caster,
+		ability = self,
+		damage = base_damage,
 		damage_type = DAMAGE_TYPE_PHYSICAL,
-		ability = self
 	}
 
-    for i = 1, count, 1 do
-        for _, enemy in pairs(enemies) do
-            local stack = 0
-            local modifier = enemy:FindModifierByNameAndCaster( "modifier_bristleback_quill_spray_custom", caster )
-            if modifier ~= nil then
-                stack = modifier:GetStackCount()
-            end
+	local spray_pfx = ParticleManager:GetParticleReplacement("particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf", caster)
+	--[[
+	local spray_impact_pfx = ParticleManager:GetParticleReplacement("particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf", caster)
+	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), source, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+	for _, enemy in pairs(enemies) do
+		local stack = enemy:GetModifierStackCount("modifier_bristleback_quill_spray_custom", caster)
 
-            damage_table.victim = enemy
+		enemy:AddNewModifier(caster, self, "modifier_bristleback_quill_spray_custom", {duration = stack_duration * (1 - enemy:GetStatusResistance())})
 
-            damage_table.damage = base_damage + stack * stack_damage
-            self:ApplyDamage( damage_table )
+		local impact_pfx = ParticleManager:CreateParticle(spray_impact_pfx, PATTACH_ABSORIGIN, enemy)
+		ParticleManager:ReleaseParticleIndex(impact_pfx)
 
-            local goo = caster:FindAbilityByName("bristleback_viscous_nasal_goo_custom")
-            if goo and goo:IsTrained() then
-                local goo_stack = 0
-                local goo_damage = goo:GetSpecialValueFor("spray_bonus_damage")
+		EmitSoundOnLocationWithCaster(enemy:GetAbsOrigin(), "Hero_Bristleback.QuillSpray.Target", caster)
 
-                local goo_modifier = enemy:FindModifierByNameAndCaster( "modifier_bristleback_viscous_nasal_goo_custom", caster )
-                if goo_modifier ~= nil then
-                    goo_stack = goo_modifier:GetStackCount()
-                end
+		local armorMod
+		if enemy:IsCreep() then
+			armorMod = enemy:AddNewModifier(damage_table.attacker, self, "modifier_bristleback_quill_spray_custom_armor", {})
+		end
 
-                damage_table.damage = goo_damage * goo_stack
-                self:ApplyDamage( damage_table )
-            end
+		damage_table.victim = enemy
+		damage_table.damage = base_damage + (stack * stack_damage)
+		ApplyDamage(damage_table)
 
-            enemy:AddNewModifier(
-                caster,
-                self,
-                "modifier_bristleback_quill_spray_custom",
-                {
-                    duration = stack_duration * ( 1 - enemy:GetStatusResistance() )
-                }
-            )
+		if armorMod then
+			armorMod:Destroy()
+		end
+	end
+	]]
+	
+	local projectile = {
+		Source = caster,
+		Ability = self,
+		EffectName = nil,
+		vSpawnOrigin = source,
+		fDistance = 1,
+		fStartRadius = 1,
+		fEndRadius = radius,
+		bHasFrontalCone = false,
+		bReplaceExisting = false,
+		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		iUnitTargetType = DOTA_UNIT_TARGET_HEROES_AND_CREEPS,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+		fExpireTime = GameRules:GetGameTime() + 5,
+		bDeleteOnHit = false,
+		vVelocity = caster:GetForwardVector() * 2.400 * (Vector(1, 1, 0)),
+		bProvidesVision = false,
+		ExtraData = {
+			base_damage = base_damage,
+			stack_damage = stack_damage,
+			stack_duration = stack_duration,
+		}
+	}
+	ProjectileManager:CreateLinearProjectile(projectile)
 
-            self:PlayEffects2( enemy )
-        end
-
-        self:PlayEffects1( source )
-    end
-end
-
-function bristleback_quill_spray_custom:GetAOERadius()
-    return self:GetSpecialValueFor("radius")
-end
-
-function bristleback_quill_spray_custom:OnSpellStart()
-    self:MakeSpray(1, nil)
-end
-
-function bristleback_quill_spray_custom:PlayEffects1( source )
-    local caster = self:GetCaster()
-
-	local particle_cast = ParticleManager:GetParticleReplacement("particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf", caster)
-
-    local pattach = PATTACH_ABSORIGIN
-    if source ~= caster then pattach = PATTACH_WORLDORIGIN end
-
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, pattach, source )
-    ParticleManager:SetParticleControl(effect_cast, 0, source:GetOrigin())
-	ParticleManager:ReleaseParticleIndex( effect_cast )
-
-	source:EmitSound("Hero_Bristleback.QuillSpray.Cast")
-end
-
-function bristleback_quill_spray_custom:PlayEffects2( target )
-    local caster = self:GetCaster()
-
-	local particle_cast = ParticleManager:GetParticleReplacement("particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf", caster)
-
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, target )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
-
-    target:EmitSound("Hero_Bristleback.QuillSpray.Target")
-end
-
-function bristleback_quill_spray_custom:ApplyDamage( damage_table )
-	local victim = damage_table.victim
-
-	if victim:IsCreep() then
-		victim:AddNewModifier(
-			damage_table.attacker,
-			self,
-			"modifier_bristleback_quill_spray_custom_armor",
-			{}
-		)
+	if bonus_quill_str_stack_damage > 0 then
+		caster:AddNewModifier(caster, self, "modifier_bb_quill_spray_berserk", {}):IncrementStackCount()
+	end
+	if ignore_warpath then
+		caster:AddNewModifier(caster, self, "modifier_bristleback_warpath_custom_ignore", {duration = FrameTime()})
+	end
+	if caster:HasScepter() then
+		if not ignore_bristleback then
+			local bb = caster:FindAbilityByName("bristleback_bristleback_custom")
+			if bb and bb:IsTrained() and bb:GetSpecialValueFor("goo_radius") <= 0 then
+				bb:AddStack()
+			end
+		end
 	end
 
-	ApplyDamage( damage_table )
+	local cast_pfx = ParticleManager:CreateParticle(spray_pfx, PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(cast_pfx, 0, source)
+	ParticleManager:ReleaseParticleIndex(cast_pfx)
 
-	if victim:IsCreep() then
-		victim:RemoveModifierByName("modifier_bristleback_quill_spray_custom_armor")
+	EmitSoundOnLocationWithCaster(source, "Hero_Bristleback.QuillSpray.Cast", caster)
+end
+function bristleback_quill_spray_custom:OnProjectileHit_ExtraData(target, loc, data)
+	if not IsServer() then return end
+	if target then
+		local caster = self:GetCaster()
+		local spray_impact_pfx = ParticleManager:GetParticleReplacement("particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf", caster)
+		local stack = target:GetModifierStackCount("modifier_bristleback_quill_spray_custom", caster)
+
+		target:AddNewModifier(caster, self, "modifier_bristleback_quill_spray_custom", {duration = data.stack_duration * (1 - target:GetStatusResistance())})
+
+		local impact_pfx = ParticleManager:CreateParticle(spray_impact_pfx, PATTACH_ABSORIGIN, target)
+		ParticleManager:ReleaseParticleIndex(impact_pfx)
+
+		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "Hero_Bristleback.QuillSpray.Target", caster)
+
+		local armorMod
+		if target:IsCreep() then
+			armorMod = target:AddNewModifier(caster, self, "modifier_bristleback_quill_spray_custom_armor", {})
+		end
+
+		ApplyDamage({
+			victim = target,
+			attacker = caster,
+			ability = self,
+			damage = data.base_damage + (stack * data.stack_damage),
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+		})
+
+		if armorMod then
+			armorMod:Destroy()
+		end
 	end
 end
 
---------------------------------------------------------------------------------
 
-modifier_bristleback_quill_spray_custom = class({})
-
+modifier_bristleback_quill_spray_custom = modifier_bristleback_quill_spray_custom or class({})
 function modifier_bristleback_quill_spray_custom:IsHidden() return false end
 function modifier_bristleback_quill_spray_custom:IsDebuff() return true end
 function modifier_bristleback_quill_spray_custom:IsPurgable() return false end
 function modifier_bristleback_quill_spray_custom:DestroyOnExpire() return false end
-
-function modifier_bristleback_quill_spray_custom:OnCreated( kv )
-	if IsServer() then
-		self:GetParent():AddNewModifier(
-			self:GetCaster(),
-			self:GetAbility(),
-			"modifier_bristleback_quill_spray_custom_stack",
-			{
-				duration = kv.duration
-			}
-		)
-
-		self:SetStackCount( 1 )
-	end
+function modifier_bristleback_quill_spray_custom:GetEffectName()
+	return "particles/units/heroes/hero_bristleback/bristleback_quill_spray_hit.vpcf"
 end
-
-function modifier_bristleback_quill_spray_custom:OnRefresh( kv )
-	if IsServer() then
-		self:GetParent():AddNewModifier(
-			self:GetCaster(),
-			self:GetAbility(),
-			"modifier_bristleback_quill_spray_custom_stack",
-			{
-				duration = kv.duration
-			}
-		)
-
-		self:IncrementStackCount()
-	end
+function modifier_bristleback_quill_spray_custom:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_bristleback_quill_spray_custom:OnCreated()
+	if not IsServer() then return end
+	self.stacks = {}
+	self:OnRefresh()
+	self:StartIntervalThink(FrameTime())
 end
+function modifier_bristleback_quill_spray_custom:OnRefresh()
+	local caster = self:GetCaster()
+	self.base_damage = self:GetAbility():GetSpecialValueFor("quill_str_base_damage")
+	self.stack_damage = self:GetAbility():GetSpecialValueFor("quill_str_stack_damage")
+	if caster.GetStrength then
+		self.base_damage = caster:GetStrength() * self.base_damage / 100
+		self.stack_damage = caster:GetStrength() * self.stack_damage / 100
+	end
 
-function modifier_bristleback_quill_spray_custom:RemoveStack()
-	self:DecrementStackCount()
+	if not IsServer() then return end
+	self:IncrementStackCount()
+	table.insert(self.stacks, {GameRules:GetGameTime(), self:GetRemainingTime()})
+end
+function modifier_bristleback_quill_spray_custom:OnIntervalThink()
+	if not IsServer() then return end
+	local currentTime = GameRules:GetGameTime()
+	for k, v in pairs(self.stacks) do
+		if currentTime >= v[1] + v[2] then
+			self.stacks[k] = nil
+			self:DecrementStackCount()
+		end
+	end
 	if self:GetStackCount() < 1 then
 		self:Destroy()
 	end
 end
-
-function modifier_bristleback_quill_spray_custom:GetEffectName()
-	return "particles/units/heroes/hero_bristleback/bristleback_quill_spray_hit_creep.vpcf"
-end
-
-function modifier_bristleback_quill_spray_custom:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
-
---------------------------------------------------------------------------------
-
-modifier_bristleback_quill_spray_custom_stack = class({})
-
-function modifier_bristleback_quill_spray_custom_stack:IsHidden() return true end
-function modifier_bristleback_quill_spray_custom_stack:IsPurgable() return false end
-function modifier_bristleback_quill_spray_custom_stack:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-
-function modifier_bristleback_quill_spray_custom_stack:OnDestroy( kv )
-	if IsServer() then
-		local modifier = self:GetParent():FindModifierByName("modifier_bristleback_quill_spray_custom")
-        if modifier then
-            modifier:RemoveStack()
-        end
-	end
-end
-
---------------------------------------------------------------------------------
-
-modifier_bristleback_quill_spray_custom_armor = class({})
-
-function modifier_bristleback_quill_spray_custom_armor:IsHidden() return true end
-function modifier_bristleback_quill_spray_custom_armor:IsPurgable() return false end
-
-function modifier_bristleback_quill_spray_custom_armor:DeclareFunctions()
+function modifier_bristleback_quill_spray_custom:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
+		MODIFIER_PROPERTY_TOOLTIP,
 	}
 end
+function modifier_bristleback_quill_spray_custom:OnTooltip()
+	return self.base_damage + self.stack_damage * self:GetStackCount()
+end
 
+
+modifier_bristleback_quill_spray_custom_armor = modifier_bristleback_quill_spray_custom_armor or class({})
+function modifier_bristleback_quill_spray_custom_armor:IsHidden() return true end
+function modifier_bristleback_quill_spray_custom_armor:IsPurgable() return false end
+function modifier_bristleback_quill_spray_custom_armor:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+	}
+end
 function modifier_bristleback_quill_spray_custom_armor:GetModifierPhysicalArmorBonus()
 	if not IsServer() then return end
 	if self.armor_lock then return end
@@ -230,3 +220,20 @@ function modifier_bristleback_quill_spray_custom_armor:GetModifierPhysicalArmorB
 	local pierce = self:GetAbility():GetSpecialValueFor("creep_armor_pierce")
 	return -(armor * pierce / 100)
 end
+
+
+modifier_bb_quill_spray_berserk = modifier_bb_quill_spray_berserk or class({})
+function modifier_bb_quill_spray_berserk:IsHidden() return false end
+function modifier_bb_quill_spray_berserk:IsPurgable() return false end
+function modifier_bb_quill_spray_berserk:RemoveOnDeath() return false end
+function modifier_bb_quill_spray_berserk:OnRefresh()
+--	self:IncrementStackCount()
+	local bonus_quill_str_stack_damage = self:GetAbility():GetSpecialValueFor("bonus_quill_str_stack_damage")
+	self.bonus_damage = bonus_quill_str_stack_damage * self:GetStackCount()
+end
+function modifier_bb_quill_spray_berserk:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_TOOLTIP,
+	}
+end
+function modifier_bb_quill_spray_berserk:OnTooltip() return self.bonus_damage end

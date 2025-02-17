@@ -1,4 +1,7 @@
 LinkLuaModifier("modifier_boss_buff", "modifiers/modifier_boss_buff", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_golem_ai", "modifiers/modifier_golem_ai", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_towers_changer", "abilities/towers_changer", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_towers_tier", "abilities/towers_changer", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_handler", "modifiers/generic", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_neutral_boss_cus", "modifiers/generic", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_invulnerable_cus", "modifiers/generic", LUA_MODIFIER_MOTION_NONE)

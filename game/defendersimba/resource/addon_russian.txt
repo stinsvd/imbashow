@@ -71,8 +71,9 @@
         "npc_dota_wave_59" "Голем Волны 5"
         "npc_dota_wave_60" "Голем Волны 5"
 
+		"npc_dota_goodguys_tower_cus"		"Башня"
 		"npc_dota_badguys_tower_cus"		"Башня"
-		"npc_dota_badguys_tower_cus"		"Башня"
+		"DOTA_Tooltip_modifier_invulnerable_cus"	"Неуязвимость"
 
 
         // "item_upgrade_scroll_1"                                             "Рецепт первый"
@@ -673,12 +674,16 @@
         "dota_ability_variable_aoe_bonus"           "к радиусу заклинаний"                  // $aoe_bonus
 
 
-        // modifiers
+		// modifiers
 
-        "DOTA_Tooltip_modifier_boss_buff"       "Like a boss"
-        "DOTA_Tooltip_modifier_boss_buff_Description"       "Магический резист: %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%  Сопротивление эффектам: %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% Уменьшение получаемого урона: %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% Уменьшение перезарядки: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
-        // Error messages
-        "error_boss_not_killed"                                  "Босс {level} не убит"
+		"DOTA_Tooltip_modifier_boss_buff"					"Like a boss"
+		"DOTA_Tooltip_modifier_boss_buff_Description"		"Сопротивление магии: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Сопротивление эффектам: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Уменьшение получаемого урона: +%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Уменьшение перезарядки: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
+
+
+		"DOTA_Tooltip_ability_special_bonus_mp_regen_3_cus"		"+{s:value} маны в секунду"
+
+		// Error messages
+		"error_boss_not_killed"				"Босс {level} не убит"
 
 
 
@@ -686,49 +691,44 @@
     // Axe
     //=========================================================================================================
     //Berserker's Call
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua" "Berserker's Call"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"	"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius" "Радиус способности:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" "Длительность:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor" "Дополнительная броня:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" "Дополнительная скорость атаки задетым врагам:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description" "Накладывает на врагов способность <font color='#FF3030'>Battle Hunger</font>."
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua"					"Berserker's Call"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"		"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description"		"Накладывает на врагов способность <font color='#FF3030'>Battle Hunger</font>."
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius"						"РАДИУС:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" 					"ДЛИТЕЛЬНОСТЬ:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor"					"ДОП БРОНЯ:"
+    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" 		"ДОП СКОРОСТЬ АТАКИ:"
 
     //Battle Hunger
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua" "Battle Hunger"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"	"Приводит врага в бешенство, нанося ему урон от <font color='#FF3030'>силы</font>, крадет <font color='#FF3030'>силу</font> врага и замедляет скорость передвижения. Эффект от способности складывается."
-    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"			"Крадет <font color='#FF3030'>силу</font> только у вражеских Героев."
-    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"			"Обычные герои не могут сопротивляться ярости Могул-хана, и она калечит их, пока они не выместят ее на ком-нибудь."
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration" "Длительность:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow" "%Замедление передвижения врага:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus" "%Бонус скорости передвижение за врага:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str" "%Силы в урон:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_str_debuff" ""
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_str_bonus_per_hero" "Количество отбираемой силы у героев:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua"					"Battle Hunger"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"		"Приводит врага в бешенство, нанося ему урон от <font color='#FF3030'>силы</font> и замедляет скорость передвижения. Эффект от способности складывается."
+    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"		"Обычные герои не могут сопротивляться ярости Могул-хана, и она калечит их, пока они не выместят ее на ком-нибудь."
+    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"		"Крадёт %str_bonus_per_hero% <font color='#FF3030'>силы</font> у вражеских героев."
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration"			"ДЛИТЕЛЬНОСТЬ:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus"		"%ДОП СКОРОСТЬ ЗА ЭФФЕКТ:"
+    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str"		"%УРОН В СЕКУНДУ ОТ СИЛЫ:"
 
-    "DOTA_Tooltip_modifier_axe_battle_hunger_lua" "Battle Hunger"
-    "DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff" "Battle Hunger"
+    "DOTA_Tooltip_modifier_axe_battle_hunger_lua"				"Battle Hunger"
+    "DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff"		"Battle Hunger"
 
     // Counter Helix
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"	"Counter Helix"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"	"При получении и нанесении определённого количества ударов, герой крутит своим топором, нанося базовый урон и урон, зависящий от силы всем врагам вокруг."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"	"Кража <font color='#FF3030'>силы</font> происходит только у вражеских героев."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"	"Считаются удары как от самого героя, так и по нему."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note2"	"Длительность эффекта как на врагах, так и на самом герое обновляется при получении новых эффектов."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_duration" "Длительность:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need" "Атак для срабатывания:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage" "Базовый урон:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str" "%Силы в доп. урон:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_steal_str" "Кража силы:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"					"Counter Helix"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"		"При получении и нанесении определённого количества ударов, герой крутит своим топором, нанося базовый урон и урон, зависящий от силы всем врагам вокруг."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"		"Крадёт %steal_str% <font color='#FF3030'>силы</font> у вражеских героев на %duration% сек."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"		"Получение нового эффекта обновляет длительность."
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need"			"АТАК ДЛЯ СРАБАТЫВАНИЯ:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage"			"БАЗОВЫЙ УРОН:"
+    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str"		"%ДОП УРОН ОТ СИЛЫ:"
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua" "Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description" "Атак для срабатывания Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua"					"Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description"		"Атак для срабатывания Counter Helix"
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff" "Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description" "Акс украл <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff"					"Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description"		"Акс украл <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"	"Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"	"У вас украдено <font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"					"Counter Helix"
+    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"		"У вас украдено <font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
 
     // Culling Blade
     "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua"	"Culling Blade"
@@ -747,7 +747,7 @@
     "DOTA_Tooltip_Ability_axe_innate_ability_Description" "За каждый полученый удар от врага, герой получает %armor_per_stack% к броне. Каждый эффект длится независимо от друг друга %duration% секунд."
 
     "DOTA_Tooltip_modifier_axe_innate_ability" "Броня за полученый удар"
-    "DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
+    "DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%fMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
 
     //=========================================================================================================
     // Slardar
@@ -829,92 +829,82 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_undispellable"		"Эффект от Corrosive Haze нельзя развеять"
 		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_armor"				"+{s:bonus_armor_reduction} к снижению брони от Corrosive Haze"
 
-    //=========================================================================================================
-    // BRISTLEBACK
-    //=========================================================================================================
+//=========================================================================================================
+// BRISTLEBACK
+//=========================================================================================================
+	"DOTA_Tooltip_Facet_bb_berserk"					"Berserk"
+	"DOTA_Tooltip_Facet_bb_berserk_Description"		"Каждое срабатываение Quill Spray увеличивает урон за эффект."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Facet_bb_berserk"		"Каждое срабатываение Quill Spray увеличивает урон за эффект на %bonus_quill_str_stack_damage%."
+	"DOTA_Tooltip_Facet_bb_snot_rocket"					"Snot Rocket"
+	"DOTA_Tooltip_Facet_bb_snot_rocket_Description"		"Когда героя бьют в спину, он выпускает не иглы, а сопли от Viscous Nasal Goo. Кроме того, усиливает эффект соплей."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_facet_bb_snot_rocket"				"Вместо игл герой выпускает во всех врагов неподалёку сопли от способности Viscous Nasal Goo текущего уровня."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_facet_bb_snot_rocket"		"Убирает лимит эффектов и наносит переодический урон зависящий от силы героя."
 
-		// BRISTLEBACK
-		// PRICKLY
-		"DOTA_Tooltip_Ability_bristleback_prickly_custom" "Prickly"
-		"DOTA_Tooltip_Ability_bristleback_prickly_custom_Description" "Герой наносит врагам позади на %amp_pct%%% больше урона. Крипы получают дополнительно %bonus_attack_speed% к скорости атаки когда атакуют в спину."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom"					"Viscous Nasal Goo"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Description"		"Обильно сморкается на жертв, снижая их броню на %goo_duration% сек. Эффекты способности складываются, а время действия обновляется с каждым её применением. Quill Spray дополнительно наносит урон за каждый эффект."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Lore"		"Простуду, подхваченную в снегах, Ригварл делает своим преимуществом."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_radius"					"РАДИУС:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack"			"БАЗОВОЕ СНИЖЕНИЕ БРОНИ:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack"			"СНИЖЕНИЕ БРОНИ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_goo_str_dmg"				"%УРОН ОТ СИЛЫ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_stack_limit"				"МАКСИМУМ ЭФФЕКТОВ:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_spray_bonus_damage"		"ДОП. УРОН ОТ QUILL SPRAY ЗА ЭФФЕКТ:"
 
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom"					"Quill Spray"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Description"		"Выпускает во все стороны иглы, нанося урон всем врагам вокруг себя. Жертвы получают дополнительный урон за каждое попадание иглами за последние %duration% сек. <br><br> Игнорирует %creep_armor_pierce%%% брони крипов."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Lore"		"Честь вышибалы — острый вопрос. Как и его шипы."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_radius"							"РАДИУС:"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_base_damage"				"%БАЗОВЫЙ УРОН ОТ СИЛЫ:"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage"			"%ДОП УРОН ОТ СИЛЫ ЗА ЭФФЕКТ:"
 
-		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff" "Prickly"
-		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description" "Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom"					"Bristleback"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description"		"Каждое применение Quill Spray герой получает заряд, максимум %max_stacks%. При применении способности, герой выпускает все заряды в виде Quill Spray и провоцирует ближайших врагов. <br><br>С аспектом Snot Rocket: вместо игл герой выпускает во всех врагов неподалёку сопли от способности Viscous Nasal Goo текущего уровня."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore"		"Иногда бывает полезно повернуться спиной к врагу во время битвы."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0"		"Спиной героя считаются %back_angle% градусов от середины его спины."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note1"		"Боками героя считаются %side_angle% градусов от середины его спины."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_side_damage_reduction"			"%СНИЖЕНИЕ УРОНА ОТ АТАК С БОКОВ:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_back_damage_reduction"			"%СНИЖЕНИЕ УРОНА ОТ АТАК В СПИНУ:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_quill_release_threshold"		"ПОРОГ УРОНА:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_radius"					"РАДИУС ПРОВОКАЦИИ:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_duration"				"ДЛИТЕЛЬНОСТЬ ПРОВОКАЦИИ:"
 
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom"					"Hairball"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_Description"		"Отхаркивает в указанную область комок игл. Приземлившись, он лопается и применяет на всех врагов вокруг несколько эффектов Viscous Nasal Goo и один эффект Quill Spray."
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_radius"			"РАДИУС:"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_quill_stacks"		"ЧИСЛО ЭФФЕКТОВ QUILL SPRAY:"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_goo_stacks"		"ЧИСЛО ЭФФЕКТОВ VISCOUS NASAL GOO:"
 
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom"					"Warpath"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_Description"		"Герой нагоняет на себя ярость каждый раз, когда использует способность, повышая свои скорость передвижения и силу."
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_Lore"		"«Держи себя в руках», — часто наставляла его мама. Но в битве ярость всегда к месту."
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_str_ptc_per_stack"			"%БОНУС К СИЛЕ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_move_speed_per_stack"		"%БОНУС К СКОРОСТИ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_duration"					"ДЛИТЕЛЬНОСТЬ ОДНОГО ЭФФЕКТА:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_max_stacks"				"МАКС. ЭФФЕКТОВ:"
+	
+	"DOTA_Tooltip_Ability_bristleback_prickly_custom"					"Prickly"
+	"DOTA_Tooltip_Ability_bristleback_prickly_custom_Description"		"Герой наносит врагам позади на %amp_pct%%% больше урона. Крипы получают дополнительно %bonus_attack_speed% к скорости атаки когда атакуют в спину."
+	"DOTA_Tooltip_Ability_bristleback_vitality_custom"					"Rigwarl's Vitality"
+	"DOTA_Tooltip_Ability_bristleback_vitality_custom_Description"		"Увеличивает здоровье героя на %health_per_str% за силу."
 
-		// VISCOUS NASAL GOO
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Description" "Обильно сморкается на жертв, снижая их броню на %duration% сек. Эффекты способности складываются, а время действия обновляется с каждым её применением. Quill Spray дополнительно наносит урон за каждый эффект."
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Lore" "Простуду, подхваченную в снегах, Ригварл делает своим преимуществом."
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_radius" "РАДИУС:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack" "СНИЖЕНИЕ БРОНИ ЗА ЭФФЕКТ:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_stack_limit" "МАКСИМУМ ЭФФЕКТОВ:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_spray_bonus_damage" "ДОП. УРОН ОТ QUILL SPRAY ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom"					"Viscous Nasal Goo"
+	"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom_Description"		"Теряет %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони."
+	"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom"					"Quill Spray"
+	"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom_Description"		"Каждый эффект увеличивает урон от Quill Spray"
+	"DOTA_Tooltip_modifier_bb_quill_spray_berserk"					"Berserk Spray"
+	"DOTA_Tooltip_modifier_bb_quill_spray_berserk_Description"		"Увеличивает доп урон от силы за эффект Quill Spray на %fMODIFIER_PROPERTY_TOOLTIP%%%."
+	"DOTA_Tooltip_Modifier_bristleback_bristleback_custom"					"Bristleback"
+	"DOTA_Tooltip_Modifier_bristleback_bristleback_custom_Description"		"Активируйте что-бы выпустить все заряды!"
+	"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff"					"Warpath"
+	"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description"		"Передвигается на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% быстрее и получает дополнительно %fMODIFIER_PROPERTY_TOOLTIP% к силе."
+	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff"					"Prickly"
+	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description"		"Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
-
-		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
-		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom_Description" "Теряет %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони."
-
-
-
-		// QUILL SPRAY
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom" "Quill Spray"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Description" "Выпускает во все стороны иглы, нанося урон всем врагам вокруг себя. Жертвы получают дополнительный урон за каждое попадание иглами за последние %duration% сек.<br><br>Игнорирует %creep_armor_pierce%%% брони крипов."
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Lore" "Честь вышибалы — острый вопрос. Как и его шипы."
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_radius" "РАДИУС:"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage" "%СИЛА В УРОН ЗА ЭФФЕКТ:"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_base_damage" "%СИЛА В БАЗОВЫЙ УРОН:"
-
-
-		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom" "Quill Spray"
-		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom_Description" "Каждый эффект увеличивает урон от Quill Spray"
-
-
-
-		// BRISTLEBACK
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom" "Bristleback"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description" "Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0" "Спиной героя считаются %back_angle% градусов от середины его спины."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note1" "Боками героя считаются %side_angle% градусов от середины его спины."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore" "Иногда бывает полезно повернуться спиной к врагу во время битвы."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_side_damage_reduction" "%СНИЖЕНИЕ УРОНА ОТ АТАК С БОКОВ:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_back_damage_reduction" "%СНИЖЕНИЕ УРОНА ОТ АТАК В СПИНУ:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_quill_release_threshold" "ПОРОГ УРОНА:"
-
-		// BRISTLEBACK
-        "DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description" "Каждое применение Quill Spray герой получает заряд, максимум %max_stacks%. При применении способности, герой выпускает все заряды в виде Quill Spray и провоцирует ближайших врагов."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_radius" "РАДИУС ПРОВОКАЦИИ:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_duration" "ДЛИТЕЛЬНОСТЬ ПРОВОКАЦИИ:"
-
-
-		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom" "Bristleback"
-		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom_Description" "Активируйте что-бы выпустить все заряды!"
-
-
-
-		// HAIRBALL
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom" "Hairball"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_Description" "Отхаркивает в указанную область комок игл. Приземлившись, он лопается и применяет на всех врагов вокруг несколько эффектов Viscous Nasal Goo и один эффект Quill Spray."
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_radius" "РАДИУС:"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_quill_stacks" "ЧИСЛО ЭФФЕКТОВ QUILL SPRAY:"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_goo_stacks" "ЧИСЛО ЭФФЕКТОВ VISCOUS NASAL GOO:"
-
-
-
-		// WARPATH
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom" "Warpath"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Description" "Герой нагоняет на себя ярость каждый раз, когда использует способность, повышая свои скорость передвижения и силу."
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Lore" "«Держи себя в руках», — часто наставляла его мама. Но в битве ярость всегда к месту."
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_str_ptc_per_stack" "%БОНУС К СИЛЕ ЗА ЭФФЕКТ:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_move_speed_per_stack" "%БОНУС К СКОРОСТИ ЗА ЭФФЕКТ:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_duration" "ДЛИТЕЛЬНОСТЬ ОДНОГО ЭФФЕКТА:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_max_stacks" "МАКС. ЭФФЕКТОВ:"
-        "DOTA_Tooltip_Ability_bristleback_warpath_custom_lifesteal_pct_per_stack" "%МАГ. ВАМПИРИЗМ ЗА ЭФФЕКТ:"
-		
-		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff" "Warpath"
-		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description" "Передвигается на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% быстрее и получает дополнительно %dMODIFIER_PROPERTY_TOOLTIP% к силе."
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_vitality_hp_per_str"		"+{s:bonus_health_per_str} здоровья за силу от Rigwarl's Vitality"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_viscous_nasal_goo_cooldown"		"–{s:bonus_AbilityCooldown} сек. перезарядки Viscous Nasal Goo"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_quill_spray_cooldown"		"–{s:bonus_AbilityCooldown} сек. перезарядки Quill Spray"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_warpath_str_pct"		"+{s:bonus_str_ptc_per_stack}% к силе за эффект от Warpath"
 
 //=========================================================================================================
 // Oracle
@@ -954,12 +944,13 @@
 	"DOTA_Tooltip_ability_orcl_purifying_flames_radius_heal_pct"	"%ЛЕЧЕНИЕ ПО ОБЛАСТИ:"
 	
 	"DOTA_Tooltip_ability_orcl_false_promise"					"False Promise"
-	"DOTA_Tooltip_ability_orcl_false_promise_description"		"<h1>При применении на союзника:</h1> Oтcpoчивaeт cудьбу coюзникa, oтклaдывaя любoe лeчeниe и пoлучeниe урона дo кoнцa дeйcтвия этoй cпocoбнocти. Пpимeнeниe cнимaeт c цeли бoльшинcтвo oтpицaтeльных эффeктoв. \n<h1>При применении на врага:</h1> Все способности применяют союзную часть на цель, а по истечению действия, вместо лечения, наносит дополнительный урон прапорциональный потенциальному исцелению. \nТИП PAЗВEИВAНИЯ: cильнoe"
+	"DOTA_Tooltip_ability_orcl_false_promise_description"		"<h1>При применении на союзника:</h1> Oтcpoчивaeт cудьбу coюзникa, oтклaдывaя любoe лeчeниe и пoлучeниe урона дo кoнцa дeйcтвия этoй cпocoбнocти. Пpимeнeниe cнимaeт c цeли бoльшинcтвo oтpицaтeльных эффeктoв. \n<h1>При применении на врага:</h1> Все способности применяют союзную часть на цель, а по истечению действия, вместо лечения, наносит дополнительный урон прапорциональный потенциальному исцелению. Всё восстановление здоровья снижено на %enemy_heal_reduction%%%. \nТИП PAЗВEИВAНИЯ: cильнoe"
 	"DOTA_Tooltip_ability_orcl_false_promise_scepter_description"		"Увеличивает урон oт зaклинaний цeли на %scepter_spell_amp_bonus%%% и умeньшaeт eё интepвaл aтaк на %scepter_bat_bonus% ceк."
 	"DOTA_Tooltip_ability_orcl_false_promise_Lore"		"Пpeдcкaзaния лжeпpopoкoв и нeпpиятeлeй oбмaнчивы."
 	"DOTA_Tooltip_ability_orcl_false_promise_Note0"		"1) Oтлoжeнныe урон и лeчeниe учитывaют бpoню и coпpoтивлeниe мaгии."
 	"DOTA_Tooltip_ability_orcl_false_promise_Note1"		"2) Oтлoжeнныe урон и лeчeниe cpaбoтaют, кoгдa цeль будeт уязвимa."
 	"DOTA_Tooltip_ability_orcl_false_promise_duration"				"ДЛИТEЛЬНOСТЬ:"
+	"DOTA_Tooltip_ability_orcl_false_promise_duration_enemy"		"ДЛИТEЛЬНOСТЬ НА ВРАГЕ:"
 	"DOTA_Tooltip_ability_orcl_false_promise_heal_amp_pct"			"%МНOЖИТEЛЬ ЛEЧEНИЯ:"
 	"DOTA_Tooltip_ability_orcl_false_promise_abilitycastrange"		"ДAЛЬНOСТЬ ПPИМEНEНИЯ:"
 	
@@ -1000,7 +991,8 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_fates_edict_mana_regen_Description"		"Восстановление маны зависит от макс маны владельца"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_purifying_flames_cooldown"		"–{s:bonus_AbilityCooldown} ceк. пepeзapядки Purifying Flames"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_purifying_flames_damage"		"+{s:bonus_damage}% к урону Purifying Flames"
-	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration"		"+{s:bonus_duration} ceк. дeйcтвия False Promise"
+	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration"					"+{s:bonus_duration} ceк. дeйcтвия False Promise"
+	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration_Description"		"+{s:bonus_duration_enemy} ceк. дeйcтвия на враге"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_armor"		"False Promise дaёт {s:bonus_bonus_armor} бpoни"
 
 
@@ -1045,5 +1037,9 @@
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Горение от Eonite Heart"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Получает магический урон. Сопротивление к магии уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"
+
+	"Infernal_Buff_Health"			"Бонсу к здоровью:"
+	"Infernal_Buff_Mana"			"Бонсу к мане:"
+	"Infernal_Buff_HealthRegen"		"Бонсу к регенерации здоровья:"
     }
 }

@@ -16,7 +16,7 @@ function modifier_golem_ai:OnCreated(kv)
 	--	golem:SetAcquisitionRange(1600)
 
         -- Координаты вражеской базы
-        local enemy_base = Vector(-10562, 10484, 634)
+        local enemy_base = Entities:FindByName(nil, "dota_goodguys_fort"):GetAbsOrigin()		--Vector(-10562, 10484, 634)
 
         -- Рассчитываем точку назначения
         self.target_point = enemy_base
@@ -25,6 +25,7 @@ function modifier_golem_ai:OnCreated(kv)
         golem:MoveToPositionAggressive(self.target_point)
 
         -- Запускаем периодический вызов функции Think
+        self:OnIntervalThink()
         self:StartIntervalThink(0.5)
     end
 end
@@ -63,17 +64,29 @@ function modifier_golem_ai:OnIntervalThink()
                     golem:MoveToTargetToAttack(enemies[1])
                 else
 					local target
-					local buildings = FindUnitsInRadius(golem:GetTeamNumber(), golem:GetAbsOrigin(), nil, 2000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
-					for i = 1, #buildings do
-						if not buildings[i]:IsAttackImmune() or not buildings[i]:IsInvulnerable() then
-							target = buildings[i]
-							break
+					local targetPos
+					for _, towers in ipairs(GameMode.TowersTable) do
+						local tower_1Unit = EntIndexToHScript(towers._1.unit)
+						local tower_2Unit = EntIndexToHScript(towers._2.unit)
+						if tower_1Unit and tower_2Unit and tower_1Unit:IsAlive() and tower_2Unit:IsAlive() and (towers._1.team == DOTA_TEAM_GOODGUYS or towers._2.team == DOTA_TEAM_GOODGUYS) then
+							targetPos = Entities:FindByName(nil, towers.key.."_point"):GetAbsOrigin()
 						end
+					end
+					if targetPos then
+						local buildings = FindUnitsInRadius(golem:GetTeamNumber(), targetPos, nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
+						for i = 1, #buildings do
+							if not buildings[i]:IsAttackImmune() or not buildings[i]:IsInvulnerable() and string.match(buildings[i]:GetUnitName(), "_tower_cus") then
+								target = buildings[i]
+								break
+							end
+						end
+					else
+						targetPos = self.target_point
 					end
 					if target then
 						golem:MoveToPositionAggressive(target:GetAbsOrigin())
 					else
-						golem:MoveToPositionAggressive(self.target_point)
+						golem:MoveToPositionAggressive(targetPos)
 					end
                 end
             end

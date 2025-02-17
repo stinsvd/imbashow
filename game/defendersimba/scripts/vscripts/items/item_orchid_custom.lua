@@ -20,10 +20,10 @@ function item_orchid_1:OnSpellStart()
     local duration = self:GetSpecialValueFor("silence_duration")
     
     target:EmitSound("DOTA_Item.Orchid.Activate")
-    target:AddNewModifier(caster, self, "modifier_item_orchid_custom_debuff", {duration = duration})
+    target:AddNewModifier(caster, self, "modifier_item_orchid_custom_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 end
 
- 
+
 modifier_item_orchid_custom_passive = class({})
 
 function modifier_item_orchid_custom_passive:IsHidden() return true end
@@ -129,36 +129,32 @@ function modifier_item_orchid_custom_debuff:DestroyOnExpire()
     end
 end
 
+
+
 item_bloodthorn_1 = class({})
-
-function item_bloodthorn_1:GetIntrinsicModifierName()
-    return "modifier_item_bloodthorn_custom_passive"
-end
-
+function item_bloodthorn_1:GetIntrinsicModifierName() return "modifier_item_bloodthorn_custom_passive" end
 function item_orchid_3:OnSpellStart()
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     local duration = self:GetSpecialValueFor("silence_duration")
     
     target:EmitSound("DOTA_Item.Bloodthorn.Activate")
-    target:AddNewModifier(caster, self, "modifier_item_bloodthorn_custom_debuff", {duration = duration})
+    target:AddNewModifier(caster, self, "modifier_item_bloodthorn_custom_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 end
 
- 
+
 modifier_item_bloodthorn_custom_passive = class({})
-
 function modifier_item_bloodthorn_custom_passive:IsHidden() return true end
-
 function modifier_item_bloodthorn_custom_passive:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+	return {
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
 		MODIFIER_EVENT_ON_ATTACK_RECORD
-        }
+	}
 end
 
 function modifier_item_bloodthorn_custom_passive:OnCreated()
@@ -171,24 +167,13 @@ function modifier_item_bloodthorn_custom_passive:OnCreated()
 	self.bonus_chance = self:GetAbility():GetSpecialValueFor("bonus_chance")
 	self.bonus_chance_damage = self:GetAbility():GetSpecialValueFor("bonus_chance_damage")
     self.parent = self:GetParent()
-	self.pierce_proc 			= false
-	self.pierce_records			= {}
+	self.pierce_proc = false
+	self.pierce_records = {}
 end
 
 function modifier_item_bloodthorn_custom_passive:OnRefresh()
     self:OnCreated()
 end
-
-function modifier_item_bloodthorn_custom_passive:CheckState()
-    if self.pierce_proc == true then 
-      return {[MODIFIER_STATE_CANNOT_MISS] = true}
-    end
-    
-    return {}
-    
-end
-
-
 
 -- function modifier_item_bloodthorn_custom_passive:GetModifierProcAttack_BonusDamage_Magical(keys)
 --     print("1234")
@@ -197,11 +182,11 @@ end
 --         self:GetParent():EmitSound("DOTA_Item.MKB.proc")
 --         self.pierce_proc = false
 --         return self.bonus_chance_damage
---     end 
+--     end
 --  end
 
 function modifier_item_bloodthorn_custom_passive:GetModifierProcAttack_BonusDamage_Magical(keys)
-	for _, record in pairs(self.pierce_records) do	
+	for _, record in pairs(self.pierce_records) do
 		if record == keys.record then
 			table.remove(self.pierce_records, _)
 

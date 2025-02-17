@@ -10,8 +10,9 @@
 		"VoteBossDecline"		"No"
 		"WaveTimerNumber"		"Wave: {d:current_wave}"
 
+		"npc_dota_goodguys_tower_cus"		"Tower"
 		"npc_dota_badguys_tower_cus"		"Tower"
-		"npc_dota_badguys_tower_cus"		"Tower"
+		"DOTA_Tooltip_modifier_invulnerable_cus"	"Invulnerable"
 
 
 
@@ -1007,89 +1008,90 @@
 		"DOTA_Tooltip_ability_item_power_treads_6_bonus_attack_speed"		"+$attack"
 		"DOTA_Tooltip_ability_item_power_treads_6_bonus_armor"				"+$armor"
 
+//=========================================================================================================
+// modifiers
+//=========================================================================================================
+
+	"DOTA_Tooltip_modifier_boss_buff"					"Like a boss"
+	"DOTA_Tooltip_modifier_boss_buff_Description"		"Magic Resistance: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Status Resistance: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Incoming Damage Reduction: +%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Cooldown Reduction: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
+
+	"DOTA_Tooltip_ability_special_bonus_mp_regen_3_cus"		"+{s:value} Mana Regen"
+
+	// Error messages
+	"error_boss_not_killed"				"Boss {level} not killed"
 
 
-		// BRISTLEBACK
-		// PRICKLY
-		"DOTA_Tooltip_Ability_bristleback_prickly_custom" "Prickly"
-		"DOTA_Tooltip_Ability_bristleback_prickly_custom_Description" "Bristleback has %bonus_damage%%% damage against enemy heroes that are behind him. Creeps gain %bonus_attack_speed% attack speed when attacking in the back."
+//=========================================================================================================
+// BRISTLEBACK
+//=========================================================================================================
+	"DOTA_Tooltip_Facet_bb_berserk"					"Berserk"
+	"DOTA_Tooltip_Facet_bb_berserk_Description"		"Каждое срабатываение Quill Spray увеличивает урон за эффект."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Facet_bb_berserk"		"Каждое срабатываение Quill Spray увеличивает урон за эффект."
+	"DOTA_Tooltip_Facet_bb_snot_rocket"					"Snot Rocket"
+	"DOTA_Tooltip_Facet_bb_snot_rocket_Description"		"Bristleback now fires Viscous Nasal Goo instead of Quills when damaged. Viscous Nasal Goo effects are stronger."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_facet_bb_snot_rocket"				"Instead of Quills, Bristleback fires Viscous Nasal Goo at all nearby enemies."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_facet_bb_snot_rocket"		"Removes stack limit and deals damage over time based on Bristleback's strength."
 
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom"					"Viscous Nasal Goo"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Description"		"Covers a targets in snot, causing it to have reduced armor for %goo_duration% seconds. Multiple casts stack and refresh the duration. Quill Spray deals an additional damage per stack."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Lore"		"Having caught a cold while stuck in the snow, Bristleback turns it to his advantage."
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_radius"					"RADIUS:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack"			"BASE ARMOR LOSS:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack"			"ARMOR LOSS PER STACK:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_goo_str_dmg"				"%STRENGTH DAMAGE PER STACK:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_stack_limit"				"STACK LIMIT:"
+	"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_spray_bonus_damage"		"QUILL SPRAY DAMAGE PER STACK:"
 
-		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff" "Prickly"
-		"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description" "Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom"					"Quill Spray"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Description"		"Sprays enemy units with quills dealing damage in an area of effect around Bristleback. Deals bonus damage for every time a unit was hit by Quill Spray in the last %duration% seconds. <br><br> Ignores %creep_armor_pierce%%% of creep armor."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Lore"		"An enforcer's honor can be a prickly thing. So can his quills."
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_radius"						"RADIUS:"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_base_damage"			"%QUILL BASE DAMAGE FROM STR:"
+	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage"		"%QUILL STACK DAMAGE FROM STR:"
 
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom"					"Bristleback"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Bristleback takes less damage if hit on the sides or rear. If Bristleback takes %quill_release_threshold% damage from the rear, he releases a Quill Spray of the current level."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description"		"Bristleback passively gains charges for each use of Quill Spray, up to %max_stacks%. Activating ability will spend all charges and release Quill Spray for each charge and taunt nearby units. <br><br>With Snot Rocket (facet): instead of Quills, Bristleback shoots Viscous Nasal Goo at all nearby enemies."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore"		"Turning his back to a fight might be just the thing."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0"		"Bristleback's rear is considered to be within %back_angle% degrees from the back."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note1"		"Bristleback's side is considered to be within %side_angle% degrees from the back."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_side_damage_reduction"			"%SIDE DAMAGE REDUCTION:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_back_damage_reduction"			"%BACK DAMAGE REDUCTION:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_quill_release_threshold"		"DAMAGE THRESHOLD:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_radius"					"TAUNT RADIUS:"
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_duration"				"TAUNT DURATION:"
 
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom"					"Hairball"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_Description"		"Coughs a quill-packed hairball towards the target location. Erupts at the location, hitting enemies with Viscous Nasal Goo stacks and Quill Spray."
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_radius"			"RADIUS:"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_quill_stacks"		"QUILL STACKS:"
+	"DOTA_Tooltip_Ability_bristleback_hairball_custom_goo_stacks"		"GOO STACKS:"
 
-		// VISCOUS NASAL GOO
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Description" "Covers a targets in snot, causing it to have reduced armor for %duration% seconds. Multiple casts stack and refresh the duration. Quill Spray deals an additional damage per stack."
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_Lore" "Having caught a cold while stuck in the snow, Bristleback turns it to his advantage."
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_radius" "RADIUS:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_armor_per_stack" "ARMOR LOSS PER STACK:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_stack_limit" "STACK LIMIT:"
-		"DOTA_Tooltip_Ability_bristleback_viscous_nasal_goo_custom_spray_bonus_damage" "QUILL SPRAY DAMAGE PER STACK:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom"					"Warpath"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_Description"		"Bristleback works himself up into a fury every time he casts a spell, increasing his movement speed and strength."
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_Lore"		"'Temper, temper,' his mum always chided. But in a fight, a temper can come in handy."
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_str_ptc_per_stack"			"%STRENGTH PER STACK:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_move_speed_per_stack"		"%MOVEMENT PER STACK:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_duration"					"STACK DURATION:"
+	"DOTA_Tooltip_Ability_bristleback_warpath_custom_max_stacks"				"MAX STACKS:"
 
+	"DOTA_Tooltip_Ability_bristleback_prickly_custom"					"Prickly"
+	"DOTA_Tooltip_Ability_bristleback_prickly_custom_Description"		"Bristleback has %bonus_damage%%% damage against enemy heroes that are behind him. Creeps gain %bonus_attack_speed% attack speed when attacking in the back."
+	"DOTA_Tooltip_Ability_bristleback_vitality_custom"					"Rigwarl's Vitality"
+	"DOTA_Tooltip_Ability_bristleback_vitality_custom_Description"		"Increases Bristleback's health by %health_per_str% per strength."
 
-		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom" "Viscous Nasal Goo"
-		"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom_Description" "Losing %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
-
-
-
-		// QUILL SPRAY
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom" "Quill Spray"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Description" "Sprays enemy units with quills dealing damage in an area of effect around Bristleback. Deals bonus damage for every time a unit was hit by Quill Spray in the last %duration% seconds.<br><br>Ignores %creep_armor_pierce%%% of creep armor."
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_Lore" "An enforcer's honor can be a prickly thing. So can his quills."
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_radius" "RADIUS:"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage" "%QUILL STR STACK DAMAGE:"
-		"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_base_damage" "%QUILL STR BASE DAMAGE"
-
-
-		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom" "Quill Spray"
-		"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom_Description" "Each stack increases damage taken from Quill Spray"
-
-
-
-		// BRISTLEBACK
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom" "Bristleback"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description" "Bristleback takes less damage if hit on the sides or rear. If Bristleback takes %quill_release_threshold% damage from the rear, he releases a Quill Spray of the current level."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0" "Bristleback's rear is considered to be within %back_angle% degrees from the back."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note1" "Bristleback's side is considered to be within %side_angle% degrees from the back."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore" "Turning his back to a fight might be just the thing."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_side_damage_reduction" "%SIDE DAMAGE REDUCTION:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_back_damage_reduction" "%BACK DAMAGE REDUCTION:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_quill_release_threshold" "DAMAGE THRESHOLD:"
-
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description" "Bristleback passively gains charges for each use of Quill Spray, up to %max_stacks%. Activating ability will spend all charges and release Quill Spray for each charge and taunts nearby units."
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_radius" "TAUNT RADIUS:"
-		"DOTA_Tooltip_Ability_bristleback_bristleback_custom_taunt_duration" "TAUNT DURATION:"
-
-
-		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom" "Bristleback"
-		"DOTA_Tooltip_Modifier_bristleback_bristleback_custom_Description" "Activate to release all charges!"
-
-
-
-		// HAIRBALL
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom" "Hairball"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_Description" "Coughs a quill-packed hairball towards the target location. Erupts at the location, hitting enemies with Viscous Nasal Goo stacks and Quill Spray."
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_radius" "RADIUS:"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_quill_stacks" "QUILL STACKS:"
-		"DOTA_Tooltip_Ability_bristleback_hairball_custom_goo_stacks" "GOO STACKS:"
-
-
-
-		// WARPATH
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom" "Warpath"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Description" "Bristleback works himself up into a fury every time he casts a spell, increasing his movement speed and strength."
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_Lore" "'Temper, temper,' his mum always chided. But in a fight, a temper can come in handy."
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_str_ptc_per_stack" "%STRENGTH PER STACK:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_move_speed_per_stack" "%MOVEMENT PER STACK:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_duration" "STACK DURATION:"
-		"DOTA_Tooltip_Ability_bristleback_warpath_custom_max_stacks" "MAX STACKS:"
-
-		
-		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff" "Warpath"
-		"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description" "Moving %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% faster and gaining bonus %dMODIFIER_PROPERTY_TOOLTIP% strength."
+	"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom"					"Viscous Nasal Goo"
+	"DOTA_Tooltip_Modifier_bristleback_viscous_nasal_goo_custom_Description"		"Losing %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
+	"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom"					"Quill Spray"
+	"DOTA_Tooltip_Modifier_bristleback_quill_spray_custom_Description"		"Each stack increases damage taken from Quill Spray"
+	"DOTA_Tooltip_modifier_bb_quill_spray_berserk"					"Berserk Spray"
+	"DOTA_Tooltip_modifier_bb_quill_spray_berserk_Description"		"Increases quill stack damage from strength by %fMODIFIER_PROPERTY_TOOLTIP%%%."
+	"DOTA_Tooltip_Modifier_bristleback_bristleback_custom"					"Bristleback"
+	"DOTA_Tooltip_Modifier_bristleback_bristleback_custom_Description"		"Activate to release all charges!"
+	"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff"					"Warpath"
+	"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description"		"Moving %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% faster and gaining bonus %dMODIFIER_PROPERTY_TOOLTIP% strength."
+	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff"					"Prickly"
+	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
 
 //=========================================================================================================
@@ -1212,12 +1214,13 @@
 	"DOTA_Tooltip_ability_orcl_purifying_flames_radius_heal_pct"	"%RADIUS HEAL:"
 
 	"DOTA_Tooltip_ability_orcl_false_promise"					"False Promise"
-	"DOTA_Tooltip_ability_orcl_false_promise_description"		"<h1>On Ally:</h1> Delays the fate of an ally, postponing any healing and damage until the ability ends. Dispels most negative effects from the target. \n<h1>On Enemy:</h1> All abilities apply the allied part to the target, and at the end of the duration, instead of healing, deals additional damage proportional to the potential healing. \nDISPEL TYPE: Strong Dispel"
+	"DOTA_Tooltip_ability_orcl_false_promise_description"		"<h1>On Ally:</h1> Delays the fate of an ally, postponing any healing and damage until the ability ends. Dispels most negative effects from the target. \n<h1>On Enemy:</h1> All abilities apply the allied part to the target, and at the end of the duration, instead of healing, deals additional damage proportional to the potential healing. All healing is reduced by %enemy_heal_reduction%%%. \nDISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_orcl_false_promise_scepter_description"		"Increases target's spell damage by %scepter_spell_amp_bonus%%% and reduces its attack interval by %scepter_bat_bonus% sec."
 	"DOTA_Tooltip_ability_orcl_false_promise_Lore"		"Foes and false prophets oft make lies of men's fates."
 	"DOTA_Tooltip_ability_orcl_false_promise_Note0"		"1) Delayed damage and healing account for armor and magic resistance."
 	"DOTA_Tooltip_ability_orcl_false_promise_Note1"		"2) Delayed damage and healing occur when the target becomes vulnerable."
 	"DOTA_Tooltip_ability_orcl_false_promise_duration"				"DURATION:"
+	"DOTA_Tooltip_ability_orcl_false_promise_duration_enemy"		"DURATION ON ENEMY:"
 	"DOTA_Tooltip_ability_orcl_false_promise_heal_amp_pct"			"%HEAL AMPLIFICATION:"
 	"DOTA_Tooltip_ability_orcl_false_promise_abilitycastrange"		"CAST RANGE:"
 
@@ -1258,7 +1261,8 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_fates_edict_mana_regen_Description"		"Mana Regen based on caster's max mana"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_purifying_flames_cooldown"		"–{s:bonus_AbilityCooldown}s Purifying Flames Cooldown"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_purifying_flames_damage"		"+{s:bonus_damage}% Purifying Flames Damage"
-	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration"		"+{s:bonus_duration}s False Promise Duration"
+	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration"					"+{s:bonus_duration}s False Promise Duration"
+	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_duration_Description"		"+{s:bonus_duration_enemy}s duration on enemy"
 	"DOTA_Tooltip_ability_special_bonus_unique_orcl_false_promise_armor"		"False Promise grants {s:bonus_bonus_armor} Armor"
 
 
@@ -1304,5 +1308,9 @@
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Eonite Heart Burn"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Deals magical damage. Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"
+
+	"Infernal_Buff_Health"			"Bonus Health:"
+	"Infernal_Buff_Mana"			"Bonus Mana:"
+	"Infernal_Buff_HealthRegen"		"Bonus Health Regen:"
     }
 }

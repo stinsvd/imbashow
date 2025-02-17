@@ -1,7 +1,7 @@
 "DOTAHeroes"
 {
 	"npc_dota_hero_axe"
-    {
+	{
 		"Ability1"		"axe_berserkers_call_lua"
 		"Ability2"		"axe_battle_hunger_lua"
 		"Ability3"		"axe_counter_helix_custom_lua"
@@ -9,7 +9,7 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"axe_culling_blade_custom_lua"
 		"Ability7"		"axe_innate_ability"
-    }
+	}
 
 	"npc_dota_hero_slardar"
 	{
@@ -44,16 +44,62 @@
 		}
 	}
 
-	"npc_dota_hero_bristleback_override"
+	"npc_dota_hero_bristleback"
 	{
-		"override_hero"				"npc_dota_hero_bristleback"					// Hero to override
-		"Ability1"					"bristleback_viscous_nasal_goo_custom"		// Ability 1
-		"Ability2"					"bristleback_quill_spray_custom"			// Ability 2
-		"Ability3"					"bristleback_bristleback_custom"			// Ability 3
-		"Ability4"					"bristleback_hairball_custom"				// Ability 4
-		"Ability5"					"generic_hidden"							// Ability 5
-		"Ability6"					"bristleback_warpath_custom"				// Ability 6
-		"Ability7"					"bristleback_prickly_custom"				// Ability 7 (Innate)
+		"Ability1"		"bristleback_viscous_nasal_goo_custom"
+		"Ability2"		"bristleback_quill_spray_custom"
+		"Ability3"		"bristleback_bristleback_custom"
+		"Ability4"		"bristleback_hairball_custom"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bristleback_warpath_custom"
+		"Ability7"		"bristleback_vitality_custom"
+
+		"Ability10"		"special_bonus_strength_15"
+		"Ability11"		"special_bonus_mp_regen_3_cus"
+		"Ability12"		"special_bonus_movement_speed_30"
+		"Ability13"		"special_bonus_armor_10"
+		"Ability14"		"special_bonus_unique_bb_quill_spray_cooldown"
+		"Ability15"		"special_bonus_unique_bb_viscous_nasal_goo_cooldown"
+		"Ability16"		"special_bonus_unique_bb_warpath_str_pct"
+		"Ability17"		"special_bonus_unique_bb_vitality_hp_per_str"
+
+		"Facets"
+		{
+			"bristleback_berserk"
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"bristleback_snot_rocket"
+			{
+				"Icon"				"snot"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"bristleback_seeing_red"
+			{
+				"Icon"				"no_vision"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+
+			"bb_berserk"
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+			}
+			"bb_snot_rocket"
+			{
+				"Icon"				"snot"
+				"Color"				"Green"
+				"GradientID"		"0"
+			}
+		}
 	}
 
 	"npc_dota_hero_oracle"
@@ -103,7 +149,7 @@
 		
 		"Facets"
 		{
-			"warlock_golem" 
+			"warlock_golem"
 			{
 				"Icon"				"summons"
 				"Color"				"Red"

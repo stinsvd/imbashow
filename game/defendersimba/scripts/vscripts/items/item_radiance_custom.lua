@@ -8,6 +8,9 @@ item_radiance_custom_4 = item_radiance_custom_1
 item_radiance_custom_5 = item_radiance_custom_1
 item_radiance_custom_6 = item_radiance_custom_1
 
+function item_radiance_custom_1:GetAOERadius()
+	return self:GetSpecialValueFor("aura_radius")
+end
 function item_radiance_custom_1:GetIntrinsicModifierName()
     return "modifier_item_radiance_custom"
 end

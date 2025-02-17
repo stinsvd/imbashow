@@ -245,4 +245,19 @@
 			}
 		}
 	}
+
+
+	"special_bonus_mp_regen_3_cus"
+	{
+		"BaseClass"					"special_bonus_mp_regen_1"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"value"
+			{
+				"value"			"3"
+			}
+		}
+	}
 }

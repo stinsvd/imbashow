@@ -1,0 +1,45 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/heroes/custom_buffs.js"/>
+	</scripts>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/heroes/custom_buffs.css"/>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+	</styles>
+	<Panel class="CustomBuffPanelMain" hittest="false">
+		<Panel id="WarlockBuffPanel" class="panel_hidden">
+			<Panel class="BuffPanel">
+				<Panel class="Buff">
+					<DOTAAbilityImage abilityname="forest_troll_high_priest_heal_amp_aura" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage abilityname="filler_ability" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage abilityname="satyr_hellcaller_unholy_aura" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+			</Panel>
+			<Panel class="BuffPanel">
+				<Panel class="Buff">
+					<DOTAAbilityImage id="Buff_1_ability" abilityname="infrnl_stomp" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage id="Buff_2_ability" abilityname="infrnl_flaming_fists" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage id="Buff_3_ability" abilityname="infrnl_immolation" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage id="Buff_4_ability" abilityname="infrnl_eonite_heart" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

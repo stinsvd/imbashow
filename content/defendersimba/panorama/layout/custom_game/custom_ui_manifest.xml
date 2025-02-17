@@ -3,7 +3,8 @@
         <include src="file://{resources}/layout/custom_game/main.js"/>
     </scripts>
     <Panel>
-        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/wave/wave.xml" />
-        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/vote_boss/vote_boss.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/creeps/wave.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/boss/vote_boss.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/heroes/custom_buffs.xml" />
     </Panel>
 </root>

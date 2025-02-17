@@ -1,5 +1,5 @@
 -- Время респавна босса после его убийства (в секундах)
-BOSS_RESPAWN_TIME = 99999
+BOSS_RESPAWN_TIME = -1
 
 if BossManager == nil then
 	BossManager = class({})
@@ -44,6 +44,7 @@ function BossManager:SpawnBoss(bossIndex)
 
 	-- Спавн юнита босса
 	local bossUnit = CreateUnitByName(bossName, spawnPoint, true, nil, nil, DOTA_TEAM_BADGUYS)
+	bossUnit:AddNewModifier(bossUnit, nil, "modifier_neutral_boss_cus", {})
 	bossUnit.bossIndex = bossIndex  -- привязываем индекс босса к юниту, чтобы знать, какой именно босс был убит
 end
 
@@ -55,19 +56,19 @@ function BossManager:OnEntityKilled(event)
 		local bossIndex = killedUnit.bossIndex
 
 		if self.bossKilled[bossIndex] == nil then
+			self.bossKilled[bossIndex] = true
 			local options = CustomNetTables:GetTableValue("game_options", "creepLevel")
 			if options then
 				options.current = options.current + 1
 				BossManager:SpawnBoss(options.current)
 				NeutralManager:UnlockNeutralCamp(options.current)
 				CustomNetTables:SetTableValue("game_options", "creepLevel", options)
+				CustomGameEventManager:Send_ServerToAllClients("ShowBossKilledNotif", {text = bossIndex, delay = 5})
 			end
 		end
-
-		self.bossKilled[bossIndex] = true
-		print("Босс " .. bossIndex .. " убит, респавн через " .. BOSS_RESPAWN_TIME .. " секунд.")
 		
 		if BOSS_RESPAWN_TIME > 0 then
+			print("Босс " .. bossIndex .. " убит, респавн через " .. BOSS_RESPAWN_TIME .. " секунд.")
 			Timers:CreateTimer(BOSS_RESPAWN_TIME, function()
 				self:SpawnBoss(bossIndex)
 			end)

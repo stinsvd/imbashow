@@ -25,7 +25,11 @@ function orcl_false_promise:OnSpellStart()
 	ParticleManager:SetParticleControlEnt(pf_target, 0, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 	ParticleManager:ReleaseParticleIndex(pf_target)
 	
-	target:Purge(false, true, false, true, true)
+	if target:GetTeamNumber() == caster:GetTeamNumber() then
+		target:Purge(false, true, false, true, true)
+	else
+		duration = self:GetSpecialValueFor("duration_enemy")
+	end
 	target:AddNewModifier(caster, self, "modifier_orcl_false_promise_buff", {duration = duration})
 end
 
@@ -70,6 +74,7 @@ function modifier_orcl_false_promise_buff:OnRefresh()
 	self.heal_amp_pct = (1 + (self:GetAbility():GetSpecialValueFor("heal_amp_pct") / 100))
 	self.scepter_spell_amp_bonus = self:GetAbility():GetSpecialValueFor("scepter_spell_amp_bonus")
 	self.scepter_bat_bonus = self:GetAbility():GetSpecialValueFor("scepter_bat_bonus")
+	self.heal_reduction = self:GetAbility():GetSpecialValueFor("enemy_heal_reduction")
 end
 function modifier_orcl_false_promise_buff:AddCustomTransmitterData() return {heal = self.heal, damage = self.damage} end
 function modifier_orcl_false_promise_buff:HandleCustomTransmitterData(data) self.heal = data.heal; self.damage = data.damage; end
@@ -109,11 +114,10 @@ function modifier_orcl_false_promise_buff:OnRemoved()
 			
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, owner, choise * (-1), nil)
 			
-			local damageLeft = choise
+			local damageLeft = choise * (-1)
 			for i = 1, #self.damageInstances do
 				self.damageInstances[i].victim = EntIndexToHScript(self.damageInstances[i].victim)
 				self.damageInstances[i].attacker = EntIndexToHScript(self.damageInstances[i].attacker)
-				self.damageInstances[i].ability = EntIndexToHScript(self.damageInstances[i].ability)
 				local instanceDamage = math.min(damageLeft, self.damageInstances[i].damage)
 				damageLeft = damageLeft - instanceDamage
 				self.damageInstances[i].damage = instanceDamage
@@ -140,7 +144,6 @@ function modifier_orcl_false_promise_buff:OnRemoved()
 		for i = 1, #self.damageInstances do
 			self.damageInstances[i].victim = EntIndexToHScript(self.damageInstances[i].victim)
 			self.damageInstances[i].attacker = EntIndexToHScript(self.damageInstances[i].attacker)
-			self.damageInstances[i].ability = EntIndexToHScript(self.damageInstances[i].ability)
 			ApplyDamage(self.damageInstances[i])
 		end
 	end
@@ -153,6 +156,10 @@ function modifier_orcl_false_promise_buff:DeclareFunctions()
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+		MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET,
+		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2,
 	}
 end
@@ -167,7 +174,7 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 	if not target then return end
 	if owner ~= target then return end
 	if damage <= 0 then return end
-	if keys.ability == self:GetAbility() then return end
+	if keys.inflictor == self:GetAbility() then return end
 	
 	local damage_flags = keys.damage_flags + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL
 	if bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS then
@@ -187,14 +194,13 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 	self.damageInstances[self.instanceCounter] = {
 		victim = owner:entindex(),
 		attacker = attacker:entindex(),
-		ability = self:GetAbility():entindex(),
-		damage = nil,
+		ability = self:GetAbility(),
+		damage = damage,
 		damage_type = keys.damage_type,
 		damage_flags = damage_flags,
 	}
 	self.instanceCounter = self.instanceCounter + 1
-	
-	self.damageInstances[self.instanceCounter - 1].damage = damage
+
 	self.damage = self.damage + damage
 	
 	local hit_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_attacked.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
@@ -225,6 +231,18 @@ function modifier_orcl_false_promise_buff:GetModifierBaseAttackTimeConstant()
 			return new_bat
 		end
 	end
+end
+function modifier_orcl_false_promise_buff:GetModifierHealAmplify_PercentageTarget()
+	if self.isEnemy then return self.heal_reduction end
+end
+function modifier_orcl_false_promise_buff:GetModifierHPRegenAmplify_Percentage()
+	if self.isEnemy then return self.heal_reduction end
+end
+function modifier_orcl_false_promise_buff:GetModifierLifestealRegenAmplify_Percentage()
+	if self.isEnemy then return self.heal_reduction end
+end
+function modifier_orcl_false_promise_buff:GetModifierSpellLifestealRegenAmplify_Percentage()
+	if self.isEnemy then return self.heal_reduction end
 end
 function modifier_orcl_false_promise_buff:OnTooltip()
 	if (self.heal - self.damage) >= 0 then

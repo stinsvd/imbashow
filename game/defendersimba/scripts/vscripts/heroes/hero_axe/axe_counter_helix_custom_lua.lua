@@ -1,214 +1,132 @@
---Designed by: AniPream and kxllswxtch from ImbaShow :)
---21/12/2024
---Способность наносит чистый урон в радиусе. Срабатывает когда владелец ударит несколько раз по врагам(крипы, герои, строения) или по владельцу ударят(крипы, герои, строения).
---Способность крадет силу у вражеских героев и дает силу нам. Эффект обновляется каждый раз при добавлении стаков
---Присутсвует глобальная переменная для отслеживания количества срабатываний что бы сбросить кулдаун у способности "axe_culling_blade_custom_lua"
-
 LinkLuaModifier("modifier_axe_counter_helix_custom_lua", "heroes/hero_axe/axe_counter_helix_custom_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_axe_counter_helix_custom_lua_debuff", "heroes/hero_axe/axe_counter_helix_custom_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_axe_counter_helix_custom_lua_buff", "heroes/hero_axe/axe_counter_helix_custom_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_axe_culling_blade_refresh_counter", "heroes/hero_axe/axe_culling_blade_custom_lua", LUA_MODIFIER_MOTION_NONE)
 
-axe_counter_helix_custom_lua = class({})
-
-function axe_counter_helix_custom_lua:GetCastRange()
-    return self:GetSpecialValueFor("radius")
+axe_counter_helix_custom_lua = axe_counter_helix_custom_lua or class({})
+function axe_counter_helix_custom_lua:Precache(context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_axe/axe_counterhelix.vpcf", context)
 end
-
-function axe_counter_helix_custom_lua:GetIntrinsicModifierName()
-    return "modifier_axe_counter_helix_custom_lua"
-end
-
-modifier_axe_counter_helix_custom_lua = class({
-    IsHidden = function(self) return false end,
-    IsPurgable = function(self) return false end,
-    IsDebuff = function(self) return false end,
-    IsBuff = function(self) return true end,
-    RemoveOnDeath = function(self) return false end,
-    GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
-})
-
-function modifier_axe_counter_helix_custom_lua:DeclareFunctions() -- Выносить отдельно. Только так работает эвент атаки. Почему? хороший вопрос...
-    return {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-    }
-end
+function axe_counter_helix_custom_lua:GetAOERadius() return self:GetSpecialValueFor("radius") end
+function axe_counter_helix_custom_lua:GetIntrinsicModifierName() return "modifier_axe_counter_helix_custom_lua" end
 
 
+modifier_axe_counter_helix_custom_lua = modifier_axe_counter_helix_custom_lua or class({})
+function modifier_axe_counter_helix_custom_lua:IsHidden() return false end
+function modifier_axe_counter_helix_custom_lua:IsPurgable() return false end
+function modifier_axe_counter_helix_custom_lua:IsDebuff() return false end
+function modifier_axe_counter_helix_custom_lua:RemoveOnDeath() return false end
 function modifier_axe_counter_helix_custom_lua:OnCreated()
-    _G.counter = 0 --Глобальная переменная для отслеживания срабатываний другой абилки
-    local ability = self:GetAbility()
-    self.radius = ability:GetSpecialValueFor("radius")
-    self.duration = ability:GetSpecialValueFor("duration")
-    -- Инициализируем стеки при создании модификатора
-    self:SetStackCount(ability:GetSpecialValueFor("attack_need")) -- Устанавливаем начальное количество стаков
-    self.steal_str = ability:GetSpecialValueFor("steal_str")
+	if not IsServer() then return end
+	self:SetStackCount(self:GetAbility():GetSpecialValueFor("attack_need"))
 end
-
+function modifier_axe_counter_helix_custom_lua:DeclareFunctions()
+	return {
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
+	}
+end
 function modifier_axe_counter_helix_custom_lua:OnAttackLanded(params)
-    if not IsServer() then return end
+	if not IsServer() then return end
+	local ability = self:GetAbility()
+	if not ability then return end
+	local caster = self:GetCaster()
+	local target = params.target
+	local attacker = params.attacker
 
-    local caster = self:GetCaster()
-    local ability = self:GetAbility()
+	if caster == attacker or target == caster then
+		self:DecrementStackCount()
 
-    if caster == params.attacker or params.target == caster then
+		if self:GetStackCount() == 0 then
+			local radius = ability:GetSpecialValueFor("radius")
+			local damage = ability:GetSpecialValueFor("base_damage")
+			if caster.GetStrength then
+				damage = damage + (caster:GetStrength() * ability:GetSpecialValueFor("damage_per_str")) / 100
+			end
+			local steal_str = self:GetAbility():GetSpecialValueFor("steal_str")
 
-        -- Уменьшаем количество стаков
-        local currentStacks = self:GetStackCount()
-        if currentStacks > 0 then
-            self:SetStackCount(currentStacks - 1)
-        end
+			caster:FadeGesture(ACT_DOTA_CAST_ABILITY_3)
+			caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 
-        -- Проверяем, если стаков больше нет
-        if self:GetStackCount() == 0 then
-            self:PlayEffects() -- Проигрываем эффект
-            self:DealDamage()   -- Наносим урон
+			local effect_cast = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_counterhelix.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+			ParticleManager:SetParticleControlEnt(effect_cast, 0, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(effect_cast)
+			caster:EmitSound("Hero_Axe.CounterHelix")
 
-            -- Восстанавливаем стеки из ключа "attack_need"
-            local attackNeed = ability:GetSpecialValueFor("attack_need")
-            if attackNeed then
-                self:SetStackCount(attackNeed)
-            end
-        end
-    end
+			local damageTable = {
+				victim = nil,
+				attacker = caster,
+				ability = ability,
+				damage = damage,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage_flags = DOTA_DAMAGE_FLAG_NONE,
+			}
+			
+			local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+			for i = 1, #enemies do
+		--		SendOverheadEventMessage(nil, OVERHEAD_ALERT_CRITICAL, enemies[i], damageTable.damage, nil)
+				damageTable.victim = enemies[i]
+				ApplyDamage(damageTable)
+
+				if enemies[i]:IsHero() and enemies[i]:IsAlive() then
+					local duration = self:GetAbility():GetSpecialValueFor("duration")
+					for x = 1, steal_str do
+						caster:AddNewModifier(caster, ability, "modifier_axe_counter_helix_custom_lua_buff", {duration = duration})
+						enemies[i]:AddNewModifier(caster, ability, "modifier_axe_counter_helix_custom_lua_debuff", {duration = duration * (1 - enemies[i]:GetStatusResistance())})
+					end
+				end
+			end
+			
+			local cullingBlade = caster:FindAbilityByName("axe_culling_blade_custom_lua")
+			if cullingBlade and cullingBlade:IsTrained() then
+				caster:AddNewModifier(caster, cullingBlade, "modifier_axe_culling_blade_refresh_counter", {})
+			end
+			ability:UseResources(true, true, false, true)
+			self:SetStackCount(ability:GetSpecialValueFor("attack_need"))
+		end
+	end
 end
 
 
-function modifier_axe_counter_helix_custom_lua:PlayEffects()
-    local caster = self:GetCaster()
-
-    local fx = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_bloodchaser/axe_attack_blur_counterhelix_bloodchaser.vpcf", PATTACH_ABSORIGIN, caster) -- рекамендую использовать данный партикл
-    ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
-    ParticleManager:SetParticleControl(fx, 1, Vector(self.radius,self.radius,self.radius)) -- то что отвечает за радиус(Не увеличивается от радиусе стандарт 300)
-    ParticleManager:ReleaseParticleIndex(fx)
-
-    local fx2 = ParticleManager:CreateParticle("particles/econ/items/axe/ti9_jungle_axe/ti9_jungle_axe_attack_blur_counterhelix_leaves.vpcf", PATTACH_ABSORIGIN, caster) -- рекамендую использовать данный партикл
-    ParticleManager:SetParticleControl(fx2, 0, caster:GetAbsOrigin())
-    ParticleManager:SetParticleControl(fx2, 1, Vector(self.radius,self.radius,self.radius)) -- то что отвечает за радиус(Не увеличивается от радиусе стандарт 300)
-    ParticleManager:ReleaseParticleIndex(fx2)
-    
-    caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
-    -- Проигрываем звук (если нужно)
-    EmitSoundOn("Hero_Axe.CounterHelix", caster)
-end
-
-function modifier_axe_counter_helix_custom_lua:DealDamage()
-    local caster = self:GetCaster()
-    local ability = self:GetAbility()
-    local strength = caster:GetStrength()
-    local damage_per_str = ability:GetSpecialValueFor("damage_per_str")
-    local damage = (strength * damage_per_str) / 100 -- Расчитываем урон от силы. Преобразуем целое число в процент.
-    local base_damage = ability:GetSpecialValueFor("base_damage") -- Базовый урон
-    local multy_damage = damage + base_damage
-    local radius = ability:GetSpecialValueFor("radius") -- Радиус
-
-    -- Находим врагов в радиусе
-    local targets = FindUnitsInRadius(
-        caster:GetTeamNumber(),
-        caster:GetAbsOrigin(),
-        nil,
-        radius,
-        DOTA_UNIT_TARGET_TEAM_ENEMY,
-        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        DOTA_UNIT_TARGET_FLAG_NONE,
-        FIND_ANY_ORDER,
-        false
-    )
-
-    -- Наносим урон всем врагам в радиусе
-    for _, enemy in pairs(targets) do
-        if enemy:IsHero() then self:AddStack(enemy, caster) end -- если крутилка сработала на героев, то добавляем силу себе и отнимаем силу врагу.
-        ApplyDamage({
-            victim = enemy,
-            attacker = caster,
-            damage = multy_damage,
-            damage_type = DAMAGE_TYPE_PURE,
-            ability = ability
-        })
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_CRITICAL, enemy, multy_damage, nil)
-    end
-
-    _G.counter = _G.counter + 1 -- когда срабатывает то увеличиваем число глобальной переменной на +1
-    ability:StartCooldown(ability:GetSpecialValueFor("AbilityCooldown"))
-end
-
-function modifier_axe_counter_helix_custom_lua:AddStack(enemy, caster)
-    for _ = 1, self.steal_str do
-        local buf = caster:AddNewModifier(caster, self:GetAbility(), "modifier_axe_counter_helix_custom_lua_buff", {duration = self.duration})
-        buf:SetDuration(self.duration, true)
-    end
-
-    if not enemy:IsAlive() then return end
-    for _ = 1, self.steal_str do
-        local deb = enemy:AddNewModifier(caster, self:GetAbility(), "modifier_axe_counter_helix_custom_lua_debuff", {duration = self.duration})
-        deb:SetDuration(self.duration, true)
-    end
-end
-
-
-modifier_axe_counter_helix_custom_lua_buff = class({
-    IsHidden = function(self) return self:GetStackCount() == 0 end,
-    IsPurgable = function(self) return false end,
-    IsDebuff = function(self) return false end,
-    IsBuff = function(self) return true end,
-    RemoveOnDeath = function(self) return true end,
-})
-
-function modifier_axe_counter_helix_custom_lua_buff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
-end
-
-
-
-
-function modifier_axe_counter_helix_custom_lua_buff:OnCreated()
-    self.ability = self:GetAbility()
-    self.bonus_str = self.ability:GetSpecialValueFor("steal_str")
-end
-
+modifier_axe_counter_helix_custom_lua_buff = modifier_axe_counter_helix_custom_lua_buff or class({})
+function modifier_axe_counter_helix_custom_lua_buff:IsHidden() return false end
+function modifier_axe_counter_helix_custom_lua_buff:IsPurgable() return false end
+function modifier_axe_counter_helix_custom_lua_buff:IsDebuff() return false end
+function modifier_axe_counter_helix_custom_lua_buff:OnCreated() self:OnRefresh() end
 function modifier_axe_counter_helix_custom_lua_buff:OnRefresh()
-    self:IncrementStackCount()
+	self:IncrementStackCount()
 end
-
+function modifier_axe_counter_helix_custom_lua_buff:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_TOOLTIP
+	}
+end
 function modifier_axe_counter_helix_custom_lua_buff:GetModifierBonusStats_Strength()
-    return self:GetStackCount()
+	return self:GetStackCount()
 end
-
 function modifier_axe_counter_helix_custom_lua_buff:OnTooltip()
-    return self:GetModifierBonusStats_Strength()
+	return self:GetModifierBonusStats_Strength()
 end
 
-modifier_axe_counter_helix_custom_lua_debuff = class({
-    IsHidden = function(self) return false end,
-    IsPurgable = function(self) return true end,
-    IsDebuff = function(self) return true end,
-    IsBuff = function(self) return false end,
-    RemoveOnDeath = function(self) return true end,
-})
 
-
+modifier_axe_counter_helix_custom_lua_debuff = modifier_axe_counter_helix_custom_lua_debuff or class({})
+function modifier_axe_counter_helix_custom_lua_debuff:IsHidden() return false end
+function modifier_axe_counter_helix_custom_lua_debuff:IsPurgable() return true end
+function modifier_axe_counter_helix_custom_lua_debuff:IsDebuff() return true end
+function modifier_axe_counter_helix_custom_lua_debuff:OnCreated() self:OnRefresh() end
+function modifier_axe_counter_helix_custom_lua_debuff:OnRefresh()
+	self:IncrementStackCount()
+end
 function modifier_axe_counter_helix_custom_lua_debuff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_TOOLTIP
-    }
+	return {
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_TOOLTIP
+	}
 end
-
-function modifier_axe_counter_helix_custom_lua_debuff:OnCreated()
-    local ability = self:GetAbility()
-    self.steal_str_debuff = ability:GetSpecialValueFor("steal_str")
-end
-
-function modifier_axe_counter_helix_custom_lua_debuff:OnRefresh(params)
-    self:IncrementStackCount()
-end
-
 function modifier_axe_counter_helix_custom_lua_debuff:GetModifierBonusStats_Strength()
-    return -self:GetStackCount()
+	return -self:GetStackCount()
 end
-
 function modifier_axe_counter_helix_custom_lua_debuff:OnTooltip()
-    return self:GetModifierBonusStats_Strength()
+	return self:GetModifierBonusStats_Strength()
 end

@@ -20,12 +20,12 @@
 #base "items/item_sheepstick_custom.kv"
 #base "items/item_diffusal_blade_custom.kv"
 #base "items/item_orchid_custom.kv"
-  
- 
+
+#base "../npc/overrided.txt"
+
+
 "items"
 {
-	"item_travel_boots_2"			"ITEM_REMOVE"
-	
 	"item_upgrade_scroll_1"
 	{
 		"BaseClass"						"item_datadriven"
@@ -225,7 +225,7 @@
 	"item_recipe_platemail_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -264,7 +264,7 @@
 	"item_recipe_tiara_of_selemene_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -304,7 +304,7 @@
 	"item_recipe_ring_of_tarrasque_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -348,7 +348,7 @@
 	"item_recipe_reaver_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -385,7 +385,7 @@
 	"item_recipe_eagle_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -421,7 +421,7 @@
 	"item_recipe_mystic_staff_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
@@ -458,7 +458,7 @@
 	"item_recipe_relic_2"
 	{		
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
+		"AbilityTextureName"			"item_recipe"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""

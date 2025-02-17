@@ -1,0 +1,255 @@
+"DOTAAbilities"
+{
+	"item_recipe_shivas_guard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_shivas_guard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_sheepstick"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_sheepstick"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_mage_slayer"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_mage_slayer"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_disperser"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_disperser"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_diffusal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_diffusal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_satanic"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_satanic"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_bloodthorn"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_bloodthorn"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_orchid"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_orchid"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_ethereal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_ethereal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_bloodstone"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_bloodstone"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_radiance"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_radiance"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_skadi"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_skadi"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_octarine_core"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_octarine_core"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_mjollnir"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_mjollnir"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_heart"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_heart"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_desolator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_desolator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_greater_crit"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_greater_crit"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_butterfly"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_butterfly"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_assault"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_assault"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_bfury"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_bfury"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_travel_boots_2"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_travel_boots_2"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_helm_of_the_overlord"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_helm_of_the_overlord"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_helm_of_the_dominator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_helm_of_the_dominator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+}

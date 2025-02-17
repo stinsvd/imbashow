@@ -6,6 +6,7 @@ end
 
 -- Время спавна нейтралов
 NM_SPAWN_TIME = 10
+NeutralManager.LevelsUnlocked = {}
 
 function NeutralManager:Init()
 	local maxLevel = 6
@@ -27,15 +28,25 @@ function NeutralManager:Init()
 end
 
 function NeutralManager:UnlockNeutralCamp(level)
-	local points = Entities:FindAllByName("creeps_"..level.."_point")
-	
-	if level == 6 then
-		GameMode:TransformPlayerToBoss()
-	end
-	
-	for _, point in ipairs(points) do
-		point.level = level
-		self:SpawnCamp(point)
+	if not NeutralManager.LevelsUnlocked[level] then
+		NeutralManager.LevelsUnlocked[level] = true
+		if level <= 6 then
+			CustomNetTables:SetTableValue("game_options", "creepLevel", {current = level})
+		end
+
+		local points = Entities:FindAllByName("creeps_"..level.."_point")
+		
+		if level == 6 then
+			GameMode:TransformPlayerToBoss()
+		end
+		
+		for _, point in ipairs(points) do
+			point.level = level
+			if level > 6 then
+				AddFOWViewer(DOTA_TEAM_BADGUYS, point:GetAbsOrigin(), 1000, 86400, true)
+			end
+			self:SpawnCamp(point)
+		end
 	end
 end
 
