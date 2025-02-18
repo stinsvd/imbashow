@@ -1,10 +1,10 @@
 "lang"
 {
-    "Language" "English"
-    "Tokens"
-    {
-        "random_boss_message"      "Do you want to become the final boss? Please type 'Yes' or 'No' in chat."
-        "boss_chosen_message"      "%s1 has become the final boss!"
+	"Language" "English"
+	"Tokens"
+	{
+		"random_boss_message"		"Do you want to become the final boss? Please type 'Yes' or 'No' in chat."
+		"boss_chosen_message"		"%s1 has become the final boss!"
 		"VoteBossTitle"			"Do you want to become the final boss?"
 		"VoteBossConfirm"		"Yes"
 		"VoteBossDecline"		"No"
@@ -1050,7 +1050,7 @@
 	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage"		"%QUILL STACK DAMAGE FROM STR:"
 
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom"					"Bristleback"
-	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Bristleback takes less damage if hit on the sides or rear. If Bristleback takes %quill_release_threshold% damage from the rear, he releases a Quill Spray of the current level."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Bristleback takes less damage if hit on the sides or rear. If Bristleback takes %quill_release_threshold% damage from the rear, he releases a Quill Spray of the current level. <br><br> Each Bristleback trigger increases Warpath stacks."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description"		"Bristleback passively gains charges for each use of Quill Spray, up to %max_stacks%. Activating ability will spend all charges and release Quill Spray for each charge and taunt nearby units. <br><br>With Snot Rocket (facet): instead of Quills, Bristleback shoots Viscous Nasal Goo at all nearby enemies."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore"		"Turning his back to a fight might be just the thing."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0"		"Bristleback's rear is considered to be within %back_angle% degrees from the back."
@@ -1312,5 +1312,5 @@
 	"Infernal_Buff_Health"			"Bonus Health:"
 	"Infernal_Buff_Mana"			"Bonus Mana:"
 	"Infernal_Buff_HealthRegen"		"Bonus Health Regen:"
-    }
+	}
 }

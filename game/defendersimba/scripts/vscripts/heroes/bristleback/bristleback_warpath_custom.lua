@@ -26,10 +26,15 @@ end
 function modifier_bristleback_warpath_custom:OnAbilityFullyCast(params)
 	if not IsServer() then return end
 	local parent = self:GetParent()
-	if not params.ability then return end
+	local ability = params.ability
+	if not ability then return end
 	if params.unit ~= parent then return end
 	if parent:PassivesDisabled() then return end
-	if params.ability:GetName() == "bristleback_bristleback_custom" then return end
+	if ability:IsItem() then return end
+	if ability:IsToggle() then return end
+	if ability:GetEffectiveCooldown(-1) <= 0 then return end
+	if not ability:ProcsMagicStick() then return end
+	if ability:GetName() == "bristleback_bristleback_custom" then return end
 	if parent:HasModifier("modifier_bristleback_warpath_custom_ignore") then return end
 
 	self:GetAbility():AddStack()

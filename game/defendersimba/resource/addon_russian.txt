@@ -1,104 +1,104 @@
 "lang"
 {
-    "Language"    "Russian"
-    "Tokens"
-    {    
-        "random_boss_message"      "Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
-        "boss_chosen_message"      "%s1 станет финальным боссом!"
+	"Language"		"Russian"
+	"Tokens"
+	{
+		"random_boss_message"		"Хотите стать финальным боссом? Напишите 'Да' или 'Нет' в чат."
+		"boss_chosen_message"		"%s1 станет финальным боссом!"
 		"VoteBossTitle"			"Ты хочешь стать финальным боссом?"
 		"VoteBossConfirm"		"Да"
 		"VoteBossDecline"		"Нет"
 		"WaveTimerNumber"		"Волна: {d:current_wave}"
 
-        "npc_dota_wave_1" "Мелкий засранец 1"
-        "npc_dota_wave_2" "Голем Волны 2"
-        "npc_dota_wave_3" "Голем Волны 3"
-        "npc_dota_wave_4" "Голем Волны 4"
-        "npc_dota_wave_5" "Голем Волны 5"
-        "npc_dota_wave_6" "Голем Волны 6"
-        "npc_dota_wave_7" "Голем Волны 7"
-        "npc_dota_wave_8" "Голем Волны 8"
-        "npc_dota_wave_9" "Голем Волны 9"
-        "npc_dota_wave_10" "Голем Волны 10"
-        "npc_dota_wave_11" "Голем Волны 11"
-        "npc_dota_wave_12" "Голем Волны 12"
-        "npc_dota_wave_13" "Голем Волны 13"
-        "npc_dota_wave_14" "Голем Волны 14"
-        "npc_dota_wave_15" "Голем Волны 15"
-        "npc_dota_wave_16" "Голем Волны 16"
-        "npc_dota_wave_17" "Голем Волны 17"
-        "npc_dota_wave_18" "Голем Волны 18"
-        "npc_dota_wave_19" "Голем Волны 19"
-        "npc_dota_wave_20" "Голем Волны 20"
-        "npc_dota_wave_21" "Голем Волны 5"
-        "npc_dota_wave_22" "Голем Волны 5"
-        "npc_dota_wave_23" "Голем Волны 5"
-        "npc_dota_wave_24" "Голем Волны 4"
-        "npc_dota_wave_25" "Голем Волны 5"
-        "npc_dota_wave_26" "Голем Волны 5"
-        "npc_dota_wave_27" "Голем Волны 5"
-        "npc_dota_wave_28" "Голем Волны 4"
-        "npc_dota_wave_29" "Голем Волны 5"
-        "npc_dota_wave_30" "Голем Волны 5"
-        "npc_dota_wave_31" "Голем Волны 5"
-        "npc_dota_wave_32" "Голем Волны 4"
-        "npc_dota_wave_33" "Голем Волны 5"
-        "npc_dota_wave_34" "Голем Волны 5"
-        "npc_dota_wave_35" "Голем Волны 5"
-        "npc_dota_wave_36" "Голем Волны 5"
-        "npc_dota_wave_37" "Голем Волны 5"
-        "npc_dota_wave_38" "Голем Волны 4"
-        "npc_dota_wave_39" "Голем Волны 5"
-        "npc_dota_wave_40" "Голем Волны 5"
-        "npc_dota_wave_41" "Голем Волны 5"
-        "npc_dota_wave_42" "Голем Волны 4"
-        "npc_dota_wave_43" "Голем Волны 5"
-        "npc_dota_wave_44" "Голем Волны 5"
-        "npc_dota_wave_45" "Голем Волны 5"
-        "npc_dota_wave_46" "Голем Волны 4"
-        "npc_dota_wave_47" "Голем Волны 5"
-        "npc_dota_wave_48" "Голем Волны 5"
-        "npc_dota_wave_49" "Голем Волны 5"
-        "npc_dota_wave_50" "Голем Волны 4"
-        "npc_dota_wave_51" "Голем Волны 5"
-        "npc_dota_wave_52" "Голем Волны 5"
-        "npc_dota_wave_53" "Голем Волны 5"
-        "npc_dota_wave_54" "Голем Волны 4"
-        "npc_dota_wave_55" "Голем Волны 5"
-        "npc_dota_wave_56" "Голем Волны 5"
-        "npc_dota_wave_57" "Голем Волны 5"
-        "npc_dota_wave_58" "Голем Волны 4"
-        "npc_dota_wave_59" "Голем Волны 5"
-        "npc_dota_wave_60" "Голем Волны 5"
+		"npc_dota_wave_1" "Мелкий засранец 1"
+		"npc_dota_wave_2" "Голем Волны 2"
+		"npc_dota_wave_3" "Голем Волны 3"
+		"npc_dota_wave_4" "Голем Волны 4"
+		"npc_dota_wave_5" "Голем Волны 5"
+		"npc_dota_wave_6" "Голем Волны 6"
+		"npc_dota_wave_7" "Голем Волны 7"
+		"npc_dota_wave_8" "Голем Волны 8"
+		"npc_dota_wave_9" "Голем Волны 9"
+		"npc_dota_wave_10" "Голем Волны 10"
+		"npc_dota_wave_11" "Голем Волны 11"
+		"npc_dota_wave_12" "Голем Волны 12"
+		"npc_dota_wave_13" "Голем Волны 13"
+		"npc_dota_wave_14" "Голем Волны 14"
+		"npc_dota_wave_15" "Голем Волны 15"
+		"npc_dota_wave_16" "Голем Волны 16"
+		"npc_dota_wave_17" "Голем Волны 17"
+		"npc_dota_wave_18" "Голем Волны 18"
+		"npc_dota_wave_19" "Голем Волны 19"
+		"npc_dota_wave_20" "Голем Волны 20"
+		"npc_dota_wave_21" "Голем Волны 5"
+		"npc_dota_wave_22" "Голем Волны 5"
+		"npc_dota_wave_23" "Голем Волны 5"
+		"npc_dota_wave_24" "Голем Волны 4"
+		"npc_dota_wave_25" "Голем Волны 5"
+		"npc_dota_wave_26" "Голем Волны 5"
+		"npc_dota_wave_27" "Голем Волны 5"
+		"npc_dota_wave_28" "Голем Волны 4"
+		"npc_dota_wave_29" "Голем Волны 5"
+		"npc_dota_wave_30" "Голем Волны 5"
+		"npc_dota_wave_31" "Голем Волны 5"
+		"npc_dota_wave_32" "Голем Волны 4"
+		"npc_dota_wave_33" "Голем Волны 5"
+		"npc_dota_wave_34" "Голем Волны 5"
+		"npc_dota_wave_35" "Голем Волны 5"
+		"npc_dota_wave_36" "Голем Волны 5"
+		"npc_dota_wave_37" "Голем Волны 5"
+		"npc_dota_wave_38" "Голем Волны 4"
+		"npc_dota_wave_39" "Голем Волны 5"
+		"npc_dota_wave_40" "Голем Волны 5"
+		"npc_dota_wave_41" "Голем Волны 5"
+		"npc_dota_wave_42" "Голем Волны 4"
+		"npc_dota_wave_43" "Голем Волны 5"
+		"npc_dota_wave_44" "Голем Волны 5"
+		"npc_dota_wave_45" "Голем Волны 5"
+		"npc_dota_wave_46" "Голем Волны 4"
+		"npc_dota_wave_47" "Голем Волны 5"
+		"npc_dota_wave_48" "Голем Волны 5"
+		"npc_dota_wave_49" "Голем Волны 5"
+		"npc_dota_wave_50" "Голем Волны 4"
+		"npc_dota_wave_51" "Голем Волны 5"
+		"npc_dota_wave_52" "Голем Волны 5"
+		"npc_dota_wave_53" "Голем Волны 5"
+		"npc_dota_wave_54" "Голем Волны 4"
+		"npc_dota_wave_55" "Голем Волны 5"
+		"npc_dota_wave_56" "Голем Волны 5"
+		"npc_dota_wave_57" "Голем Волны 5"
+		"npc_dota_wave_58" "Голем Волны 4"
+		"npc_dota_wave_59" "Голем Волны 5"
+		"npc_dota_wave_60" "Голем Волны 5"
 
 		"npc_dota_goodguys_tower_cus"		"Башня"
 		"npc_dota_badguys_tower_cus"		"Башня"
 		"DOTA_Tooltip_modifier_invulnerable_cus"	"Неуязвимость"
 
 
-        // "item_upgrade_scroll_1"                                             "Рецепт первый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_1"                        "Рецепт первый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_1_Description"            "Доступен с начала игры"
+		// "item_upgrade_scroll_1"											 "Рецепт первый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_1"						"Рецепт первый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_1_Description"			"Доступен с начала игры"
 
-        "item_upgrade_scroll_2"                                             "Рецепт второй"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_2"                        "Рецепт второй"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_2_Description"            "Доступен с после убийства первого Босса"
+		"item_upgrade_scroll_2"											 "Рецепт второй"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_2"						"Рецепт второй"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_2_Description"			"Доступен с после убийства первого Босса"
 
-        "item_upgrade_scroll_3"                                             "Рецепт третий"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_3"                        "Рецепт третий"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_3_Description"            "Доступен с после убийства второго Босса"
+		"item_upgrade_scroll_3"											 "Рецепт третий"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_3"						"Рецепт третий"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_3_Description"			"Доступен с после убийства второго Босса"
 
-        "item_upgrade_scroll_4"                                             "Рецепт четвертый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_4"                        "Рецепт четвертый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_4_Description"            "Доступен с после убийства третьего Босса"
+		"item_upgrade_scroll_4"											 "Рецепт четвертый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_4"						"Рецепт четвертый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_4_Description"			"Доступен с после убийства третьего Босса"
 
-        "item_upgrade_scroll_5"                                             "Рецепт пятый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_5"                        "Рецепт пятый"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_5_Description"            "Доступен с после убийства четвертого Босса"
+		"item_upgrade_scroll_5"											 "Рецепт пятый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_5"						"Рецепт пятый"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_5_Description"			"Доступен с после убийства четвертого Босса"
 
-        "item_upgrade_scroll_6"                                             "Рецепт шестой"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_6"                        "Рецепт шестой"
-        "DOTA_Tooltip_ability_item_upgrade_scroll_6_Description"            "Доступен с после убийства пятого Босса"
+		"item_upgrade_scroll_6"											 "Рецепт шестой"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_6"						"Рецепт шестой"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_6_Description"			"Доступен с после убийства пятого Босса"
 
 
 
@@ -632,46 +632,46 @@
 		"DOTA_Tooltip_ability_item_power_treads_6"					"Power Treads #6"
 		"DOTA_Tooltip_ability_item_power_treads_6_Description"		"<h1>Активное: Switch Attribute</h1> Меняет атрибут, который получает бонус: +%bonus_active_stat% к силе, ловкости или интеллекту. \nБонусы к скорости передвижения от нескольких пар ботинок не складываются."
 
-        //=========================================================================================================
-        // (название)
-        //=========================================================================================================
+		//=========================================================================================================
+		// (название)
+		//=========================================================================================================
 
 
-        // To create a new key ( like $health ) just add the entry here
-        "dota_ability_variable_health"              "к здоровью"                    // $health
-        "dota_ability_variable_mana"                "к мане"                        // $mana
-        "dota_ability_variable_armor"               "к броне"                       // $armor
-        "dota_ability_variable_damage"              "к урону"                   // $damage
-        "dota_ability_variable_str"                 "к силе"                    // $str
-        "dota_ability_variable_int"                 "к интеллекту"              // $int
-        "dota_ability_variable_agi"                 "к ловкости"                    // $agi
-        "dota_ability_variable_all"                 "ко всем атрибутам"         // $all
-        "dota_ability_variable_primary_attribute"   "к основному атрибуту"          // $primary_attribute
-        "dota_ability_variable_attack"              "к скорости атаки"              // $attack
-        "dota_ability_variable_attack_pct"          "к базовой скорости атаки"  // $attack_pct
-        "dota_ability_variable_hp_regen"            "к восстановлению здоровья"     // $hp_regen
-        "dota_ability_variable_lifesteal"           "к вампиризму"                  // $lifesteal
-        "dota_ability_variable_mana_regen"          "к восстановлению маны"         // $mana_regen
-        "dota_ability_variable_mana_regen_aura"     "к восстановлению маны в ауре"  // $mana_regen_aura
-        "dota_ability_variable_spell_amp"           "к урону от заклинаний"             // $spell_amp
-        "dota_ability_variable_debuff_amp"          "к длительности отрицательных эффектов"         // $debuff_amp
-        "dota_ability_variable_move_speed"          "к скорости передвижения"           // $move_speed
-        "dota_ability_variable_evasion"             "к уклонению"                   // $evasion
-        "dota_ability_variable_spell_resist"        "к сопротивлению магии"         // $spell_resist
-        "dota_ability_variable_spell_lifesteal"     "к вампиризму заклинаниями"         // $spell_lifesteal
-        "dota_ability_variable_spell_lifesteal_creep"   "к вампиризму заклинаниями (от крипов)" // $spell_lifesteal_creep
-        "dota_ability_variable_spell_lifesteal_hero"    "к вампиризму заклинаниями (от героев)" // $spell_lifesteal_hero
-        "dota_ability_variable_selected_attrib"     "к выбранному атрибуту"     // $selected_attribute
-        "dota_ability_variable_attack_range"        "к дальности атаки <font color='#7d7d7d'>(в дальнем бою)</font>"    // $attack_range
-        "dota_ability_variable_attack_range_melee"  "к дальности атаки <font color='#7d7d7d'>(в ближнем бою)</font>"    // $attack_range_melee
-        "dota_ability_variable_cast_range"          "к дальности применения заклинаний"             // $cast_range
-        "dota_ability_variable_status_resist"       "к сопротивлению эффектам"          // $status_resist
-        "dota_ability_variable_projectile_speed"    "к скорости снарядов"           // $projectile_speed
-        "dota_ability_variable_manacost_reduction"  "к уменьшению расхода маны"     // $manacost_reduction
-        "dota_ability_variable_cooldown_reduction"  "к уменьшению перезарядок заклинаний"       // $cooldown_reduction 
-        "dota_ability_variable_max_mana_percentage" "к максимальной мане"           // $max_mana_percentage
-        "dota_ability_variable_slow_resistance"     "к сопротивлению замедлениям"           // $slow_resistance
-        "dota_ability_variable_aoe_bonus"           "к радиусу заклинаний"                  // $aoe_bonus
+		// To create a new key ( like $health ) just add the entry here
+		"dota_ability_variable_health"				"к здоровью"								// $health
+		"dota_ability_variable_mana"				"к мане"									// $mana
+		"dota_ability_variable_armor"				"к броне"									// $armor
+		"dota_ability_variable_damage"				"к урону"									// $damage
+		"dota_ability_variable_str"					"к силе"									// $str
+		"dota_ability_variable_int"					"к интеллекту"								// $int
+		"dota_ability_variable_agi"					"к ловкости"								// $agi
+		"dota_ability_variable_all"					"ко всем атрибутам"							// $all
+		"dota_ability_variable_primary_attribute"	"к основному атрибуту"						// $primary_attribute
+		"dota_ability_variable_attack"				"к скорости атаки"							// $attack
+		"dota_ability_variable_attack_pct"			"к базовой скорости атаки"					// $attack_pct
+		"dota_ability_variable_hp_regen"			"к восстановлению здоровья"					// $hp_regen
+		"dota_ability_variable_lifesteal"			"к вампиризму"								// $lifesteal
+		"dota_ability_variable_mana_regen"			"к восстановлению маны"						// $mana_regen
+		"dota_ability_variable_mana_regen_aura"		"к восстановлению маны в ауре"				// $mana_regen_aura
+		"dota_ability_variable_spell_amp"			"к урону от заклинаний"						// $spell_amp
+		"dota_ability_variable_debuff_amp"			"к длительности отрицательных эффектов"		// $debuff_amp
+		"dota_ability_variable_move_speed"			"к скорости передвижения"					// $move_speed
+		"dota_ability_variable_evasion"				"к уклонению"								// $evasion
+		"dota_ability_variable_spell_resist"		"к сопротивлению магии"						// $spell_resist
+		"dota_ability_variable_spell_lifesteal"		"к вампиризму заклинаниями"					// $spell_lifesteal
+		"dota_ability_variable_spell_lifesteal_creep"	"к вампиризму заклинаниями (от крипов)"	// $spell_lifesteal_creep
+		"dota_ability_variable_spell_lifesteal_hero"	"к вампиризму заклинаниями (от героев)"	// $spell_lifesteal_hero
+		"dota_ability_variable_selected_attrib"		"к выбранному атрибуту"						// $selected_attribute
+		"dota_ability_variable_attack_range"		"к дальности атаки <font color='#7d7d7d'>(в дальнем бою)</font>"	// $attack_range
+		"dota_ability_variable_attack_range_melee"	"к дальности атаки <font color='#7d7d7d'>(в ближнем бою)</font>"	// $attack_range_melee
+		"dota_ability_variable_cast_range"			"к дальности применения заклинаний"			// $cast_range
+		"dota_ability_variable_status_resist"		"к сопротивлению эффектам"					// $status_resist
+		"dota_ability_variable_projectile_speed"	"к скорости снарядов"						// $projectile_speed
+		"dota_ability_variable_manacost_reduction"	"к уменьшению расхода маны"					// $manacost_reduction
+		"dota_ability_variable_cooldown_reduction"	"к уменьшению перезарядок заклинаний"		// $cooldown_reduction 
+		"dota_ability_variable_max_mana_percentage"	"к максимальной мане"						// $max_mana_percentage
+		"dota_ability_variable_slow_resistance"		"к сопротивлению замедлениям"				// $slow_resistance
+		"dota_ability_variable_aoe_bonus"			"к радиусу заклинаний"						// $aoe_bonus
 
 
 		// modifiers
@@ -687,71 +687,71 @@
 
 
 
-    //=========================================================================================================
-    // Axe
-    //=========================================================================================================
-    //Berserker's Call
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua"					"Berserker's Call"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"		"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description"		"Накладывает на врагов способность <font color='#FF3030'>Battle Hunger</font>."
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius"						"РАДИУС:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" 					"ДЛИТЕЛЬНОСТЬ:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor"					"ДОП БРОНЯ:"
-    "DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" 		"ДОП СКОРОСТЬ АТАКИ:"
+	//=========================================================================================================
+	// Axe
+	//=========================================================================================================
+	//Berserker's Call
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua"					"Berserker's Call"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"		"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description"		"Накладывает на врагов способность <font color='#FF3030'>Battle Hunger</font>."
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius"						"РАДИУС:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" 					"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor"					"ДОП БРОНЯ:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" 		"ДОП СКОРОСТЬ АТАКИ:"
 
-    //Battle Hunger
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua"					"Battle Hunger"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"		"Приводит врага в бешенство, нанося ему урон от <font color='#FF3030'>силы</font> и замедляет скорость передвижения. Эффект от способности складывается."
-    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"		"Обычные герои не могут сопротивляться ярости Могул-хана, и она калечит их, пока они не выместят ее на ком-нибудь."
-    "DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"		"Крадёт %str_bonus_per_hero% <font color='#FF3030'>силы</font> у вражеских героев."
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration"			"ДЛИТЕЛЬНОСТЬ:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus"		"%ДОП СКОРОСТЬ ЗА ЭФФЕКТ:"
-    "DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str"		"%УРОН В СЕКУНДУ ОТ СИЛЫ:"
+	//Battle Hunger
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua"					"Battle Hunger"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"		"Приводит врага в бешенство, нанося ему урон от <font color='#FF3030'>силы</font> и замедляет скорость передвижения. Эффект от способности складывается."
+	"DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"		"Обычные герои не могут сопротивляться ярости Могул-хана, и она калечит их, пока они не выместят ее на ком-нибудь."
+	"DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"		"Крадёт %str_bonus_per_hero% <font color='#FF3030'>силы</font> у вражеских героев."
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration"			"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus"		"%ДОП СКОРОСТЬ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str"		"%УРОН В СЕКУНДУ ОТ СИЛЫ:"
 
-    "DOTA_Tooltip_modifier_axe_battle_hunger_lua"				"Battle Hunger"
-    "DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff"		"Battle Hunger"
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua"				"Battle Hunger"
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff"		"Battle Hunger"
 
-    // Counter Helix
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"					"Counter Helix"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"		"При получении и нанесении определённого количества ударов, герой крутит своим топором, нанося базовый урон и урон, зависящий от силы всем врагам вокруг."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"		"Крадёт %steal_str% <font color='#FF3030'>силы</font> у вражеских героев на %duration% сек."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"		"Получение нового эффекта обновляет длительность."
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need"			"АТАК ДЛЯ СРАБАТЫВАНИЯ:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage"			"БАЗОВЫЙ УРОН:"
-    "DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str"		"%ДОП УРОН ОТ СИЛЫ:"
+	// Counter Helix
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"					"Counter Helix"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"		"При получении и нанесении определённого количества ударов, герой крутит своим топором, нанося базовый урон и урон, зависящий от силы всем врагам вокруг."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"		"Крадёт %steal_str% <font color='#FF3030'>силы</font> у вражеских героев на %duration% сек."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"		"Получение нового эффекта обновляет длительность."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need"			"АТАК ДЛЯ СРАБАТЫВАНИЯ:"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage"			"БАЗОВЫЙ УРОН:"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str"		"%ДОП УРОН ОТ СИЛЫ:"
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua"					"Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description"		"Атак для срабатывания Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description"		"Атак для срабатывания Counter Helix"
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff"					"Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description"		"Акс украл <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description"		"Акс украл <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
 
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"					"Counter Helix"
-    "DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"		"У вас украдено <font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"		"У вас украдено <font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> силы."
 
-    // Culling Blade
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua"	"Culling Blade"
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Description"	"Герой находит слабую точку врага и наносит ему чистый урон, зависящий от силы. Если убить этой способностью вражеского героя или крипа то владелец на всегда получит силу. Каждые %counter_to_refresh% срабатываний способности <font color='#eeeeee'>Counter Helix</font> сбрасывает перезарядку  этой способности."
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_to_damage_pct" "%Силы в урон:"
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_creep" "Силы за крипа:"
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_hero" "Силы за героя:"
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Scepter_Description" "Способность теперь работает в радиусе %radius%."
-    "DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Note0"	"Сила получается за каждое добитое этой способностью существо."
+	// Culling Blade
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua"	"Culling Blade"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Description"	"Герой находит слабую точку врага и наносит ему чистый урон, зависящий от силы. Если убить этой способностью вражеского героя или крипа то владелец на всегда получит силу. Каждые %counter_to_refresh% срабатываний способности <font color='#eeeeee'>Counter Helix</font> сбрасывает перезарядку этой способности."
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_to_damage_pct" "%Силы в урон:"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_creep" "Силы за крипа:"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_hero" "Силы за героя:"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Scepter_Description" "Способность теперь работает в радиусе %radius%."
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Note0"	"Сила получается за каждое добитое этой способностью существо."
 
-    "DOTA_Tooltip_modifier_axe_culling_blade_custom_lua"             "Бонус силы"
-    "DOTA_Tooltip_modifier_axe_culling_blade_custom_lua_Description" "Сейчас Акс получает (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной силы."
+	"DOTA_Tooltip_modifier_axe_culling_blade_custom_lua"			 "Бонус силы"
+	"DOTA_Tooltip_modifier_axe_culling_blade_custom_lua_Description" "Сейчас Акс получает (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной силы."
 
-    //врожденка
-    "DOTA_Tooltip_Ability_axe_innate_ability"             "Броня за полученый удар"
-    "DOTA_Tooltip_Ability_axe_innate_ability_Description" "За каждый полученый удар от врага, герой получает %armor_per_stack% к броне. Каждый эффект длится независимо от друг друга %duration% секунд."
+	//врожденка
+	"DOTA_Tooltip_Ability_axe_innate_ability"			 "Броня за полученый удар"
+	"DOTA_Tooltip_Ability_axe_innate_ability_Description" "За каждый полученый удар от врага, герой получает %armor_per_stack% к броне. Каждый эффект длится независимо от друг друга %duration% секунд."
 
-    "DOTA_Tooltip_modifier_axe_innate_ability" "Броня за полученый удар"
-    "DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%fMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
+	"DOTA_Tooltip_modifier_axe_innate_ability" "Броня за полученый удар"
+	"DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%fMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
 
-    //=========================================================================================================
-    // Slardar
-    //=========================================================================================================
+	//=========================================================================================================
+	// Slardar
+	//=========================================================================================================
 
  		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"В начале действия способность Guardian Sprint даёт сопротивление замедлениям и ускоряет передвижение ещё сильнее."
 		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Владелец Corrosive Haze получает %armor_pct%%% от брони, отнятой у врагов этой способностью."
@@ -858,7 +858,7 @@
 	"DOTA_Tooltip_Ability_bristleback_quill_spray_custom_quill_str_stack_damage"			"%ДОП УРОН ОТ СИЛЫ ЗА ЭФФЕКТ:"
 
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom"					"Bristleback"
-	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня."
+	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Description"		"Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня. <br><br> Каждое срабатывание Bristleback увеличивает эффекты Warpath."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Scepter_Description"		"Каждое применение Quill Spray герой получает заряд, максимум %max_stacks%. При применении способности, герой выпускает все заряды в виде Quill Spray и провоцирует ближайших врагов. <br><br>С аспектом Snot Rocket: вместо игл герой выпускает во всех врагов неподалёку сопли от способности Viscous Nasal Goo текущего уровня."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Lore"		"Иногда бывает полезно повернуться спиной к врагу во время битвы."
 	"DOTA_Tooltip_Ability_bristleback_bristleback_custom_Note0"		"Спиной героя считаются %back_angle% градусов от середины его спины."
@@ -1041,5 +1041,5 @@
 	"Infernal_Buff_Health"			"Бонсу к здоровью:"
 	"Infernal_Buff_Mana"			"Бонсу к мане:"
 	"Infernal_Buff_HealthRegen"		"Бонсу к регенерации здоровья:"
-    }
+	}
 }

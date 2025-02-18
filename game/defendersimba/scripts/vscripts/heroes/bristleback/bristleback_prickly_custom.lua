@@ -1,5 +1,5 @@
-LinkLuaModifier( "modifier_bristleback_prickly_custom", "heroes/bristleback/bristleback_prickly_custom", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_bristleback_prickly_custom_buff", "heroes/bristleback/bristleback_prickly_custom", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_bristleback_prickly_custom", "heroes/bristleback/bristleback_prickly_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bristleback_prickly_custom_buff", "heroes/bristleback/bristleback_prickly_custom", LUA_MODIFIER_MOTION_NONE)
 
 
 bristleback_prickly_custom = bristleback_prickly_custom or class({})
@@ -32,36 +32,25 @@ function modifier_bristleback_prickly_custom:IsHidden() return true end
 function modifier_bristleback_prickly_custom:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
-
-function modifier_bristleback_prickly_custom:OnAttackLanded( params )
-	local parent = self:GetParent()
-
+function modifier_bristleback_prickly_custom:OnAttackLanded(params)
 	if not IsServer() then return end
+	local parent = self:GetParent()
 	if parent:PassivesDisabled() then return end
 	if params.attacker == nil then return end
 	if params.target ~= parent then return end
 	if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
 	if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) == DOTA_DAMAGE_FLAG_HPLOSS then return end
 
-	if self:GetAbility():IsFacingBack(params.attacker)  then
-		params.attacker:AddNewModifier(
-			parent,
-			self:GetAbility(),
-			"modifier_bristleback_prickly_custom_buff",
-			{
-				duration = self:GetAbility():GetSpecialValueFor("duration")
-			}
-		)
+	if self:GetAbility():IsFacingBack(params.attacker) then
+		params.attacker:AddNewModifier(parent, self:GetAbility(), "modifier_bristleback_prickly_custom_buff", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 	end
 end
 function modifier_bristleback_prickly_custom:GetModifierTotalDamageOutgoing_Percentage(params)
-	local parent = self:GetParent()
-
 	if not IsServer() then return end
+	local parent = self:GetParent()
 	if parent:PassivesDisabled() then return end
 	if params.attacker == nil then return end
 	if not params.attacker:IsCreep() then return end

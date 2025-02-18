@@ -69,15 +69,16 @@ function modifier_axe_berserkers_call_lua_debuff:OnCreated(kv)
 	if not IsServer() then return end
 	self.buff_attack_speed_enemy = kv.buff_attack_speed_enemy
 	OrderAttackTarget(self:GetParent(), self:GetCaster())
-	self:GetParent():MoveToTargetToAttack(self:GetCaster())
+	self:GetParent():SetForceAttackTarget(self:GetCaster())
 	self:SetHasCustomTransmitterData(true)
 
 	self:StartIntervalThink(FrameTime())
 end
 function modifier_axe_berserkers_call_lua_debuff:OnRefresh(kv)
+	if not IsServer() then return end
 	self.buff_attack_speed_enemy = kv.buff_attack_speed_enemy
 	OrderAttackTarget(self:GetParent(), self:GetCaster())
-	self:GetParent():MoveToTargetToAttack(self:GetCaster())
+	self:GetParent():SetForceAttackTarget(self:GetCaster())
 	self:SendBuffRefreshToClients()
 end
 function modifier_axe_berserkers_call_lua_debuff:OnIntervalThink()

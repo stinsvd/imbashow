@@ -25,16 +25,15 @@ function bristleback_bristleback_custom:OnSpellStart()
 	local taunt_radius = self:GetSpecialValueFor("taunt_radius")
 	local taunt_duration = self:GetSpecialValueFor("taunt_duration")
 	local goo_radius = self:GetSpecialValueFor("goo_radius")
-	local mod = caster:FindModifierByName("modifier_bristleback_bristleback_custom")
 
-	if mod:GetStackCount() == 0 then return end
+	local mod = caster:GetModifierStackCount("modifier_bristleback_bristleback_custom", caster)
+	if mod == 0 then return end
+	caster:SetModifierStackCount("modifier_bristleback_bristleback_custom", caster, 0)
 
 	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 	caster:EmitSound("Hero_Bristleback.Bristleback.Active")
 
-	caster:AddNewModifier(caster, self, "modifier_bristleback_bristleback_custom_active", {goo_radius = goo_radius}):SetStackCount(mod:GetStackCount())
-
-	mod:SetStackCount(0)
+	caster:AddNewModifier(caster, self, "modifier_bristleback_bristleback_custom_active", {goo_radius = goo_radius}):SetStackCount(mod)
 
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, taunt_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 	for _, enemy in pairs(enemies) do
@@ -95,13 +94,22 @@ function modifier_bristleback_bristleback_custom:GetModifierIncomingDamage_Perce
 		parent:EmitSound("Hero_Bristleback.Bristleback")
 
 		if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
-			local goo_radius = self:GetAbility():GetSpecialValueFor("goo_radius")
+			local goo_radius = ability:GetSpecialValueFor("goo_radius")
 			local quillSpray = parent:FindAbilityByName("bristleback_quill_spray_custom")
 			if goo_radius > 0 then
 				quillSpray = parent:FindAbilityByName("bristleback_viscous_nasal_goo_custom")
 			end
 			if quillSpray and quillSpray:IsTrained() then
-				self:Spray(params.damage)
+				local quill_release_threshold = ability:GetSpecialValueFor("quill_release_threshold")
+				self.accDamage = (self.accDamage or 0) + params.damage
+				if self.accDamage >= quill_release_threshold then
+					local delta = math.floor(self.accDamage / quill_release_threshold)
+					local spray = parent:AddNewModifier(parent, ability, "modifier_bristleback_bristleback_custom_spray", {})
+					if spray then
+						spray:SetStackCount(delta)
+					end
+					self.accDamage = self.accDamage - (delta * quill_release_threshold)
+				end
 			end
 		end
 
@@ -116,24 +124,6 @@ function modifier_bristleback_bristleback_custom:GetModifierIncomingDamage_Perce
 	end
 
 	return 0
-end
-
-function modifier_bristleback_bristleback_custom:Spray(damage)
-	local parent = self:GetParent()
-	local quill_release_threshold = self:GetAbility():GetSpecialValueFor("quill_release_threshold")
-
-	self.accDamage = (self.accDamage or 0) + damage
-
-	if self.accDamage >= quill_release_threshold then
-		local delta = math.floor(self.accDamage / quill_release_threshold)
-
-		local spray = parent:AddNewModifier(parent, self:GetAbility(), "modifier_bristleback_bristleback_custom_spray", {})
-		if spray then
-			spray:SetStackCount(delta)
-		end
-
-		self.accDamage = self.accDamage - (delta * quill_release_threshold)
-	end
 end
 
 
@@ -220,16 +210,16 @@ function modifier_bristleback_bristleback_custom_taunt:IsPurgable() return false
 function modifier_bristleback_bristleback_custom_taunt:GetStatusEffectName()
 	return "particles/status_fx/status_effect_beserkers_call.vpcf"
 end
-function modifier_bristleback_bristleback_custom_taunt:OnCreated(kv)
-	if not IsServer() then return end
-	OrderAttackTarget(self:GetParent(), self:GetCaster())
-	self:GetParent():MoveToTargetToAttack(self:GetCaster())
+function modifier_bristleback_bristleback_custom_taunt:OnCreated()
+	self:OnRefresh()
 
+	if not IsServer() then return end
 	self:StartIntervalThink(FrameTime())
 end
-function modifier_bristleback_bristleback_custom_taunt:OnRefresh(kv)
+function modifier_bristleback_bristleback_custom_taunt:OnRefresh()
+	if not IsServer() then return end
 	OrderAttackTarget(self:GetParent(), self:GetCaster())
-	self:GetParent():MoveToTargetToAttack(self:GetCaster())
+	self:GetParent():SetForceAttackTarget(self:GetCaster())
 end
 function modifier_bristleback_bristleback_custom_taunt:OnIntervalThink()
 	if not IsServer() then return end
