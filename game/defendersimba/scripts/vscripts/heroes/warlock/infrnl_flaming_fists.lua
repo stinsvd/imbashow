@@ -40,7 +40,8 @@ function modifier_infrnl_flaming_fists:OnAttackLanded(keys)
 	if self:GetParent() == attacker then
 		local targetPos = target:GetAbsOrigin()
 		local hpleft_damage = self:GetAbility():GetSpecialValueFor("hpleft_damage")
-		local damage = (attacker:GetMaxHealth() - attacker:GetHealth()) * (hpleft_damage / 100)
+		local health_pct = (100 - attacker:GetHealthPercent())
+		local damage = (attacker:GetMaxHealth() * health_pct) * (hpleft_damage / 100)
 		
 		self.damageTable.damage = damage
 		self.damageTable.victim = target

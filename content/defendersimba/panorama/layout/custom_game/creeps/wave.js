@@ -1,4 +1,6 @@
+let activated = false
 function UpdateWaveTimer() {
+	activated = true
 	let data = CustomNetTables.GetTableValue("game_options", "waveOptions");
 	$("#WaveTimerMain").SetHasClass("hidden", data == null)
 	if (data) {
@@ -21,4 +23,14 @@ function ShowBossKilledNotif(data) {
 	CustomNetTables.SubscribeNetTableListener("game_options", UpdateWaveTimer)
 	
 	GameEvents.Subscribe("ShowBossKilledNotif", ShowBossKilledNotif)
+	
+	$.RegisterForUnhandledEvent("DOTAHUDShopClosed", function () {
+		if (activated == true) {
+		}
+	})
+	
+	$.RegisterForUnhandledEvent("DOTAHUDShopOpened", function () {
+		if (activated == true) {
+		}
+	})
 })()

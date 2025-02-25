@@ -45,7 +45,7 @@ function modifier_orcl_rain_of_destiny_aura:OnIntervalThink()
 		local caster = self:GetCaster()
 		local flames = caster:FindAbilityByName("orcl_purifying_flames")
 		if flames and flames:IsTrained() then
-			local targets = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			local targets = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
 			if #targets > 0 then
 				flames:OnSpellStart(targets[math.random(1, #targets)])
 			end

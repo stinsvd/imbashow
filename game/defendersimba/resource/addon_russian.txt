@@ -297,22 +297,22 @@
 		//=========================================================================================================
 
 		"DOTA_Tooltip_ability_item_radiance_custom_1"					"РАДИК #1"
-		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_2"					"РАДИК #2"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_2_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_3"					"РАДИК #3"
-		"DOTA_Tooltip_ability_item_radiance_custom_3_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_4"					"РАДИК #4"
-		"DOTA_Tooltip_ability_item_radiance_custom_4_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_4_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_5"					"РАДИК #5"
-		"DOTA_Tooltip_ability_item_radiance_custom_5_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_5_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_6"					"РАДИК #6"
-		"DOTA_Tooltip_ability_item_radiance_custom_6_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона <br><br> Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_6_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
 		//=========================================================================================================
 		// СКАДИ
@@ -752,7 +752,12 @@
 	//=========================================================================================================
 	// Slardar
 	//=========================================================================================================
-
+		"DOTA_Tooltip_Facet_slardar_crusher"					"Crusher"
+		"DOTA_Tooltip_Facet_slardar_crusher_Description"		"Дополнительно повторяет Slithereen Crush несколько раз после применения. Каждое повторение увеличивает радиус."
+ 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Facet_slardar_crusher"		"Дополнительно повторяет Slithereen Crush %recast% раз(а) после применения с промежутком %recast_delay% секунд. При каждом срабатывании радиус увеличивается на %recast_bonus_radius%."
+		"DOTA_Tooltip_Facet_slardar_decaying_armor"					"Decaying Armor"
+		"DOTA_Tooltip_Facet_slardar_decaying_armor_Description"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню."
+ 		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_decaying_armor"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню на %armor_per_hit%."
  		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"В начале действия способность Guardian Sprint даёт сопротивление замедлениям и ускоряет передвижение ещё сильнее."
 		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Владелец Corrosive Haze получает %armor_pct%%% от брони, отнятой у врагов этой способностью."
 		
@@ -779,6 +784,7 @@
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_description"		"Увеличивает радиус удара и пруда. Способность ненадолго накладывает на жертв эффект Corrosive Haze."
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Lore"		"Мощь воды вкупе с её быстротой пробьёт даже самую сильную защиту."
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage_str_pct"			"%ДОП УРОН ОТ СИЛЫ:"
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_stun_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_attack_slow"				"ЗАМЕДЛЕНИЕ АТАКИ:"
@@ -965,6 +971,10 @@
 	"DOTA_Tooltip_ability_orcl_heal_supremacy"					"Heal Supremacy"
 	"DOTA_Tooltip_ability_orcl_heal_supremacy_Description"		"Герой совершенствует свои навыки при исцелении союзных героев, увеличивая исходящее лечение на %heal_amp_per_stack%%% каждые %healing_to_stack% исцелённого здоровья."
 	
+	"DOTA_Tooltip_ability_orcl_harm_supremacy"					"Harm Supremacy"
+	"DOTA_Tooltip_ability_orcl_harm_supremacy_Description"		"Герой совершенствует свои навыки причинения вреда, увеличивая урон от заклинаний на %spell_amp_per_cast%%% за каждое применение способностей."
+	"DOTA_Tooltip_ability_orcl_harm_supremacy_total_spell_amp"		"%БОНУС УРОНА К ЗАКЛИНАНИЯМ:"
+	
 	"DOTA_Tooltip_modifier_orcl_fortunes_end"					"Оцепенение от Fortune's End"
 	"DOTA_Tooltip_modifier_orcl_fortunes_end_Description"		"С существа развеяли положительные эффекты, и оно не может передвигаться."
 	"DOTA_Tooltip_modifier_orcl_fortunes_end_purge_constantly"					"Fortune's End"
@@ -1008,14 +1018,15 @@
 	"DOTA_Tooltip_ability_infrnl_stomp_burn_maxhp_damage"		"%УРОН ГОРЕНИЯ ОТ МАКС ЗДОРОВЬЯ:"
 	
 	"DOTA_Tooltip_ability_infrnl_flaming_fists"					"Flaming Fists"
-	"DOTA_Tooltip_ability_infrnl_flaming_fists_description"		"Каждая атака заряжена инфернальным пламенем, наносящее урон зависящий от недостающего здоровья владельца. \n<h1>Улучшение</h1> Дополнительно наносит +%up_base_damage% чистого урона врагам в радиусе %radius% (основная цель также получает этот урон)."
+	"DOTA_Tooltip_ability_infrnl_flaming_fists_description"		"Каждая атака заряжена инфернальным пламенем, наносящее урон зависящий от недостающего здоровья владельца. \n<h1>Улучшение</h1> Дополнительно наносит +%up_base_damage% магического урона врагам в радиусе %radius% (основная цель также получает этот урон)."
 	"DOTA_Tooltip_ability_infrnl_flaming_fists_base_damage"			"УРОН ПО ОБЛАСТИ:"
 	"DOTA_Tooltip_ability_infrnl_flaming_fists_hpleft_damage"		"%УРОН ОТ НЕДОСТАЮЩЕГО ЗДОРОВЬЯ:"
 	
 	"DOTA_Tooltip_ability_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_ability_infrnl_immolation_description"		"Герой поджигает себя, нанося периодический урон всем противникам вокруг. Урон по врагам зависит от максимального здоровья владельца. <br><br> Сначала тратит ману на активацию, а потом здоровье на поддержание способности. <br><br> Даёт %up_shards% Archon's Shard каждые %up_time% секунд непрерывного поддержания. \n<h1>Улучшение</h1> Базовый урон в секунду +%up_base_damage_per_second%."
 	"DOTA_Tooltip_ability_infrnl_immolation_shard_description"		"Увеличивает радиус на %bonus_radius%."
-	"DOTA_Tooltip_ability_infrnl_immolation_note0"		"Тратит %health_per_second%%% текущего здоровья каждую секунду на поддержание способности."
+	"DOTA_Tooltip_ability_infrnl_immolation_note0"		"Тратит %health_per_second%%% макс здоровья каждую секунду на поддержание способности."
+	"DOTA_Tooltip_ability_infrnl_immolation_radius"							"РАДИУС:"
 	"DOTA_Tooltip_ability_infrnl_immolation_base_damage_per_second"			"БАЗОВЫЙ УРОН В СЕКУНДУ:"
 	"DOTA_Tooltip_ability_infrnl_immolation_maxhp_damage_per_second"		"%УРОН ОТ МАКС ЗДОРОВЬЯ:"
 	
@@ -1030,6 +1041,35 @@
 	"DOTA_Tooltip_ability_infrnl_burning_spirit_description"		"Инфернал усиляет свой дух каждый раз, когда поглощает Archon's Shard. <br><br> Каждый поглощенный Archon's Shard даёт одно из усилений: <br> - +%bonus_health% к здоровью <br> - +%bonus_mana% к мане <br> - +%bonus_hp_regen% к регенерации здоровья <br> - +%bonus_gold% золота * уровень героя <br> - +%bonus_exp% опыта * уровень героя <br> - <b>Улучшение</b> для Infernal Stomp <br> - <b>Улучшение</b> для Flaming Fists <br> - <b>Улучшение</b> для Immolation <br> - <b>Улучшение</b> для Eonite Heart"
 	"DOTA_Tooltip_ability_infrnl_burning_spirit_scepter_description"		"Каждое поглащение Archon's Shard даёт %upgrades_per_cast% улучшения."
 	
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion"					"Invasion"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_description"		"Герой расщипляется на несколько големов, которые имеют часть от выживаемости владельца. Сам владелец становится частью одного из них. <br><br> Каждый голем имеет несколько способностей и возможность переселить в себя владельца. <br><br> Повторное применение отменяет действие способности. <br> При преждевременной отмене способности или смерти всех големов - владелец лишается %fail_hp%%% текущего здоровья. \n<h1>Улучшение</h1> Улучшает способности Mini-Flaming Fists и Mini-Immolation у големов."
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_golems_count"		"КОЛ-ВО ГОЛЕМОВ:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_duration"			"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_maxhp"				"%ЗДОРОВЬЕ ГОЛЕМА:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_armor"				"%БРОНЯ ГОЛЕМА:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_magic_resist"		"%СОПРОТИВЛЕНИЕ МАГИИ ГОЛЕМА:"
+
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_switch"					"Switch Main"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_switch_description"		"Герой меняет своё присутствие следуя за этим големом."
+
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball"					"Fireball"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_description"		"Выпускает маленький огненный шар, оглушающий цель и наносящий урон, который зависит от макс здоровья владельца. Каждый последующий шар попавший в цель увеличивает урон."
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_damage"					"%УРОН ОТ МАКС ЗДОРОВЬЯ:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_bonus_damage"			"ДОП УРОН ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_bonus_damage_pct"		"%ДОП УРОН ОТ ЗДОРОВЬЯ ЗА ЭФФЕКТ:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_duration"				"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_stun_duration"			"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists"					"Mini-Flaming Fists"
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_description"		"Каждая атака имеет шанс нанести удар с инфернальным пламенем, наносящем урон зависящий от недостающего здоровья владельца. \n<h1>Улучшение</h1> Дополнительно наносит +%up_base_damage% магического урона."
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_chance"				"%ШАНС:"
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_hpleft_damage"		"%УРОН ОТ НЕДОСТАЮЩЕГО ЗДОРОВЬЯ:"
+
+	"DOTA_Tooltip_ability_infrnl_mini_immolation"					"Mini-Immolation"
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_description"		"Поджигает всё вокруг себя, нанося периодический урон всем противникам вокруг. Урон по врагам зависит от максимального здоровья владельца. \n<h1>Улучшение</h1> Базовый урон в секунду +%up_base_damage_per_second%."
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_radius"						"РАДИУС:"
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_maxhp_damage_per_second"		"%УРОН ОТ МАКС ЗДОРОВЬЯ:"
+	
 	"DOTA_Tooltip_modifier_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_modifier_infrnl_immolation_description"		"Наносит магический урон в зоне действия."
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart"					"Eonite Heart"
@@ -1037,9 +1077,74 @@
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Горение от Eonite Heart"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Получает магический урон. Сопротивление к магии уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"
+	"DOTA_Tooltip_modifier_infrnl_mini_immolation_burn_aura"					"Ожог от Mini-Immolation"
+	"DOTA_Tooltip_modifier_infrnl_mini_immolation_burn_aura_description"		"Получает переодический урон."
 
 	"Infernal_Buff_Health"			"Бонсу к здоровью:"
 	"Infernal_Buff_Mana"			"Бонсу к мане:"
 	"Infernal_Buff_HealthRegen"		"Бонсу к регенерации здоровья:"
+	"Infernal_Buff_GoldGain"		"Получено бонусного золота:"
+	"Infernal_Buff_ExpGain"			"Получено бонусного опыта:"
+
+
+
+//=========================================================================================================
+// Venomancer
+//=========================================================================================================
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin"					"Universal Toxin"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_Description"		"Каждое нанесение урона героем влечет за собой страшное отравление, которое наносит на %bonus_damage_per_lvl% больше урона за каждый уровень героя. Так же замедляет цель на %ms_debuff_value%% за каждые %ms_debuff_treshold% эффектов."
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_scepter_Description"		"Добавляет к итоговому урону %int_scale%% урона от интеллекта героя"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_duration"						"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_stack_count_per_item_tick"		"СТАКОВ ЗА УРОН ПРЕДМЕТАМИ:"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_damage_per_sec"				"ИТОГОВЫЙ УРОН В СЕКУНДУ:"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_ms_debuff_value"				"%ЗАМЕДЛЕНИЕ:"
+
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack"					"Toxic Attack"
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack_Description"		"Герой выпускает волну желочи вокруг себя, накладывая на всех <b>Universal Toxin</b> и накладывая замедление которое ослабевает со времен."
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack_duration"				"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack_radius"				"РАДИУС:"
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack_stack_count"			"КОЛИЧЕСТВО ЭФФЕКТОВ ТОКСИНА:"
+	"DOTA_Tooltip_Ability_venomancer_toxic_attack_ms_debuff_pct"		"%ЗАМЕДЛЕНИЕ:"
+
+	"DOTA_Tooltip_Ability_venomancer_poison_sting_custom"					"Poison Sting"
+	"DOTA_Tooltip_Ability_venomancer_poison_sting_custom_Description"		"Каждая атака героя накладывает на врагов его смертоносный токсин."
+	"DOTA_Tooltip_Ability_venomancer_poison_sting_custom_shard_description"		"Каждая атака героя разделяется ещё на %target_count% врагов в радиусе атаки."
+	"DOTA_Tooltip_Ability_venomancer_poison_sting_custom_stack_count"		"ЭФФЕКТОВ ТОКСИНА ЗА АТАКУ:"
+
+	"npc_dota_venomancer_poison_ward"			"Чумной тотем"
+	"DOTA_Tooltip_Ability_venomancer_poison_ward"					"Poison Ward"
+	"DOTA_Tooltip_Ability_venomancer_poison_ward_Description"		"Герой призывает чумной тотем, которое живет %duration% секунд, наследуюет часть здоровья хозияна и получает урон от его интеллекта, так же имеет <b>Poison Sting</b> с эффективностью %poison_sting_efficiency_pct%%, и атакует на %target_count% цель больше."
+	"DOTA_Tooltip_Ability_venomancer_poison_ward_base_hp"					"БАЗОВОЕ ЗДОРОВЬЕ:"
+	"DOTA_Tooltip_Ability_venomancer_poison_ward_hp_pct_caster"				"%ЗДОРОВЬЯ ОТ МАКС ЗДОРОВЬЯ ВЛАДЕЛЬЦА:"
+	"DOTA_Tooltip_Ability_venomancer_poison_ward_base_dmg"					"БАЗОВЫЙ УРОН:"
+	"DOTA_Tooltip_Ability_venomancer_poison_ward_dmg_pct_caster_int"		"%УРОНА ОТ ИНТЕЛЛЕКТА ВЛАДЕЛЬЦА:"
+
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud"					"Poison Cloud"
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud_Description"		"Герой создает паровую завесу из своего яда на точку, которая каждую секунду отравляет всех кто в ней окажется, накладывая %stack_count_per_sec% эффектов <b>Universal Toxin</b>, уменьшая получаемое лечение врагов, и увеличивая скорость атаки самого героя и подконтрольных существ."
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud_duration"			"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud_radius"			"РАДИУС:"
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud_heal_debuff"		"%СНИЖАЕМОЕ ЛЕЧЕНИЕ:"
+	"DOTA_Tooltip_Ability_venomancer_poison_cloud_bonus_as"			"БОНУС К СКОРОСТИ АТАКИ:"
+
+	"DOTA_Tooltip_modifier_venomancer_universal_toxin_debuff"		"Universal Toxin"
+	"DOTA_Tooltip_modifier_venomancer_toxic_attack_debuff"					"Toxic Attack"
+	"DOTA_Tooltip_modifier_venomancer_toxic_attack_debuff_Description"		"цель замедленна на %dMODIFIER_PROPERTY_TOOLTIP%%%"
+	"DOTA_Tooltip_modifier_venomancer_poison_cloud_debuff"					"Poison Cloud"
+	"DOTA_Tooltip_modifier_venomancer_poison_cloud_debuff_Description"		"Лечение уменьшено, а ваша кожа гниет."
+	"DOTA_Tooltip_modifier_venomancer_poison_cloud_buff"					"Poison Cloud"
+	"DOTA_Tooltip_modifier_venomancer_poison_cloud_buff_Description"		"Скорость атаки увеличена, а ваша кожа сияет."
+
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_1"					"Усиливает <b>Toxic Attack</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_1_Description"		"Эффект Toxic Attack сжигает {s:bonus_burns_stacks_pct}% эффектов Universal Toxin моментально нанося весь урон соженных стаков."
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_2"		"+{s:bonus_stack_count} эффектов токсина за атаку от <b>Poison Sting</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_3"		"+{s:bonus_duration} сек. к длительности <b>Toxic Attack</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_4"		"+{s:bonus_poison_sting_efficiency_pct}% к эффективности <b>Poison Sting</b> у <b>Poison Ward</b>."
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_5"		"+{s:bonus_radius}% радиусу <b>Toxic Attack</b> и <b>Poison Cloud</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_6"					"Усиливает <b>Poison Ward</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_6_Description"		"Увеличивает здоровье от макс здоровья и урон от интеллекта владельца на {s:bonus_hp_pct_caster}%/{s:bonus_dmg_pct_caster_int}%"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_7"					"Уменьшает перезарядку <b>Toxic Attack</b> и <b>Poison Cloud</b> на {s:bonus_AbilityCooldown}%"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_7_Description"		"Увеличивает перезарядку Poison Ward на это же значение"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_8"		"+{s:bonus_stack_count}% к накладываемому количеству эффектов Universal Toxin"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_8"		"Увеличивает количество эффектов <b>Universal Toxin</b> на {s:bonus_stack_count}%"
 	}
 }

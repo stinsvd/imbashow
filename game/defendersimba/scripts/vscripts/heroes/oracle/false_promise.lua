@@ -185,19 +185,21 @@ function modifier_orcl_false_promise_buff:GetModifierIncomingDamage_Percentage(k
 		damage_flags = damage_flags + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 	end
 	
+	--[[
 	if keys.damage_type == 1 then
 		damage_flags = damage_flags + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR
 	elseif keys.damage_type == 2 then
 		damage_flags = damage_flags + DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR
 	end
+	]]
 	
 	self.damageInstances[self.instanceCounter] = {
 		victim = owner:entindex(),
 		attacker = attacker:entindex(),
 		ability = self:GetAbility(),
 		damage = damage,
-		damage_type = keys.damage_type,
-		damage_flags = damage_flags,
+		damage_type = DAMAGE_TYPE_PURE,
+		damage_flags = damage_flags + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
 	}
 	self.instanceCounter = self.instanceCounter + 1
 

@@ -3,6 +3,7 @@
 #base "heroes/bristleback_abilities.kv"
 #base "heroes/oracle_abilities.kv"
 #base "heroes/warlock.txt"
+#base "heroes/venomancer.txt"
 
 "DOTAAbilities"
 {

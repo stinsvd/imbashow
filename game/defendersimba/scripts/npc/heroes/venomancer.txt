@@ -1,0 +1,238 @@
+"DOTAAbilities"
+{
+	"venomancer_universal_toxin"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/venomancer/venomancer_universal_toxin"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
+		{
+			"duration"											"10"                //длительность эффекта
+			"stack_count_per_item_tick"
+			{
+				"value"											"5"                 //базоваое значения стаков за тик урона предметов(не срабатывает от большенства эффектов атаки)
+				"special_bonus_unique_venomancer_custom_8"		"+100%"             //бонусное значения стаков за тик урона предметов от таланта
+			}
+			"damage_tick_rate"									"1"                 //частота нанесения урона, можно уменьшать или увеличивать, урон в секунду не поменяется
+			"damage_per_sec_base"								"10"                //Базовый урон в секунду
+			"damage_per_sec"									"10"                //итоговый урон в секунду, менять не стоит, значение там высчитывается автоматически
+			"bonus_damage_per_lvl"								"10"                //бонус к итоговому урона за уровень героя
+			"ms_debuff_treshold"								"10"                //сколько стаков эффекта надо для ms_debuff_value% замедления
+			"ms_debuff_value"									"2"                 //% замедления за ms_debuff_treshold стаков
+			"int_scale"
+			{
+				"value"											"10"                //% бонуса к итоговому урону от интеллекта героя с аганимом(убрав RequiresScepter аганим все ещё нужен будет)
+				"RequiresScepter"								"1"
+			}
+		}
+	}
+
+	"venomancer_toxic_attack"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/venomancer/venomancer_toxic_attack"
+		"AbilityTextureName"			"venomancer_venomous_gale"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"10"
+		"AbilityCastPoint"				"0.69"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"120 125 130 135"
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"											"15"                                //перезарядка
+				"special_bonus_unique_venomancer_custom_7"		"-40%"                              //пуменьшение перезарядки с талантом
+			}
+			"duration"
+			{
+				"value"											"10"                                //базовая длительность замедления
+				"special_bonus_unique_venomancer_custom_3"		"+5"                                //дополнительная длительность от таланта
+			}
+			"radius"
+			{
+				"value"											"1000"                              //базовый радиус наложения замедления и стаков
+				"special_bonus_unique_venomancer_custom_5"		"+50%"                              //дополнительный радиус от таланта
+			}
+			"ms_debuff_pct"										"100"                               //процент замедления на пике
+			"stack_count"
+			{
+				"value"											"10 20 30 40 50 60 70 80 90 100"    //базовое значение накладываемых стаков токсина
+				"special_bonus_unique_venomancer_custom_8"		"+100%"                             //Бонусное количество накладываемых стаков от токсина
+			}
+			"burns_stacks_pct"
+			{
+				"value"											"0"                                 //если 0 и меньше бонус работает только с талантом
+				"special_bonus_unique_venomancer_custom_1"		"50"                                //% сжигаемых стаков
+			}
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+	"venomancer_poison_sting_custom"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/venomancer/venomancer_poison_sting_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityTextureName"			"venomancer_poison_sting"
+		"MaxLevel"						"10"
+		"HasShardUpgrade"				"1"
+		"AbilityValues"
+		{
+			"stack_count"
+			{
+				"value"											"10 20 30 40 50 60 70 80 90 100"  //стаков с атаки
+				"special_bonus_unique_venomancer_custom_2"		"+25"                             //доп стаков с атаки с талантом
+				"special_bonus_unique_venomancer_custom_8"		"+100%"                           //доп стаков с талантом на увелечение стаков на всех скилах
+			}
+			"target_count"
+			{
+				"value"											"0"                               //работает только с шардом
+				"special_bonus_shard"							"+2"                              //количество доп целей
+			}
+		}
+	}
+
+	"venomancer_poison_ward"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/venomancer/venomancer_poison_ward"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityTextureName"			"venomancer_plague_ward"
+		"MaxLevel"						"10"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"120 125 130 135"
+		"AbilityCastPoint"				"0.69"
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"											"15"            //перезарядка способности
+				"special_bonus_unique_venomancer_custom_7"		"+40%"          //увеличенная перезарядка из-зи таланта
+			}
+			"base_hp"											"100"           //базовое здоровье варда
+			"hp_pct_caster"
+			{
+				"value"											"50"            //% здоровья от здоровья героя
+				"special_bonus_unique_venomancer_custom_6"		"+100%"         //%доп здоровья от здоровья героя от таланта
+			}
+			"base_dmg"											"100"           //базовый урон
+			"dmg_pct_caster_int"
+			{
+				"value"											"50"            //%урона от ителлекта героя
+				"special_bonus_unique_venomancer_custom_6"		"+100%"         //%доп урон от ителлекта героя от таланта
+			}
+			"poison_sting_efficiency_pct"
+			{
+				"value"											"50"            //%эффективности 2 способности у варда
+				"special_bonus_unique_venomancer_custom_4"		"+100%"         //%доп эффективность от таланта
+			}
+			"duration"											"10"            //время жизнеи варда
+			"target_count"										"1"             //количество доп целей(работает только если у героя прокачена 2 способность)
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"venomancer_poison_cloud"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/venomancer/venomancer_poison_cloud"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityTextureName"			"venomancer_noxious_plague"
+		"MaxLevel"						"10"
+		"AbilityCastPoint"				"0.69"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"120 125 130 135"
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"											"15"
+				"special_bonus_unique_venomancer_custom_7"		"-40%"
+			}
+			"stack_count_per_sec"
+			{
+				"value"											"10 20 30 40 50 60 70 80 90 100"
+				"special_bonus_unique_venomancer_custom_8"		"+100%"
+			}
+			"heal_debuff"										"100"
+			"radius"
+			{
+				"value"											"1000"
+				"special_bonus_unique_venomancer_custom_5"		"+50%"
+			}
+			"bonus_as"											"100"
+			"duration"											"10"
+			"debuff_interval"									"0.2"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	///////////////////////
+	///!ТАЛАНТЫ
+	//////////////////////
+
+	"special_bonus_unique_venomancer_custom_1"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+
+	"special_bonus_unique_venomancer_custom_2"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_3"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_4"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_5"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_6"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_7"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+	"special_bonus_unique_venomancer_custom_8"
+	{
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_base"
+	}
+}

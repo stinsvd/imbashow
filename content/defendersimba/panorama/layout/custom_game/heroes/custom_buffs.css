@@ -6,6 +6,9 @@
 .panel_hidden {
 	opacity: 0;
 }
+.panel_ability {
+	visibility: collapse;
+}
 
 #WarlockBuffPanel {
 	flow-children: down;
@@ -27,8 +30,8 @@
 }
 
 .BuffIcon {
-	width: 100%;
 	height: 100%;
+	align: center center;
 }
 
 .remain_time_count {

@@ -367,42 +367,42 @@
 		//=========================================================================================================
 
 		"DOTA_Tooltip_ability_item_radiance_custom_1"					"Radiance #1"
-		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_2"					"Radiance #2"
-		"DOTA_Tooltip_ability_item_radiance_custom_2_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_2_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_radiance_custom_2_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_3"					"Radiance #3"
-		"DOTA_Tooltip_ability_item_radiance_custom_3_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_3_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_radiance_custom_3_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_4"					"Radiance #4"
-		"DOTA_Tooltip_ability_item_radiance_custom_4_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_4_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_4_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_4_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_4_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_radiance_custom_4_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_5"					"Radiance #5"
-		"DOTA_Tooltip_ability_item_radiance_custom_5_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_5_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_5_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_5_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_5_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_radiance_custom_5_bonus_intellect"	"+$int"
 
 		"DOTA_Tooltip_ability_item_radiance_custom_6"					"Radiance #6"
-		"DOTA_Tooltip_ability_item_radiance_custom_6_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. <br><br> Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_radiance_custom_6_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_6_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_radiance_custom_6_bonus_strength"	"+$str"
 		"DOTA_Tooltip_ability_item_radiance_custom_6_bonus_agility"		"+$agi"
@@ -1097,6 +1097,12 @@
 //=========================================================================================================
 // Slardar
 //=========================================================================================================
+	"DOTA_Tooltip_Facet_slardar_crusher"					"Crusher"
+	"DOTA_Tooltip_Facet_slardar_crusher_Description"		"Additionally repeats Slithereen Crush several times after application. Each repetition increases the radius."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_Facet_slardar_crusher"		"Additionally repeat Slithereen Crush %recast% time(s) after cast with a %recast_delay% second delay between each one. Each time the radius increases by %recast_bonus_radius% with each repeat."
+	"DOTA_Tooltip_Facet_slardar_decaying_armor"					"Decaying Armor"
+	"DOTA_Tooltip_Facet_slardar_decaying_armor_Description"		"Each attack on an enemy under the effect of Corrosive Haze further reduces their armor."
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_decaying_armor"		"Each attack on an enemy under the effect of Corrosive Haze further reduces their armor by %armor_per_hit%."
 	"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"Slardar has slow resistance and even more movement speed at the beginning of Guardian Sprint."
 	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Corrosive Haze increases Slardar's armor by %armor_pct%%% of the total armor reduced."
 	
@@ -1234,6 +1240,10 @@
 
 	"DOTA_Tooltip_ability_orcl_heal_supremacy"					"Heal Supremacy"
 	"DOTA_Tooltip_ability_orcl_heal_supremacy_Description"		"Oracle perfects his skills in healing allied heroes, amplifying outgoing healing by %heal_amp_per_stack%%% for every %healing_to_stack% healed health."
+	
+	"DOTA_Tooltip_ability_orcl_harm_supremacy"					"Harm Supremacy"
+	"DOTA_Tooltip_ability_orcl_harm_supremacy_Description"		"Oracle perfects his skills in causing harm, increasing spell damage by %spell_amp_per_cast%%% for each ability cast."
+	"DOTA_Tooltip_ability_orcl_harm_supremacy_total_spell_amp"		"%BONUS SPELL AMPLIFICATION:"
 
 	"DOTA_Tooltip_modifier_orcl_fortunes_end"					"Root from Fortune's End"
 	"DOTA_Tooltip_modifier_orcl_fortunes_end_Description"		"Positive effects dispelled, unable to move."
@@ -1271,6 +1281,7 @@
 // Infernal (Warlock)
 //=========================================================================================================
 	"npc_dota_hero_warlock"					"Infernal"
+	"npc_dota_mini_infernal_cus"			"Mini-Infernal"
 	"DOTA_Tooltip_ability_infrnl_stomp"					"Infernal Stomp"
 	"DOTA_Tooltip_ability_infrnl_stomp_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. <br><br> Grants %shards_per_cast% Archon's Shard on cast. \n<h1>Upgrade</h1> Increases impact damage by +%up_impact_base_damage%. <br> Increases burning damage by +%up_burn_base_damage%."
 	"DOTA_Tooltip_ability_infrnl_stomp_impact_base_damage"		"BASE IMPACT DAMAGE:"
@@ -1286,7 +1297,7 @@
 	"DOTA_Tooltip_ability_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_ability_infrnl_immolation_description"		"Deals damage to enemies in a radius, based on the owner's maximum health. <br><br> Initially costs mana to activate, then health to maintain. <br><br> Grants %up_shards% Archon's Shard every %up_time% seconds of continuous maintenance. \n<h1>Upgrade</h1> Increases base damage per second by +%up_base_damage_per_second%."
 	"DOTA_Tooltip_ability_infrnl_immolation_shard_description"		"Increases radius by %bonus_radius%."
-	"DOTA_Tooltip_ability_infrnl_immolation_note0"		"Consumes %health_per_second%%% current health per second to maintain."
+	"DOTA_Tooltip_ability_infrnl_immolation_note0"		"Consumes %health_per_second%%% max health per second to maintain."
 	"DOTA_Tooltip_ability_infrnl_immolation_base_damage_per_second"			"BASE DAMAGE PER SECOND:"
 	"DOTA_Tooltip_ability_infrnl_immolation_maxhp_damage_per_second"		"%MAX HP DAMAGE PER SECOND:"
 	
@@ -1301,6 +1312,35 @@
 	"DOTA_Tooltip_ability_infrnl_burning_spirit_description"		"The Infernal enhances his spirit every time he absorbs an Archon's Shard. <br><br> Each absorbed Archon's Shard grants one of the following enhancements: <br> - +%bonus_health% health <br> - +%bonus_mana% mana <br> - +%bonus_hp_regen% health regeneration <br> - +%bonus_gold% gold * hero level <br> - +%bonus_exp% experience * hero level <br> - <b>Upgrade</b> for Infernal Stomp <br> - <b>Upgrade</b> for Flaming Fists <br> - <b>Upgrade</b> for Immolation <br> - <b>Upgrade</b> for Eonite Heart"
 	"DOTA_Tooltip_ability_infrnl_burning_spirit_scepter_description"		"Each absorbed Archon's Shard grants %upgrades_per_cast% upgrades."
 	
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion"					"Invasion"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_description"		"The Infernal splits into several golems, each with a portion of the owner's survivability. The owner becomes part of one of them. <br><br> Each golem has several abilities and the ability to transfer the owner into itself. <br><br> Reapplying cancels the ability. <br> Premature cancellation or death of all golems results in the owner losing %fail_hp%%% of current health. \n<h1>Upgrade</h1> Upgrades the Mini-Flaming Fists and Mini-Immolation abilities of the golems."
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_golems_count"		"GOLEMS COUNT:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_duration"			"DURATION:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_maxhp"				"%GOLEM HEALTH:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_armor"				"%GOLEM ARMOR:"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_magic_resist"		"%GOLEM MAGIC RESISTANCE:"
+	
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_switch"					"Switch Main"
+	"DOTA_Tooltip_ability_infrnl_infernal_invasion_switch_description"		"The Infernal changes its presence to follow this golem."
+	
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball"					"Fireball"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_description"		"Releases a small fireball that stuns the target and deals damage based on the owner's max health. Each subsequent hit increases damage."
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_damage"					"%MAX HEALTH DAMAGE:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_bonus_damage"			"BONUS DAMAGE PER STACK:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_bonus_damage_pct"		"%BONUS HEALTH DAMAGE PER STACK:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_duration"				"DURATION:"
+	"DOTA_Tooltip_ability_infrnl_mini_fire_ball_stun_duration"			"STUN DURATION:"
+	
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists"					"Mini-Flaming Fists"
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_description"		"Each attack has a chance to strike with infernal flames, dealing damage based on the owner's missing health. \n<h1>Upgrade</h1> Additionally deals +%up_base_damage% magical damage."
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_chance"				"%CHANCE:"
+	"DOTA_Tooltip_ability_infrnl_mini_flaming_fists_hpleft_damage"		"%MISSING HEALTH DAMAGE:"
+	
+	"DOTA_Tooltip_ability_infrnl_mini_immolation"					"Mini-Immolation"
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_description"		"Ignites everything around, dealing periodic damage to enemies. Damage depends on the owner's max health. \n<h1>Upgrade</h1> Increases base damage per second by +%up_base_damage_per_second%."
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_radius"						"RADIUS:"
+	"DOTA_Tooltip_ability_infrnl_mini_immolation_maxhp_damage_per_second"		"%MAX HEALTH DAMAGE:"
+	
 	"DOTA_Tooltip_modifier_infrnl_immolation"					"Immolation"
 	"DOTA_Tooltip_modifier_infrnl_immolation_description"		"Deals magical damage in the area."
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart"					"Eonite Heart"
@@ -1308,9 +1348,13 @@
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn"					"Eonite Heart Burn"
 	"DOTA_Tooltip_modifier_infrnl_eonite_heart_burn_description"		"Deals magical damage. Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 	"DOTA_Tooltip_modifier_infrnl_burning_spirit"					"Archon's Shard"
+	"DOTA_Tooltip_modifier_infrnl_mini_immolation_burn_aura"					"Mini-Immolation Burn"
+	"DOTA_Tooltip_modifier_infrnl_mini_immolation_burn_aura_description"		"Deals periodic damage."
 
 	"Infernal_Buff_Health"			"Bonus Health:"
 	"Infernal_Buff_Mana"			"Bonus Mana:"
 	"Infernal_Buff_HealthRegen"		"Bonus Health Regen:"
+	"Infernal_Buff_GoldGain"		"Bonus Gold Gained:"
+	"Infernal_Buff_ExpGain"			"Bonus Exp Gained:"
 	}
 }

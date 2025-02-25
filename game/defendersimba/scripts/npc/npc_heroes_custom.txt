@@ -34,10 +34,24 @@
 				"Icon"				"speed"
 				"Color"				"Red"
 				"GradientID"		"2"
+				"Deprecated"		"true"
 			}
 			"slardar_brineguard"
 			{
 				"Icon"				"armor"
+				"Color"				"Purple"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"slardar_crusher"
+			{
+				"Icon"				"nuke"
+				"Color"				"Red"
+				"GradientID"		"1"
+			}
+			"slardar_decaying_armor"
+			{
+				"Icon"				"armor_broken"
 				"Color"				"Purple"
 				"GradientID"		"1"
 			}
@@ -108,7 +122,7 @@
 		"Ability2"		"orcl_fates_edict"
 		"Ability3"		"orcl_purifying_flames"
 		"Ability4"		"orcl_rain_of_destiny"
-		"Ability5"		"orcl_heal_supremacy"
+		"Ability5"		"orcl_harm_supremacy"
 		"Ability6"		"orcl_false_promise"
 		"Ability10"		"special_bonus_unique_orcl_fortunes_end_duration"
 		"Ability11"		"special_bonus_unique_orcl_false_promise_armor"
@@ -132,7 +146,7 @@
 		"Ability3"		"infrnl_immolation"			//"warlock_upheaval"
 		"Ability4"		"generic_hidden"			//"warlock_eldritch_summoning"
 		"Ability5"		"generic_hidden"			//"generic_hidden"
-		"Ability6"		"infrnl_eonite_heart"		//"warlock_rain_of_chaos"
+		"Ability6"		"generic_hidden"			//"warlock_rain_of_chaos"
 		"Ability7"		"infrnl_burning_spirit"		//"warlock_eldritch_summoning"
 		"Ability10"		"special_bonus_unique_warlock_5"
 		"Ability11"		"special_bonus_unique_warlock_upheaval_aoe"
@@ -154,6 +168,7 @@
 				"Icon"				"summons"
 				"Color"				"Red"
 				"GradientID"		"0"
+				"Deprecated"		"true"
 			}
 			"warlock_grimoire"
 			{
@@ -169,6 +184,61 @@
 					}
 				}
 			}
+			"infernal_self_presence"
+			{
+				"Icon"				"barrier"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"			"infrnl_eonite_heart"
+						"AbilityIndex"			"5"
+						"AutoLevelAbility"		"false"
+					}
+				}
+			}
+			"infernal_invasion"
+			{
+				"Icon"				"summons"
+				"Color"				"Orange"
+				"GradientID"		"1"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"			"infrnl_infernal_invasion"
+						"AbilityIndex"			"5"
+						"AutoLevelAbility"		"false"
+					}
+				}
+			}
+		}
+	}
+	
+	"npc_dota_hero_venomancer_custom"
+	{
+		"override_hero"		"npc_dota_hero_venomancer"
+
+		"Ability1"		"venomancer_toxic_attack"
+		"Ability2"		"venomancer_poison_sting_custom"
+		"Ability3"		"venomancer_poison_ward"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"venomancer_poison_cloud"
+		"Ability7"		"venomancer_universal_toxin"
+		"Ability10"		"special_bonus_unique_venomancer_custom_1"
+		"Ability11"		"special_bonus_unique_venomancer_custom_2"
+		"Ability12"		"special_bonus_unique_venomancer_custom_3"
+		"Ability13"		"special_bonus_unique_venomancer_custom_4"
+		"Ability14"		"special_bonus_unique_venomancer_custom_5"
+		"Ability15"		"special_bonus_unique_venomancer_custom_6"
+		"Ability16"		"special_bonus_unique_venomancer_custom_7"
+		"Ability17"		"special_bonus_unique_venomancer_custom_8"
+
+		"Facets"
+		{
 		}
 	}
 }

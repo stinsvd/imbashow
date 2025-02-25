@@ -12,7 +12,7 @@ end
 function infrnl_immolation:ProcsMagicStick() return false end
 function infrnl_immolation:GetHealthCost(lvl)
 	if self:GetCaster():HasModifier("modifier_infrnl_immolation") then
-		return self:GetCaster():GetHealth() * (self:GetSpecialValueFor("health_per_second") / 100)
+		return self:GetCaster():GetMaxHealth() * (self:GetLevelSpecialValueFor("health_per_second", math.min(lvl, 1)) / 100)
 	end
 	return 0
 end
@@ -20,7 +20,7 @@ function infrnl_immolation:GetManaCost(lvl)
 	if self:GetCaster():HasModifier("modifier_infrnl_immolation") then
 		return 0
 	end
-	return self:GetSpecialValueFor("AbilityManaCost")
+	return self:GetLevelSpecialValueFor("AbilityManaCost", math.min(lvl, 1))
 end
 function infrnl_immolation:GetAOERadius()
 	return self:GetSpecialValueFor("radius")

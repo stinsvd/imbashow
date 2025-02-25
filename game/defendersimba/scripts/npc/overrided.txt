@@ -1,11 +1,673 @@
 "DOTAAbilities"
 {
+	"item_recipe_orb_of_venom"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_orb_of_venom"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_hurricane_pike"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_hurricane_pike"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_force_staff"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_force_staff"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_headdress"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_headdress"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_boots_of_bearing"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_boots_of_bearing"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_ancient_janggo"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_ancient_janggo"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_manta"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_manta"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_meteor_hammer"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_meteor_hammer"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_yasha_and_kaya"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_yasha_and_kaya"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_kaya_and_sange"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_kaya_and_sange"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_sange_and_yasha"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_sange_and_yasha"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_kaya"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_kaya"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_yasha"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_yasha"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_sange"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_sange"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_soul_ring"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_soul_ring"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_holy_locket"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_holy_locket"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_magic_wand"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_magic_wand"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_magic_stick"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_magic_stick"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_branches"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_overwhelming_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_overwhelming_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_swift_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_swift_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_arcane_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_arcane_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_blink"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_wind_waker"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_wind_waker"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_cyclone"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_cyclone"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_sphere"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_sphere"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_gungir"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_gungir"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_rod_of_atos"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_rod_of_atos"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_eternal_shroud"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_eternal_shroud"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_spirit_vessel"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_spirit_vessel"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_urn_of_shadows"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_urn_of_shadows"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_aeon_disk"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_aeon_disk"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_lotus_orb"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_lotus_orb"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_pipe"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_pipe"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_refresher"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_refresher"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_abyssal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_abyssal_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_basher"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_basher"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_black_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_black_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_silver_edge"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_silver_edge"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_invis_sword"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_invis_sword"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_glimmer_cape"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_glimmer_cape"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_shadow_amulet"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_shadow_amulet"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_monkey_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_monkey_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_mask_of_madness"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_mask_of_madness"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_harpoon"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_harpoon"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_echo_sabre"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_echo_sabre"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_crimson_guard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_crimson_guard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_vanguard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_vanguard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_heavens_halberd"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_heavens_halberd"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_nullifier"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_nullifier"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_guardian_greaves"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_guardian_greaves"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_mekansm"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_mekansm"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_blade_mail"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_blade_mail"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_hand_of_midas"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_hand_of_midas"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_falcon_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_falcon_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_armlet"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_armlet"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_revenants_brooch"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_revenants_brooch"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_arcane_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_arcane_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_tranquil_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_tranquil_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_phase_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_phase_boots"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_devastator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_devastator"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	"item_recipe_witch_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_witch_blade"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
 	"item_recipe_shivas_guard"
 	{
 		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"
 	}
 	"item_shivas_guard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_veil_of_discord"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_veil_of_discord"
 	{
 		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"
@@ -153,6 +815,16 @@
 		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"
 	}
+	"item_recipe_maelstrom"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_maelstrom"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
 	
 	"item_recipe_heart"
 	{
@@ -182,6 +854,16 @@
 		"IsObsolete"					"1"
 	}
 	"item_greater_crit"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_recipe_lesser_crit"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_lesser_crit"
 	{
 		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"

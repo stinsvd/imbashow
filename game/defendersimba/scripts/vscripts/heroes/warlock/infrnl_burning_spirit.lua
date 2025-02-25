@@ -6,6 +6,7 @@ LinkLuaModifier("modifier_infrnl_burning_spirit", "heroes/warlock/infrnl_burning
 infrnl_burning_spirit = infrnl_burning_spirit or class({})
 function infrnl_burning_spirit:Precache(context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts", context)
+	PrecacheResource("particle", "particles/custom/heroes/infernal/infernal_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf", context)
 end
 function infrnl_burning_spirit:GetIntrinsicModifierName() return "modifier_infrnl_burning_spirit" end
@@ -16,15 +17,29 @@ function modifier_infrnl_burning_spirit:IsHidden() return self:GetStackCount() =
 function modifier_infrnl_burning_spirit:IsPurgable() return false end
 function modifier_infrnl_burning_spirit:OnCreated()
 	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local casterPos = caster:GetAbsOrigin()
+	local amb_pfx = ParticleManager:CreateParticle("particles/custom/heroes/infernal/infernal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControlEnt(amb_pfx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, casterPos, true)
+	self:AddParticle(amb_pfx, false, false, -1, false, false)
+
 	self.allUpgrades = {
+		bonus_health_stacks = 0,
 		bonus_health = 0,
+		bonus_mana_stacks = 0,
 		bonus_mana = 0,
+		bonus_hp_regen_stacks = 0,
 		bonus_hp_regen = 0,
+		gold_gain_stacks = 0,
+		gold_gain = 0,
+		exp_gain_stacks = 0,
+		exp_gain = 0,
 		infrnl_stomp_impact_base_damage = 0,
 		infrnl_stomp_burn_base_damage = 0,
 		infrnl_flaming_fists_base_damage = 0,
 		infrnl_immolation_base_damage_per_second = 0,
 		infrnl_eonite_heart_burn_damage = 0,
+		infrnl_infernal_invasion_burn_damage = 0,
 	}
 	self:SetHasCustomTransmitterData(true)
 end
@@ -70,13 +85,13 @@ function modifier_infrnl_burning_spirit:DeclareFunctions()
 	}
 end
 function modifier_infrnl_burning_spirit:GetModifierHealthBonus()
-	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_health * self:GetAbility():GetSpecialValueFor("bonus_health") end
+	if self.allUpgrades then return self.allUpgrades.bonus_health end
 end
 function modifier_infrnl_burning_spirit:GetModifierManaBonus()
-	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_mana * self:GetAbility():GetSpecialValueFor("bonus_mana") end
+	if self.allUpgrades then return self.allUpgrades.bonus_mana end
 end
 function modifier_infrnl_burning_spirit:GetModifierConstantHealthRegen()
-	if self.allUpgrades and self:GetAbility() then return self.allUpgrades.bonus_hp_regen * self:GetAbility():GetSpecialValueFor("bonus_hp_regen") end
+	if self.allUpgrades then return self.allUpgrades.bonus_hp_regen end
 end
 --[[
 function modifier_infrnl_burning_spirit:OnAbilityExecuted(keys)
@@ -118,18 +133,24 @@ end
 function modifier_infrnl_burning_spirit:Upgrade(num)
 	if not IsServer() then return end
 	if not self:GetAbility() then return end
-	local buff = num or RandomInt(1, 9)
+	local buff = num or RandomInt(1, 10)
 	local count = self:GetAbility():GetSpecialValueFor("upgrades_per_cast")
 	local infrnlStats = CustomNetTables:GetTableValue("heroes_stats", "Infernal") or {}
 	for i = 1, count do
 		local owner = self:GetParent()
 	--	print(buff)
 		if buff == 1 then
-			self.allUpgrades.bonus_health = self.allUpgrades.bonus_health + 1
+			local bonus_health = self:GetAbility():GetSpecialValueFor("bonus_health")
+			self.allUpgrades.bonus_health_stacks = self.allUpgrades.bonus_health_stacks + 1
+			self.allUpgrades.bonus_health = self.allUpgrades.bonus_health + bonus_health
 		elseif buff == 2 then
-			self.allUpgrades.bonus_mana = self.allUpgrades.bonus_mana + 1
+			local bonus_mana = self:GetAbility():GetSpecialValueFor("bonus_mana")
+			self.allUpgrades.bonus_mana_stacks = self.allUpgrades.bonus_mana_stacks + 1
+			self.allUpgrades.bonus_mana = self.allUpgrades.bonus_mana + bonus_mana
 		elseif buff == 3 then
-			self.allUpgrades.bonus_hp_regen = self.allUpgrades.bonus_hp_regen + 1
+			local bonus_hp_regen = self:GetAbility():GetSpecialValueFor("bonus_hp_regen")
+			self.allUpgrades.bonus_hp_regen_stacks = self.allUpgrades.bonus_hp_regen_stacks + 1
+			self.allUpgrades.bonus_hp_regen = self.allUpgrades.bonus_hp_regen + bonus_hp_regen
 		elseif buff == 4 then
 			local bonus_gold = self:GetAbility():GetSpecialValueFor("bonus_gold") * owner:GetLevel()
 			local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, owner)
@@ -139,11 +160,15 @@ function modifier_infrnl_burning_spirit:Upgrade(num)
 			owner:ModifyGold(bonus_gold, true, 0)
 			EmitSoundOnClient("DOTA_Item.Hand_Of_Midas", owner:GetPlayerOwner())
 			SendOverheadEventMessage(PlayerResource:GetPlayer(owner:GetPlayerOwnerID()), OVERHEAD_ALERT_GOLD, owner, bonus_gold, nil)
+			self.allUpgrades.gold_gain_stacks = self.allUpgrades.gold_gain_stacks + 1
+			self.allUpgrades.gold_gain = self.allUpgrades.gold_gain + bonus_gold
 		elseif buff == 5 then
 			local bonus_exp = self:GetAbility():GetSpecialValueFor("bonus_exp") * owner:GetLevel()
 			owner:AddExperience(bonus_exp, 4, false, false)
 			EmitSoundOnClient("Item.TomeOfKnowledge", owner:GetPlayerOwner())
 			SendOverheadEventMessage(PlayerResource:GetPlayer(owner:GetPlayerOwnerID()), OVERHEAD_ALERT_XP, owner, bonus_exp, nil)
+			self.allUpgrades.exp_gain_stacks = self.allUpgrades.exp_gain_stacks + 1
+			self.allUpgrades.exp_gain = self.allUpgrades.exp_gain + bonus_exp
 		elseif buff == 6 then
 			self.allUpgrades.infrnl_stomp_impact_base_damage = self.allUpgrades.infrnl_stomp_impact_base_damage + 1
 			self.allUpgrades.infrnl_stomp_burn_base_damage = self.allUpgrades.infrnl_stomp_burn_base_damage + 1
@@ -153,6 +178,8 @@ function modifier_infrnl_burning_spirit:Upgrade(num)
 			self.allUpgrades.infrnl_immolation_base_damage_per_second = self.allUpgrades.infrnl_immolation_base_damage_per_second + 1
 		elseif buff == 9 then
 			self.allUpgrades.infrnl_eonite_heart_burn_damage = self.allUpgrades.infrnl_eonite_heart_burn_damage + 1
+		elseif buff == 10 then
+			self.allUpgrades.infrnl_infernal_invasion_burn_damage = self.allUpgrades.infrnl_infernal_invasion_burn_damage + 1
 		end
 		self:SendBuffRefreshToClients()
 		

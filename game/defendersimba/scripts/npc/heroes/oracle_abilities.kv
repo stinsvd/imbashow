@@ -352,4 +352,24 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	}
+	
+// Oracle Innate: Harm Supremacy
+	"orcl_harm_supremacy"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/oracle/harm_supremacy"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"oracle_purifying_flames"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"spell_amp_per_cast"		"0.1"
+			"total_spell_amp"
+			{
+				"dynamic_value"			"true"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
 }

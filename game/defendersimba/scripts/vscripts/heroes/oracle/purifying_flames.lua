@@ -75,6 +75,7 @@ function modifier_orcl_purifying_flames_buff:OnCreated(kv)
 	if not IsServer() then return end
 	self.tick_rate = FrameTime()	--self:GetAbility():GetSpecialValueFor("tick_rate")
 	self.stacks = {}
+	self.numbersThink = 0
 	self:OnRefresh(kv)
 	
 	local flames_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
@@ -122,7 +123,7 @@ function modifier_orcl_purifying_flames_buff:HealEffect(removed, healEfficiency)
 	local heal_per_tick = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * self.tick_rate
 	local heal = (removed and heal_per_tick * self:GetRemainingTime() or heal_per_tick) * ((healEfficiency or 100) / 100)
 	target:HealWithParams(heal, ability, false, true, caster, false)
-	self.numbersThink = (self.numbersThink or 0) + self.tick_rate
+	self.numbersThink = self.numbersThink + self.tick_rate
 	if self.numbersThink >= 0.5 then
 		self.numbersThink = 0
 		local numbers = (self.heal_per_tick * self:GetStackCount()) / self:GetDuration() * 0.5

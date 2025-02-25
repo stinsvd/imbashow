@@ -21,6 +21,14 @@
 					<DOTAAbilityImage abilityname="satyr_hellcaller_unholy_aura" scaling="stretch-to-fit-y-preserve-aspect" />
 					<Label class="remain_time_count" text="0" />
 				</Panel>
+				<Panel class="Buff">
+					<Image class="BuffIcon" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<Image class="BuffIcon" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
 			</Panel>
 			<Panel class="BuffPanel">
 				<Panel class="Buff">
@@ -37,6 +45,10 @@
 				</Panel>
 				<Panel class="Buff">
 					<DOTAAbilityImage id="Buff_4_ability" abilityname="infrnl_eonite_heart" scaling="stretch-to-fit-y-preserve-aspect" />
+					<Label class="remain_time_count" text="0" />
+				</Panel>
+				<Panel class="Buff">
+					<DOTAAbilityImage id="Buff_5_ability" abilityname="infrnl_infernal_invasion" scaling="stretch-to-fit-y-preserve-aspect" />
 					<Label class="remain_time_count" text="0" />
 				</Panel>
 			</Panel>

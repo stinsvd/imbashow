@@ -183,16 +183,20 @@ function GameMode:OnGameRulesStateChange()
 	local state = GameRules:State_Get()
 	print("Game state changed to ", state)
 
-	if state == DOTA_GAMERULES_STATE_PRE_GAME then
-		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
-		for i = 0, PlayerResource:GetPlayerCount() - 1 do
-			if not PlayerResource:HasSelectedHero(i) then
-				local player = PlayerResource:GetPlayer(i)
+	if state == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+		for i = 1, PlayerResource:GetPlayerCount() do
+			if not PlayerResource:HasSelectedHero(i-1) then
+				local player = PlayerResource:GetPlayer(i-1)
 				if player then
 					player:MakeRandomHeroSelection()
+					PlayerResource:SetHasRandomed(i-1)
 				end
 			end
 		end
+	end
+
+	if state == DOTA_GAMERULES_STATE_PRE_GAME then
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
 
 		print("Игра в состоянии предыгровой подготовки")
 

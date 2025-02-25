@@ -10,6 +10,10 @@ function infrnl_stomp:Precache(context)
 	PrecacheResource("particle", "particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_shard_fireball.vpcf", context)
 end
+function infrnl_stomp:GetHealthCost(lvl)
+	return self:GetCaster():GetHealth() * (self:GetLevelSpecialValueFor("health_cost", math.min(lvl, 1)) / 100)
+end
+function infrnl_stomp:GetAOERadius() return self:GetSpecialValueFor("radius") end
 function infrnl_stomp:GetCastAnimation() return ACT_DOTA_ATTACK end
 function infrnl_stomp:OnSpellStart()
 	if not IsServer() then return end
@@ -91,4 +95,8 @@ function modifier_infrnl_stomp:OnIntervalThink()
 		self.damageTable.victim = enemy
 		ApplyDamage(self.damageTable)
 	end
+end
+function modifier_infrnl_stomp:OnDestroy()
+	if not IsServer() then return end
+	self:GetParent():RemoveSelf()
 end

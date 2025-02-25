@@ -50,6 +50,7 @@ function modifier_slrdr_corrosive_haze:OnRefresh()
 	self.has_self_buff = self:GetAbility():GetSpecialValueFor("has_self_buff")
 	self.armor_pct = self:GetAbility():GetSpecialValueFor("armor_pct")
 	self.undispellable = self:GetAbility():GetSpecialValueFor("undispellable")
+	self.armor_per_hit = self:GetAbility():GetSpecialValueFor("armor_per_hit")
 
 	if not IsServer() then return end
 	local caster = self:GetCaster()
@@ -90,10 +91,21 @@ end
 function modifier_slrdr_corrosive_haze:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_EVENT_ON_ATTACKED,
 		MODIFIER_PROPERTY_PROVIDES_FOW_POSITION,
 	}
 end
-function modifier_slrdr_corrosive_haze:GetModifierPhysicalArmorBonus() return self.armor_reduction * (-1) end
+function modifier_slrdr_corrosive_haze:GetModifierPhysicalArmorBonus() return (self.armor_reduction + (self.armor_per_hit * self:GetStackCount())) * (-1) end
+function modifier_slrdr_corrosive_haze:OnAttacked(keys)
+	if not IsServer() then return end
+	if self.armor_per_hit <= 0 then return end
+	local attacker = keys.attacker
+	local target = keys.target
+	if not attacker or not target then return end
+	if target == self:GetParent() and attacker == self:GetCaster() then
+		self:IncrementStackCount()
+	end
+end
 function modifier_slrdr_corrosive_haze:GetModifierProvidesFOWVision() return 1 end
 function modifier_slrdr_corrosive_haze:CheckState()
 	return {
@@ -142,6 +154,10 @@ function modifier_slrdr_corrosive_haze_thinker:OnCreated(kv)
 	ParticleManager:SetParticleControl(puddle_pfx, 1, Vector(self.radius, 1, 1))
 	ParticleManager:SetParticleControl(puddle_pfx, 15, Vector(255, 255, 255))
 	self:AddParticle(puddle_pfx, false, false, -1, false, false)
+end
+function modifier_slrdr_corrosive_haze_thinker:OnDestroy()
+	if not IsServer() then return end
+	self:GetParent():RemoveSelf()
 end
 function modifier_slrdr_corrosive_haze_thinker:IsAura() return true end
 function modifier_slrdr_corrosive_haze_thinker:IsAuraActiveOnDeath() return false end

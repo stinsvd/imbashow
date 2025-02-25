@@ -17,6 +17,11 @@
 		"AbilitySound"					"Hero_Huskar.Inner_Fire.Cast"
 		"AbilityValues"
 		{
+			"health_cost"
+			{
+				"value"							"15"
+				"affected_by_aoe_increase"		"1"
+			}
 			"radius"
 			{
 				"value"							"500"
@@ -29,7 +34,7 @@
 			}
 			"impact_maxhp_damage"
 			{
-				"value"							"20 40 60 80 100 120 140"
+				"value"							"20 30 40 50 60 70 80"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"stun_duration"				"2"
@@ -42,7 +47,7 @@
 			}
 			"burn_maxhp_damage"
 			{
-				"value"							"8 16 24 32 40 48 56"
+				"value"							"4 6 8 10 12 14 16"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"up_impact_base_damage"
@@ -85,7 +90,7 @@
 			}
 			"hpleft_damage"
 			{
-				"value"							"0.5 1 2 4 8 16 32"
+				"value"							"3 6 9 12 15 18 21"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"up_base_damage"
@@ -123,13 +128,13 @@
 			}
 			"maxhp_damage_per_second"
 			{
-				"value"							"5 10 15 20 25 30 35"
+				"value"							"1 2 3 4 5 6 7"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"radius"
 			{
-				"value"							"500"
-				"special_bonus_shard"			"+200"
+				"value"							"450"
+				"special_bonus_shard"			"+150"
 				"affected_by_aoe_increase"		"1"
 			}
 			"up_time"						"10"
@@ -154,17 +159,17 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"infernal/infrnl_eonite_heart"
-		"MaxLevel"						"3"
+		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"120 90 60"
+		"AbilityCooldown"				"120 105 90 75 60"
 		"AbilityManaCost"				"500"
 		"AbilitySound"					"Hero_Warlock.RainOfChaos"
 		"AbilityValues"
 		{
 			"duration"					"40"
-			"bonus_health_pct"			"5 10 20"
+			"bonus_health_pct"			"20"
 			"bonus_model_scale"			"15"
-			"bonus_status_resist"		"30"
+			"bonus_status_resist"		"10 15 20 25 30"
 			"burn_damage"
 			{
 				"value"							"0"
@@ -172,7 +177,7 @@
 			}
 			"burn_interval"				"1"
 			"burn_duration"				"5"
-			"burn_magic_resistance"		"-10 -30 -50"
+			"burn_magic_resistance"		"-10 -20 -30 -40 -50"
 			"up_burn_damage"
 			{
 				"value"							"25"
@@ -182,6 +187,128 @@
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+	
+// Infernal Invasion
+	"infrnl_infernal_invasion"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/warlock/infrnl_infernal_invasion"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityTextureName"			"warlock_rain_of_chaos"
+		"MaxLevel"						"5"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySound"					"Hero_Warlock.RainOfChaos"
+		"AbilityValues"
+		{
+			"golems_count"			"2 3 4 5 6"
+			"duration"				"5"
+			"fail_hp"				"50"
+			"maxhp"					"50"
+			"armor"					"50"
+			"magic_resist"			"50"
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+// Switch main
+	"infrnl_infernal_invasion_switch"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/warlock/infrnl_infernal_invasion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"infernal/infrnl_eonite_heart"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+	}
+// Fireball
+	"infrnl_mini_fire_ball"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/warlock/infrnl_infernal_invasion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"black_dragon_fireball"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityValues"
+		{
+			"damage"				"2"
+			"bonus_damage"			"50"
+			"bonus_damage_pct"		"0"
+			"duration"				"10"
+			"stun_duration"			"0.1"
+			"speed"					"1400"
+		}
+	}
+// Flaming Fists
+	"infrnl_mini_flaming_fists"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/warlock/infrnl_infernal_invasion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"infernal/infrnl_flaming_fists"
+		"MaxLevel"						"7"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"chance"					"25"
+			"hpleft_damage"
+			{
+				"value"							"1.5 3 4.5 6 7.5 9 10.5"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"up_base_damage"
+			{
+				"value"							"10"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+// Immolation
+	"infrnl_mini_immolation"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/warlock/infrnl_infernal_invasion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"infernal/infrnl_immolation"
+		"MaxLevel"						"7"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"interval"						"0.5"
+			"maxhp_damage_per_second"
+			{
+				"value"							"1 2 3 4 5 6 7"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"radius"
+			{
+				"value"							"300"
+				"affected_by_aoe_increase"		"1"
+			}
+			"up_base_damage_per_second"
+			{
+				"value"							"10"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	
 // Burning Spirit

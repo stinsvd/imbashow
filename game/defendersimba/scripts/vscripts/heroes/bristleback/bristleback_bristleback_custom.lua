@@ -214,6 +214,7 @@ function modifier_bristleback_bristleback_custom_taunt:OnCreated()
 	self:OnRefresh()
 
 	if not IsServer() then return end
+	self:GetParent():Interrupt()
 	self:StartIntervalThink(FrameTime())
 end
 function modifier_bristleback_bristleback_custom_taunt:OnRefresh()

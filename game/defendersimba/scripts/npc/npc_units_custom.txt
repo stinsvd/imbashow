@@ -91,6 +91,109 @@
 	}
 
 
+	"npc_dota_mini_infernal_cus"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/items/warlock/golem/puppet_summoner_golem/puppet_summoner_golem.vmdl"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_warlock_golem.vsndevts"
+		"SoundSet"					"Hero_WarlockGolem"
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+		"HasInventory"				"0"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"ModelScale"				"1"
+		"LoadoutScale"				"0.5"
+		"ConsideredHero"			"1"
+		"UnitLabel"					"mini_infernal"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
+		}
+		
+		"Ability1"					""
+		
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"90"
+		"AttackDamageMax"			"110"
+		"AttackRate"				"1.2"
+		"AttackAnimationPoint"		"0.26"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"200"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+		
+		"HealthBarOffset"			"240"
+		
+		"BountyXP"					"98"
+		"BountyGoldMin"				"100"
+		"BountyGoldMax"				"100"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"500"
+		
+		"StatusHealth"				"1500"
+		"StatusHealthRegen"			"25"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+
+	"npc_dota_venomancer_poison_ward"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/venomancer/venomancer_ward.vmdl"
+		"SoundSet"					"Hero_Venomancer.PoisonWard"
+		"Level"						"1"
+		
+		"HealthBarOffset"			"140"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"				"40"
+
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"20"
+		"AttackDamageMax"			"20"
+		"AttackRate"				"1.5"
+		"AttackRange"				"750"
+		"ProjectileModel"			"particles/units/heroes/hero_venomancer/venomancer_plague_ward_projectile.vpcf"
+		"ProjectileSpeed"			"1400"
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	}
+
+
 	"dota_courier"
 	{
 		"BaseClass"                  "npc_dota_courier"  // Базовый класс курьера

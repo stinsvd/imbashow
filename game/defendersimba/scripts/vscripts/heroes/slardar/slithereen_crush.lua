@@ -5,6 +5,7 @@ LinkLuaModifier("modifier_slrdr_slithereen_crush_debuff", "heroes/slardar/slithe
 LinkLuaModifier("modifier_slrdr_slithereen_crush_stun", "heroes/slardar/slithereen_crush", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_slrdr_slithereen_crush_puddle_thinker", "heroes/slardar/slithereen_crush", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_slrdr_slithereen_crush_puddle", "heroes/slardar/slithereen_crush", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_slrdr_slithereen_crush_recast", "heroes/slardar/slithereen_crush", LUA_MODIFIER_MOTION_NONE)
 
 
 slrdr_slithereen_crush = slrdr_slithereen_crush or class({})
@@ -15,15 +16,17 @@ function slrdr_slithereen_crush:Precache(context)
 	PrecacheResource("particle", "particles/generic_gameplay/generic_stunned.vpcf", context)
 end
 function slrdr_slithereen_crush:GetAOERadius() return self:GetSpecialValueFor("crush_radius") end
-function slrdr_slithereen_crush:OnSpellStart()
+function slrdr_slithereen_crush:OnSpellStart(newRadius)
 	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local damage = self:GetSpecialValueFor("crush_damage")
 	if caster.GetStrength and caster:GetStrength() > 0 then
 		damage = damage + (caster:GetStrength() * self:GetSpecialValueFor("crush_damage_str_pct") / 100)
 	end
-	local radius = self:GetSpecialValueFor("crush_radius")
+	local radius = newRadius or self:GetSpecialValueFor("crush_radius")
 	local slow_duration = self:GetSpecialValueFor("crush_extra_slow_duration")
+	local recast = self:GetSpecialValueFor("recast")
+	local recast_delay = self:GetSpecialValueFor("recast_delay")
 	local stun_duration = self:GetSpecialValueFor("stun_duration")
 	local shard_amp_duration = self:GetSpecialValueFor("shard_amp_duration")
 	local haze = caster:FindAbilityByName("slrdr_corrosive_haze")
@@ -59,6 +62,10 @@ function slrdr_slithereen_crush:OnSpellStart()
 		
 		damageTable.victim = enemies[i]
 		ApplyDamage(damageTable)
+	end
+
+	if not newRadius and recast > 0 then
+		caster:AddNewModifier(caster, self, "modifier_slrdr_slithereen_crush_recast", {duration = (recast * recast_delay) + FrameTime()})
 	end
 	
 	local puddle_duration = self:GetSpecialValueFor("puddle_duration")
@@ -120,6 +127,10 @@ function modifier_slrdr_slithereen_crush_puddle_thinker:OnCreated(kv)
 	ParticleManager:SetParticleControl(puddle_pfx, 1, Vector(self.radius, 1, 1))
 	ParticleManager:SetParticleControl(puddle_pfx, 15, Vector(255, 255, 255))
 	self:AddParticle(puddle_pfx, false, false, -1, false, false)
+end
+function modifier_slrdr_slithereen_crush_puddle_thinker:OnDestroy()
+	if not IsServer() then return end
+	self:GetParent():RemoveSelf()
 end
 function modifier_slrdr_slithereen_crush_puddle_thinker:IsAura() return true end
 function modifier_slrdr_slithereen_crush_puddle_thinker:IsAuraActiveOnDeath() return false end
@@ -187,4 +198,22 @@ function modifier_slrdr_slithereen_crush_puddle:GetModifierBonusStats_Strength()
 	
 	local elapsedTime = GameRules:GetDOTATime(true, true) - self.createdTime
 	return bonus * math.min(elapsedTime / self.max_effect, 1)
+end
+
+
+modifier_slrdr_slithereen_crush_recast = modifier_slrdr_slithereen_crush_recast or class({})
+function modifier_slrdr_slithereen_crush_recast:IsHidden() return true end
+function modifier_slrdr_slithereen_crush_recast:IsPurgable() return false end
+function modifier_slrdr_slithereen_crush_recast:OnCreated()
+	self.recast = self:GetAbility():GetSpecialValueFor("recast")
+	self.recast_delay = self:GetAbility():GetSpecialValueFor("recast_delay")
+	self.crush_radius = self:GetAbility():GetSpecialValueFor("crush_radius")
+	self.recast_bonus_radius = self:GetAbility():GetSpecialValueFor("recast_bonus_radius")
+	self:StartIntervalThink(self.recast_delay)
+end
+function modifier_slrdr_slithereen_crush_recast:OnIntervalThink()
+	if not IsServer() then return end
+	self.count = (self.count or 0) + 1
+--	self:GetParent():StartGesture(ACT_DOTA_CAST_ABILITY_2)
+	self:GetAbility():OnSpellStart(self.crush_radius + (self.recast_bonus_radius * self.count))
 end
