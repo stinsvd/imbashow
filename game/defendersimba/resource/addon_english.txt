@@ -12,7 +12,65 @@
 
 		"npc_dota_goodguys_tower_cus"		"Tower"
 		"npc_dota_badguys_tower_cus"		"Tower"
+		"npc_dota_morph_boss_cus"			"Morph"
 		"DOTA_Tooltip_modifier_invulnerable_cus"	"Invulnerable"
+
+
+		"DOTA_Tooltip_ability_item_upgrade_scroll_1"					"First Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_1_Description"		"Available from the start of the game"
+
+		"item_upgrade_scroll_2"											"Second Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_2"					"Second Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_2_Description"		"Available after killing the first boss"
+
+		"item_upgrade_scroll_3"											"Third Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_3"					"Third Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_3_Description"		"Available after killing the second boss"
+
+		"item_upgrade_scroll_4"											"Fourth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_4"					"Fourth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_4_Description"		"Available after killing the third boss"
+
+		"item_upgrade_scroll_5"											"Fifth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_5"					"Fifth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_5_Description"		"Available after killing the fourth boss"
+
+		"item_upgrade_scroll_6"											"Sixth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_6"					"Sixth Scroll"
+		"DOTA_Tooltip_ability_item_upgrade_scroll_6_Description"		"Available after killing the fifth boss"
+
+
+
+		//=========================================================================================================
+
+		"DOTA_Tooltip_ability_item_platemail_2"			"Platemail #2"
+		"DOTA_Tooltip_ability_item_platemail_2_Lore"		"Thick metal plates that protect the entire upper body. Avoid dropping on feet."
+		"DOTA_Tooltip_ability_item_platemail_2_bonus_armor"		"+$armor"
+
+		"DOTA_Tooltip_Ability_item_tiara_of_selemene_2"			"Tiara of Selemene #2"
+		"DOTA_Tooltip_ability_item_tiara_of_selemene_2_Lore"		"Tiara!"
+		"DOTA_Tooltip_ability_item_tiara_of_selemene_2_bonus_mana_regen"		"+$mana_regen"
+
+		"DOTA_Tooltip_Ability_item_ring_of_tarrasque_2"			"Ring of Tarrasque #2"
+		"DOTA_Tooltip_ability_item_ring_of_tarrasque_2_Lore"		"An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component."
+		"DOTA_Tooltip_ability_item_ring_of_tarrasque_2_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_ring_of_tarrasque_2_bonus_health"				"+$health"
+
+		"DOTA_Tooltip_ability_item_reaver_2"			"Reaver #2"
+		"DOTA_Tooltip_ability_item_reaver_2_Lore"		"A massive axe capable of tearing whole mountains down."
+		"DOTA_Tooltip_ability_item_reaver_2_bonus_strength"		"+$str"
+
+		"DOTA_Tooltip_ability_item_eagle_2"			"Eaglesong #2"
+		"DOTA_Tooltip_ability_item_eagle_2_Lore"		"Capturing the majestic call of an eagle, this mystical horn brings limitless dexterity to those who hear it."
+		"DOTA_Tooltip_ability_item_eagle_2_bonus_agility"		"+$agi"
+
+		"DOTA_Tooltip_ability_item_mystic_staff_2"			"Mystic Staff #2"
+		"DOTA_Tooltip_ability_item_mystic_staff_2_Lore"		"Enigmatic staff made of only the most expensive crystals."
+		"DOTA_Tooltip_ability_item_mystic_staff_2_bonus_intellect"		"+$int"
+
+		"DOTA_Tooltip_ability_item_relic_2"			"Sacred Relic #2"
+		"DOTA_Tooltip_ability_item_relic_2_Lore"		"An ancient weapon that often turns the tides of war."
+		"DOTA_Tooltip_ability_item_relic_2_bonus_damage"		"+$damage"
 
 
 
@@ -20,6 +78,7 @@
 		// Battle Fury
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_bfury_1"		"Battle Fury Recipe"
 		"DOTA_Tooltip_ability_item_bfury_1"					"Battle Fury #1"
 		"DOTA_Tooltip_ability_item_bfury_1_Description"		"<h1>Active: Chop Tree</h1> Destroy a target tree. \n<h1>Passive: Cleave</h1> Deals %cleave_damage%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. (Melee Only)"
 		"DOTA_Tooltip_ability_item_bfury_1_bonus_damage"			"+$damage"
@@ -70,6 +129,7 @@
 		"DOTA_Tooltip_ability_item_range_bf_Description"		"<h1>Passive: Splash</h1> Deals %splash_damage_percent%%% of attack damage as physical damage in a radius of %splash_radius% around the target. (Ranged Only)"
 		"DOTA_Tooltip_ability_item_range_bf_bonus_damage"		"+$damage"
 
+		"DOTA_Tooltip_ability_item_recipe_range_btfury_1"		"Wicked Fury Recipe"
 		"DOTA_Tooltip_ability_item_range_btfury_1"					"Wicked Fury #1"
 		"DOTA_Tooltip_ability_item_range_btfury_1_Description"		"<h1>Passive: Splash</h1> Deals %splash_damage_percent%%% of attack damage as physical damage in a radius of %splash_radius% around the target. (Ranged Only)"
 		"DOTA_Tooltip_ability_item_range_btfury_1_bonus_damage"				"+$damage"
@@ -116,6 +176,7 @@
 		// Cuirass
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_assault_cuirass_1"		"Assault Cuirass Recipe"
 		"DOTA_Tooltip_ability_item_assault_cuirass_1"					"Cuirass #1"
 		"DOTA_Tooltip_ability_item_assault_cuirass_1_Description"		"<h1>Passive: Assault Aura</h1> Reduces enemy armor by %armor_reduction%. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_assault_cuirass_1_bonus_attack_speed"		"+$attack"
@@ -169,6 +230,7 @@
 		// Butterfly
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_butterfly_1"		"Butterfly Recipe"
 		"DOTA_Tooltip_ability_item_butterfly_1"			"Butterfly #1"
 		"DOTA_Tooltip_ability_item_butterfly_1_bonus_agility"			"+$agi"
 		"DOTA_Tooltip_ability_item_butterfly_1_bonus_attack_speed"		"+$attack"
@@ -209,6 +271,7 @@
 		// Daedalus
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_daedalus_1"		"Daedalus Recipe"
 		"DOTA_Tooltip_ability_item_daedalus_1"					"Daedalus #1"
 		"DOTA_Tooltip_ability_item_daedalus_1_Description"		"<h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_daedalus_1_bonus_damage"		"+$damage"
@@ -237,6 +300,7 @@
 		// Desolator
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_desolator_custom_1"		"Desolator Recipe"
 		"DOTA_Tooltip_ability_item_desolator_custom_1"					"Desolator #1"
 		"DOTA_Tooltip_ability_item_desolator_custom_1_Description"		"<h1>Passive: Corruption</h1> Your attacks reduce the target's armor by %armor_reduction% for %armor_reduction_duration% seconds."
 		"DOTA_Tooltip_ability_item_desolator_custom_1_bonus_damage"		"+$damage"
@@ -268,6 +332,7 @@
 		// Heart of Tarrasque
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_heart_of_tarrasque_1"		"Heart of Tarrasque Recipe"
 		"DOTA_Tooltip_ability_item_heart_of_tarrasque_1"		"Heart of Tarrasque #1"
 		"DOTA_Tooltip_ability_item_heart_of_tarrasque_1_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_heart_of_tarrasque_1_bonus_health"			"+$health"
@@ -308,6 +373,7 @@
 		// Octarine Core
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_octarine_core_1"		"Octarine Core Recipe"
 		"DOTA_Tooltip_ability_item_octarine_core_1"					"Octarine Core #1"
 		"DOTA_Tooltip_ability_item_octarine_core_1_Description"		"<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items."
 		"DOTA_Tooltip_ability_item_octarine_core_1_bonus_health"			"+$health"
@@ -366,6 +432,7 @@
 		// Radiance
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_radiance_custom_1"		"Radiance Recipe"
 		"DOTA_Tooltip_ability_item_radiance_custom_1"					"Radiance #1"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Passive: Burn</h1> Scorches enemies for %aura_damage% magical damage per second. Illusions deal %aura_illusion_pct%%% less damage. <br><br> Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_bonus_damage"		"+$damage"
@@ -412,6 +479,7 @@
 		// Eye of Skadi
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_skadi_custom_1"		"Eye of Skadi Recipe"
 		"DOTA_Tooltip_ability_item_skadi_custom_1"					"Eye of Skadi #1"
 		"DOTA_Tooltip_ability_item_skadi_custom_1_Description"		"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement by %slow_movement_speed%%%, as well as their attack speed by %slow_attack_speed%. Additionally it reduces all healing, lifesteal and regen by %heal_reduction%%% Lasts for %slow_duration% seconds."
 		"DOTA_Tooltip_ability_item_skadi_custom_1_bonus_strength"		"+$all"
@@ -467,6 +535,7 @@
 		// Mjollnir
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_mjollnir_custom_1"		"Mjollnir Recipe"
 		"DOTA_Tooltip_ability_item_mjollnir_custom_1"					"Mjollnir #1"
 		"DOTA_Tooltip_ability_item_mjollnir_custom_1_Description"		"<h1>Passive: Chain Lightning</h1> Grants a %lightning_chance%%% chance on attack to release a chain lightning, dealing %lightning_damage% magical damage to enemies within a radius of %lightning_radius%. \n<h1>Passive: Pierce</h1> Grants each attack a %mkb_damage_chance%%% chance to deal %mkb_bonus_damage% additional magical damage."
 		"DOTA_Tooltip_ability_item_mjollnir_custom_1_bonus_damage"				"+$damage"
@@ -501,6 +570,7 @@
 		// Bloodstone
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_bloodstone_1"		"Bloodstone Recipe"
 		"DOTA_Tooltip_ability_item_bloodstone_1"					"Bloodstone #1"
 		"DOTA_Tooltip_ability_item_bloodstone_1_Description"		"<h1>Passive: Spell Lifesteal</h1>Spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type."
 		"DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"		"%+$spell_lifesteal"
@@ -553,6 +623,7 @@
 		// Diffusal Blade
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_diffusal_blade_cus_1"		"Diffusal Blade Recipe"
 		"DOTA_Tooltip_ability_item_diffusal_blade_cus_1"					"Diffusal Blade #1"
 		"DOTA_Tooltip_ability_item_diffusal_blade_cus_1_Description"		"<h1>Active: Inhibit</h1> Targets an enemy, slowing it for %duration% seconds. \n<h1>Passive: Manabreak</h1>Each attack burns %mana_break% mana from the target, and deals %damage_per_burn% physical damage per burned mana."
 		"DOTA_Tooltip_ability_item_diffusal_blade_cus_1_bonus_agility"			"+$agi"
@@ -590,6 +661,7 @@
 		// Ethereal Blade
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_ethereal_blade_1"		"Ethereal Blade Recipe"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1"					"Ethereal Blade #1"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_Description"		"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br> Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your target's primary attribute + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds \n<h1>Passive: Empower Spell</h1> The next Unit Target spell you cast on an enemy deals a separate %bonus_spell_damage% + %spell_crit_multiplier%%% of your attack damage as bonus damage to the target, and slows them by %slow_phylacrery%%% for %slow_duration%s. <br> Cooldown: %cooldown_phylacrery%s \n<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_bonus_agility"			"+$agi"
@@ -660,32 +732,33 @@
 		// Маг криты
 		//=========================================================================================================
 
-		"DOTA_Tooltip_ability_item_magical_crit_1"					"Маг. криты #1"
+		"DOTA_Tooltip_ability_item_recipe_magical_crit_1"		"Arcane Daedalus Recipe"
+		"DOTA_Tooltip_ability_item_magical_crit_1"					"Arcane Daedalus #1"
 		"DOTA_Tooltip_ability_item_magical_crit_1_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_1_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_1_bonus_spell_amp"		"%+$spell_amp"
 
-		"DOTA_Tooltip_ability_item_magical_crit_2"					"Маг. криты #2"
+		"DOTA_Tooltip_ability_item_magical_crit_2"					"Arcane Daedalus #2"
 		"DOTA_Tooltip_ability_item_magical_crit_2_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_2_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_2_bonus_spell_amp"		"%+$spell_amp"
 
-		"DOTA_Tooltip_ability_item_magical_crit_3"					"Маг. криты #3"
+		"DOTA_Tooltip_ability_item_magical_crit_3"					"Arcane Daedalus #3"
 		"DOTA_Tooltip_ability_item_magical_crit_3_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_3_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_3_bonus_spell_amp"		"%+$spell_amp"
 
-		"DOTA_Tooltip_ability_item_magical_crit_4"					"Маг. криты #4"
+		"DOTA_Tooltip_ability_item_magical_crit_4"					"Arcane Daedalus #4"
 		"DOTA_Tooltip_ability_item_magical_crit_4_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_4_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_4_bonus_spell_amp"		"%+$spell_amp"
 
-		"DOTA_Tooltip_ability_item_magical_crit_5"					"Маг. криты #5"
+		"DOTA_Tooltip_ability_item_magical_crit_5"					"Arcane Daedalus #5"
 		"DOTA_Tooltip_ability_item_magical_crit_5_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_5_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_5_bonus_spell_amp"		"%+$spell_amp"
 
-		"DOTA_Tooltip_ability_item_magical_crit_6"					"Маг. криты #6"
+		"DOTA_Tooltip_ability_item_magical_crit_6"					"Arcane Daedalus #6"
 		"DOTA_Tooltip_ability_item_magical_crit_6_Description"		"<h1>Passive: Spell Strike</h1> Abilities have a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 		"DOTA_Tooltip_ability_item_magical_crit_6_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_magical_crit_6_bonus_spell_amp"		"%+$spell_amp"
@@ -694,6 +767,7 @@
 		// Orchid Malevolence
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_orchid_1"		"Orchid Malevolence Recipe"
 		"DOTA_Tooltip_ability_item_orchid_1"					"Orchid Malevolence #1"
 		"DOTA_Tooltip_ability_item_orchid_1_Description"		"<h1>Active: Soul Burn</h1>Silences the target unit for %silence_duration% seconds. At the end of the silence, %silence_damage_percent%%% of the damage received while silenced is inflicted as bonus magical damage."
 		"DOTA_Tooltip_ability_item_orchid_1_Lore"		"A garnet rod constructed from the essence of a fire demon."
@@ -814,6 +888,7 @@
 		// Mage Slayer & Scythe of Vyse
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_mage_slayer_1"		"Mage Slayer Recipe"
 		"DOTA_Tooltip_ability_item_mage_slayer_1"					"Mage Slayer #1"
 		"DOTA_Tooltip_ability_item_mage_slayer_1_Description"		"<h1>Passive: Mage Slayer</h1>Places a debuff when you attack enemies, dealing %dps% damage per second and causing them to do %spell_amp_debuff%%% less spell damage for %duration% seconds."
 		"DOTA_Tooltip_ability_item_mage_slayer_1_Lore"		"Forged by a secret order in The Third Age of Praxa'cia to fell the False King."
@@ -880,6 +955,7 @@
 		// Shiva's Guard
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_shivasguard_1"		"Shiva's Guard Recipe"
 		"DOTA_Tooltip_ability_item_shivasguard_1"					"Shiva's Guard #1"
 		"DOTA_Tooltip_ability_item_shivasguard_1_Description"		"<h1>Active: Arctic Blast</h1> Emits a freezing wave that deals %blast_damage% magical damage and slows their movement by %slow_movement_speed%%% for %slow_duration% seconds. <br><br> Radius: %blast_radius% \n<h1>Passive: Freezing Aura</h1> Reduces the attack speed of all enemies by %aura_attack_speed% and all heals, regeneration and lifesteal by %aura_heal_percent%%%. <br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivasguard_1_Lore"		"Said to have belonged to a goddess, today it retains much of its former power."
@@ -939,6 +1015,445 @@
 		"DOTA_Tooltip_ability_item_shivasguard_6_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_shivasguard_6_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_ability_item_shivasguard_6_bonus_hp_regen"		"+$hp_regen"
+
+		//=========================================================================================================
+		// Linken's Sphere
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_linkens_sphere_cus"		"Linken's Sphere Recipe"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus"					"Linken's Sphere #1"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_bonus_all_stats"			"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus"					"Linken's Sphere #2"
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus"					"Linken's Sphere #3"
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus"					"Linken's Sphere #4"
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus"					"Linken's Sphere #5"
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus"					"Linken's Sphere #6"
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_Description"		"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds. \n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_duration% seconds."
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_Lore"		"This magical sphere once protected one of the most famous heroes in history."
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_modifier_linkens_sphere_cus_buff"					"Linken's Sphere Spell Block"
+		"DOTA_Tooltip_modifier_linkens_sphere_cus_buff_Description"		"The next targeted spell will be blocked."
+
+		//=========================================================================================================
+		// Mask of Madness
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus"					"Mask of Madness #2"
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_Description"		"<h1>Active: Berserk</h1>Gives %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces your armor by %berserk_armor_reduction% and silences you. Lasts %berserk_duration% seconds. \n<h1>Passive: Lifesteal</h1>Heals the attacker for a percentage of physical damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_Lore"		"Once this mask is worn, its bearer becomes an uncontrollable aggressive force."
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_lifesteal_percent"		"%+$lifesteal"
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus"					"Mask of Madness #3"
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_Description"		"<h1>Active: Berserk</h1>Gives %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces your armor by %berserk_armor_reduction% and silences you. Lasts %berserk_duration% seconds. \n<h1>Passive: Lifesteal</h1>Heals the attacker for a percentage of physical damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_Lore"		"Once this mask is worn, its bearer becomes an uncontrollable aggressive force."
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_bonus_attack_speed"	"+$attack"
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_lifesteal_percent"		"%+$lifesteal"
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus"					"Mask of Madness #4"
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_Description"		"<h1>Active: Berserk</h1>Gives %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces your armor by %berserk_armor_reduction% and silences you. Lasts %berserk_duration% seconds. \n<h1>Passive: Lifesteal</h1>Heals the attacker for a percentage of physical damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_Lore"		"Once this mask is worn, its bearer becomes an uncontrollable aggressive force."
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_bonus_attack_speed"	"+$attack"
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_lifesteal_percent"		"%+$lifesteal"
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus"					"Mask of Madness #5"
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_Description"		"<h1>Active: Berserk</h1>Gives %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces your armor by %berserk_armor_reduction% and silences you. Lasts %berserk_duration% seconds. \n<h1>Passive: Lifesteal</h1>Heals the attacker for a percentage of physical damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_Lore"		"Once this mask is worn, its bearer becomes an uncontrollable aggressive force."
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_bonus_attack_speed"	"+$attack"
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_lifesteal_percent"		"%+$lifesteal"
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus"					"Mask of Madness #6"
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_Description"		"<h1>Active: Berserk</h1>Gives %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces your armor by %berserk_armor_reduction% and silences you. Lasts %berserk_duration% seconds. \n<h1>Passive: Lifesteal</h1>Heals the attacker for a percentage of physical damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_Lore"		"Once this mask is worn, its bearer becomes an uncontrollable aggressive force."
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_bonus_attack_speed"	"+$attack"
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_lifesteal_percent"		"%+$lifesteal"
+		
+		"DOTA_Tooltip_modifier_mask_of_madness_cus_active"					"Berserk"
+		"DOTA_Tooltip_modifier_mask_of_madness_cus_active_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% but reduces armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% and silences you."
+
+		//=========================================================================================================
+		// Witch Blade / Parasma
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_witch_blade_cus"		"Witch Blade Recipe"
+		"DOTA_Tooltip_ability_item_witch_blade_cus"					"Witch Blade #1"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_Description"		"<h1>Passive: Witch Blade</h1>Causes your next attack to apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second. This attack has True Strike."
+		"DOTA_Tooltip_ability_item_witch_blade_cus_Lore"		"A spiteful blade inadvertently possessed by the soul of its incautious creator."
+		"DOTA_Tooltip_ability_item_witch_blade_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_projectile_speed"		"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus"					"Witch Blade #2"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_Description"		"<h1>Passive: Witch Blade</h1>Causes your next attack to apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second. This attack has True Strike."
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_Lore"		"A spiteful blade inadvertently possessed by the soul of its incautious creator."
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_projectile_speed"			"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus"					"Parasma #1"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_Description"		"<h1>Passive: Witch Blade</h1> Causes your next attack to have true strike, apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second.\n\n<h1>Passive: Magic Corruption</h1> Your attacks reduce the enemy's Magic resistance by %active_mres_reduction%%% for %passive_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_Lore"		"Devastating."
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_projectile_speed"			"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus"					"Parasma #2"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_Description"		"<h1>Passive: Witch Blade</h1> Causes your next attack to have true strike, apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second.\n\n<h1>Passive: Magic Corruption</h1> Your attacks reduce the enemy's Magic resistance by %active_mres_reduction%%% for %passive_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_Lore"		"Devastating."
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_projectile_speed"			"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus"					"Parasma #3"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_Description"		"<h1>Passive: Witch Blade</h1> Causes your next attack to have true strike, apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second.\n\n<h1>Passive: Magic Corruption</h1> Your attacks reduce the enemy's Magic resistance by %active_mres_reduction%%% for %passive_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_Lore"		"Devastating."
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_projectile_speed"			"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus"					"Parasma #4"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_Description"		"<h1>Passive: Witch Blade</h1> Causes your next attack to have true strike, apply a poison for %slow_duration% seconds, slowing by %slow%%% and dealing %int_damage_multiplier%x your intelligence as damage every second.\n\n<h1>Passive: Magic Corruption</h1> Your attacks reduce the enemy's Magic resistance by %active_mres_reduction%%% for %passive_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_Lore"		"Devastating."
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_projectile_speed"			"+$projectile_speed"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_modifier_witch_blade_cus_debuff"					"Witch Blade"
+		"DOTA_Tooltip_modifier_witch_blade_cus_debuff_Description"		"Taking damage per second and reducing movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_parasma_debuff"					"Magic Corruption"
+		"DOTA_Tooltip_modifier_parasma_debuff_Description"		"Magic resistance by reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
+
+		//=========================================================================================================
+		// Echo Sabre
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_echo_sabre_cus"		"Echo Sabre Recipe"
+		"DOTA_Tooltip_ability_item_echo_sabre_cus"					"Echo Sabre #1"
+		"DOTA_Tooltip_ability_item_echo_sabre_cus_Description"		"<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike."
+		"DOTA_Tooltip_ability_item_echo_sabre_cus_Lore"		"A deceptively swift blade imbued with resonant magic."
+		"DOTA_Tooltip_Ability_item_echo_sabre_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_cus_bonus_strength"		"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus"					"Echo Sabre #2"
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus_Description"		"<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike."
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus_Lore"		"A deceptively swift blade imbued with resonant magic."
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus"					"Echo Sabre #3"
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus_Description"		"<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike."
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus_Lore"		"A deceptively swift blade imbued with resonant magic."
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_slow"					"Echo Sabre Slow"
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_slow_Description"		"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_cd"					"Echo Strike Cooldown"
+
+		//=========================================================================================================
+		// Black King Bar
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_black_king_bar_cus"		"Рецепт: Black King Bar"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus"					"Black King Bar #1"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus"					"Black King Bar #2"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus"					"Black King Bar #3"
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Fade</h1> While Avatar is active, gains invisibility, which is broken upon attacking or using an ability."
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus"					"Black King Bar #4"
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Glimmer</h1> While Avatar is active, gains invisibility and +%invis_ms% Movement Speed, which is broken upon attacking or using an ability."
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus"					"Black King Bar #5"
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Glimmer</h1> While Avatar is active, gains invisibility and +%invis_ms% Movement Speed, which is broken upon attacking or using an ability."
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus"					"Black King Bar #6"
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Description"		"<h1>Active: Avatar</h1> Applies a basic dispel. Grants %magic_resist%%% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. <br><br>Duration: %duration% <br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Glimmer</h1> While Avatar is active, gains invisibility and +%invis_ms% Movement Speed, which is broken upon attacking or using an ability."
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Lore"		"A powerful staff imbued with the strength of giants."
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Note0"		"Abilities that pierce magic immunity will work fully even when Avatar is activated."
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_bonus_magic_resist"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_modifier_black_king_bar_cus_active"					"Black King Bar"
+		"DOTA_Tooltip_modifier_black_king_bar_cus_active_Description"		"Debuff Immune. Magic resistance increased by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%. Immune to pure and reflected damage."
+		"DOTA_Tooltip_modifier_black_king_bar_cus_invis"					"Glimmer Cape"
+		"DOTA_Tooltip_modifier_black_king_bar_cus_invis_Description"		"Invisible. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+
+		//=========================================================================================================
+		// Refresher Orb
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_refresher_cus"		"Refresher Orb Recipe"
+		"DOTA_Tooltip_ability_item_refresher_cus"					"Refresher Orb #1"
+		"DOTA_Tooltip_ability_item_refresher_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_cus_bonus_mana_regen"			"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_cus_bonus_damage"				"+$damage"
+		
+		"DOTA_Tooltip_ability_item_refresher_2_cus"					"Refresher Orb #2"
+		"DOTA_Tooltip_ability_item_refresher_2_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_2_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_2_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_2_cus_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_2_cus_bonus_damage"			"+$damage"
+		
+		"DOTA_Tooltip_ability_item_refresher_3_cus"					"Refresher Orb #3"
+		"DOTA_Tooltip_ability_item_refresher_3_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_3_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_3_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_3_cus_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_3_cus_bonus_damage"			"+$damage"
+		
+		"DOTA_Tooltip_ability_item_refresher_4_cus"					"Refresher Orb #4"
+		"DOTA_Tooltip_ability_item_refresher_4_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_4_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_4_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_4_cus_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_4_cus_bonus_damage"			"+$damage"
+		
+		"DOTA_Tooltip_ability_item_refresher_5_cus"					"Refresher Orb #5"
+		"DOTA_Tooltip_ability_item_refresher_5_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_5_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_5_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_5_cus_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_5_cus_bonus_damage"			"+$damage"
+		
+		"DOTA_Tooltip_ability_item_refresher_6_cus"					"Refresher Orb #6"
+		"DOTA_Tooltip_ability_item_refresher_6_cus_Description"		"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. This item's cooldown only progresses in your hero's main inventory. <br><br> Cooldown: %AbilityCooldown% sec"
+		"DOTA_Tooltip_ability_item_refresher_6_cus_Lore"		"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_6_cus_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_6_cus_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_6_cus_bonus_damage"			"+$damage"
+
+		//=========================================================================================================
+		// Nullifier
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_nullifier_cus"		"Nullifier Recipe"
+		"DOTA_Tooltip_ability_item_nullifier_cus"					"Nullifier #1"
+		"DOTA_Tooltip_ability_item_nullifier_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_cus_bonus_damage"		"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_cus_slow_pct"			"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_item_nullifier_2_cus"					"Nullifier #2"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_bonus_damage"	"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_slow_pct"		"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_item_nullifier_3_cus"					"Nullifier #3"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_bonus_damage"	"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_slow_pct"		"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_item_nullifier_4_cus"					"Nullifier #4"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_bonus_damage"	"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_slow_pct"		"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_item_nullifier_5_cus"					"Nullifier #5"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_bonus_damage"	"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_slow_pct"		"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_item_nullifier_6_cus"					"Nullifier #6"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Description"		"<h1>Active: Nullify</h1> Dispels the target and applies a debuff for %mute_duration% seconds. Continuously dispels and slows the target.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Lore"		"A dangerous weapon pilfered from an inverse dimension."
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Note0"		"Can be cast on invulnerable units."
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_bonus_damage"	"+$damage"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_bonus_armor"		"+$armor"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_slow_pct"		"%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_modifier_nullifier_cus_debuff"					"Nullifier"
+		"DOTA_Tooltip_modifier_nullifier_cus_debuff_Description"		"The target is being constantly dispelled. Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_nullifier_cus_slow"					"Nullifier Slow"
+		"DOTA_Tooltip_modifier_nullifier_cus_slow_Description"		"Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		//=========================================================================================================
+		// Shadow Blade / Silver Edge
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_shadow_blade_cus"		"Shadow Blade Recipe"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus"					"Shadow Blade #1"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units.  <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Lore"		"The blade of a fallen king, it allows you to move unseen and strike from the shadows."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_bonus_mana_regen"		"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus"					"Shadow Blade #2"
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units.  <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Lore"		"The blade of a fallen king, it allows you to move unseen and strike from the shadows."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus"					"Silver Edge #1"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus"					"Silver Edge #2"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus"					"Silver Edge #3"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus"					"Silver Edge #4"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_bonus_mana_regen"			"+$mana_regen"
+		
+		"DOTA_Tooltip_modifier_shadow_blade_cus_windwalk"					"Shadow Walk"
+		"DOTA_Tooltip_modifier_shadow_blade_cus_windwalk_Description"		"Invisible as the wind. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and you can move through units. Attacking to break invisibility will deal %dMODIFIER_PROPERTY_TOOLTIP% bonus damage."
+		"DOTA_Tooltip_modifier_silver_edge_cus_windwalk"					"Shadow Walk"
+		"DOTA_Tooltip_modifier_silver_edge_cus_windwalk_Description"		"Invisible. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and you can move through units. Attacking to break invisibility will deal %dMODIFIER_PROPERTY_TOOLTIP% bonus damage, slow the target and disable their passives."
+		"DOTA_Tooltip_modifier_silver_edge_cus_debuff"					"Shadow Walk Attack"
+		"DOTA_Tooltip_modifier_silver_edge_cus_debuff_Description"		"Passive abilities disabled."
+
+		//=========================================================================================================
+		// Moon Shard
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_moon_shard_cus"					"Moon Shard"
+		"DOTA_Tooltip_ability_item_moon_shard_cus_Description"		"<h1>Use: Consume</h1> Consume the Moon Shard to permanently gain %consumed_bonus% attack speed and %consumed_bonus_night_vision% bonus night vision. Max 1 use. \n<h1>Passive: Shade Sight</h1> Grants bonus night vision."
+		"DOTA_Tooltip_ability_item_moon_shard_cus_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_moon_shard_cus_bonus_night_vision"		"+Bonus Night Vision"
+		"DOTA_Tooltip_ability_item_moon_shard_cus_Lore"		"Said to be a tear from the lunar goddess Selemene."
+		"DOTA_Tooltip_modifier_moon_shard_cus_consume"					"Moon Shard"
+		"DOTA_Tooltip_modifier_moon_shard_cus_consume_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and night vision increased by %dMODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE% after consuming a Moon Shard."
 
 		//=========================================================================================================
 		// Power Treads
@@ -1013,7 +1528,7 @@
 //=========================================================================================================
 
 	"DOTA_Tooltip_modifier_boss_buff"					"Like a boss"
-	"DOTA_Tooltip_modifier_boss_buff_Description"		"Magic Resistance: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Status Resistance: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Incoming Damage Reduction: +%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Cooldown Reduction: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
+	"DOTA_Tooltip_modifier_boss_buff_Description"		"Magic Resistance: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Status Resistance: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Incoming Damage Reduction: %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Cooldown Reduction: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
 
 	"DOTA_Tooltip_ability_special_bonus_mp_regen_3_cus"		"+{s:value} Mana Regen"
 

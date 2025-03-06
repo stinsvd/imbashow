@@ -17,6 +17,7 @@ function item_bloodstone_1:OnSpellStart()
     local damage = self:GetSpecialValueFor("damage")
     local max_targets = self:GetSpecialValueFor("max_targets")
     local radius = self:GetSpecialValueFor("radius")
+    local spell_lifesteal_active = self:GetSpecialValueFor("spell_lifesteal_active")
 
     target:EmitSound("DOTA_Item.Dagon.Activate")
 
@@ -45,7 +46,11 @@ function item_bloodstone_1:OnSpellStart()
             ability = self
         }
     
-        ApplyDamage(damageTable)
+        local realDmg = ApplyDamage(damageTable)
+
+		if realDmg > 0 and spell_lifesteal_active > 0 then
+			caster:HealWithParams(realDmg * (spell_lifesteal_active / 100), self, false, true, caster, false)
+		end
     
         local particle = ParticleManager:CreateParticle("particles/items_fx/dagon.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
@@ -130,7 +135,6 @@ function modifier_item_bloodstone_custom:OnTakeDamage(keys)
 	local target = keys.unit
 	local attacker = keys.attacker
 	if attacker ~= self:GetParent() then return end
-	print(keys.damage, keys.original_damage)
 	if attacker:FindAllModifiersByName(self:GetName())[1] ~= self then return end
 	if target:IsBuilding() or target:IsOther() then return end
 	if not keys.inflictor or keys.damage_category ~= DOTA_DAMAGE_CATEGORY_SPELL then return end
@@ -156,6 +160,6 @@ function modifier_item_bloodstone_custom:OnTakeDamage(keys)
 		end
 	end
 
-	local spell_lifesteal = keys.inflictor == self:GetAbility() and self:GetAbility():GetSpecialValueFor("spell_lifesteal_active") or self:GetAbility():GetSpecialValueFor("spell_lifesteal")
+	local spell_lifesteal = self:GetAbility():GetSpecialValueFor("spell_lifesteal")
 	attacker:HealWithParams(damage * (spell_lifesteal / 100), self:GetAbility(), false, true, attacker, true)
 end

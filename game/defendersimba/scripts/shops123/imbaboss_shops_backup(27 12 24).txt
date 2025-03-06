@@ -104,7 +104,7 @@
 		"item"		"item_hand_of_midas"
  		"item"		"item_helm_of_the_dominator"	
 		"item"		"item_travel_boots"		
-		"item"		"item_moon_shard"	
+		"item"		"item_moon_shard_cus"	
 	}
 
 	// Level 2 - Blue Recipes
@@ -178,16 +178,16 @@
 		"item"		"item_meteor_hammer"	
 		"item"		"item_armlet"
 		"item"		"item_basher"	
-		"item"		"item_invis_sword"
+		"item"		"item_shadow_blade_cus"
  		"item"		"item_desolator"	
 		"item"		"item_bfury"
 		"item"		"item_ethereal_blade"
-		"item"		"item_nullifier"	
+		"item"		"item_nullifier_cus"	
 		"item"		"item_monkey_king_bar" 	
 		"item"		"item_butterfly"
 		"item"		"item_radiance"
 		"item"		"item_greater_crit"
-		"item"		"item_silver_edge"
+		"item"		"item_shadow_blade_3_cus"
 		"item"		"item_rapier"
 		"item"		"item_bloodthorn"
 		"item"		"item_abyssal_blade"	

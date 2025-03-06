@@ -1,0 +1,236 @@
+"DOTAAbilities"
+{
+	"item_recipe_refresher_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_sobi_mask;item_sobi_mask;item_ring_of_regen;item_ring_of_regen;item_upgrade_scroll_1"
+		}
+	}
+	"item_refresher_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+
+	"item_recipe_refresher_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher_cus;item_cornucopia;item_upgrade_scroll_2"
+		}
+	}
+	"item_refresher_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+
+	"item_recipe_refresher_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher_2_cus;item_pers;item_upgrade_scroll_3"
+		}
+	}
+	"item_refresher_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+
+	"item_recipe_refresher_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher_3_cus;item_ring_of_tarrasque;item_tiara_of_selemene;item_upgrade_scroll_4"
+		}
+	}
+	"item_refresher_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+
+	"item_recipe_refresher_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher_4_cus;item_pers;item_ring_of_tarrasque;item_tiara_of_selemene;item_upgrade_scroll_5"
+		}
+	}
+	"item_refresher_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+
+	"item_recipe_refresher_6_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_6_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher_5_cus;item_ring_of_tarrasque_2;item_tiara_of_selemene_2;item_upgrade_scroll_6"
+		}
+	}
+	"item_refresher_6_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"refresher"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"220 200 180 160 140 120"
+		"AbilityManaCost"				"350"
+		"AbilitySharedCooldown"			"refresher"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"CooldownPausedOutOfInventory"	"1"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"2.5 7 13.5 25.5 44 80"
+			"bonus_mana_regen"			"1.4 3.4 7.4 13.4 21.65 39.65"
+			"bonus_damage"				"0 7 7 7 14 14"
+		}
+	}
+}

@@ -194,6 +194,56 @@
 	}
 
 
+	"npc_dota_morph_boss_cus"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/morphling/morphling.vmdl"
+		"SoundSet"					"Hero_Morphling"
+		"Level"						"50"
+		"ModelScale"				"0.88"
+		
+		"HealthBarOffset"			"140"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		
+		"ArmorPhysical"					"-2"
+		"MovementSpeed"					"285"
+		"MovementTurnRate"				"0.7"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"800"
+		"AttackAcquisitionRange"		"1200"
+		
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"12"
+		"AttackDamageMax"				"21"
+		"AttackRate"					"1.5"
+		"AttackAnimationPoint"			"0.5"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"350"
+		"ProjectileModel"				"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		"ProjectileSpeed"				"1300"
+		
+		"StatusHealth"					"200"
+		"StatusHealthRegen"				"50"
+		"StatusMana"					"1000"
+		"StatusManaRegen"				"50"
+		
+		"AttributeBaseStrength"			"23"
+		"AttributeStrengthGain"			"3.2"
+		"AttributeBaseAgility"			"24"
+		"AttributeAgilityGain"			"3.9"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.8"
+	}
+
+
 	"dota_courier"
 	{
 		"BaseClass"                  "npc_dota_courier"  // Базовый класс курьера

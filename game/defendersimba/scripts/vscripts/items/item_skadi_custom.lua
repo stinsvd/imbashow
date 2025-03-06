@@ -79,8 +79,8 @@ end
 
 function modifier_item_skadi_custom:OnAttackLanded(params)
 	if not IsServer() then return end
-	local target = keys.target
-	local attacker = keys.attacker
+	local target = params.target
+	local attacker = params.attacker
 	if not target then return end
 	if not attacker then return end
 	if attacker ~= self:GetParent() then return end

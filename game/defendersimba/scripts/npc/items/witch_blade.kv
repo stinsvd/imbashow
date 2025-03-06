@@ -1,0 +1,260 @@
+"DOTAAbilities"
+{
+	"item_recipe_witch_blade_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_robe;item_sobi_mask;item_upgrade_scroll_1"
+		}
+	}
+	"item_witch_blade_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"witch_blade"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+
+	"item_recipe_witch_blade_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade_cus;item_sobi_mask;item_blitz_knuckle;item_upgrade_scroll_2"
+		}
+	}
+	"item_witch_blade_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"witch_blade"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+
+	"item_recipe_witch_blade_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade_2_cus;item_sobi_mask;item_sobi_mask;item_oblivion_staff;item_upgrade_scroll_3"
+		}
+	}
+	"item_witch_blade_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"devastator"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+
+	"item_recipe_witch_blade_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade_3_cus;item_sobi_mask;item_oblivion_staff;item_oblivion_staff;item_upgrade_scroll_4"
+		}
+	}
+	"item_witch_blade_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"devastator"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+
+	"item_recipe_witch_blade_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade_4_cus;item_platemail;item_tiara_of_selemene;item_tiara_of_selemene;item_upgrade_scroll_5"
+		}
+	}
+	"item_witch_blade_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"devastator"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+
+	"item_recipe_witch_blade_6_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade_6_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade_5_cus;item_mystic_staff_2;item_upgrade_scroll_6"
+		}
+	}
+	"item_witch_blade_6_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/witch_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"devastator"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilitySharedCooldown"			"witch_blade"
+		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"witch blade;wb"
+		"AbilityValues"
+		{
+			"AbilityCooldown"			"9 9 7 7 7 7"
+			"bonus_intellect"			"6 6 16 36 36 111"
+			"bonus_mana_regen"			"0.7 1.4 3.8 6.5 18.5 18.5"
+			"bonus_armor"				"0 0 0 0 10 10"
+			"bonus_attack_speed"		"0 35 70 140 140 140"
+			"projectile_speed"			"300"
+			"int_damage_multiplier"		"0.75"
+			"slow"						"25"
+			"slow_duration"				"4"
+			"active_mres_reduction"		"0 0 15 15 15 15"
+			"passive_cooldown"			"0 0 4 4 4 4"
+		}
+	}
+}

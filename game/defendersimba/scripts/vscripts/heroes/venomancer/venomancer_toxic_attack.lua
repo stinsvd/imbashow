@@ -12,7 +12,7 @@ function venomancer_toxic_attack:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	local stack_count = self:GetSpecialValueFor("stack_count")
 	local burns_stacks_pct = self:GetSpecialValueFor("burns_stacks_pct") / 100
-	local universal_toxin = caster:FindAbilityByName("venomancer_universal_toxin")
+	local innate = caster:FindAbilityByName("venomancer_universal_toxin")
 
 	local particle = ParticleManager:CreateParticle("particles/econ/items/venomancer/veno_2022_immortal_tail/veno_2022_immortal_poison_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
@@ -24,19 +24,19 @@ function venomancer_toxic_attack:OnSpellStart()
 	local damageTable = {
 		victim = nil,
 		attacker = caster,
-		ability = universal_toxin,
+		ability = innate,
 		damage = nil,
-		damage_type = universal_toxin:GetAbilityDamageType(),
+		damage_type = innate:GetAbilityDamageType(),
 	}
 
 	for _, enemy in pairs(enemies) do
 		local statusRes = 1 - enemy:GetStatusResistance()
 		enemy:AddNewModifier(caster, self, "modifier_venomancer_toxic_attack_debuff", {duration = duration * statusRes})
 		
-		if universal_toxin then
+		if innate and innate:IsTrained() then
 			local modif = enemy:FindModifierByName("modifier_venomancer_universal_toxin_debuff")
-			local toxin_duration = universal_toxin:GetSpecialValueFor("duration")
-			local damage_per_sec = universal_toxin:GetSpecialValueFor("damage_per_sec")
+			local toxin_duration = innate:GetSpecialValueFor("duration")
+			local damage_per_sec = innate:GetSpecialValueFor("damage_per_sec")
 			local total_damage = 0
 			
 			if modif then
@@ -48,7 +48,7 @@ function venomancer_toxic_attack:OnSpellStart()
 					modif:SetStackCount(stacks)
 				end
 			else
-				modif = enemy:AddNewModifier(caster, universal_toxin, "modifier_venomancer_universal_toxin_debuff", {duration = toxin_duration * statusRes})
+				modif = enemy:AddNewModifier(caster, innate, "modifier_venomancer_universal_toxin_debuff", {duration = toxin_duration * statusRes})
 			end
 			
 			modif:SetStackCount(modif:GetStackCount() + stack_count)
@@ -67,56 +67,16 @@ modifier_venomancer_toxic_attack_debuff = modifier_venomancer_toxic_attack_debuf
 function modifier_venomancer_toxic_attack_debuff:IsHidden() return false end
 function modifier_venomancer_toxic_attack_debuff:IsDebuff() return true end
 function modifier_venomancer_toxic_attack_debuff:IsPurgable() return true end
-function modifier_venomancer_toxic_attack_debuff:OnCreated()
-	self:ForceRefresh()
-	self:SetHasCustomTransmitterData(true)
-	if not IsServer() then return end
-
-	self.ms_debuff_pct = self:GetAbility():GetSpecialValueFor("ms_debuff_pct")
-	self.current_slow = self.ms_debuff_pct
-	self.start_time = GameRules:GetGameTime()
-	self.duration = self:GetRemainingTime()
-
-	self:SetStackCount(math.floor(self.current_slow + 0.5))
-	self:StartIntervalThink(FrameTime())
-end
+function modifier_venomancer_toxic_attack_debuff:OnCreated() self:OnRefresh() end
 function modifier_venomancer_toxic_attack_debuff:OnRefresh()
-	self.ms_debuff_pct = self:GetAbility():GetSpecialValueFor("ms_debuff_pct")
-	self.current_slow = self.ms_debuff_pct
-end
-function modifier_venomancer_toxic_attack_debuff:OnIntervalThink()
-	if not IsServer() then return end
-
-	self:CalculateSlow()
-	self:SetStackCount(math.floor(self.current_slow + 0.5))
-end
-function modifier_venomancer_toxic_attack_debuff:CalculateSlow()
-	local time_left = self.duration - (GameRules:GetGameTime() - self.start_time)
-	
-	if time_left < 0 then time_left = 0 end
-
-	self.slow_factor = time_left / self.duration
-	self.current_slow = self.ms_debuff_pct * self.slow_factor
-end
-function modifier_venomancer_toxic_attack_debuff:AddCustomTransmitterData()
-	return {
-		current_slow = math.floor(self.current_slow + 0.5),
-	}
+	self.ms_debuff_pct = self:GetAbility():GetSpecialValueFor("ms_debuff_pct") * (-1)
+	self.duration = self:GetRemainingTime()
 end
 function modifier_venomancer_toxic_attack_debuff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_TOOLTIP
 	}
 end
-function modifier_venomancer_toxic_attack_debuff:HandleCustomTransmitterData(data)
-	if data.current_slow then
-		self.current_slow = data.current_slow
-	end
-end
 function modifier_venomancer_toxic_attack_debuff:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetStackCount() * (-1)
-end
-function modifier_venomancer_toxic_attack_debuff:OnTooltip()
-	return self:GetStackCount()
+	return (self:GetRemainingTime() / self.duration) * self.ms_debuff_pct
 end

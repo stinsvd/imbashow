@@ -1,0 +1,131 @@
+"DOTAAbilities"
+{
+	"item_recipe_echo_sabre_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_ogre_axe;item_broadsword;item_void_stone;item_upgrade_scroll_1"
+		}
+	}
+	"item_echo_sabre_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/echo_sabre"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"echo_sabre"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"echo_sabre"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 60 115"
+			"bonus_strength"		"15 40 65"
+			"bonus_mana_regen"		"1.75 3.5 5.25"
+			"echo_attack_speed"		"490"
+			"echo_attacks"			"1 2 3"
+			"movement_slow"			"100"
+			"slow_duration"			"0.6 1 1.4"
+		}
+	}
+
+	"item_recipe_echo_sabre_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre_cus;item_void_stone;item_demon_edge;item_reaver;item_upgrade_scroll_2"
+		}
+	}
+	"item_echo_sabre_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/echo_sabre"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"echo_sabre"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"echo_sabre"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 60 115"
+			"bonus_strength"		"15 40 65"
+			"bonus_mana_regen"		"1.75 3.5 5.25"
+			"echo_attack_speed"		"490"
+			"echo_attacks"			"1 2 3"
+			"movement_slow"			"100"
+			"slow_duration"			"0.6 1 1.4"
+		}
+	}
+
+	"item_recipe_echo_sabre_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre_2_cus;item_void_stone;item_relic;item_reaver;item_upgrade_scroll_3"
+		}
+	}
+	"item_echo_sabre_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/echo_sabre"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"echo_sabre"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"echo_sabre"
+		"ItemShopTags"					"attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"			"20 60 115"
+			"bonus_strength"		"15 40 65"
+			"bonus_mana_regen"		"1.75 3.5 5.25"
+			"echo_attack_speed"		"490"
+			"echo_attacks"			"1 2 3"
+			"movement_slow"			"100"
+			"slow_duration"			"0.6 1 1.4"
+		}
+	}
+}

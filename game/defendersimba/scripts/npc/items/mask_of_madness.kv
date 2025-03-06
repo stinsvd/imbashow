@@ -1,0 +1,212 @@
+"DOTAAbilities"
+{
+	"item_recipe_mask_of_madness_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_lifesteal;item_gloves;item_upgrade_scroll_2"
+		}
+	}
+	"item_mask_of_madness_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_madness"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mask_of_madness"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"15"
+		"AbilitySharedCooldown"			"mom"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"						"0 15 29 84 84"
+			"bonus_attack_speed"				"20 55 115 175 455"
+			"lifesteal_percent"					"18 20 22 24 26"
+			"berserk_bonus_attack_speed"		"40 110 230 350 910"
+			"berserk_bonus_movement_speed"		"20 30 40 50 60"
+			"berserk_armor_reduction"			"8 12 16 22 26"
+			"berserk_duration"					"6"
+		}
+	}
+
+	"item_recipe_mask_of_madness_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_cus;item_broadsword;item_blitz_knuckles;item_upgrade_scroll_3"
+		}
+	}
+	"item_mask_of_madness_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_madness"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mask_of_madness"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"30"
+		"AbilitySharedCooldown"			"mom"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"						"0 15 29 84 84"
+			"bonus_attack_speed"				"10 27 57 87 227"
+			"lifesteal_percent"					"18 20 22 24 26"
+			"berserk_bonus_attack_speed"		"40 110 230 350 910"
+			"berserk_bonus_movement_speed"		"20 30 40 50 60"
+			"berserk_armor_reduction"			"8 12 16 22 26"
+			"berserk_duration"					"6"
+		}
+	}
+
+	"item_recipe_mask_of_madness_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_2_cus;item_mithril_hammer;item_hyperstone;item_upgrade_scroll_4"
+		}
+	}
+	"item_mask_of_madness_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_madness"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mask_of_madness"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"45"
+		"AbilitySharedCooldown"			"mom"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"						"0 15 29 84 84"
+			"bonus_attack_speed"				"10 27 57 87 227"
+			"lifesteal_percent"					"18 20 22 24 26"
+			"berserk_bonus_attack_speed"		"40 110 230 350 910"
+			"berserk_bonus_movement_speed"		"20 30 40 50 60"
+			"berserk_armor_reduction"			"8 12 16 22 26"
+			"berserk_duration"					"6"
+		}
+	}
+
+	"item_recipe_mask_of_madness_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_3_cus;item_relic;item_hyperstone;item_upgrade_scroll_5"
+		}
+	}
+	"item_mask_of_madness_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_madness"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mask_of_madness"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"60"
+		"AbilitySharedCooldown"			"mom"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"						"0 15 29 84 84"
+			"bonus_attack_speed"				"10 27 57 87 227"
+			"lifesteal_percent"					"18 20 22 24 26"
+			"berserk_bonus_attack_speed"		"40 110 230 350 910"
+			"berserk_bonus_movement_speed"		"20 30 40 50 60"
+			"berserk_armor_reduction"			"8 12 16 22 26"
+			"berserk_duration"					"6"
+		}
+	}
+
+	"item_recipe_mask_of_madness_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_4_cus;item_moon_shard_cus;item_moon_shard_cus;item_upgrade_scroll_6"
+		}
+	}
+	"item_mask_of_madness_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_madness"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mask_of_madness"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"75"
+		"AbilitySharedCooldown"			"mom"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"						"0 15 29 84 84"
+			"bonus_attack_speed"				"10 27 57 87 227"
+			"lifesteal_percent"					"18 20 22 24 26"
+			"berserk_bonus_attack_speed"		"40 110 230 350 910"
+			"berserk_bonus_movement_speed"		"20 30 40 50 60"
+			"berserk_armor_reduction"			"8 12 16 22 26"
+			"berserk_duration"					"6"
+		}
+	}
+}

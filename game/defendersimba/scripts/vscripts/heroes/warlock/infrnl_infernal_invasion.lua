@@ -362,9 +362,8 @@ function modifier_infrnl_mini_flaming_fists:OnAttackLanded(keys)
 	local chance = ability:GetSpecialValueFor("chance")
 	if RollPercentage(chance) then
 		local base_damage = ability:GetSpecialValueFor("up_base_damage") * self.bonusStacks
-		local hpleft_damage = ability:GetSpecialValueFor("hpleft_damage")
-		local health_pct = (100 - attacker:GetHealthPercent())
-		local damage = (attacker:GetMaxHealth() * health_pct) * (hpleft_damage / 100)
+		local hpleft_damage = ability:GetSpecialValueFor("hpleft_damage") / 100
+		local damage = (attacker:GetMaxHealth() - attacker:GetHealth()) * hpleft_damage
 
 		local hit_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 		ParticleManager:SetParticleControlEnt(hit_pfx, 0, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)

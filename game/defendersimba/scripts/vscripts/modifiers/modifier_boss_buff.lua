@@ -22,9 +22,18 @@ function modifier_boss_buff:OnCreated()
 	self.multiplier = 4
 
 	if IsServer() then
-		self.strengthGain = parent:GetStrengthGain()
-		self.agilityGain = parent:GetAgilityGain()
-		self.intellectGain = parent:GetIntellectGain()
+		self.strengthGain = 0
+		if parent.GetStrengthGain then
+			self.strengthGain = parent:GetStrengthGain()
+		end
+		self.agilityGain = 0
+		if parent.GetAgilityGain then
+			self.agilityGain = parent:GetAgilityGain()
+		end
+		self.intellectGain = 0
+		if parent.GetIntellectGain then
+			self.intellectGain = parent:GetIntellectGain()
+		end
 		self:SetHasCustomTransmitterData(true)
 	end
 	self.magicResistance = 25

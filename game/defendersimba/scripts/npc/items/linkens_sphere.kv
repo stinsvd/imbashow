@@ -1,0 +1,248 @@
+"DOTAAbilities"
+{
+	"item_recipe_linkens_sphere_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_crown;item_sobi_mask;item_ring_of_regen;item_upgrade_scroll_1"
+		}
+	}
+	"item_linkens_sphere_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+
+	"item_recipe_linkens_sphere_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_linkens_sphere_cus;item_diadem;item_upgrade_scroll_2"
+		}
+	}
+	"item_linkens_sphere_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+	
+	"item_recipe_linkens_sphere_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_linkens_sphere_2_cus;item_pers;item_crown;item_sobi_mask;item_sobi_mask;item_upgrade_scroll_3"
+		}
+	}
+	"item_linkens_sphere_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+	
+	"item_recipe_linkens_sphere_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_linkens_sphere_3_cus;item_ultimate_orb;item_ring_of_health;item_upgrade_scroll_4"
+		}
+	}
+	"item_linkens_sphere_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+	
+	"item_recipe_linkens_sphere_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_linkens_sphere_4_cus;item_ultimate_orb;item_ultimate_orb;item_upgrade_scroll_5"
+		}
+	}
+	"item_linkens_sphere_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+	
+	"item_recipe_linkens_sphere_6_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_linkens_sphere_6_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_linkens_sphere_5_cus;item_ultimate_orb;item_ultimate_orb;item_pers;item_pers;item_upgrade_scroll_6"
+		}
+	}
+	"item_linkens_sphere_6_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/linkens_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sphere"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilityCastRange"				"700"
+		"AbilitySharedCooldown"			"linkens_sphere"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken\'s sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"4 10 14 29 59 89"
+			"bonus_health_regen"		"1.25 1.5 8 12.5 12.5 25.5"
+			"bonus_mana_regen"			"1 1 4.5 5 5 9.5"
+			"block_cooldown"			"22 20 18 16 14 12"
+			"block_duration"			"12"
+		}
+	}
+}

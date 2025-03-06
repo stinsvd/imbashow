@@ -1,5 +1,16 @@
 "DOTAAbilities"
 {
+	"item_recipe_moon_shard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	"item_moon_shard"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+
 	"item_recipe_orb_of_venom"
 	{
 		"ItemPurchasable"				"0"
@@ -418,23 +429,18 @@
 	}
 	"item_recipe_glimmer_cape"
 	{
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
+//		"ItemPurchasable"				"0"
+//		"IsObsolete"					"1"
 	}
 	"item_glimmer_cape"
 	{
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
-	}
-	"item_recipe_shadow_amulet"
-	{
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
+//		"ItemPurchasable"				"0"
+//		"IsObsolete"					"1"
 	}
 	"item_shadow_amulet"
 	{
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
+//		"ItemPurchasable"				"0"
+//		"IsObsolete"					"1"
 	}
 	
 	"item_recipe_monkey_king_bar"

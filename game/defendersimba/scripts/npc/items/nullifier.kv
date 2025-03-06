@@ -1,0 +1,266 @@
+"DOTAAbilities"
+{
+	"item_recipe_nullifier_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_blades_of_attack;item_ring_of_protection;item_ring_of_regen;item_upgrade_scroll_1"
+		}
+	}
+	"item_nullifier_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_recipe_nullifier_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier_cus;item_blades_of_attack;item_chainmail;item_ring_of_regen;item_upgrade_scroll_2"
+		}
+	}
+	"item_nullifier_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_recipe_nullifier_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier_2_cus;item_broadsword;item_chainmail;item_ring_of_health;item_upgrade_scroll_3"
+		}
+	}
+	"item_nullifier_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_recipe_nullifier_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier_3_cus;item_claymore;item_platemail;item_ring_of_health;item_upgrade_scroll_4"
+		}
+	}
+	"item_nullifier_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_recipe_nullifier_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier_4_cus;item_ring_of_tarrasque;item_relic;item_upgrade_scroll_5"
+		}
+	}
+	"item_nullifier_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+
+	"item_recipe_nullifier_6_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_6_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier_5_cus;item_ring_of_tarrasque;item_platemail;item_rapier;item_upgrade_scroll_6"
+		}
+	}
+	"item_nullifier_6_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/nullifier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"nullifier"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"nullifier"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"				"9 18 33 53 108 308"
+			"bonus_armor"				"2 6 10 20 20 30"
+			"bonus_regen"				"1.25 2.5 7 11.5 23.5 35.5"
+			"mute_duration"				"0.2 0.5 1 2 3 4"
+			"projectile_speed"			"1800"
+			"slow_pct"					"10"
+			"slow_interval_duration"	"0.5"
+		}
+	}
+}

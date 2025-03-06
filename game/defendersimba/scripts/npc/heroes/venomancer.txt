@@ -11,21 +11,20 @@
 		"HasScepterUpgrade"				"1"
 		"AbilityValues"
 		{
-			"duration"											"10"                //длительность эффекта
+			"duration"											"10"
 			"stack_count_per_item_tick"
 			{
-				"value"											"5"                 //базоваое значения стаков за тик урона предметов(не срабатывает от большенства эффектов атаки)
-				"special_bonus_unique_venomancer_custom_8"		"+100%"             //бонусное значения стаков за тик урона предметов от таланта
+				"value"											"5"
+				"special_bonus_unique_venomancer_custom_8"		"x2"
 			}
-			"damage_tick_rate"									"1"                 //частота нанесения урона, можно уменьшать или увеличивать, урон в секунду не поменяется
-			"damage_per_sec_base"								"10"                //Базовый урон в секунду
-			"damage_per_sec"									"10"                //итоговый урон в секунду, менять не стоит, значение там высчитывается автоматически
-			"bonus_damage_per_lvl"								"10"                //бонус к итоговому урона за уровень героя
-			"ms_debuff_treshold"								"10"                //сколько стаков эффекта надо для ms_debuff_value% замедления
-			"ms_debuff_value"									"2"                 //% замедления за ms_debuff_treshold стаков
+			"damage_tick_rate"									"1"
+			"damage_per_sec"									"10"
+			"bonus_damage_per_lvl"								"10"
+			"ms_debuff_treshold"								"10"
+			"ms_debuff_value"									"2"
 			"int_scale"
 			{
-				"value"											"10"                //% бонуса к итоговому урону от интеллекта героя с аганимом(убрав RequiresScepter аганим все ещё нужен будет)
+				"value"											"10"
 				"RequiresScepter"								"1"
 			}
 		}
@@ -45,29 +44,29 @@
 		{
 			"AbilityCooldown"
 			{
-				"value"											"15"                                //перезарядка
-				"special_bonus_unique_venomancer_custom_7"		"-40%"                              //пуменьшение перезарядки с талантом
+				"value"											"15"
+				"special_bonus_unique_venomancer_custom_7"		"-40%"
 			}
 			"duration"
 			{
-				"value"											"10"                                //базовая длительность замедления
-				"special_bonus_unique_venomancer_custom_3"		"+5"                                //дополнительная длительность от таланта
+				"value"											"10"
+				"special_bonus_unique_venomancer_custom_3"		"+5"
 			}
 			"radius"
 			{
-				"value"											"1000"                              //базовый радиус наложения замедления и стаков
-				"special_bonus_unique_venomancer_custom_5"		"+50%"                              //дополнительный радиус от таланта
+				"value"											"1000"
+				"special_bonus_unique_venomancer_custom_5"		"+50%"
 			}
-			"ms_debuff_pct"										"100"                               //процент замедления на пике
+			"ms_debuff_pct"										"100"
 			"stack_count"
 			{
-				"value"											"10 20 30 40 50 60 70 80 90 100"    //базовое значение накладываемых стаков токсина
-				"special_bonus_unique_venomancer_custom_8"		"+100%"                             //Бонусное количество накладываемых стаков от токсина
+				"value"											"10 20 30 40 50 60 70 80 90 100"
+				"special_bonus_unique_venomancer_custom_8"		"x2"
 			}
 			"burns_stacks_pct"
 			{
-				"value"											"0"                                 //если 0 и меньше бонус работает только с талантом
-				"special_bonus_unique_venomancer_custom_1"		"50"                                //% сжигаемых стаков
+				"value"											"0"
+				"special_bonus_unique_venomancer_custom_1"		"50"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -88,14 +87,14 @@
 		{
 			"stack_count"
 			{
-				"value"											"10 20 30 40 50 60 70 80 90 100"  //стаков с атаки
-				"special_bonus_unique_venomancer_custom_2"		"+25"                             //доп стаков с атаки с талантом
-				"special_bonus_unique_venomancer_custom_8"		"+100%"                           //доп стаков с талантом на увелечение стаков на всех скилах
+				"value"											"10 20 30 40 50 60 70 80 90 100"
+				"special_bonus_unique_venomancer_custom_2"		"+25"
+				"special_bonus_unique_venomancer_custom_8"		"x2"
 			}
 			"target_count"
 			{
-				"value"											"0"                               //работает только с шардом
-				"special_bonus_shard"							"+2"                              //количество доп целей
+				"value"											"0"
+				"special_bonus_shard"							"+2"
 			}
 		}
 	}
@@ -117,28 +116,28 @@
 		{
 			"AbilityCooldown"
 			{
-				"value"											"15"            //перезарядка способности
-				"special_bonus_unique_venomancer_custom_7"		"+40%"          //увеличенная перезарядка из-зи таланта
+				"value"											"15"
+				"special_bonus_unique_venomancer_custom_7"		"+40%"
 			}
-			"base_hp"											"100"           //базовое здоровье варда
+			"base_hp"											"100"
 			"hp_pct_caster"
 			{
-				"value"											"50"            //% здоровья от здоровья героя
-				"special_bonus_unique_venomancer_custom_6"		"+100%"         //%доп здоровья от здоровья героя от таланта
+				"value"											"50"
+				"special_bonus_unique_venomancer_custom_6"		"+100%"
 			}
-			"base_dmg"											"100"           //базовый урон
+			"base_dmg"											"100"
 			"dmg_pct_caster_int"
 			{
-				"value"											"50"            //%урона от ителлекта героя
-				"special_bonus_unique_venomancer_custom_6"		"+100%"         //%доп урон от ителлекта героя от таланта
+				"value"											"50"
+				"special_bonus_unique_venomancer_custom_6"		"+100%"
 			}
 			"poison_sting_efficiency_pct"
 			{
-				"value"											"50"            //%эффективности 2 способности у варда
-				"special_bonus_unique_venomancer_custom_4"		"+100%"         //%доп эффективность от таланта
+				"value"											"50"
+				"special_bonus_unique_venomancer_custom_4"		"+50"
 			}
-			"duration"											"10"            //время жизнеи варда
-			"target_count"										"1"             //количество доп целей(работает только если у героя прокачена 2 способность)
+			"duration"											"10"
+			"target_count"										"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -167,7 +166,7 @@
 			"stack_count_per_sec"
 			{
 				"value"											"10 20 30 40 50 60 70 80 90 100"
-				"special_bonus_unique_venomancer_custom_8"		"+100%"
+				"special_bonus_unique_venomancer_custom_8"		"x2"
 			}
 			"heal_debuff"										"100"
 			"radius"

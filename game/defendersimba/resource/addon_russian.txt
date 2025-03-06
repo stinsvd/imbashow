@@ -76,6 +76,7 @@
 		"DOTA_Tooltip_modifier_invulnerable_cus"	"Неуязвимость"
 
 
+
 		// "item_upgrade_scroll_1"											 "Рецепт первый"
 		"DOTA_Tooltip_ability_item_upgrade_scroll_1"						"Рецепт первый"
 		"DOTA_Tooltip_ability_item_upgrade_scroll_1_Description"			"Доступен с начала игры"
@@ -102,11 +103,36 @@
 
 
 
+		//=========================================================================================================
+
+		"DOTA_Tooltip_ability_item_platemail_2"			"Platemail #2"
+		"DOTA_Tooltip_ability_item_platemail_2_Lore"		"Толстые металлические пластины, полностью защищающие торс. На ноги не ронять."
+		
+		"DOTA_Tooltip_ability_item_tiara_of_selemene_2"			"Tiara of Selemene #2"
+		"DOTA_Tooltip_ability_item_tiara_of_selemene_2_Lore"		"Тиара!"
+
+		"DOTA_Tooltip_ability_item_ring_of_tarrasque_2"			"Ring of Tarrasque #2"
+		"DOTA_Tooltip_ability_item_ring_of_tarrasque_2_Lore"		"Нестареющее кольцо, выкованное с помощью обычной магии крови, но усиленное могуществом предполагаемого бывшего владельца."
+
+		"DOTA_Tooltip_ability_item_reaver_2"			"Reaver #2"
+		"DOTA_Tooltip_ability_item_reaver_2_Lore"		"Массивный топор, способный сокрушать даже горы."
+
+		"DOTA_Tooltip_ability_item_eagle_2"			"Eaglesong #2"
+		"DOTA_Tooltip_ability_item_eagle_2_Lore"		"Этот загадочный рог удерживает в себе клич орла: кто услышит его, получит безграничную ловкость."
+
+		"DOTA_Tooltip_ability_item_mystic_staff_2"			"Mystic Staff #2"
+		"DOTA_Tooltip_ability_item_mystic_staff_2_Lore"		"Загадочный посох, сделанный исключительно из дорогих кристаллов."
+
+		"DOTA_Tooltip_ability_item_relic_2"			"Sacred Relic #2"
+		"DOTA_Tooltip_ability_item_relic_2_Lore"		"Древнее оружие, способное изменить ход битвы."
+
+
 
 		//=========================================================================================================
 		// МИЛИ БФ
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_bfury_1"		"Рецепт: Battle Fury"
 		"DOTA_Tooltip_ability_item_bfury_1"					"BF #1"
 		"DOTA_Tooltip_ability_item_bfury_1_Description"		"<h1>Активное: Chop Tree</h1> Срубает выбранное дерево. \n<h1>Пассивное: Cleave</h1> Атаки героя прорубают жертву, нанося врагам в радиусе %cleave_distance% вокруг неё физический урон (только в ближнем бою). <br><br>• Урон: %cleave_damage%%%"
 
@@ -129,31 +155,33 @@
 		// РЕНДЖ БФ
 		//=========================================================================================================
 
-		"DOTA_Tooltip_ability_item_range_bf"					"BF RANGE #0"
+		"DOTA_Tooltip_ability_item_range_bf"					"Wicked Fury #0"
 		"DOTA_Tooltip_ability_item_range_bf_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_1"					"BF RANGE #1"
+		"DOTA_Tooltip_ability_item_recipe_range_btfury_1"		"Рецепт: Wicked Fury"
+		"DOTA_Tooltip_ability_item_range_btfury_1"					"Wicked Fury #1"
 		"DOTA_Tooltip_ability_item_range_btfury_1_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_2"					"BF RANGE #2"
+		"DOTA_Tooltip_ability_item_range_btfury_2"					"Wicked Fury #2"
 		"DOTA_Tooltip_ability_item_range_btfury_2_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_3"					"BF RANGE #3"
+		"DOTA_Tooltip_ability_item_range_btfury_3"					"Wicked Fury #3"
 		"DOTA_Tooltip_ability_item_range_btfury_3_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_4"					"BF RANGE #4"
+		"DOTA_Tooltip_ability_item_range_btfury_4"					"Wicked Fury #4"
 		"DOTA_Tooltip_ability_item_range_btfury_4_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_5"					"BF RANGE #5"
+		"DOTA_Tooltip_ability_item_range_btfury_5"					"Wicked Fury #5"
 		"DOTA_Tooltip_ability_item_range_btfury_5_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
-		"DOTA_Tooltip_ability_item_range_btfury_6"					"BF RANGE #6"
+		"DOTA_Tooltip_ability_item_range_btfury_6"					"Wicked Fury #6"
 		"DOTA_Tooltip_ability_item_range_btfury_6_Description"		"<h1>Пассивное: Splash</h1> Атаки героя наносят врагам в радиусе %splash_radius% вокруг цели физический урон (только в дальнем бою). <br><br>• Урон: %splash_damage_percent%%%"
 
 		//=========================================================================================================
 		// КИРАСА
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_assault_cuirass_1"		"Рецепт: Assault Cuirass"
 		"DOTA_Tooltip_ability_item_assault_cuirass_1"					"Кираса #1"
 		"DOTA_Tooltip_ability_item_assault_cuirass_1_Description"		"<h1>Пассивное: Assault Aura</h1> Снижает броню врагов на %armor_reduction%. <br><br> Радиус: %aura_radius%"
 
@@ -189,6 +217,7 @@
 		// БАБОЧКА
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_butterfly_1"		"Рецепт: Butterfly"
 		"DOTA_Tooltip_ability_item_butterfly_1"			"Бабочка #1"
 
 		"DOTA_Tooltip_ability_item_butterfly_2"			"Бабочка #2"
@@ -205,6 +234,7 @@
 		// ДАЕДАЛУС
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_daedalus_1"		"Рецепт: Daedalus"
 		"DOTA_Tooltip_ability_item_daedalus_1"					"Криты #1"
 		"DOTA_Tooltip_ability_item_daedalus_1_Description"		"<h1>Пассивное: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%% урона."
 
@@ -227,6 +257,7 @@
 		// ДЕЗОЛЬ
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_desolator_custom_1"		"Рецепт: Desolator"
 		"DOTA_Tooltip_ability_item_desolator_custom_1"					"ДЕЗОЛЬ #1"
 		"DOTA_Tooltip_ability_item_desolator_custom_1_Description"		"<h1>Пассивное: Corruption</h1> Атаки уменьшают броню цели на %armor_reduction%. Эффект длится %armor_reduction_duration% сек."
 
@@ -252,6 +283,7 @@
 		// ТАРАСКА
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_heart_of_tarrasque_1"		"Рецепт: Heart of Tarrasque"
 		"DOTA_Tooltip_ability_item_heart_of_tarrasque_1"			"ТАРАСКА #1"
 		"DOTA_Tooltip_ability_item_heart_of_tarrasque_1_health_regen_pct"		"%+макс. здоровья в секунду"
 
@@ -274,6 +306,7 @@
 		// ОКТАРИН
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_octarine_core_1"		"Рецепт: Octarine Core"
 		"DOTA_Tooltip_ability_item_octarine_core_1"					"ОКТАРИН #1"
 		"DOTA_Tooltip_ability_item_octarine_core_1_Description"		"<h1>Пассивное: Cooldown Reduction</h1>Уменьшает перезарядку всех предметов и способностей."
 
@@ -296,6 +329,7 @@
 		// РАДИАНС
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_radiance_custom_1"		"Рецепт: Radiance"
 		"DOTA_Tooltip_ability_item_radiance_custom_1"					"РАДИК #1"
 		"DOTA_Tooltip_ability_item_radiance_custom_1_Description"		"<h1>Пассивное: Burn</h1> Каждую секунду наносит наносит противникам %aura_damage% магического урона. Иллюзии наносят на %aura_illusion_pct%%% меньше урона. <br><br> Радиус: %aura_radius%"
 
@@ -318,6 +352,7 @@
 		// СКАДИ
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_skadi_custom_1"		"Рецепт: Eye of Skadi"
 		"DOTA_Tooltip_ability_item_skadi_custom_1"					"СКАДИ #1"
 		"DOTA_Tooltip_ability_item_skadi_custom_1_Description"		"<h1>Пассивное: Cold Attack</h1> Каждая атака на %slow_duration% сек. замедляет передвижение на %slow_movement_speed%%% и атаку цели на %slow_attack_speed%, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%."
 
@@ -343,6 +378,7 @@
 		// МДЖОЛНИР
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_mjollnir_custom_1"		"Рецепт: Mjollnir"
 		"DOTA_Tooltip_ability_item_mjollnir_custom_1"					"МОЛНИИ #1"
 		"DOTA_Tooltip_ability_item_mjollnir_custom_1_Description"		"<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %lightning_chance%%% может создать разряд цепной молнии, нанося %lightning_damage% магического урона противникам в радиусе %lightning_radius%. \n<h1>Пассивное: Pierce</h1> Каждая атака может с вероятностью в %mkb_damage_chance%%% нанести %mkb_bonus_damage% дополнительного магического урона."
 
@@ -365,6 +401,7 @@
 		// БЛАДСТОУН
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_bloodstone_1"		"Рецепт: Bloodstone"
 		"DOTA_Tooltip_ability_item_bloodstone_1"					"БЛАДСТОУН #1"
 		"DOTA_Tooltip_ability_item_bloodstone_1_Description"		"<h1>Пассивное: Spell Lifesteal</h1> Наделяет заклинания владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
 		
@@ -387,6 +424,7 @@
 		// Дифуза
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_diffusal_blade_cus_1"		"Рецепт: Diffusal Blade"
 		"DOTA_Tooltip_ability_item_diffusal_blade_cus_1"					"Дифуза #1"
 		"DOTA_Tooltip_ability_item_diffusal_blade_cus_1_Description"		"<h1>Активное: Inhibit</h1> Замедляет противника на %duration% сек. \n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %mana_break% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны."
 		
@@ -412,6 +450,7 @@
 		// Этериал
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_ethereal_blade_1"		"Рецепт: Ethereal Blade"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1"					"Этериал #1"
 		"DOTA_Tooltip_ability_item_ethereal_blade_1_Description"		"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%. <br><br> Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_agility_multiplier% * его основной атрибут + %blast_damage_base%. <br> Длительность: %duration% сек. \n<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага, отдельно нанесёт ему ещё (%bonus_spell_damage% + %spell_crit_multiplier%%% от атаки владельца) урона и замедлит его на %slow_phylacrery%%%. <br> Длительность: %slow_duration% сек. <br> Перезарядка: %cooldown_phylacrery% сек. \n<h1>Пассивное: Spell Strike</h1> Способности с вероятностью в %crit_chance%%% могут нанести %crit_multiplier%%% урона."
 
@@ -440,6 +479,7 @@
 		// Маг криты
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_magical_crit_1"		"Рецепт: Arcane Daedalus"
 		"DOTA_Tooltip_ability_item_magical_crit_1"					"Маг. криты #1"
 		"DOTA_Tooltip_ability_item_magical_crit_1_Description"		"<h1>Пассивное: Spell Strike</h1> Способности с вероятностью в %crit_chance%%% могут нанести %crit_multiplier%%% урона."
 
@@ -462,6 +502,7 @@
 		// Орчид
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_orchid_1"		"Рецепт: Orchid Malevolence"
 		"DOTA_Tooltip_ability_item_orchid_1"					"Орчид #1"
 		"DOTA_Tooltip_ability_item_orchid_1_Description"		"<h1>Активное: Soul Burn</h1>Запрещает выбранной цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия."
 		"DOTA_Tooltip_ability_item_orchid_1_Lore"		"Гранатовый посох, выкованный из сущности огненного демона."
@@ -532,6 +573,7 @@
 		// Хекс
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_mage_slayer_1"		"Рецепт: Mage Slayer"
 		"DOTA_Tooltip_ability_item_mage_slayer_1"					"Мейджслеер #1"
 		"DOTA_Tooltip_ability_item_mage_slayer_1_Description"		"<h1>Пассивное: Mage Slayer</h1>Атакуемые враги получают %dps% урона в секунду и наносят на %spell_amp_debuff%%% меньше урона заклинаниями. Действует %duration% сек."
 		"DOTA_Tooltip_ability_item_mage_slayer_1_Lore"		"Оружие, выкованное потайным орденом в Третью эпоху Пракса'ции, чтобы сразить Ложного короля."
@@ -568,6 +610,7 @@
 		// Шива
 		//=========================================================================================================
 
+		"DOTA_Tooltip_ability_item_recipe_shivasguard_1"		"Рецепт: Shiva's Guard"
 		"DOTA_Tooltip_ability_item_shivasguard_1"					"Шива #1"
 		"DOTA_Tooltip_ability_item_shivasguard_1_Description"		"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит им %blast_damage% магического урона и на %slow_duration% сек. снижает их скорость передвижения на %slow_movement_speed%%%. <br><br> Радиус: %blast_radius% \n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %aura_heal_percent%%%. <br><br> Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivasguard_1_Lore"		"Говорят, когда-то этот артефакт принадлежал богине, и он не теряет былого могущества по сей день."
@@ -609,6 +652,294 @@
 		"DOTA_Tooltip_ability_item_shivasguard_6_Note0"		"Волна распространяется со скоростью в %blast_speed% до максимального размера в %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivasguard_6_Note1"		"Морозная волна следует за владельцем."
 		"DOTA_Tooltip_ability_item_shivasguard_6_Note2"		"Эффект от нескольких Freezing Aura не складывается."
+
+		//=========================================================================================================
+		// Linken's Sphere
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_linkens_sphere_cus"		"Рецепт: Linken's Sphere"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus"					"Linken's Sphere #1"
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus"					"Linken's Sphere #2"
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_2_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus"					"Linken's Sphere #3"
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_3_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus"					"Linken's Sphere #4"
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_4_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus"					"Linken's Sphere #5"
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_5_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus"					"Linken's Sphere #6"
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_Description"		"<h1>Пассивное: Spellblock</h1> Блокирует одно направленное заклинание каждые %block_cooldown% сек. Некоторые заклинания не блокируются. \n<h1>Активное: Transfer Spellblock</h1> Временно отключает пассивное заклинание предмета, и накладывает его на выбранного союзника на %block_duration% сек."
+		"DOTA_Tooltip_ability_item_linkens_sphere_6_cus_Lore"		"Некогда эта магическая сфера защитила одного из самых знаменитых героев в истории."
+		
+		"DOTA_Tooltip_modifier_linkens_sphere_cus_buff"					"Защита от способностей у Linken's Sphere"
+		"DOTA_Tooltip_modifier_linkens_sphere_cus_buff_Description"		"Следующее направленное заклинание будет заблокировано."
+
+		//=========================================================================================================
+		// Mask of Madness
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus"					"Mask of Madness #2"
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_Description"		"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек. \n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+		"DOTA_Tooltip_ability_item_mask_of_madness_cus_Lore"		"Надев эту маску, воин впадает в безудержную ярость."
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus"					"Mask of Madness #3"
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_Description"		"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек. \n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+		"DOTA_Tooltip_ability_item_mask_of_madness_2_cus_Lore"		"Надев эту маску, воин впадает в безудержную ярость."
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus"					"Mask of Madness #4"
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_Description"		"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек. \n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+		"DOTA_Tooltip_ability_item_mask_of_madness_3_cus_Lore"		"Надев эту маску, воин впадает в безудержную ярость."
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus"					"Mask of Madness #5"
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_Description"		"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек. \n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+		"DOTA_Tooltip_ability_item_mask_of_madness_4_cus_Lore"		"Надев эту маску, воин впадает в безудержную ярость."
+		
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus"					"Mask of Madness #6"
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_Description"		"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек. \n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+		"DOTA_Tooltip_ability_item_mask_of_madness_5_cus_Lore"		"Надев эту маску, воин впадает в безудержную ярость."
+		
+		"DOTA_Tooltip_modifier_mask_of_madness_cus_active"					"Berserk"
+		"DOTA_Tooltip_modifier_mask_of_madness_cus_active_Description"		"Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, но герой обезмолвлен и имеет на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% меньше брони."
+
+		//=========================================================================================================
+		// Witch Blade / Parasma
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_witch_blade_cus"		"Рецепт: Witch Blade"
+		"DOTA_Tooltip_ability_item_witch_blade_cus"					"Witch Blade #1"
+		"DOTA_Tooltip_ability_item_witch_blade_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться."
+		"DOTA_Tooltip_ability_item_witch_blade_cus_Lore"		"Коварный клинок, в котором оказалась заключена душа его неосторожного создателя."
+		
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus"					"Witch Blade #2"
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться."
+		"DOTA_Tooltip_ability_item_witch_blade_2_cus_Lore"		"Коварный клинок, в котором оказалась заключена душа его неосторожного создателя."
+		
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus"					"Witch Blade #3"
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться. \n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
+		"DOTA_Tooltip_ability_item_witch_blade_3_cus_Lore"		"Поразительно."
+		
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus"					"Witch Blade #4"
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться. \n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
+		"DOTA_Tooltip_ability_item_witch_blade_4_cus_Lore"		"Поразительно."
+		
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus"					"Witch Blade #5"
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться. \n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
+		"DOTA_Tooltip_ability_item_witch_blade_5_cus_Lore"		"Поразительно."
+		
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus"					"Witch Blade #6"
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_Description"		"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться. \n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
+		"DOTA_Tooltip_ability_item_witch_blade_6_cus_Lore"		"Поразительно."
+		
+		"DOTA_Tooltip_modifier_witch_blade_cus_debuff"					"Witch Blade"
+		"DOTA_Tooltip_modifier_witch_blade_cus_debuff_Description"		"Получает урон каждую секунду. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_parasma_debuff"					"Magic Corruption"
+		"DOTA_Tooltip_modifier_parasma_debuff_Description"		"Сопротивление магии уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
+
+		//=========================================================================================================
+		// Echo Sabre
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_echo_sabre_cus"		"Рецепт: Echo Sabre"
+		"DOTA_Tooltip_ability_item_echo_sabre_cus"					"Echo Sabre #1"
+		"DOTA_Tooltip_ability_item_echo_sabre_cus_Description"		"<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%."
+		"DOTA_Tooltip_ability_item_echo_sabre_cus_Lore"		"Обманчиво быстрый клинок, полный магии звука."
+		
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus"					"Echo Sabre #2"
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus_Description"		"<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%."
+		"DOTA_Tooltip_ability_item_echo_sabre_2_cus_Lore"		"Обманчиво быстрый клинок, полный магии звука."
+		
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus"					"Echo Sabre #3"
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus_Description"		"<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%."
+		"DOTA_Tooltip_ability_item_echo_sabre_3_cus_Lore"		"Обманчиво быстрый клинок, полный магии звука."
+		
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_slow"					"Замедление от Echo Sabre"
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_slow_Description"		"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_echo_sabre_cus_echo_cd"					"Перезарядка Echo Strike"
+
+		//=========================================================================================================
+		// Black King Bar
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_black_king_bar_cus"		"Рецепт: Black King Bar"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus"					"Black King Bar #1"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus"					"Black King Bar #2"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_2_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus"					"Black King Bar #3"
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n<h1>Пассивная: Fade</h1> Под действием Avatar, герой получает невидимость, которая развеивается при атаке или использовании способности."
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_3_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus"					"Black King Bar #4"
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n<h1>Пассивная: Glimmer</h1> Под действием Avatar, герой получает невидимость и +%invis_ms% к скорости передвижения, которая развеивается при атаке или использовании способности."
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_4_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus"					"Black King Bar #5"
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n<h1>Пассивная: Glimmer</h1> Под действием Avatar, герой получает невидимость и +%invis_ms% к скорости передвижения, которая развеивается при атаке или использовании способности."
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_5_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus"					"Black King Bar #6"
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n<h1>Пассивная: Glimmer</h1> Под действием Avatar, герой получает невидимость и +%invis_ms% к скорости передвижения, которая развеивается при атаке или использовании способности."
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Lore"		"Мощный посох, наделённый силой гигантов."
+		"DOTA_Tooltip_ability_item_black_king_bar_6_cus_Note0"		"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+		
+		"DOTA_Tooltip_modifier_black_king_bar_cus_active"					"Black King Bar"
+		"DOTA_Tooltip_modifier_black_king_bar_cus_active_Description"		"Существо невосприимчиво к эффектам и полностью защищено от чистого и отражённого урона. Сопротивление магии увеличено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+		"DOTA_Tooltip_modifier_black_king_bar_cus_invis"					"Glimmer Cape"
+		"DOTA_Tooltip_modifier_black_king_bar_cus_invis_Description"		"Невидими. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+
+		//=========================================================================================================
+		// Refresher Orb
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_refresher_cus"		"Рецепт: Refresher Orb"
+		"DOTA_Tooltip_ability_item_refresher_cus"					"Refresher Orb #1"
+		"DOTA_Tooltip_ability_item_refresher_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_cus_Lore"		"Могущественный артефакт, созданный для магов."
+		
+		"DOTA_Tooltip_ability_item_refresher_2_cus"					"Refresher Orb #2"
+		"DOTA_Tooltip_ability_item_refresher_2_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_2_cus_Lore"		"Могущественный артефакт, созданный для магов."
+		
+		"DOTA_Tooltip_ability_item_refresher_3_cus"					"Refresher Orb #3"
+		"DOTA_Tooltip_ability_item_refresher_3_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_3_cus_Lore"		"Могущественный артефакт, созданный для магов."
+		
+		"DOTA_Tooltip_ability_item_refresher_4_cus"					"Refresher Orb #4"
+		"DOTA_Tooltip_ability_item_refresher_4_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_4_cus_Lore"		"Могущественный артефакт, созданный для магов."
+		
+		"DOTA_Tooltip_ability_item_refresher_5_cus"					"Refresher Orb #5"
+		"DOTA_Tooltip_ability_item_refresher_5_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_5_cus_Lore"		"Могущественный артефакт, созданный для магов."
+		
+		"DOTA_Tooltip_ability_item_refresher_6_cus"					"Refresher Orb #6"
+		"DOTA_Tooltip_ability_item_refresher_6_cus_Description"		"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя. <br><br> Перезарядка: %AbilityCooldown% сек."
+		"DOTA_Tooltip_ability_item_refresher_6_cus_Lore"		"Могущественный артефакт, созданный для магов."
+
+		//=========================================================================================================
+		// Nullifier
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_nullifier_cus"		"Рецепт: Nullifier"
+		"DOTA_Tooltip_ability_item_nullifier_cus"					"Nullifier #1"
+		"DOTA_Tooltip_ability_item_nullifier_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_cus_slow_pct"			"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_item_nullifier_2_cus"					"Nullifier #2"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_2_cus_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_item_nullifier_3_cus"					"Nullifier #3"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_3_cus_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_item_nullifier_4_cus"					"Nullifier #4"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_4_cus_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_item_nullifier_5_cus"					"Nullifier #5"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_5_cus_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_item_nullifier_6_cus"					"Nullifier #6"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Description"		"<h1>Активное: Nullify</h1>Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек, также замедляя её.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Lore"		"Опасное оружие, выкраденное из обратного измерения."
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_Note0"		"Можно применять на неуязвимых существ."
+		"DOTA_Tooltip_ability_item_nullifier_6_cus_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_modifier_nullifier_cus_debuff"					"Nullifier"
+		"DOTA_Tooltip_modifier_nullifier_cus_debuff_Description"		"С этого существа постоянно развеиваются положительные эффекты, а также оно замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_modifier_nullifier_cus_slow"					"Замедление от Nullifier"
+		"DOTA_Tooltip_modifier_nullifier_cus_slow_Description"		"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		//=========================================================================================================
+		// Shadow Blade / Silver Edge
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_shadow_blade_cus"		"Рецепт: Shadow Blade"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus"					"Shadow Blade #1"
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, дополнительно нанесёт %windwalk_bonus_damage% физического урона."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Lore"		"Клинок павшего короля позволяет передвигаться незаметно и наносить удар из тени."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus"					"Shadow Blade #2"
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, дополнительно нанесёт %windwalk_bonus_damage% физического урона."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Lore"		"Клинок павшего короля позволяет передвигаться незаметно и наносить удар из тени."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus"					"Silver Edge #1"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек. \n<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%. <br><br>Перезарядка: %echo_cooldown% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Lore"		"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus"					"Silver Edge #2"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек. \n<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%. <br><br>Перезарядка: %echo_cooldown% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Lore"		"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus"					"Silver Edge #3"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек. \n<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%. <br><br>Перезарядка: %echo_cooldown% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Lore"		"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus"					"Silver Edge #4"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Description"		"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек. \n<h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%. <br><br>Перезарядка: %echo_cooldown% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Lore"		"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note0"		"Задержка перед невидимостью — %windwalk_fade_time% сек."
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note1"		"Если невидимость кончится без атаки, дополнительный урон будет потерян."
+		
+		"DOTA_Tooltip_modifier_shadow_blade_cus_windwalk"					"Shadow Walk"
+		"DOTA_Tooltip_modifier_shadow_blade_cus_windwalk_Description"		"Невидим, словно ветер. Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, также вы можете проходить сквозь существ. Если вы прервёте невидимость атакой, то она нанесёт %dMODIFIER_PROPERTY_TOOLTIP% дополнительного урона."
+		"DOTA_Tooltip_modifier_silver_edge_cus_windwalk"					"Shadow Walk"
+		"DOTA_Tooltip_modifier_silver_edge_cus_windwalk_Description"		"Герой невидим и может проходить сквозь других существ. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Атака снимет невидимость, нанесёт цели %dMODIFIER_PROPERTY_TOOLTIP% дополнительного урона и отключит её пассивные способности."
+		"DOTA_Tooltip_modifier_silver_edge_cus_debuff"					"Атака Shadow Walk"
+		"DOTA_Tooltip_modifier_silver_edge_cus_debuff_Description"		"Пассивные способности отключены."
+
+		//=========================================================================================================
+		// Moon Shard
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_moon_shard_cus"					"Moon Shard"
+		"DOTA_Tooltip_ability_item_moon_shard_cus_Description"		"<h1>Использование: Consume</h1> Поглощает предмет и навсегда увеличивает скорость атаки на %consumed_bonus%, а радиус обзора ночью — на %consumed_bonus_night_vision%. Можно поглотить лишь один Moon Shard. \n<h1>Пассивное: Shade Sight</h1> Увеличивает радиус обзора ночью."
+		"DOTA_Tooltip_ability_item_moon_shard_cus_bonus_night_vision"		"+к радиусу обзора ночью"
+		"DOTA_Tooltip_ability_item_moon_shard_cus_Lore"		"Говорят, что это слеза Селемине — богини Луны."
+		"DOTA_Tooltip_modifier_moon_shard_cus_consume"					"Moon Shard"
+		"DOTA_Tooltip_modifier_moon_shard_cus_consume_Description"		"От поглощённого Moon Shard скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, а радиус обзора ночью увеличен на %dMODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE%."
 
 		//=========================================================================================================
 		// Power Treads
@@ -677,7 +1008,7 @@
 		// modifiers
 
 		"DOTA_Tooltip_modifier_boss_buff"					"Like a boss"
-		"DOTA_Tooltip_modifier_boss_buff_Description"		"Сопротивление магии: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Сопротивление эффектам: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Уменьшение получаемого урона: +%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Уменьшение перезарядки: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
+		"DOTA_Tooltip_modifier_boss_buff_Description"		"Сопротивление магии: +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% <br> Сопротивление эффектам: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%% <br> Уменьшение получаемого урона: %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% <br> Уменьшение перезарядки: %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING%%%"
 
 
 		"DOTA_Tooltip_ability_special_bonus_mp_regen_3_cus"		"+{s:value} маны в секунду"
@@ -687,9 +1018,9 @@
 
 
 
-	//=========================================================================================================
-	// Axe
-	//=========================================================================================================
+//=========================================================================================================
+// Axe
+//=========================================================================================================
 	//Berserker's Call
 	"DOTA_Tooltip_Ability_axe_berserkers_call_lua"					"Berserker's Call"
 	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"		"Герой бросает вызов ближайшим врагам, заставляя их атаковать его, враги получаю бонус к скорости атаки. Герой получает бонус к броне на время действия способности."
@@ -749,91 +1080,91 @@
 	"DOTA_Tooltip_modifier_axe_innate_ability" "Броня за полученый удар"
 	"DOTA_Tooltip_modifier_axe_innate_ability_Description" "Сейчас Акс получает (<font color='#53ea48'>%fMODIFIER_PROPERTY_TOOLTIP%</font>) бонусной брони."
 
-	//=========================================================================================================
-	// Slardar
-	//=========================================================================================================
-		"DOTA_Tooltip_Facet_slardar_crusher"					"Crusher"
-		"DOTA_Tooltip_Facet_slardar_crusher_Description"		"Дополнительно повторяет Slithereen Crush несколько раз после применения. Каждое повторение увеличивает радиус."
- 		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Facet_slardar_crusher"		"Дополнительно повторяет Slithereen Crush %recast% раз(а) после применения с промежутком %recast_delay% секунд. При каждом срабатывании радиус увеличивается на %recast_bonus_radius%."
-		"DOTA_Tooltip_Facet_slardar_decaying_armor"					"Decaying Armor"
-		"DOTA_Tooltip_Facet_slardar_decaying_armor_Description"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню."
- 		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_decaying_armor"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню на %armor_per_hit%."
- 		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"В начале действия способность Guardian Sprint даёт сопротивление замедлениям и ускоряет передвижение ещё сильнее."
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Владелец Corrosive Haze получает %armor_pct%%% от брони, отнятой у врагов этой способностью."
-		
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel"					"Seaborn Sentinel"
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_Description"		"Скорость передвижения, восстановление здоровья и броня героя увеличиваются, когда он находится в реке или пруду."
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_speed"			"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_regen"			"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_armor"			"ДОП. БРОНЯ:"
-		"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_strength"		"ДОП. СИЛА:"
-		
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint"					"Guardian Sprint"
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Description"		"Герой стремительно скользит, передвигаясь значительно быстрее и проходя сквозь других существ."
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Lore"		"Мощный хвост змееногого стража, привыкший к морским глубинам, носит его и на суше."
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_Note0"		"Не останавливает прерываемые заклинания."
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_bonus_speed"				"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_duration"					"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_percent"		"%ПЕРВИЧНЫЙ БОНУС К СКОРОСТИ:"
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_slow_resistance"			"%СОПРОТИВЛЕНИЕ ЗАМЕДЛЕНИЯМ:"
-		"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_duration"		"ДЛИТЕЛЬНОСТЬ ПЕРВИЧНОГО БОНУСА:"
-		
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush"					"Slithereen Crush"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Description"		"Бьёт по земле, создавая небольшой пруд, оглушая наземных врагов неподалёку и нанося им урон. После оглушения враги будут замедлены."
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_scepter_description"		"Постепенно увеличивает восстановление здоровья, броню и сопротивление эффектам в пруду, достигая предела через %puddle_max_effect% секунд."
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_description"		"Увеличивает радиус удара и пруда. Способность ненадолго накладывает на жертв эффект Corrosive Haze."
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_Lore"		"Мощь воды вкупе с её быстротой пробьёт даже самую сильную защиту."
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage"					"УРОН:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage_str_pct"			"%ДОП УРОН ОТ СИЛЫ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_stun_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_attack_slow"				"ЗАМЕДЛЕНИЕ АТАКИ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow_duration"		"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_radius"					"РАДИУС:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_duration"				"ДЛИТЕЛЬНОСТЬ ПРУДА:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_radius"					"РАДИУС ПРУДА:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_amp_duration"			"ДЛИТЕЛЬНОСТЬ CORROSIVE HAZE:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_hp_regen"				"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ В ПРУДЕ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_armor"					"ДОП. БРОНЯ В ПРУДЕ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_status_resistance"		"%ДОП. СОПРОТИВЛЕНИЕ ЭФФЕКТАМ В ПРУДЕ:"
-		"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_strength_pct"			"%ДОП. СИЛА В ПРУДЕ:"
-		
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep"					"Bash of the Deep"
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Description"		"Пocлe кaждых %attack_count% aтaк гepoй oглушит и нaнecёт дoпoлнитeльный урон cвoeй cлeдующeй aтaкoй. Пассивно увeличивaeт урон oт aтaк влaдeльцa, кoгдa тoт нaхoдитcя в вoдe."
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Lore"		"Любoй, ктo пocягнёт на coкpoвищa глубин, вcтpeтитcя лицoм к лицу c их бecпoщaдным змeeнoгим cтpaжeм."
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Note0"		"Нe coчeтaeтcя c эффeктoм oт пpeдмeтa Skull Basher."
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage"				"ДOП. УРОН:"
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage_str_pct"		"%ДOП. УРОН ОТ СИЛЫ:"
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_duration"					"ДЛИТEЛЬНOСТЬ OГЛУШEНИЯ:"
-		"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_river_damage"				"ДOП. УРОН В ВOДE:"
-		
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze"					"Corrosive Haze"
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Description"		"Уменьшает сопротивление цели физическому урону, даёт по ней обзор и раскрывает её невидимость. Жертва оставляет за собой водный след в течение %puddle_duration% секунд. <br><br> Каждое применение атакует жертву."
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze_Lore"		"Даже самая крепкая броня тает под натиском солёных вод океана."
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze_armor_reduction"		"СНИЖЕНИЕ БРОНИ:"
-		"DOTA_Tooltip_ability_slrdr_corrosive_haze_duration"			"ДЛИТЕЛЬНОСТЬ:"
-		
-		"DOTA_Tooltip_modifier_slrdr_guardian_sprint"					"Guardian Sprint"
-		"DOTA_Tooltip_modifier_slrdr_guardian_sprint_Description"		"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
-		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff"					"Slithereen Crush"
-		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff_Description"		"Под действием способности Slithereen Crush у Slardar. Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки снижена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
-		"DOTA_Tooltip_modifier_slrdr_slithereen_crush_stun"		"Оглушение"
-		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep"					"Счётчик Bash of the Deep"
-		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_Description"		"Oглушaeт пocлe oпpeдeлённoгo кoличecтвa aтaк."
-		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash"					"Oглушeниe oт Bash of the Deep"
-		"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash_description"		""
-		"DOTA_Tooltip_modifier_slrdr_corrosive_haze"					"Corrosive Haze"
-		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_Description"		"Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. \nВы видимы для Slardar и его союзников."
-		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff"					"Brineguard"
-		"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff_Description"		"Броня увеличена на %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% за счёт действия Corrosive Haze на противников."
-		
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_guardian_sprint_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Guardian Sprint"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Slithereen Crush"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_damage"			"+{s:bonus_crush_damage} к урону от Slithereen Crush"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_stun"				"+{s:bonus_stun_duration} сек. оглушения от Slithereen Crush"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_bash_of_the_deep_damage"			"+{s:bonus_bonus_damage_str_pct}% к урону от силы от Bash of the Deep"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_undispellable"		"Эффект от Corrosive Haze нельзя развеять"
-		"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_armor"				"+{s:bonus_armor_reduction} к снижению брони от Corrosive Haze"
+//=========================================================================================================
+// Slardar
+//=========================================================================================================
+	"DOTA_Tooltip_Facet_slardar_crusher"					"Crusher"
+	"DOTA_Tooltip_Facet_slardar_crusher_Description"		"Дополнительно повторяет Slithereen Crush несколько раз после применения. Каждое повторение увеличивает радиус."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_Facet_slardar_crusher"		"Дополнительно повторяет Slithereen Crush %recast% раз(а) после применения с промежутком %recast_delay% секунд. При каждом срабатывании радиус увеличивается на %recast_bonus_radius%."
+	"DOTA_Tooltip_Facet_slardar_decaying_armor"					"Decaying Armor"
+	"DOTA_Tooltip_Facet_slardar_decaying_armor_Description"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню."
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_decaying_armor"		"Каждая атака по врагу под эффектом Corrosive Haze дополнительно снижает броню на %armor_per_hit%."
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_Facet_slardar_leg_day"		"В начале действия способность Guardian Sprint даёт сопротивление замедлениям и ускоряет передвижение ещё сильнее."
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Facet_slardar_brineguard"		"Владелец Corrosive Haze получает %armor_pct%%% от брони, отнятой у врагов этой способностью."
+	
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel"					"Seaborn Sentinel"
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_Description"		"Скорость передвижения, восстановление здоровья и броня героя увеличиваются, когда он находится в реке или пруду."
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_speed"			"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_regen"			"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_armor"			"ДОП. БРОНЯ:"
+	"DOTA_Tooltip_ability_slrdr_seaborn_sentinel_puddle_strength"		"ДОП. СИЛА:"
+	
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint"					"Guardian Sprint"
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_Description"		"Герой стремительно скользит, передвигаясь значительно быстрее и проходя сквозь других существ."
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_Lore"		"Мощный хвост змееногого стража, привыкший к морским глубинам, носит его и на суше."
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_Note0"		"Не останавливает прерываемые заклинания."
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_bonus_speed"				"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_duration"					"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_percent"		"%ПЕРВИЧНЫЙ БОНУС К СКОРОСТИ:"
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_slow_resistance"			"%СОПРОТИВЛЕНИЕ ЗАМЕДЛЕНИЯМ:"
+	"DOTA_Tooltip_ability_slrdr_guardian_sprint_speed_burst_duration"		"ДЛИТЕЛЬНОСТЬ ПЕРВИЧНОГО БОНУСА:"
+	
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush"					"Slithereen Crush"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_Description"		"Бьёт по земле, создавая небольшой пруд, оглушая наземных врагов неподалёку и нанося им урон. После оглушения враги будут замедлены."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_scepter_description"		"Постепенно увеличивает восстановление здоровья, броню и сопротивление эффектам в пруду, достигая предела через %puddle_max_effect% секунд."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_description"		"Увеличивает радиус удара и пруда. Способность ненадолго накладывает на жертв эффект Corrosive Haze."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_Lore"		"Мощь воды вкупе с её быстротой пробьёт даже самую сильную защиту."
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage"					"УРОН:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_damage_str_pct"			"%ДОП УРОН ОТ СИЛЫ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_stun_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_attack_slow"				"ЗАМЕДЛЕНИЕ АТАКИ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_extra_slow_duration"		"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_crush_radius"					"РАДИУС:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_duration"				"ДЛИТЕЛЬНОСТЬ ПРУДА:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_radius"					"РАДИУС ПРУДА:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_shard_amp_duration"			"ДЛИТЕЛЬНОСТЬ CORROSIVE HAZE:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_hp_regen"				"ДОП. ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ В ПРУДЕ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_armor"					"ДОП. БРОНЯ В ПРУДЕ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_status_resistance"		"%ДОП. СОПРОТИВЛЕНИЕ ЭФФЕКТАМ В ПРУДЕ:"
+	"DOTA_Tooltip_ability_slrdr_slithereen_crush_puddle_strength_pct"			"%ДОП. СИЛА В ПРУДЕ:"
+	
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep"					"Bash of the Deep"
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Description"		"Пocлe кaждых %attack_count% aтaк гepoй oглушит и нaнecёт дoпoлнитeльный урон cвoeй cлeдующeй aтaкoй. Пассивно увeличивaeт урон oт aтaк влaдeльцa, кoгдa тoт нaхoдитcя в вoдe."
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Lore"		"Любoй, ктo пocягнёт на coкpoвищa глубин, вcтpeтитcя лицoм к лицу c их бecпoщaдным змeeнoгим cтpaжeм."
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_Note0"		"Нe coчeтaeтcя c эффeктoм oт пpeдмeтa Skull Basher."
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage"				"ДOП. УРОН:"
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_bonus_damage_str_pct"		"%ДOП. УРОН ОТ СИЛЫ:"
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_duration"					"ДЛИТEЛЬНOСТЬ OГЛУШEНИЯ:"
+	"DOTA_Tooltip_ability_slrdr_bash_of_the_deep_river_damage"				"ДOП. УРОН В ВOДE:"
+	
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze"					"Corrosive Haze"
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Description"		"Уменьшает сопротивление цели физическому урону, даёт по ней обзор и раскрывает её невидимость. Жертва оставляет за собой водный след в течение %puddle_duration% секунд. <br><br> Каждое применение атакует жертву."
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_Lore"		"Даже самая крепкая броня тает под натиском солёных вод океана."
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_armor_reduction"		"СНИЖЕНИЕ БРОНИ:"
+	"DOTA_Tooltip_ability_slrdr_corrosive_haze_duration"			"ДЛИТЕЛЬНОСТЬ:"
+	
+	"DOTA_Tooltip_modifier_slrdr_guardian_sprint"					"Guardian Sprint"
+	"DOTA_Tooltip_modifier_slrdr_guardian_sprint_Description"		"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+	"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff"					"Slithereen Crush"
+	"DOTA_Tooltip_modifier_slrdr_slithereen_crush_debuff_Description"		"Под действием способности Slithereen Crush у Slardar. Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки снижена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_modifier_slrdr_slithereen_crush_stun"		"Оглушение"
+	"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep"					"Счётчик Bash of the Deep"
+	"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_Description"		"Oглушaeт пocлe oпpeдeлённoгo кoличecтвa aтaк."
+	"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash"					"Oглушeниe oт Bash of the Deep"
+	"DOTA_Tooltip_modifier_slrdr_bash_of_the_deep_bash_description"		""
+	"DOTA_Tooltip_modifier_slrdr_corrosive_haze"					"Corrosive Haze"
+	"DOTA_Tooltip_modifier_slrdr_corrosive_haze_Description"		"Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. \nВы видимы для Slardar и его союзников."
+	"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff"					"Brineguard"
+	"DOTA_Tooltip_modifier_slrdr_corrosive_haze_self_buff_Description"		"Броня увеличена на %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% за счёт действия Corrosive Haze на противников."
+	
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_guardian_sprint_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Guardian Sprint"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_cooldown"			"–{s:bonus_AbilityCooldown} сек. перезарядки Slithereen Crush"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_damage"			"+{s:bonus_crush_damage} к урону от Slithereen Crush"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_slithereen_crush_stun"				"+{s:bonus_stun_duration} сек. оглушения от Slithereen Crush"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_bash_of_the_deep_damage"			"+{s:bonus_bonus_damage_str_pct}% к урону от силы от Bash of the Deep"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_undispellable"		"Эффект от Corrosive Haze нельзя развеять"
+	"DOTA_Tooltip_ability_special_bonus_unique_slrdr_corrosive_haze_armor"				"+{s:bonus_armor_reduction} к снижению брони от Corrosive Haze"
 
 //=========================================================================================================
 // BRISTLEBACK
@@ -1093,9 +1424,9 @@
 //=========================================================================================================
 	"DOTA_Tooltip_Ability_venomancer_universal_toxin"					"Universal Toxin"
 	"DOTA_Tooltip_Ability_venomancer_universal_toxin_Description"		"Каждое нанесение урона героем влечет за собой страшное отравление, которое наносит на %bonus_damage_per_lvl% больше урона за каждый уровень героя. Так же замедляет цель на %ms_debuff_value%% за каждые %ms_debuff_treshold% эффектов."
-	"DOTA_Tooltip_Ability_venomancer_universal_toxin_scepter_Description"		"Добавляет к итоговому урону %int_scale%% урона от интеллекта героя"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_scepter_Description"		"Увеличивает урон токсина на %int_scale%%% от интеллекта героя."
 	"DOTA_Tooltip_Ability_venomancer_universal_toxin_duration"						"ДЛИТЕЛЬНОСТЬ:"
-	"DOTA_Tooltip_Ability_venomancer_universal_toxin_stack_count_per_item_tick"		"СТАКОВ ЗА УРОН ПРЕДМЕТАМИ:"
+	"DOTA_Tooltip_Ability_venomancer_universal_toxin_stack_count_per_item_tick"		"ЭФФЕКТОВ ЗА УРОН ПРЕДМЕТАМИ:"
 	"DOTA_Tooltip_Ability_venomancer_universal_toxin_damage_per_sec"				"ИТОГОВЫЙ УРОН В СЕКУНДУ:"
 	"DOTA_Tooltip_Ability_venomancer_universal_toxin_ms_debuff_value"				"%ЗАМЕДЛЕНИЕ:"
 
@@ -1128,7 +1459,7 @@
 
 	"DOTA_Tooltip_modifier_venomancer_universal_toxin_debuff"		"Universal Toxin"
 	"DOTA_Tooltip_modifier_venomancer_toxic_attack_debuff"					"Toxic Attack"
-	"DOTA_Tooltip_modifier_venomancer_toxic_attack_debuff_Description"		"цель замедленна на %dMODIFIER_PROPERTY_TOOLTIP%%%"
+	"DOTA_Tooltip_modifier_venomancer_toxic_attack_debuff_Description"		"Цель замедленна на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	"DOTA_Tooltip_modifier_venomancer_poison_cloud_debuff"					"Poison Cloud"
 	"DOTA_Tooltip_modifier_venomancer_poison_cloud_debuff_Description"		"Лечение уменьшено, а ваша кожа гниет."
 	"DOTA_Tooltip_modifier_venomancer_poison_cloud_buff"					"Poison Cloud"
@@ -1140,11 +1471,9 @@
 	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_3"		"+{s:bonus_duration} сек. к длительности <b>Toxic Attack</b>"
 	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_4"		"+{s:bonus_poison_sting_efficiency_pct}% к эффективности <b>Poison Sting</b> у <b>Poison Ward</b>."
 	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_5"		"+{s:bonus_radius}% радиусу <b>Toxic Attack</b> и <b>Poison Cloud</b>"
-	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_6"					"Усиливает <b>Poison Ward</b>"
-	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_6_Description"		"Увеличивает здоровье от макс здоровья и урон от интеллекта владельца на {s:bonus_hp_pct_caster}%/{s:bonus_dmg_pct_caster_int}%"
-	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_7"					"Уменьшает перезарядку <b>Toxic Attack</b> и <b>Poison Cloud</b> на {s:bonus_AbilityCooldown}%"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_6"		"+{s:bonus_hp_pct_caster}%/{s:bonus_dmg_pct_caster_int}% к здоровью и урону <b>Poison Ward</b>"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_7"					"-{s:bonus_AbilityCooldown}% перезарядки <b>Toxic Attack</b> и <b>Poison Cloud</b>"
 	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_7_Description"		"Увеличивает перезарядку Poison Ward на это же значение"
-	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_8"		"+{s:bonus_stack_count}% к накладываемому количеству эффектов Universal Toxin"
-	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_8"		"Увеличивает количество эффектов <b>Universal Toxin</b> на {s:bonus_stack_count}%"
+	"DOTA_Tooltip_Ability_special_bonus_unique_venomancer_custom_8"		"x{s:bonus_stack_count} к накладываемому количеству эффектов <b>Universal Toxin</b>"
 	}
 }

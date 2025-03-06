@@ -285,12 +285,20 @@ function GameMode:OnPlayerUsedAbility(event)
 	local abiltyName = event.abilityname
     local playerID = event.PlayerID
 
-    if abiltyName == "item_tpscroll" then
-        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-        if not hero:HasItemInInventory("item_travel_boots") and not hero:HasItemInInventory("item_travel_boots_2") then
-            hero:AddItemByName("item_tpscroll")
-        end
-    end
+	if abiltyName == "item_tpscroll" then
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		local hasItem = false
+		for i = 0, 5 do
+			local item = hero:GetItemInSlot(i)
+			if item and item:GetName() == "item_travel_boots" then
+				hasItem = true
+				break
+			end
+		end
+		if not hasItem then
+			hero:AddItemByName("item_tpscroll")
+		end
+	end
 end
 function GameMode:OnPlayerChannelAbility(event)
 	local abiltyName = event.abilityname
@@ -339,14 +347,17 @@ function GameMode:ProcessPlayerChoices()
     if #bossCandidates > 0 then
         bossPlayerID = bossCandidates[RandomInt(1, #bossCandidates)]
     else
-        -- Если никто не выбрал "Да", выбираем случайного игрока
+        -- Если никто не выбрал "Да"
+		--[[
         local allPlayers = {}
-        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
             if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
                 table.insert(allPlayers, playerID)
             end
         end
         bossPlayerID = allPlayers[RandomInt(1, #allPlayers)]
+		]]
+		return
     end
 
     -- Сохраняем ID игрока, который станет боссом
@@ -365,7 +376,6 @@ function GameMode:ProcessPlayerChoices()
         heroName = string.gsub(heroName, "_", " ")
         heroName = string.upper(string.sub(heroName, 1, 1)) .. string.sub(heroName, 2)
     end
-
 end
 
 
@@ -377,6 +387,10 @@ function GameMode:OnNPCSpawned(keys)
 			npc:AddNewModifier(npc, nil, "modifier_generic_handler", {})
 --		end
 --	end
+	local tpscroll = npc:FindItemInInventory("item_tpscroll")
+	if tpscroll then
+		tpscroll:EndCooldown()
+	end
 end
 
 function GameMode:OnEntityKilled(event)
@@ -415,25 +429,28 @@ function GameMode:OnEntityKilled(event)
         end
     end
 
-
-
     if killedUnit:GetUnitName() == "npc_dota_boss_6" then
         self:OpenGate()
     end
 end
 
+function GameMode:IsGateOpen()
+	return self.isGateOpen or false
+end
 function GameMode:OpenGate()
-    local gate = Entities:FindByName(nil, "gate")
-    local blocks = Entities:FindAllByName("gate_obstruction")
-    UTIL_Remove(gate)
-    for _,block in ipairs(blocks) do
-        block:Destroy()
-    end
+	local gate = Entities:FindByName(nil, "gate")
+	local blocks = Entities:FindAllByName("gate_obstruction")
+	UTIL_Remove(gate)
+	for _,block in ipairs(blocks) do
+		block:Destroy()
+	end
+	self.isGateOpen = true
 end
 -- Функция для преобразования игрока в финального босса
 function GameMode:TransformPlayerToBoss()
 	if GameMode:GetBoss() then return end
     local playerID = GameMode.bossPlayerID
+	if not playerID then return end
     local player = PlayerResource:GetPlayer(playerID)
 
     if not player then return end
@@ -500,28 +517,29 @@ end
 
 function GameMode:StartBossFight()
 	local boss = self:GetBoss()
-	if not boss then return end
-	local point = self:GetWaveSpawnPoint()
-	--[[
-	if self.soul then UTIL_Remove(self.soul) end
-	self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+	if boss then
+		local point = self:GetWaveSpawnPoint()
+		--[[
+		if self.soul then UTIL_Remove(self.soul) end
+		self.soul = CreateUnitByName("npc_boss_soul", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-	Timers:CreateTimer(0.2, function()
-		self.soul:MoveToPosition(Vector(-10862, 10454, 0))
-	end)
-	]]
-	if not boss:IsAlive() then
-		boss:RespawnUnit()
+		Timers:CreateTimer(0.2, function()
+			self.soul:MoveToPosition(Vector(-10862, 10454, 0))
+		end)
+		]]
+		if not boss:IsAlive() then
+			boss:RespawnUnit()
+		end
+		FindClearSpaceForUnit(boss, point, true)
+		GameMode:SetStartBossFight(true)
 	end
-	FindClearSpaceForUnit(boss, point, true)
-	GameMode:SetStartBossFight(true)
 end
 -- Функция для обновления количества игроков в командах
 function GameMode:UpdateTeamPlayerCounts()
     local goodGuysCount = 0
     local badGuysCount = 0
 
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+    for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
         if PlayerResource:IsValidPlayerID(playerID) then
             local team = PlayerResource:GetTeam(playerID)
             if team == DOTA_TEAM_GOODGUYS then
@@ -584,8 +602,15 @@ function GameMode:GetWaveSpawnPoint(isForWave)
 		end
 	end
 
-	if not isForWave and spawnPoint == nil then
-		spawnPoint = Entities:FindByName(nil, "global_point"):GetAbsOrigin()
+	if spawnPoint == nil then
+		local name = "global_point"
+		if GameMode:IsGateOpen() and isForWave then
+			name = "last_point"
+		end
+		local ent = Entities:FindByName(nil, name)
+		if ent then
+			spawnPoint = ent:GetAbsOrigin()
+		end
 	end
 
 	return spawnPoint
@@ -726,12 +751,11 @@ function GameMode:SpawnWave()
             end
         end
 
-        if GameMode.currentWave%5 == 0 then
+        if GameMode.currentWave % 5 == 0 then
             local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
             local spawnLocation = spawnPoint + offset
 
             local unit = CreateUnitByName("npc_dota_wave_mini_boss_" .. GameMode.currentWave, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
-
             if unit then
                 unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
             end
@@ -745,6 +769,147 @@ function GameMode:SpawnWave()
     if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
         self:StartBossFight()
     end
+end
+
+function GameMode:SpawnMorph()
+    local spawnPoint = self:GetWaveSpawnPoint(true)
+	if spawnPoint then
+		PrecacheUnitByNameAsync("npc_dota_morph_boss_cus", function()
+			local morph = CreateUnitByName("npc_dota_morph_boss_cus", spawnPoint, true, nil, nil, DOTA_TEAM_BADGUYS)
+			if morph then
+				morph:SetCanSellItems(false)
+				for abilitySlot = 0, morph:GetAbilityCount() - 1 do
+					local morphAbility = morph:GetAbilityByIndex(abilitySlot)
+					if morphAbility then
+						morphAbility:RemoveSelf()
+					end
+				end
+				local maxHealth = 0
+				local maxMana = 0
+				local abilitiesCount = 0
+				local players = {}
+				local playersAbilities = {}
+				local playersItems = {}
+				for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
+					if PlayerResource:IsValidPlayerID(playerID) then--and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+						local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+						if hero then
+							if hero:GetMaxHealth() > maxHealth then
+								maxHealth = hero:GetMaxHealth()
+							end
+							if hero:GetMaxMana() > maxMana then
+								maxMana = hero:GetMaxMana()
+							end
+							table.insert(players, hero)
+
+							local playerAbilCount = 0
+							for abilitySlot = 0, hero:GetAbilityCount() - 1 do
+								local heroAbility = hero:GetAbilityByIndex(abilitySlot)
+								if heroAbility and heroAbility:GetLevel() > 0 then
+									local abilityName = heroAbility:GetAbilityName()
+									local abilityLvl = heroAbility:GetLevel()
+									playerAbilCount = playerAbilCount + 1
+									if not heroAbility:IsAttributeBonus() and not heroAbility:IsHidden() then
+										table.insert(playersAbilities, {abilityName, abilityLvl})
+									end
+								end
+							end
+							if playerAbilCount > abilitiesCount then
+								abilitiesCount = playerAbilCount
+							end
+							for itemSlot = 0, 5 do
+								local heroItem = hero:GetItemInSlot(itemSlot)
+								if heroItem then
+									local itemName = heroItem:GetName()
+									table.insert(playersItems, itemName)
+								end
+							end
+						end
+					end
+				end
+				if #players > 0 then
+					local hero = players[RandomInt(1, #players)]
+					if hero then
+						--[[
+						local morphAbils = 0
+						while #playersAbilities > 0 and morphAbils < abilitiesCount do
+							local randomAbil = RandomInt(1, #playersAbilities)
+							local abilityName = playersAbilities[randomAbil][1]
+							local abilityLvl = playersAbilities[randomAbil][2]
+							local morphAbility = morph:AddAbility(abilityName)
+							if morphAbility then
+								morphAbility:SetActivated(true)
+								morphAbility:SetLevel(abilityLvl)
+								morphAbils = morphAbils + 1
+								table.remove(playersAbilities, randomAbil)
+							end
+						end
+						]]
+						local morphInv = 0
+						while #playersItems > 0 and morphInv < 6 do
+							local randomItem = RandomInt(1, #playersItems)
+							local itemName = playersItems[randomItem]
+							if not morph:HasItemInInventory(itemName) then
+								local morphItem = morph:AddItemByName(itemName)
+								if morphItem then
+									morphItem:SetPurchaseTime(0)
+									morphInv = morphInv + 1
+								end
+							end
+							table.remove(playersItems, randomItem)
+						end
+						for abilitySlot = 0, hero:GetAbilityCount() - 1 do
+							local heroAbility = hero:GetAbilityByIndex(abilitySlot)
+							if heroAbility and heroAbility:GetLevel() > 0 then
+								local abilityName = heroAbility:GetAbilityName()
+								local morphAbility = morph:AddAbility(abilityName)
+								if morphAbility then
+									morphAbility:SetActivated(true)
+									morphAbility:SetLevel(heroAbility:GetLevel())
+								end
+							end
+						end
+						--[[
+						for itemSlot = 0, 5 do
+							local heroItem = hero:GetItemInSlot(itemSlot)
+							if heroItem then
+								local itemName = heroItem:GetName()
+								local morphItem = morph:AddItemByName(itemName)
+								if morphItem then
+									morphItem:SetPurchaseTime(0)
+								end
+							end
+						end
+						]]
+						
+						local morphAbils = 0
+						while #playersAbilities > 0 and morphAbils < 4 do
+							local randomAbil = RandomInt(1, #playersAbilities)
+							local abilityName = playersAbilities[randomAbil][1]
+							if not morph:HasAbility(abilityName) then
+								local abilityLvl = playersAbilities[randomAbil][2]
+								local morphAbility = morph:AddAbility(abilityName)
+								if morphAbility then
+									morphAbility:SetActivated(true)
+									morphAbility:SetLevel(abilityLvl)
+									morphAbils = morphAbils + 1
+								end
+							end
+							table.remove(playersAbilities, randomAbil)
+						end
+						morph:SetControllableByPlayer(hero:GetPlayerID(), true)
+					end
+					morph:SetBaseMaxHealth(maxHealth)
+					morph:SetMaxHealth(maxHealth)
+					morph:SetHealth(maxHealth)
+					morph:SetMaxMana(maxMana)
+					morph:SetMana(maxMana)
+				end
+				morph:AddNewModifier(morph, nil, "modifier_morph_boss_ai", {})
+				morph:AddNewModifier(morph, nil, "modifier_boss_buff", {})
+			end
+		end)
+	end
 end
 
 function GameMode:GiveRewardWave()
@@ -770,17 +935,32 @@ function GameMode:StartWaveSpawnTimer()
 end
 function GameMode:WaveSpawnThink()
 	local interval = 0.1
-	local options = CustomNetTables:GetTableValue("game_options", "waveOptions") or {waveInterval = WAVE_INTERVAL, waveTimer = 0, currentWave = GameMode.currentWave, maxWaves = GameMode.maxWaves}
-	if options then
-		if options.waveTimer <= 0 then
-			GameMode:SpawnWave()
-			options.waveTimer = WAVE_INTERVAL
-			options.currentWave = GameMode.currentWave
+	if GameMode.currentWave < GameMode.maxWaves then
+		local options = CustomNetTables:GetTableValue("game_options", "waveOptions") or {waveInterval = WAVE_INTERVAL, waveTimer = 0, currentWave = GameMode.currentWave, maxWaves = GameMode.maxWaves}
+		if options then
+			if options.waveTimer <= 0 then
+				GameMode:SpawnWave()
+				options.waveTimer = WAVE_INTERVAL
+				options.currentWave = GameMode.currentWave
+
+				--[[
+				if GameMode.currentWave % 1 == 0 then
+					GameMode:SpawnMorph()
+				end
+				]]
+			end
+			options.waveTimer = options.waveTimer - interval
+			CustomNetTables:SetTableValue("game_options", "waveOptions", options)
 		end
-		options.waveTimer = options.waveTimer - interval
-		CustomNetTables:SetTableValue("game_options", "waveOptions", options)
 	end
-	return GameMode.currentWave > GameMode.maxWaves and nil or interval
+
+	self.SpawnMorphInterval = self.SpawnMorphInterval or 120
+	self.SpawnMorphInterval = self.SpawnMorphInterval - interval
+	if self.SpawnMorphInterval <= 0 then
+		self.SpawnMorphInterval = RandomInt(60, 180)
+		self:SpawnMorph()
+	end
+	return interval
 end
 
 function GameMode:OrderFilter(event)
@@ -854,6 +1034,13 @@ function GameMode:OnPlayerChat(keys)
 			local name = tostring(text[2])
 			if name then
 				PlayerResource:GetPlayer(playerID):SetSelectedHero("npc_dota_hero_"..name)
+			end
+		end
+
+		if normal_text == "?" then
+			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+			if hero then
+				hero:AddNewModifier(hero, nil, "modifier_help", {})
 			end
 		end
 	end

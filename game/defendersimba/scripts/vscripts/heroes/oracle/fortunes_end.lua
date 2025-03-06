@@ -173,7 +173,9 @@ function orcl_fortunes_end:OnProjectileHit_ExtraData(target, loc, data)
 		local targets = FindUnitsInRadius(caster:GetTeamNumber(), targetPos, nil, pull_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HEROES_AND_CREEPS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _, unit in pairs(targets) do
 			if unit ~= target then
-				unit:AddNewModifier(caster, self, "modifier_orcl_fortunes_end_pull", {duration = pull_duration * (1 - unit:GetStatusResistance()), pull_speed = pull_speed, x = targetPos.x, y = targetPos.y})
+				if not unit:IsDebuffImmune() then
+					unit:AddNewModifier(caster, self, "modifier_orcl_fortunes_end_pull", {duration = pull_duration * (1 - unit:GetStatusResistance()), pull_speed = pull_speed, x = targetPos.x, y = targetPos.y})
+				end
 			end
 		end
 		

@@ -1,0 +1,254 @@
+"DOTAAbilities"
+{
+	"item_recipe_black_king_bar_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_blades_of_attack;item_gauntlets;item_gauntlets;item_upgrade_scroll_1"
+		}
+	}
+	"item_black_king_bar_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+
+	"item_recipe_black_king_bar_2_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_2_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_cus;item_cloak;item_upgrade_scroll_2"
+		}
+	}
+	"item_black_king_bar_2_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+
+	"item_recipe_black_king_bar_3_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_3_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_2_cus;item_ogre_axe;item_shadow_amulet;item_upgrade_scroll_3"
+		}
+	}
+	"item_black_king_bar_3_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"3"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+
+	"item_recipe_black_king_bar_4_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_4_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_3_cus;item_mithril_hammer;item_glimmer_cape;item_upgrade_scroll_4"
+		}
+	}
+	"item_black_king_bar_4_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"4"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+
+	"item_recipe_black_king_bar_5_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_5_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_4_cus;item_demon_edge;item_reaver;item_upgrade_scroll_5"
+		}
+	}
+	"item_black_king_bar_5_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"5"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+
+	"item_recipe_black_king_bar_6_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_6_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_5_cus;item_reaver_2;item_upgrade_scroll_6"
+		}
+	}
+	"item_black_king_bar_6_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/black_king_bar"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"black_king_bar"
+		"MaxUpgradeLevel"				"6"
+		"ItemBaseLevel"					"6"
+		"AbilityCooldown"				"95"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_strength"		"9 9 19 19 44 119"
+			"bonus_damage"			"6 6 6 30 70 70"
+			"bonus_magic_resist"	"0 20 20 35 35 35"
+			"duration"				"2 3 4 5 6 7"
+			"model_scale"			"30"
+			"magic_resist"			"60 60 60 70 70 70"
+			"invis"					"0 0 1 1 1 1"
+			"invis_ms"				"0 0 0 75 75 75"
+		}
+	}
+}
