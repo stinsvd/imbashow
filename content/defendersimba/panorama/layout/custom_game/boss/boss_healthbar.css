@@ -1,0 +1,84 @@
+.Root {
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.Hidden {
+	opacity: 0;
+}
+
+#MainPanel {
+	width: fit-children;
+	height: fit-children;
+	align: center top;
+	margin-top: 7%;
+	transition-property: opacity;
+	transition-duration: .2s;
+	transition-timing-function: ease-in;
+	flow-children: down;
+}
+
+#BossHealthManaContainer {
+	width: fit-children;
+	height: fit-children;
+	flow-children: down;
+}
+
+#BossManaProgressBar {
+	height: 10px;
+}
+
+.BossHealthManaProgressBar {
+	width: 600px;
+	height: 25px;
+	border-radius: 3px;
+	border: 1px solid rgb(0, 0, 0);
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	background-color: rgba(0, 0, 0, 0.96);
+}
+
+.ProgressBarLeft {
+	transition-property: width;
+	transition-duration: .1s;
+	transition-timing-function:linear;
+}
+#BossHealthProgressBar_Left {
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#5D2E25), color-stop(0.2, #A54E39), color-stop(.5, #904030), to(#5D2C25));
+}
+#BossManaProgressBar_Left {
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#2b4287), color-stop(0.2, #4165ce), color-stop(.5, #4a73ea), to(#2b4287));
+}
+
+#HealthBurner, #ManaBurner {
+	width: 100%;
+	height: 100%;
+}
+#HealthBurner {
+	hue-rotation: 240deg;
+}
+#ManaBurner {
+	hue-rotation: 50deg;
+	opacity: 0.4;
+}
+
+#ProgressBarLabel {
+	font-size: 14px;
+	align: center center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 1px 4px 3 #000000;
+	font-weight: bold;
+}
+
+#BossName {
+	font-size: 20px;
+	align: right center;
+	text-align: center;
+	margin-right: 5%;
+	color: white;
+	text-shadow: 1px 1px 0px 3 #00000066;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}

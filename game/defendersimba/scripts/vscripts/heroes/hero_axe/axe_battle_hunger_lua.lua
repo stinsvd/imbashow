@@ -89,11 +89,13 @@ function modifier_axe_battle_hunger_lua_debuff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_TOOLTIP,
 		MODIFIER_EVENT_ON_DEATH,
 	}
 end
 function modifier_axe_battle_hunger_lua_debuff:GetModifierMoveSpeedBonus_Percentage() return self.slow end
 function modifier_axe_battle_hunger_lua_debuff:GetModifierBonusStats_Strength() return self.str_debuff * (-1) end
+function modifier_axe_battle_hunger_lua_debuff:OnTooltip() return self.damage end
 function modifier_axe_battle_hunger_lua_debuff:OnDeath(params)
 	if not IsServer() then return end
 	local unit = params.unit

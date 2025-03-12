@@ -1,0 +1,26 @@
+<root>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/boss/boss_healthbar.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/boss/boss_healthbar.js" />
+	</scripts>
+	<Panel class="Root" hittest="false" hittestchildren="true">
+		<Panel id="MainPanel" class="Hidden" hittest="false">
+			<Label id="BossName" />
+			<Panel id="BossHealthManaContainer">
+				<ProgressBar id="BossHealthProgressBar" class="BossHealthManaProgressBar" value="1" >
+					<Panel id="BossHealthProgressBar_Left" class="ProgressBarLeft" >
+						<DOTAScenePanel id="HealthBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
+					</Panel>
+					<Label id="ProgressBarLabel" />
+				</ProgressBar>
+				<ProgressBar id="BossManaProgressBar" class="BossHealthManaProgressBar" value="1" >
+					<Panel id="BossManaProgressBar_Left" class="ProgressBarLeft" >
+						<DOTAScenePanel id="ManaBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
+					</Panel>
+				</ProgressBar>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

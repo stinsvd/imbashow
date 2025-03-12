@@ -97,6 +97,7 @@ function modifier_morph_boss_ai:OnIntervalThink()
 	local morph = self:GetParent()
 
 	if morph and morph:IsAlive() then
+		if morph:IsChanneling() then return end
 		local target
 		local targetPos
 		if not morph:IsAttacking() and not morph:IsMoving() then
@@ -131,9 +132,11 @@ end
 function modifier_morph_boss_ai:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	}
 end
 function modifier_morph_boss_ai:GetModifierPercentageManacostStacking() return 100 end
+function modifier_morph_boss_ai:GetModifierPhysicalArmorBonus() return self:GetStackCount() * 1 end
 
 
 
@@ -169,7 +172,16 @@ function TryToCastSomeAbility(ability, unit, unitPos, unitTeam)
 	if ability:IsCooldownReady() then
 		local ability_behavior = ability:GetBehaviorInt()
 		local delay = (ability:GetCastPoint() or 0.1) * 3
-		local radius = ability:GetCastRange(unitPos, unit) or ability:GetAOERadius() or unit:GetAcquisitionRange()
+		local radius = ability:GetCastRange(unitPos, unit)
+		if radius == 0 then
+			radius = ability:GetAOERadius()
+		end
+		if radius == 0 then
+			radius = unit:GetAcquisitionRange()
+		end
+		if radius == 0 then
+			radius = 800
+		end
 		local teams = ability:GetAbilityTargetTeam() or DOTA_UNIT_TARGET_TEAM_ENEMY
 		local types = ability:GetAbilityTargetType() or DOTA_UNIT_TARGET_HEROES_AND_CREEPS
 		local flags = ability:GetAbilityTargetFlags() or DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE

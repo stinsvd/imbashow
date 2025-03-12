@@ -28,6 +28,7 @@
 #base "items/refresher.kv"
 #base "items/nullifier.kv"
 #base "items/shadow_blade.kv"
+#base "items/shields.kv"
 
 #base "../npc/overrided.txt"
 
@@ -173,35 +174,54 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"minimum_distance"		"70"
-				"maximum_distance"		"800"
-				"vision_radius"			"200"
-				"tooltip_channel_time"			"1.0"
+			"minimum_distance"		"70"
+			"maximum_distance"		"800"
+			"vision_radius"			"200"
+			"tooltip_channel_time"			"1.0"
 		}
 	}
 
 	"item_aghanims_shard"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1400"
-		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"ags;shard;aghanim\'s shard;aghs"
-		
 		"ItemPermanent"					"0"
 		"ItemStockTime"					"0"
 		"ItemStockInitial"				"-1"
 		"ItemStockMax"					"-1"
 		"ItemInitialStockTime"			"0"
-
-		"SuggestLategame"				"1"
+		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ags;shard;aghanim\'s shard;aghs"
 	}
 
+// Infused Raindrop
+	"item_infused_raindrop"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"225"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"7"
+		"ItemShopTags"					"armor"
+		"ItemQuality"					"component"
+		"ItemAliases"					"raindrop"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"6"
+		"ItemHideCharges"				"0"
+		"ItemStockTime"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemInitialStockTimeTurbo"		"0"
+		"AbilityValues"
+		{
+			"mana_regen"			"0.8"
+			"magic_damage_block"	"120"
+			"min_damage"			"75"
+			"initial_charges"		"6"
+		}
+	}
 
 	"item_custom_damage_boost"
 	{
@@ -303,7 +323,7 @@
 		}
 	}
 
-	"item_tiara_of_selemene"
+	"item_ring_of_tarrasque"
 	{
 		"MaxUpgradeLevel"			"2"
 		"ItemBaseLevel"				"1"
@@ -519,6 +539,96 @@
 			"bonus_night_vision"				"400"
 			"consumed_bonus"					"60"
 			"consumed_bonus_night_vision"		"200"
+		}
+	}
+	
+// Rod of Atos
+	"item_rod_of_atos_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/gleipnir"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"rod_of_atos"
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"50"
+		"AbilitySharedCooldown"			"atos"
+		"ItemShopTags"					"int;regen_health"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"rod of atos"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15"
+			"bonus_hp"				"275"
+			"duration"				"2"
+		}
+	}
+// Recipe: Rod of Atos
+	"item_recipe_rod_of_atos_cus"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"250"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_rod_of_atos_cus"
+		"ItemRequirements"
+		{
+			"01"						"item_staff_of_wizardry;item_vitality_booster"
+		}
+	}
+// Gleipnir
+	"item_gleipnir"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/gleipnir"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"gungir"
+		"AbilitySharedCooldown"			"atos"
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"100"
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"gleipnir;gliepnir;glaypnir"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_aoe"					"75"
+			"bonus_intellect"			"15"
+			"bonus_hp"					"450"
+			"bonus_mana"				"200"
+			"radius"
+			{
+				"value"							"275"
+				"affected_by_aoe_increase"		"1"
+			}
+			"duration"				"2"
+		}
+	}
+// Recipe: Gleipnir
+	"item_recipe_gleipnir"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_gleipnir"
+		"ItemRequirements"
+		{
+			"01"						"item_point_booster;item_rod_of_atos_cus"
 		}
 	}
 }

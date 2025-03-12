@@ -72,6 +72,14 @@
 		"DOTA_Tooltip_ability_item_relic_2_Lore"		"An ancient weapon that often turns the tides of war."
 		"DOTA_Tooltip_ability_item_relic_2_bonus_damage"		"+$damage"
 
+		"DOTA_Tooltip_ability_item_stout_shield_cus"					"Stout Shield"
+		"DOTA_Tooltip_ability_item_stout_shield_cus_Description"		"<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged."
+		"DOTA_Tooltip_ability_item_stout_shield_cus_Lore"		"One man's wine barrel bottom is another man's shield."
+
+		"DOTA_Tooltip_ability_item_quelling_blade_2"					"Stout Shield + Quelling Blade"
+		"DOTA_Tooltip_ability_item_quelling_blade_2_Description"		"<h1>Active: Chop Tree</h1> Destroy a target tree. \n<h1>Passive: Quell</h1> Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged. \n<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged."
+		"DOTA_Tooltip_ability_item_quelling_blade_2_bonus_all_stats"		"+$all"
+
 
 
 		//=========================================================================================================
@@ -1377,7 +1385,7 @@
 		
 		"DOTA_Tooltip_ability_item_recipe_shadow_blade_cus"		"Shadow Blade Recipe"
 		"DOTA_Tooltip_ability_item_shadow_blade_cus"					"Shadow Blade #1"
-		"DOTA_Tooltip_ability_item_shadow_blade_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units.  <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
+		"DOTA_Tooltip_ability_item_shadow_blade_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
 		"DOTA_Tooltip_ability_item_shadow_blade_cus_Lore"		"The blade of a fallen king, it allows you to move unseen and strike from the shadows."
 		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1387,7 +1395,7 @@
 		"DOTA_Tooltip_ability_item_shadow_blade_cus_bonus_mana_regen"		"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_shadow_blade_2_cus"					"Shadow Blade #2"
-		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units.  <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
+		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While Shadow Walk is active, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus physical damage on that attack."
 		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Lore"		"The blade of a fallen king, it allows you to move unseen and strike from the shadows."
 		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1397,7 +1405,7 @@
 		"DOTA_Tooltip_ability_item_shadow_blade_2_cus_bonus_mana_regen"			"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_shadow_blade_3_cus"					"Silver Edge #1"
-		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
 		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
 		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1407,7 +1415,7 @@
 		"DOTA_Tooltip_ability_item_shadow_blade_3_cus_bonus_mana_regen"			"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_shadow_blade_4_cus"					"Silver Edge #2"
-		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
 		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
 		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1417,7 +1425,7 @@
 		"DOTA_Tooltip_ability_item_shadow_blade_4_cus_bonus_mana_regen"			"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_shadow_blade_5_cus"					"Silver Edge #3"
-		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
 		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
 		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1427,7 +1435,7 @@
 		"DOTA_Tooltip_ability_item_shadow_blade_5_cus_bonus_mana_regen"			"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_shadow_blade_6_cus"					"Silver Edge #4"
-		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell.  While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
+		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %windwalk_duration% seconds, or until you attack or cast a spell. While invisible, you move %windwalk_movement_speed%%% faster and can move through units. <br><br>Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus physical damage and disable their passive abilities for %backstab_duration% seconds. \n<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on the first strike. <br><br>Cooldown: %echo_cooldown%s"
 		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Lore"		"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
 		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note0"		"Has a %windwalk_fade_time% second fade time."
 		"DOTA_Tooltip_ability_item_shadow_blade_6_cus_Note1"		"If the invisibility ends without attacking, the bonus damage is lost."
@@ -1442,6 +1450,123 @@
 		"DOTA_Tooltip_modifier_silver_edge_cus_windwalk_Description"		"Invisible. Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and you can move through units. Attacking to break invisibility will deal %dMODIFIER_PROPERTY_TOOLTIP% bonus damage, slow the target and disable their passives."
 		"DOTA_Tooltip_modifier_silver_edge_cus_debuff"					"Shadow Walk Attack"
 		"DOTA_Tooltip_modifier_silver_edge_cus_debuff_Description"		"Passive abilities disabled."
+
+		//=========================================================================================================
+		// Uniguard / Crimson Guard
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_uniguard"		"Uniguard Recipe"
+		"DOTA_Tooltip_ability_item_uniguard"					"Uniguard #1"
+		"DOTA_Tooltip_ability_item_uniguard_Description"		"<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged. \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_uniguard_Lore"		"A powerful shield that defends its wielder from even the most vicious of attacks."
+		"DOTA_Tooltip_ability_item_uniguard_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_mana_regen"		"+$mana_regen"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_armor"			"+$armor"
+		"DOTA_Tooltip_ability_item_uniguard_bonus_magic_armor"		"%+$spell_resist"
+
+		"DOTA_Tooltip_ability_item_uniguard_2"					"Uniguard #2"
+		"DOTA_Tooltip_ability_item_uniguard_2_Description"		"<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged. \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_uniguard_2_Lore"		"A powerful shield that defends its wielder from even the most vicious of attacks."
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_mana_regen"			"+$mana_regen"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_uniguard_2_bonus_magic_armor"		"%+$spell_resist"
+
+		"DOTA_Tooltip_ability_item_uniguard_3"					"Uniguard #3"
+		"DOTA_Tooltip_ability_item_uniguard_3_Description"		"<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged. \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_uniguard_3_Lore"		"A powerful shield that defends its wielder from even the most vicious of attacks."
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_mana_regen"			"+$mana_regen"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_uniguard_3_bonus_magic_armor"		"%+$spell_resist"
+
+		"DOTA_Tooltip_ability_item_uniguard_4"					"Crimson Guard"
+		"DOTA_Tooltip_ability_item_uniguard_4_Description"		"<h1>Active: Guard</h1> For %active_duration% seconds, grant nearby allied heroes and buildings to block damage equal to %active_block% plus %active_block_max_hp_pct%%% of the casters max health value from each incoming attack. <br><br> Radius: %active_radius% \n<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %damage_block_melee% damage from incoming attacks on melee heroes, and %damage_block_ranged% damage on ranged. \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_uniguard_4_Lore"		"A cuirass originally built to protect against the dreaded Year Beast."
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_mana_regen"			"+$mana_regen"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_uniguard_4_bonus_magic_armor"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_modifier_uniguard_cooldown"					"Magical Damage Block Cooldown"
+		"DOTA_Tooltip_modifier_uniguard_active"					"Guard"
+		"DOTA_Tooltip_modifier_uniguard_active_Description"		"Block %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% damage from incoming attacks."
+		"DOTA_Tooltip_modifier_uniguard_active_cooldown"					"Guard Cooldown"
+		"DOTA_Tooltip_modifier_uniguard_active_cooldown_Description"		"Guard will not affect a unit that has recently been protected by Guard."
+
+		//=========================================================================================================
+		// Pipe of Insight
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_pipe_of_insight"					"Pipe of Insight #1"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_Description"		"<h1>Active: Barrier</h1> Gives a magic damage barrier that absorbs %barrier_block% + %barrier_block_max_mp_pct%%% owner's max mana damage to all nearby allies. Lasts %barrier_duration% seconds.<br><br>Radius: %barrier_radius% \n<h1>Passive: Insight Aura</h1> Gives allied units %aura_health_regen% health regeneration and %aura_magic_resistance%%% magic resistance. <br><br> Radius: %aura_radius% \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_Lore"		"A powerful artifact of mysterious origin, it creates barriers against magical forces."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_Note0"		"Multiple instances of Barrier do not stack."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_Note1"		"Stacks multiplicatively with other sources of magic resistance."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_bonus_all"				"+$all"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_bonus_magic_armor"		"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2"					"Pipe of Insight #2"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_Description"		"<h1>Active: Barrier</h1> Gives a magic damage barrier that absorbs %barrier_block% + %barrier_block_max_mp_pct%%% owner's max mana damage to all nearby allies. Lasts %barrier_duration% seconds.<br><br>Radius: %barrier_radius% \n<h1>Passive: Insight Aura</h1> Gives allied units %aura_health_regen% health regeneration and %aura_magic_resistance%%% magic resistance. <br><br> Radius: %aura_radius% \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_Lore"		"A powerful artifact of mysterious origin, it creates barriers against magical forces."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_Note0"		"Multiple instances of Barrier do not stack."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_Note1"		"Stacks multiplicatively with other sources of magic resistance."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_bonus_all"					"+$all"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_2_bonus_magic_armor"			"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3"					"Pipe of Insight #3"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_Description"		"<h1>Active: Barrier</h1> Gives a magic damage barrier that absorbs %barrier_block% + %barrier_block_max_mp_pct%%% owner's max mana damage to all nearby allies. Lasts %barrier_duration% seconds.<br><br>Radius: %barrier_radius% \n<h1>Passive: Insight Aura</h1> Gives allied units %aura_health_regen% health regeneration and %aura_magic_resistance%%% magic resistance. <br><br> Radius: %aura_radius% \n<h1>Passive: Magical Damage Block</h1> Blocks up to %magic_damage_block% magic damage. Triggers only if the damage is greater than %min_damage% and no more than once every %magic_block_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_Lore"		"A powerful artifact of mysterious origin, it creates barriers against magical forces."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_Note0"		"Multiple instances of Barrier do not stack."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_Note1"		"Stacks multiplicatively with other sources of magic resistance."
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_bonus_all"					"+$all"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_bonus_health_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_pipe_of_insight_3_bonus_magic_armor"			"%+$spell_resist"
+		
+		"DOTA_Tooltip_modifier_pipe_of_insight_1_aura"					"Insight Aura"
+		"DOTA_Tooltip_modifier_pipe_of_insight_1_aura_Description"		"Regenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per second and +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% bonus magic resistance."
+		"DOTA_Tooltip_modifier_pipe_of_insight_2_aura"					"Insight Aura"
+		"DOTA_Tooltip_modifier_pipe_of_insight_2_aura_Description"		"Regenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per second and +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% bonus magic resistance."
+		"DOTA_Tooltip_modifier_pipe_of_insight_3_aura"					"Insight Aura"
+		"DOTA_Tooltip_modifier_pipe_of_insight_3_aura_Description"		"Regenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per second and +%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% bonus magic resistance."
+		"DOTA_Tooltip_modifier_pipe_of_insight_barrier"					"Barrier"
+		"DOTA_Tooltip_modifier_pipe_of_insight_barrier_Description"		"Magic damage barrier that absorbs %dMODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT% incoming damage."
+
+		//=========================================================================================================
+		// Rod of Atos / Gleipnir
+		//=========================================================================================================
+		
+		"DOTA_Tooltip_ability_item_recipe_rod_of_atos_cus"		"Rod of Atos Recipe"
+		"DOTA_Tooltip_ability_item_rod_of_atos_cus"					"Rd of oAtos"
+		"DOTA_Tooltip_ability_item_rod_of_atos_cus_Description"		"<h1>Active: Cripple</h1> Roots the target for %duration% seconds."
+		"DOTA_Tooltip_ability_item_rod_of_atos_cus_Lore"		"Atos, the Lord of Blight, has his essence stored in this deceptively simple wand."
+		"DOTA_Tooltip_ability_item_rod_of_atos_cus_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_rod_of_atos_cus_bonus_hp"			"+$health"
+		
+		"DOTA_Tooltip_ability_item_recipe_gleipnir"		"Gleipnir Recipe"
+		"DOTA_Tooltip_ability_item_gleipnir"					"Gleipnir"
+		"DOTA_Tooltip_ability_item_gleipnir_Description"		"<h1>Active: Eternal Chains</h1> Roots and pulls all enemies in a %radius% radius for %duration% seconds."
+		"DOTA_Tooltip_ability_item_gleipnir_Lore"		"Bindings forged by impossible means to leash an ancient evil."
+		"DOTA_Tooltip_ability_item_gleipnir_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_gleipnir_bonus_hp"				"+$health"
+		"DOTA_Tooltip_Ability_item_gleipnir_bonus_mana"				"+$mana"
+		
+		"DOTA_Tooltip_modifier_rod_of_atos_cus_debuff"					"Rod of Atos"
+		"DOTA_Tooltip_modifier_rod_of_atos_cus_debuff_Description"		"Cannot move while rooted."
 
 		//=========================================================================================================
 		// Moon Shard
@@ -1537,6 +1662,65 @@
 
 
 //=========================================================================================================
+// Axe
+//=========================================================================================================
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua"					"Berserker's Call"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_Description"		"Axe taunts nearby enemy units, forcing them to attack him with bonus attack speed while he gains bonus armor during the duration."
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_shard_description"		"Applies <font color='#FF3030'>Battle Hunger</font> to enemies."
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_Lore"		"Mogul Khan's warcry taunts opponents into engaging in an unconquerable battle with the Axe."
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_radius"						"RADIUS:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_duration" 					"DURATION:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_bonus_armor"					"BONUS ARMOR:"
+	"DOTA_Tooltip_Ability_axe_berserkers_call_lua_buff_attack_speed_enemy" 		"ENEMY ATTACK SPEED BONUS:"
+
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua"					"Battle Hunger"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_Description"		"Enrages an enemy unit, causing it to take damage over time and slows. The duration of each stack is separate."
+	"DOTA_Tooltip_ability_axe_battle_hunger_lua_Lore"		"Ordinary heroes cannot withstand Mogul Khan's rage for battle, such that it injures them until it is satisfied."
+	"DOTA_Tooltip_ability_axe_battle_hunger_lua_Note0"		"Steals %str_bonus_per_hero% <font color='#FF3030'>strength</font> from enemy heroes."
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_duration"			"DURATION:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_slow"				"%MOVEMENT SLOW:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_speed_bonus"		"%MOVEMENT SPEED BONUS PER STACK:"
+	"DOTA_Tooltip_Ability_axe_battle_hunger_lua_damage_per_str"		"%DAMAGE PER SECOND FROM STR:"
+
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua"					"Counter Helix"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Description"		"After a set number of attacks, Axe will perform a helix counter attack, dealing pure damage to all nearby enemies."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Lore"		"Axe is the only reinforcement this army needs."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note0"		"Steals %steal_str% <font color='#FF3030'>strength</font> from enemy heroes for %duration%s."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_Note1"		"Getting a new stack will refresh the duration."
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_attack_need"			"ATTACKS TO HELIX:"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_base_damage"			"BASE DAMAGE:"
+	"DOTA_Tooltip_Ability_axe_counter_helix_custom_lua_damage_per_str"		"%DAMAGE FROM STR:"
+
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua"					"Culling Blade"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Description"		"Axe spots a weakness and strikes, dealing pure damage, depends on owner's strength. When an enemy creep or hero is killed with Culling Blade, its gives permanent strength. Every %counter_to_refresh% <font color='#eeeeee'>Counter Helix</font> triggers, cooldown of Culling Blade is reset."
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_scepter_Description"		"Affects enemies within %radius% of the target."
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_Lore"		"Mogul Khan is the embodiment of battle and fury, launching into a gruesome fatality against those who dare engage the Axe in combat."
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_to_damage_pct"		"%STR TO DAMAGE:"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_creep"			"STR PER CREEP:"
+	"DOTA_Tooltip_Ability_axe_culling_blade_custom_lua_str_per_hero"			"STR PER HERO:"
+
+	"DOTA_Tooltip_Ability_axe_innate_ability"					"Hit Harder!"
+	"DOTA_Tooltip_Ability_axe_innate_ability_Description"		"For each hit received, Axe gets armor. Each effect lasts independently of each other."
+	"DOTA_Tooltip_Ability_axe_innate_ability_armor_per_stack"		"ARMOR PER STACK:"
+	"DOTA_Tooltip_Ability_axe_innate_ability_duration"				"STACK DURATION:"
+
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua"					"Battle Hunger"
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua_Description"		"Strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff"					"Battle Hunger"
+	"DOTA_Tooltip_modifier_axe_battle_hunger_lua_debuff_Description"		"Dealing %dMODIFIER_PROPERTY_TOOLTIP% damage per second, reducing movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_Description"		"Attacks remaining to perform a counter attack"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_buff_Description"		"Stolen <font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font> strength."
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff"					"Counter Helix"
+	"DOTA_Tooltip_modifier_axe_counter_helix_custom_lua_debuff_Description"		"<font color='#FF0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font> strength were stolen from you."
+	"DOTA_Tooltip_modifier_axe_culling_blade_custom_lua"					"Culling Blade Strength"
+	"DOTA_Tooltip_modifier_axe_culling_blade_custom_lua_Description"		"Axe now gets (<font color='#53ea48'>%dMODIFIER_PROPERTY_TOOLTIP%</font>) bonus strength."
+	"DOTA_Tooltip_modifier_axe_innate_ability"					"Hit Harder!"
+	"DOTA_Tooltip_modifier_axe_innate_ability_Description"		"Axe now gets (<font color='#53ea48'>%fMODIFIER_PROPERTY_TOOLTIP%</font>) bonus armor."
+
+
+//=========================================================================================================
 // BRISTLEBACK
 //=========================================================================================================
 	"DOTA_Tooltip_Facet_bb_berserk"					"Berserk"
@@ -1607,6 +1791,11 @@
 	"DOTA_Tooltip_Modifier_bristleback_warpath_custom_buff_Description"		"Moving %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% faster and gaining bonus %dMODIFIER_PROPERTY_TOOLTIP% strength."
 	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff"					"Prickly"
 	"DOTA_Tooltip_Modifier_bristleback_prickly_custom_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_vitality_hp_per_str"		"+{s:bonus_health_per_str} Rigwarl's Vitality Health per Strength"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_viscous_nasal_goo_cooldown"		"–{s:bonus_AbilityCooldown}s Viscous Nasal Goo Cooldown"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_quill_spray_cooldown"		"–{s:bonus_AbilityCooldown}s Quill Spray Cooldown"
+	"DOTA_Tooltip_ability_special_bonus_unique_bb_warpath_str_pct"		"+{s:bonus_str_ptc_per_stack}% Warpath Strength per Stack"
 
 
 //=========================================================================================================

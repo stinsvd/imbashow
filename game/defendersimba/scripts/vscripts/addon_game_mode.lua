@@ -11,7 +11,7 @@ require('tables/boss_gold')
 
 -- Объявляем класс GameMode
 if GameMode == nil then
-    _G.GameMode = class({})
+	_G.GameMode = class({})
 end
 
 RESPAWN_TIME = 15
@@ -21,90 +21,87 @@ BOSS_FIGHT_INTERVAL = 5
 WAVE_INTERVAL = 60
 
 
-GameMode.currentWave = 0        -- Текущая волна
-GameMode.maxWaves = 60           -- Максимальное количество волн
+GameMode.currentWave = 0
+GameMode.maxWaves = 60
 
--- Таблица для хранения выбора игроков
 GameMode.playerChoices = {}
 
-HeroExpTable = {0}
-expTable = {
-    240,
-    400,
-    520,
-    600,
-    680,
-    760,
-    800,
-    900,
-    1000,
-    1100,
-    1200,
-    1300,
-    1400,
-    1500,
-    1600,
-    1700,
-    1800,
-    1900,
-    2000,
-    2200,
-    2400,
-    2600,
-    2800,
-    3000,
-    4000,
-    5000,
-    6000,
-    7000,
-    7500,
-    -- После 30 лвла
-    8000,
-    8500,
-    9000,
-    9500,
-    10000,
-    10500,
-    11000,
-    11500,
-    12000,
-    12500,
-    13000,
-    13500,
-    14000,
-    14500,
-    15000,
-    15500,
-    16000,
-    16500,
-    17000,
-    17500
+_G.HeroExpTable = {0}
+local expTable = {
+	240,
+	400,
+	520,
+	600,
+	680,
+	760,
+	800,
+	900,
+	1000,
+	1100,
+	1200,
+	1300,
+	1400,
+	1500,
+	1600,
+	1700,
+	1800,
+	1900,
+	2000,
+	2200,
+	2400,
+	2600,
+	2800,
+	3000,
+	4000,
+	5000,
+	6000,
+	7000,
+	7500,
+	-- После 30 лвла
+	8000,
+	8500,
+	9000,
+	9500,
+	10000,
+	10500,
+	11000,
+	11500,
+	12000,
+	12500,
+	13000,
+	13500,
+	14000,
+	14500,
+	15000,
+	15500,
+	16000,
+	16500,
+	17000,
+	17500
 }
 
 for i=2,#expTable + 1 do
-	HeroExpTable[i] = HeroExpTable[i-1] + expTable[i-1]
+	_G.HeroExpTable[i] = _G.HeroExpTable[i-1] + expTable[i-1]
 end
--- Функция Precache загружает необходимые ресурсы перед началом игры
+
 function Precache(context)
-    -- Предварительно загружаем юниты для всех волн
-    PrecacheResource("particle", "particles/generic/magic_crit.vpcf", context)
-    PrecacheResource("particle", "particles/dark_moon/darkmoon_creep_warning.vpcf", context)
-    PrecacheResource("particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
-    PrecacheResource("particle", "particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf", context)
-    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context)
+	PrecacheResource("particle", "particles/generic/magic_crit.vpcf", context)
+	PrecacheResource("particle", "particles/dark_moon/darkmoon_creep_warning.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context)
 	PrecacheUnitByNameSync("npc_dota_badguys_tower_cus", context)
 	PrecacheUnitByNameSync("npc_dota_goodguys_tower_cus", context)
 
-    for i = 1, GameMode.maxWaves do
-        local unitName = "npc_dota_wave_" .. i
-        PrecacheUnitByNameSync(unitName, context)
-    end
+	for i = 1, GameMode.maxWaves do
+		local unitName = "npc_dota_wave_" .. i
+		PrecacheUnitByNameSync(unitName, context)
+	end
 
-    -- Предварительно загружаем способности юнитов
-    for i = 1, GameMode.maxWaves do
-        local abilityName = "golem_ability_wave_" .. i
-        PrecacheItemByNameSync(abilityName, context)
-    end
+	for i = 1, GameMode.maxWaves do
+		local abilityName = "golem_ability_wave_" .. i
+		PrecacheItemByNameSync(abilityName, context)
+	end
 
 	_G.GLOBAL_PRECACHE = _G.GLOBAL_PRECACHE or {}
 	local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
@@ -118,67 +115,54 @@ function Precache(context)
 			end
 		end
 	end
-
-    -- Предварительно загружаем модификатор AI
-    -- Не нужно кэшировать Lua-модификаторы
 end
 
--- Функция Activate вызывается при старте кастомки
 function Activate()
-    -- Инициализируем режим игры
-    GameMode:InitGameMode()
+	GameMode:InitGameMode()
 end
 
--- Функция инициализации режима игры
 function GameMode:InitGameMode()
-    print("GameMode инициализирован")
+	print("GameMode инициализирован")
 
 	GameRules:EnableCustomGameSetupAutoLaunch(true)
 	GameRules:SetCustomGameSetupAutoLaunchDelay(0.5)
-    -- Устанавливаем время выбора героев в 0 секунд
-    GameRules:SetHeroSelectionTime(15)
+	GameRules:SetHeroSelectionTime(15)
 
-    GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
-	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( HeroExpTable )
+	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
+	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(_G.HeroExpTable)
 
-    -- Устанавливаем стратегическое время в 0 секунд
-    GameRules:SetStrategyTime(10)
-    -- Устанавливаем максимальное количество игроков для каждой команды
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 6)
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
+	GameRules:SetStrategyTime(10)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 6)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 
-    -- Устанавливаем время демонстрации героев в 0 секунд
-    GameRules:SetShowcaseTime(0)
-    GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
-    GameRules:GetGameModeEntity():SetUseTurboCouriers(true)
-    -- Устанавливаем предыгровое время в 10 секунд
-    GameRules:SetPreGameTime(10)
-    GameRules:SetUseUniversalShopMode(true)
---    GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
-    if IsInToolsMode() then
+	GameRules:SetShowcaseTime(0)
+	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+	GameRules:GetGameModeEntity():SetUseTurboCouriers(true)
+	
+	GameRules:SetPreGameTime(10)
+	GameRules:SetUseUniversalShopMode(true)
+--	GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
+	if IsInToolsMode() then
 --		GameRules:GetGameModeEntity():SetFogOfWarDisabled(true)
 		if GetMapName() == "test" then
 			SendToServerConsole("dota_easybuy 1")
 		end
-    end
+	end
 	
-    -- Устанавливаем начальное время суток на ночь (0.75 соответствует ночи)
-    GameRules:SetTimeOfDay(0.75)
+	GameRules:SetTimeOfDay(0.75)
 
-    -- Подписываемся на изменение состояния игры
 	ListenToGameEvent("player_chat", Dynamic_Wrap(GameMode, "OnPlayerChat"), self)
-    ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
-    ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
-    ListenToGameEvent("dota_ability_channel_finished", Dynamic_Wrap(GameMode, "OnPlayerChannelAbility"), self)
+	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), self)
+	ListenToGameEvent("dota_player_used_ability", Dynamic_Wrap(GameMode, "OnPlayerUsedAbility"), self)
+	ListenToGameEvent("dota_ability_channel_finished", Dynamic_Wrap(GameMode, "OnPlayerChannelAbility"), self)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(GameMode, "OnNPCSpawned"), self)
-    ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
+	ListenToGameEvent("entity_killed", Dynamic_Wrap(GameMode, "OnEntityKilled"), self)
 	CustomGameEventManager:RegisterListener("OnPlayerChoseBoss", Dynamic_Wrap(GameMode, "OnPlayerChoseBoss"))
-    local mode = GameRules:GetGameModeEntity()
+	local mode = GameRules:GetGameModeEntity()
 	mode:SetCustomBackpackSwapCooldown(0)
-    mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
+	mode:SetExecuteOrderFilter(Dynamic_Wrap(GameMode, 'OrderFilter'), self)
 end
 
--- Функция, вызываемая при изменении состояния игры
 function GameMode:OnGameRulesStateChange()
 	local state = GameRules:State_Get()
 	print("Game state changed to ", state)
@@ -261,10 +245,8 @@ function GameMode:OnGameRulesStateChange()
 		]]
 		GameMode:RefreshTowersInvul()
 
-		-- Обрабатываем результаты выбора игроков
 		GameMode:ProcessPlayerChoices()
 
-		-- Запускаем спавн волн
 	--	GameMode:StartWaveSpawnTimer()
 		GameRules:GetGameModeEntity():SetThink("WaveSpawnThink", GameMode, "WaveThink", 0.1)
 	end
@@ -283,7 +265,7 @@ end
 
 function GameMode:OnPlayerUsedAbility(event)
 	local abiltyName = event.abilityname
-    local playerID = event.PlayerID
+	local playerID = event.PlayerID
 
 	if abiltyName == "item_tpscroll" then
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
@@ -330,52 +312,43 @@ function GameMode:OnPlayerChannelAbility(event)
 	end
 end
 
--- Функция для обработки выборов игроков
 function GameMode:ProcessPlayerChoices()
-    print("Обрабатываем выборы игроков")
+	print("Обрабатываем выборы игроков")
 
-    -- Собираем игроков, выбравших "Да"
-    local bossCandidates = {}
-    for playerID, choice in pairs(GameMode.playerChoices) do
-        if choice == 0 then
-            table.insert(bossCandidates, playerID)
-        end
-    end
+	local bossCandidates = {}
+	for playerID, choice in pairs(GameMode.playerChoices) do
+		if choice == 0 then
+			table.insert(bossCandidates, playerID)
+		end
+	end
 
-    -- Выбираем случайного игрока из кандидатов или из всех, если никто не выбрал "Да"
-    local bossPlayerID = nil
-    if #bossCandidates > 0 then
-        bossPlayerID = bossCandidates[RandomInt(1, #bossCandidates)]
-    else
-        -- Если никто не выбрал "Да"
+	local bossPlayerID = nil
+	if #bossCandidates > 0 then
+		bossPlayerID = bossCandidates[RandomInt(1, #bossCandidates)]
+	else
 		--[[
-        local allPlayers = {}
-        for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
-            if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
-                table.insert(allPlayers, playerID)
-            end
-        end
-        bossPlayerID = allPlayers[RandomInt(1, #allPlayers)]
+		local allPlayers = {}
+		for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
+			if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) and PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+				table.insert(allPlayers, playerID)
+			end
+		end
+		bossPlayerID = allPlayers[RandomInt(1, #allPlayers)]
 		]]
 		return
-    end
+	end
 
-    -- Сохраняем ID игрока, который станет боссом
-    GameMode.bossPlayerID = bossPlayerID
+	GameMode.bossPlayerID = bossPlayerID
 
-    -- Получаем имя героя игрока
-    local heroName = PlayerResource:GetSelectedHeroName(bossPlayerID)
+	local heroName = PlayerResource:GetSelectedHeroName(bossPlayerID)
 
-    -- Проверяем, есть ли имя героя
-    if heroName == nil or heroName == "" then
-        heroName = "Неизвестный герой"
-    else
-        -- Преобразуем имя героя в читаемый формат
-        -- Например, "npc_dota_hero_axe" -> "Axe"
-        heroName = string.gsub(heroName, "npc_dota_hero_", "")
-        heroName = string.gsub(heroName, "_", " ")
-        heroName = string.upper(string.sub(heroName, 1, 1)) .. string.sub(heroName, 2)
-    end
+	if heroName == nil or heroName == "" then
+		heroName = "Неизвестный герой"
+	else
+		heroName = string.gsub(heroName, "npc_dota_hero_", "")
+		heroName = string.gsub(heroName, "_", " ")
+		heroName = string.upper(string.sub(heroName, 1, 1)) .. string.sub(heroName, 2)
+	end
 end
 
 
@@ -387,51 +360,56 @@ function GameMode:OnNPCSpawned(keys)
 			npc:AddNewModifier(npc, nil, "modifier_generic_handler", {})
 --		end
 --	end
-	local tpscroll = npc:FindItemInInventory("item_tpscroll")
-	if tpscroll then
-		tpscroll:EndCooldown()
-	end
+
+	Timers:CreateTimer(0.1, function()
+		if npc and not npc:IsNull() then
+			local tpscroll = npc:FindItemInInventory("item_tpscroll")
+			if tpscroll then
+				tpscroll:EndCooldown()
+			end
+		end
+	end)
 end
 
 function GameMode:OnEntityKilled(event)
-    local killedUnit = EntIndexToHScript(event.entindex_killed)
-    
-    if killedUnit:IsRealHero() then
-        killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
+	local killedUnit = EntIndexToHScript(event.entindex_killed)
+	
+	if killedUnit:IsRealHero() then
+		killedUnit:SetTimeUntilRespawn(RESPAWN_TIME)
 
-        if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then
+		if GameMode:IsStartBossFight() and GameMode:GetBoss() == killedUnit then
 		--	local soul = GameMode:GetSoulBoss()
 			GameMode:SetStartBossFight(false)
-        --	soul:Destroy()
-        end
-    end
+		--	soul:Destroy()
+		end
+	end
 
-    if killedUnit:HasModifier("modifier_golem_ai") then
-        local isCurrentWaveUnit = false
-        for i,unit in ipairs(self.waveUnits) do
-            if unit:GetEntityIndex() == killedUnit:GetEntityIndex() then
-                isCurrentWaveUnit = true
-                table.remove(self.waveUnits, i)
-                break
-            end
-        end
+	if killedUnit:HasModifier("modifier_golem_ai") then
+		local isCurrentWaveUnit = false
+		for i,unit in ipairs(self.waveUnits) do
+			if unit:GetEntityIndex() == killedUnit:GetEntityIndex() then
+				isCurrentWaveUnit = true
+				table.remove(self.waveUnits, i)
+				break
+			end
+		end
 
-        if isCurrentWaveUnit and #self.waveUnits == 0 then
-            self:GiveRewardWave()
-        end
-    end
+		if isCurrentWaveUnit and #self.waveUnits == 0 then
+			self:GiveRewardWave()
+		end
+	end
 
-    if killedUnit:IsBossCreature() then
-        local reward = BOSS_GOLD[killedUnit:GetUnitName()]
+	if killedUnit:IsBossCreature() then
+		local reward = BOSS_GOLD[killedUnit:GetUnitName()]
 	--	DeepPrintTable(reward)
-        if reward then
-            GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
-        end
-    end
+		if reward then
+			GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
+		end
+	end
 
-    if killedUnit:GetUnitName() == "npc_dota_boss_6" then
-        self:OpenGate()
-    end
+	if killedUnit:GetUnitName() == "npc_dota_boss_6" then
+		self:OpenGate()
+	end
 end
 
 function GameMode:IsGateOpen()
@@ -446,16 +424,16 @@ function GameMode:OpenGate()
 	end
 	self.isGateOpen = true
 end
--- Функция для преобразования игрока в финального босса
+
 function GameMode:TransformPlayerToBoss()
 	if GameMode:GetBoss() then return end
-    local playerID = GameMode.bossPlayerID
+	local playerID = GameMode.bossPlayerID
 	if not playerID then return end
-    local player = PlayerResource:GetPlayer(playerID)
+	local player = PlayerResource:GetPlayer(playerID)
 
-    if not player then return end
+	if not player then return end
 
-    local hero = player:GetAssignedHero()
+	local hero = player:GetAssignedHero()
 	Timers:CreateTimer(0.1, function()
 		if not hero or hero:IsNull() then return end
 		if not hero:IsAlive() then
@@ -463,14 +441,13 @@ function GameMode:TransformPlayerToBoss()
 		end
 		self:SetBoss(hero)
 		if hero then
-			-- Переводим игрока в команду BADGUYS
-			player:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
-			PlayerResource:SetCustomTeamAssignment(playerID, DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
+			player:SetTeam(DOTA_TEAM_BADGUYS)
+			PlayerResource:SetCustomTeamAssignment(playerID, DOTA_TEAM_BADGUYS)
 
-			-- Меняем команду героя
-			hero:SetTeam(DOTA_TEAM_BADGUYS) -- поменял временно на DOTA_TEAM_GOODGUYS
+			hero:SetTeam(DOTA_TEAM_BADGUYS)
 			hero:SetOwner(player)
 			hero:SetControllableByPlayer(playerID, true)
+			hero:AddNewModifier(hero, nil, "modifier_boss_healthbar", {})
 			hero:AddNewModifier(hero, nil, "modifier_boss_buff", {})
 	
 			local courierPlayer = PlayerResource:GetPreferredCourierForPlayer(playerID)
@@ -484,18 +461,17 @@ function GameMode:TransformPlayerToBoss()
 			FindClearSpaceForUnit(courierPlayer, point, true)
 			courierPlayer:RespawnUnit()
 
-			-- Обновляем количество игроков в командах
 			GameMode:UpdateTeamPlayerCounts()
 		end
 
 		self:StartBossFight()
 	end)
- end
+end
 
 function GameMode:SetBoss(hero)
-    if hero:IsRealHero() then
-        self.boss = hero
-    end
+	if hero:IsRealHero() then
+		self.boss = hero
+	end
 end
 
 
@@ -504,15 +480,15 @@ function GameMode:GetBoss()
 end
 
 function GameMode:GetSoulBoss()
-    return self.soul
+	return self.soul
 end
 
 function GameMode:IsStartBossFight()
-    return self.bossFight
+	return self.bossFight
 end
 
 function GameMode:SetStartBossFight(state)
-    self.bossFight = state
+	self.bossFight = state
 end
 
 function GameMode:StartBossFight()
@@ -534,24 +510,24 @@ function GameMode:StartBossFight()
 		GameMode:SetStartBossFight(true)
 	end
 end
--- Функция для обновления количества игроков в командах
+
 function GameMode:UpdateTeamPlayerCounts()
-    local goodGuysCount = 0
-    local badGuysCount = 0
+	local goodGuysCount = 0
+	local badGuysCount = 0
 
-    for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            local team = PlayerResource:GetTeam(playerID)
-            if team == DOTA_TEAM_GOODGUYS then
-                goodGuysCount = goodGuysCount + 1
-            elseif team == DOTA_TEAM_BADGUYS then
-                badGuysCount = badGuysCount + 1
-            end
-        end
-    end
+	for playerID = 0, PlayerResource:GetPlayerCount() - 1 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			local team = PlayerResource:GetTeam(playerID)
+			if team == DOTA_TEAM_GOODGUYS then
+				goodGuysCount = goodGuysCount + 1
+			elseif team == DOTA_TEAM_BADGUYS then
+				badGuysCount = badGuysCount + 1
+			end
+		end
+	end
 
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, goodGuysCount)
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, badGuysCount)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, goodGuysCount)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, badGuysCount)
 end
 --[[
 function GameMode:GetWaveSpawnPoint(isForWave)
@@ -723,63 +699,66 @@ function GameMode:RefreshTowersInvul()
 end
 
 function GameMode:SpawnWave()
-    if GameMode.currentWave > GameMode.maxWaves then return end
+	if GameMode.currentWave > GameMode.maxWaves then return end
 
-    GameMode.currentWave = GameMode.currentWave + 1
+	GameMode.currentWave = GameMode.currentWave + 1
 
-    -- Имя юнита для текущей волны
-    local unitName = "npc_dota_wave_" .. GameMode.currentWave
+	
+	local unitName = "npc_dota_wave_" .. GameMode.currentWave
 
-    local spawnPoint = self:GetWaveSpawnPoint(true)
+	local spawnPoint = self:GetWaveSpawnPoint(true)
 
-    self.waveUnits = {}
+	self.waveUnits = {}
 
-    if spawnPoint then
-        for i = 1, 10 do
-            -- Смещаем точку спавна, чтобы юниты не накладывались друг на друга
-            local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
-            local spawnLocation = spawnPoint + offset
+	if spawnPoint then
+		for i = 1, 10 do
+			local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
+			local spawnLocation = spawnPoint + offset
 
-            -- Спавним юнита
-            local unit = CreateUnitByName(unitName, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
-            table.insert(self.waveUnits, unit)
-            if unit then
-                -- Добавляем модификатор AI
-                unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
-            else
+			local unit = CreateUnitByName(unitName, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+			table.insert(self.waveUnits, unit)
+			if unit then
+				unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
+			else
 		--		print("Не удалось заспавнить юнита:", unitName)
-            end
-        end
+			end
+		end
 
-        if GameMode.currentWave % 5 == 0 then
-            local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
-            local spawnLocation = spawnPoint + offset
+		if GameMode.currentWave % 5 == 0 then
+			local offset = Vector(RandomFloat(-200, 200), RandomFloat(-200, 200), 0)
+			local spawnLocation = spawnPoint + offset
 
-            local unit = CreateUnitByName("npc_dota_wave_mini_boss_" .. GameMode.currentWave, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
-            if unit then
-                unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
-            end
-        end
-    end
+			local unit = CreateUnitByName("npc_dota_wave_mini_boss_" .. GameMode.currentWave, spawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+			if unit then
+				unit:AddNewModifier(unit, nil, "modifier_golem_ai", {})
+			end
+		end
+	end
 
-    if GameMode.currentWave == TRANSFER_FINAL_BOSS then
+	if GameMode.currentWave == TRANSFER_FINAL_BOSS then
 	--	GameMode:TransformPlayerToBoss()
-    end
+	end
 
-    if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
-        self:StartBossFight()
-    end
+	if self.currentWave > TRANSFER_FINAL_BOSS and (self.currentWave - TRANSFER_FINAL_BOSS)%BOSS_FIGHT_INTERVAL == 0 then
+		self:StartBossFight()
+	end
 end
 
 function GameMode:SpawnMorph()
-    local spawnPoint = self:GetWaveSpawnPoint(true)
+	local spawnPoint = self:GetWaveSpawnPoint(true)
 	if spawnPoint then
+		local blockedHeroes = {
+		}
+		local blockedAbilities = {
+			kez_switch_weapons = true,
+		}
 		PrecacheUnitByNameAsync("npc_dota_morph_boss_cus", function()
 			local morph = CreateUnitByName("npc_dota_morph_boss_cus", spawnPoint, true, nil, nil, DOTA_TEAM_BADGUYS)
 			if morph then
 				morph:SetCanSellItems(false)
 				for abilitySlot = 0, morph:GetAbilityCount() - 1 do
 					local morphAbility = morph:GetAbilityByIndex(abilitySlot)
+					blockedAbilities[morphAbility:GetAbilityName()] = true
 					if morphAbility then
 						morphAbility:RemoveSelf()
 					end
@@ -809,7 +788,7 @@ function GameMode:SpawnMorph()
 									local abilityName = heroAbility:GetAbilityName()
 									local abilityLvl = heroAbility:GetLevel()
 									playerAbilCount = playerAbilCount + 1
-									if not heroAbility:IsAttributeBonus() and not heroAbility:IsHidden() then
+									if not heroAbility:IsAttributeBonus() and not heroAbility:IsHidden() and not blockedAbilities[abilityName] then
 										table.insert(playersAbilities, {abilityName, abilityLvl})
 									end
 								end
@@ -862,10 +841,12 @@ function GameMode:SpawnMorph()
 							local heroAbility = hero:GetAbilityByIndex(abilitySlot)
 							if heroAbility and heroAbility:GetLevel() > 0 then
 								local abilityName = heroAbility:GetAbilityName()
-								local morphAbility = morph:AddAbility(abilityName)
-								if morphAbility then
-									morphAbility:SetActivated(true)
-									morphAbility:SetLevel(heroAbility:GetLevel())
+								if not blockedAbilities[abilityName] then
+									local morphAbility = morph:AddAbility(abilityName)
+									if morphAbility then
+										morphAbility:SetActivated(true)
+										morphAbility:SetLevel(math.max(heroAbility:GetLevel(), 1))
+									end
 								end
 							end
 						end
@@ -891,21 +872,24 @@ function GameMode:SpawnMorph()
 								local morphAbility = morph:AddAbility(abilityName)
 								if morphAbility then
 									morphAbility:SetActivated(true)
-									morphAbility:SetLevel(abilityLvl)
+									morphAbility:SetLevel(math.max(abilityLvl, 1))
 									morphAbils = morphAbils + 1
 								end
 							end
 							table.remove(playersAbilities, randomAbil)
 						end
-						morph:SetControllableByPlayer(hero:GetPlayerID(), true)
+					--	morph:SetControllableByPlayer(hero:GetPlayerID(), true)
 					end
 					morph:SetBaseMaxHealth(maxHealth)
 					morph:SetMaxHealth(maxHealth)
 					morph:SetHealth(maxHealth)
 					morph:SetMaxMana(maxMana)
 					morph:SetMana(maxMana)
+					morph:SetBaseDamageMin(50 + (GameMode.currentWave * 3))
+					morph:SetBaseDamageMax(50 + (GameMode.currentWave * 6))
 				end
-				morph:AddNewModifier(morph, nil, "modifier_morph_boss_ai", {})
+				morph:AddNewModifier(morph, nil, "modifier_morph_boss_ai", {}):SetStackCount(GameMode.currentWave)
+				morph:AddNewModifier(morph, nil, "modifier_boss_healthbar", {})
 				morph:AddNewModifier(morph, nil, "modifier_boss_buff", {})
 			end
 		end)
@@ -913,25 +897,22 @@ function GameMode:SpawnMorph()
 end
 
 function GameMode:GiveRewardWave()
-    local reward = WAVE_REWARDS[self.currentWave]
-    GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
+	local reward = WAVE_REWARDS[self.currentWave]
+	GiveAllGoldAndXp(reward, DOTA_TEAM_GOODGUYS)
 end
 
--- Функция для запуска таймера спавна волн каждые 30 секунд
 function GameMode:StartWaveSpawnTimer()
-    print("Запуск таймера спавна волн")
-    Timers:CreateTimer(0, function()
-        -- Спавним волну
-        GameMode:SpawnWave()
-
-        -- Проверяем, достигли ли мы последней волны
-        if GameMode.currentWave > GameMode.maxWaves then
-            print("Все волны были заспавнены.")
-            return nil  -- Останавливаем таймер
-        else
-            return WAVE_INTERVAL  -- Повторяем каждые 30 секунд
-        end
-    end)
+	print("Запуск таймера спавна волн")
+	Timers:CreateTimer(0, function()
+		GameMode:SpawnWave()
+		
+		if GameMode.currentWave > GameMode.maxWaves then
+			print("Все волны были заспавнены.")
+			return nil
+		else
+			return WAVE_INTERVAL
+		end
+	end)
 end
 function GameMode:WaveSpawnThink()
 	local interval = 0.1
@@ -977,21 +958,21 @@ function GameMode:OrderFilter(event)
 	end
 
 	if type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
-        local item = event.shop_item_name
- 
-        if string.sub(item, 1, 19) == "item_upgrade_scroll" then
-            local upgradeLevel  = tonumber(string.sub(item, 21))
-            local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-            local team = hero:GetTeamNumber()
-            
-            if upgradeLevel ~= 1 then
-                local index = team == DOTA_TEAM_GOODGUYS and 1 or 2
-                if not BossManager:IsBossKilled(upgradeLevel - index) then
-                    CreateHudError(PlayerResource:GetPlayer(playerId), "#error_boss_not_killed", {level = upgradeLevel - index})
-                    return false
-                end
-            end
-        end
+		local item = event.shop_item_name
+
+		if string.sub(item, 1, 19) == "item_upgrade_scroll" then
+			local upgradeLevel = tonumber(string.sub(item, 21))
+			local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+			local team = hero:GetTeamNumber()
+			
+			if upgradeLevel ~= 1 then
+				local index = team == DOTA_TEAM_GOODGUYS and 1 or 2
+				if not BossManager:IsBossKilled(upgradeLevel - index) then
+					CreateHudError(PlayerResource:GetPlayer(playerId), "#error_boss_not_killed", {level = upgradeLevel - index})
+					return false
+				end
+			end
+		end
 	end
 	if type == DOTA_UNIT_ORDER_CAST_POSITION then
 		if ability and ability:GetAbilityName() == "item_tpscroll" then
@@ -1034,13 +1015,6 @@ function GameMode:OnPlayerChat(keys)
 			local name = tostring(text[2])
 			if name then
 				PlayerResource:GetPlayer(playerID):SetSelectedHero("npc_dota_hero_"..name)
-			end
-		end
-
-		if normal_text == "?" then
-			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-			if hero then
-				hero:AddNewModifier(hero, nil, "modifier_help", {})
 			end
 		end
 	end

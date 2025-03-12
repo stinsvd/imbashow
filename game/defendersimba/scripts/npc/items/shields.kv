@@ -1,0 +1,428 @@
+"DOTAAbilities"
+{
+// Stout Shield
+	"item_stout_shield_cus"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/stout_shield.vmdl"
+		"AbilityTextureName"			"stout_shield"
+		"ItemCost"						"100"
+		"ItemShopTags"					"block"
+		"ItemQuality"					"component"
+		"ItemAliases"					"stout shield"
+		"AbilityValues"
+		{
+			"damage_block_melee"		"20"
+			"damage_block_ranged"		"8"
+			"block_chance"				"50"
+		}
+	}
+	
+// Quelling Blade 2
+	"item_quelling_blade_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"Model"							"models/props_gameplay/quelling_blade.vmdl"
+		"AbilityTextureName"			"quelling_blade_2"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"0"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"component"
+		"ItemAliases"					"qb;quelling blade"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"5"
+			"damage_bonus"				"20"
+			"damage_bonus_ranged"		"10"
+			"damage_block_melee"		"30"
+			"damage_block_ranged"		"15"
+			"block_chance"				"50"
+		}
+	}
+	"item_recipe_quelling_blade_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_quelling_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_stout_shield_cus;item_crown;item_quelling_blade"
+		}
+	}
+	
+// Uniguard
+	"item_uniguard"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"vanguard"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"1"
+		"ItemShopTags"					"regen_health;block;health_pool;boost_magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"vanguard;hood"
+		"AbilityValues"
+		{
+			"bonus_strength"			"11 21 46 121"
+			"bonus_agility"				"5"
+			"bonus_intellect"			"5"
+			"bonus_health_regen"		"4.5 16.5 28.5 64.5"
+			"bonus_mana_regen"			"0.8"
+			"bonus_armor"				"0 10 20 50"
+			"bonus_magic_armor"			"20 30 40 40"
+			"damage_block_melee"		"30 40 50 75"
+			"damage_block_ranged"		"15 25 35 50"
+			"block_chance"				"50 55 60 80"
+			"magic_damage_block"		"120 160 240 320"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_uniguard"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_uniguard"
+		"ItemRequirements"
+		{
+			"01"						"item_belt_of_strength;item_quelling_blade_2;item_ring_of_health;item_cloak;item_infused_raindrop;item_upgrade_scroll_1"
+		}
+	}
+	
+// Uniguard 2
+	"item_uniguard_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"vanguard"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"2"
+		"ItemShopTags"					"regen_health;block;health_pool;boost_magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"vanguard;hood"
+		"AbilityValues"
+		{
+			"bonus_strength"			"11 21 46 121"
+			"bonus_agility"				"5"
+			"bonus_intellect"			"5"
+			"bonus_health_regen"		"4.5 16.5 28.5 64.5"
+			"bonus_mana_regen"			"0.8"
+			"bonus_armor"				"0 10 20 50"
+			"bonus_magic_armor"			"20 30 40 40"
+			"damage_block_melee"		"30 40 50 75"
+			"damage_block_ranged"		"15 25 35 50"
+			"block_chance"				"50 55 60 80"
+			"magic_damage_block"		"120 160 240 320"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_uniguard_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_uniguard_2"
+		"ItemRequirements"
+		{
+			"01"						"item_uniguard;item_ogre_axe;item_platemail;item_cloak;item_ring_of_tarrasque;item_upgrade_scroll_2"
+		}
+	}
+	
+// Uniguard 3
+	"item_uniguard_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"vanguard"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"3"
+		"ItemShopTags"					"regen_health;block;health_pool;boost_magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"vanguard;hood"
+		"AbilityValues"
+		{
+			"bonus_strength"			"11 21 46 121"
+			"bonus_agility"				"5"
+			"bonus_intellect"			"5"
+			"bonus_health_regen"		"4.5 16.5 28.5 64.5"
+			"bonus_mana_regen"			"0.8"
+			"bonus_armor"				"0 10 20 50"
+			"bonus_magic_armor"			"20 30 40 40"
+			"damage_block_melee"		"30 40 50 75"
+			"damage_block_ranged"		"15 25 35 50"
+			"block_chance"				"50 55 60 80"
+			"magic_damage_block"		"120 160 240 320"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_uniguard_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_uniguard_3"
+		"ItemRequirements"
+		{
+			"01"						"item_uniguard_2;item_reaver;item_platemail;item_cloak;item_ring_of_tarrasque;item_upgrade_scroll_3"
+		}
+	}
+	
+// Crimson Guard
+	"item_uniguard_4"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityTextureName"			"crimson_guard"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"4"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"75"
+		"ItemShopTags"					"regen_health;block;health_pool;boost_magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"vanguard;hood"
+		"AbilityValues"
+		{
+			"bonus_strength"			"11 21 46 121"
+			"bonus_agility"				"5"
+			"bonus_intellect"			"5"
+			"bonus_health_regen"		"4.5 16.5 28.5 64.5"
+			"bonus_mana_regen"			"0.8"
+			"bonus_armor"				"0 10 20 50"
+			"bonus_magic_armor"			"20 30 40 40"
+			"damage_block_melee"		"30 40 50 75"
+			"damage_block_ranged"		"15 25 35 50"
+			"block_chance"				"50 55 60 80"
+			"magic_damage_block"		"120 160 240 320"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+
+			"active_block"				"100"
+			"active_block_max_hp_pct"	"2.2"
+			"active_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"active_duration"			"7"
+			"tooltip_reapply_time"		"39"
+		}
+	}
+	"item_recipe_uniguard_4"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_uniguard_4"
+		"ItemRequirements"
+		{
+			"01"						"item_uniguard_3;item_reaver_2;item_platemail_2;item_ring_of_tarrasque_2;item_upgrade_scroll_4"
+		}
+	}
+	
+// Pipe of Insight
+	"item_pipe_of_insight"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityTextureName"			"pipe"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"150"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"AbilityValues"
+		{
+			"bonus_all"					"5"
+			"bonus_health_regen"		"9 30 80"
+			"bonus_magic_armor"			"20 25 40"
+			"aura_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"aura_health_regen"			"2.5 17.5 30"
+			"aura_magic_resistance"		"8 10 15"
+			"barrier_block"				"425"
+			"barrier_block_max_mp_pct"	"5 10 20"
+			"barrier_duration"			"8"
+			"barrier_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"magic_damage_block"		"160 200 260"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_pipe_of_insight"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_of_insight"
+		"ItemRequirements"
+		{
+			"01"						"item_uniguard;item_ring_of_health;item_upgrade_scroll_4"
+		}
+	}
+	
+// Pipe of Insight 2
+	"item_pipe_of_insight_2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityTextureName"			"pipe"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"150"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"AbilityValues"
+		{
+			"bonus_all"					"5"
+			"bonus_health_regen"		"9 30 80"
+			"bonus_magic_armor"			"20 25 40"
+			"aura_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"aura_health_regen"			"2.5 17.5 30"
+			"aura_magic_resistance"		"8 10 15"
+			"barrier_block"				"425"
+			"barrier_block_max_mp_pct"	"5 10 20"
+			"barrier_duration"			"8"
+			"barrier_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"magic_damage_block"		"160 200 260"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_pipe_of_insight_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_of_insight_2"
+		"ItemRequirements"
+		{
+			"01"						"item_pipe_of_insight;item_ring_of_tarrasque_2;item_upgrade_scroll_5"
+		}
+	}
+	
+// Pipe of Insight 3
+	"item_pipe_of_insight_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shields"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HEROES_AND_CREEPS"
+		"AbilityTextureName"			"pipe"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"150"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"AbilityValues"
+		{
+			"bonus_all"					"5"
+			"bonus_health_regen"		"9 30 80"
+			"bonus_magic_armor"			"20 25 40"
+			"aura_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"aura_health_regen"			"2.5 17.5 30"
+			"aura_magic_resistance"		"8 10 15"
+			"barrier_block"				"425"
+			"barrier_block_max_mp_pct"	"5 10 20"
+			"barrier_duration"			"8"
+			"barrier_radius"
+			{
+				"value"							"1200"
+				"affected_by_aoe_increase"		"1"
+			}
+			"magic_damage_block"		"160 200 260"
+			"min_damage"				"75"
+			"magic_block_cooldown"		"7"
+		}
+	}
+	"item_recipe_pipe_of_insight_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_of_insight_3"
+		"ItemRequirements"
+		{
+			"01"						"item_pipe_of_insight_2;item_ring_of_health;item_cloak;item_ring_of_tarrasque;item_ring_of_tarrasque_2;item_upgrade_scroll_6"
+		}
+	}
+}

@@ -5,6 +5,7 @@
     <Panel>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/creeps/wave.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/boss/vote_boss.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/boss/boss_healthbar.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/heroes/custom_buffs.xml" />
     </Panel>
 </root>

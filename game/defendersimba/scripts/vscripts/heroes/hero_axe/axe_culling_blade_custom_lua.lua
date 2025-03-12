@@ -36,7 +36,8 @@ function axe_culling_blade_custom_lua:OnSpellStart()
 		targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	end
 	for _, enemy in pairs(targets) do
-		if enemy:GetHealth() < damage and not (enemy:GetUnitName() == "npc_dota_roshan" or enemy:GetUnitName() == "npc_dota_miniboss") then
+		if enemy:GetHealth() <= damage and not (enemy:GetUnitName() == "npc_dota_roshan" or enemy:GetUnitName() == "npc_dota_miniboss") then
+			enemy:RemoveModifierByName("modifier_dazzle_shallow_grave")
 			enemy:Kill(self, caster)
 		else
 			damageTable.victim = enemy
